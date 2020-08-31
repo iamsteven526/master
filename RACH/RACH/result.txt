@@ -1,0 +1,18 @@
+RACH-OFDM-GDMA-BPSK system
+
+(1008,504) LDPC code
+Separated channel decoding: SPA
+Iteration#: 100
+
+FFT point: 16, CP length: 4, channel tap: 5
+Number of users: 10
+
+Perfect Time
+
+Perfect CSI
+
+ALOHA + MLDT, 	NON SLOTED system
+Channel, K=0
+OFDM : CP, CP Len : 4
+Preamble Len: 63
+-

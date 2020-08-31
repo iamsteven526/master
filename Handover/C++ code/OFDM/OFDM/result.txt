@@ -1,0 +1,7 @@
+OFDM system 1024PSK
+One-tap equalizer  
+
+1). subcarrier number: 1024, subcarrier spacing: 15(kHz) 
+2). path number : 6(tapes), UE speed: 540(km/h)
+3). Fast fading- time-varying Rayleigh fading channel
+

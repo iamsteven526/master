@@ -1,0 +1,16 @@
+GDMA-QPSK system
+Number of users: 2
+
+Block length: 2000
+
+Cluster length: 2000
+
+Cluster-based channel estimation: LBG algo.
+
+-
+
+SNR[dB] = 100.0, BER = 4.800000e-01, MSE = 5.461597e-14, MSE_centroid = 1.965465e-13
+SNR[dB] = 105.0, BER = 4.850000e-01, MSE = 1.717554e-14, MSE_centroid = 6.310466e-14
+SNR[dB] = 110.0, BER = 4.750000e-01, MSE = 4.951992e-15, MSE_centroid = 1.940679e-14
+SNR[dB] = 115.0, BER = 4.800000e-01, MSE = 1.509850e-15, MSE_centroid = 6.250674e-15
+SNR[dB] = 120.0, BER = 5.125000e-01, MSE = 5.463620e-16, MSE_centroid = 2.071410e-15

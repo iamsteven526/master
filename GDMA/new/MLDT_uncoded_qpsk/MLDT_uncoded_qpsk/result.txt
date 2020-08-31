@@ -1,0 +1,11 @@
+GDMA-QPSK system
+Number of users: 2
+
+Block length: 100
+
+Cluster length: 100
+
+Perfect CSI
+
+-
+

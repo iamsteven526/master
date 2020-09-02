@@ -566,9 +566,13 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 		if (reset)
 			break;
         
+		int symmetric_success_count = 0;
         for(int i = 0; i < num_level/2; ++i){ //0816add
-			sup_centroid[pair[i][0]][0] = (-1)*sup_centroid[pair[i][1]][0];
-            sup_centroid[pair[i][0]][1] = (-1)*sup_centroid[pair[i][1]][1];
+			if((abs(sup_centroid[pair[i][0]][0] + sup_centroid[pair[i][1]][0]) < 0.1) && (abs(sup_centroid[pair[i][0]][1] + sup_centroid[pair[i][1]][1]) < 0.1)){
+			    sup_centroid[pair[i][0]][0] = (-1)*sup_centroid[pair[i][1]][0];
+                sup_centroid[pair[i][0]][1] = (-1)*sup_centroid[pair[i][1]][1];
+				symmetric_success_count++;
+			}
 		}
 
 		if (num_level != 2)

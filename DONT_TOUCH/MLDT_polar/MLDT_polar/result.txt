@@ -1,0 +1,23 @@
+(128,63) Polar-coded GDMA-BPSK system
+Number of users: 3
+
+PCC: Bhattacharyya bound
+Designed SNR: 1.0 dB
+Decoder: SCL-32
+
+Cluster-based channel estimation:
+Initial centroids selection : modified k-means++
+Proposed method : 1
+w/ Gaussian mixture model
+
+Noncoherent block coding
+
+Synchronous system
+
+Block Fading
+Fading size:128
+Rayleight Channel
+CRC_LEN = 0
+-
+
+SNR[dB] =  30.0, BER = 6.461089e-04, BLER = 1.720384e-03, MSE = 1.822503e-06

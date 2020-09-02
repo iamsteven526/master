@@ -1,0 +1,71 @@
+\contentsline {chapter}{口試委員會審定書}{i}{Doc-Start}% 
+\contentsline {chapter}{致謝}{ii}{chapter*.1}% 
+\contentsline {chapter}{中文摘要}{iii}{chapter*.2}% 
+\contentsline {chapter}{Abstract}{iv}{chapter*.3}% 
+\contentsline {chapter}{Contents}{vi}{chapter*.4}% 
+\contentsline {chapter}{List of Figures}{ix}{chapter*.5}% 
+\contentsline {chapter}{List of Tables}{xii}{chapter*.6}% 
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}Gain-Division Multiple Access}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Detection Principle}{5}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Implementation Methood}{11}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}BPSK-modulated GDMA Implementation}{11}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}QPSK-modulated GDMA Implementation}{14}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}PAM-modulated GDMA Implementation}{17}{subsection.2.2.3}% 
+\contentsline {section}{\numberline {2.3}Joint channel decoding for the GDMA system}{21}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Introduction of Joint Channel Decoding}{21}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}LDPC Coded GDMA system}{22}{subsection.2.3.2}% 
+\contentsline {paragraph}{Messages and Initialization}{22}{section*.7}% 
+\contentsline {paragraph}{Output Message of Variable Nodes}{23}{section*.8}% 
+\contentsline {paragraph}{Output Message of Check Nodes}{24}{section*.9}% 
+\contentsline {paragraph}{Finalization and Symbol-to-Bit Mapping}{25}{section*.10}% 
+\contentsline {paragraph}{Simulation Results}{26}{section*.11}% 
+\contentsline {subsection}{\numberline {2.3.3}Polar Coded GDMA system}{28}{subsection.2.3.3}% 
+\contentsline {paragraph}{Graph representation}{28}{section*.12}% 
+\contentsline {paragraph}{$f$-function}{30}{section*.13}% 
+\contentsline {paragraph}{$g$-function}{30}{section*.14}% 
+\contentsline {subsubsection}{General Sum Product Algorithm decoder}{32}{section*.15}% 
+\contentsline {paragraph}{Initialization}{32}{section*.16}% 
+\contentsline {paragraph}{Message passing}{33}{section*.17}% 
+\contentsline {paragraph}{Simulation result}{34}{section*.18}% 
+\contentsline {subsubsection}{Joint Successive Cancellation List decoder}{36}{section*.19}% 
+\contentsline {paragraph}{Update for odd branch}{36}{section*.20}% 
+\contentsline {paragraph}{Update for even branch}{37}{section*.21}% 
+\contentsline {paragraph}{Metric path}{38}{section*.22}% 
+\contentsline {paragraph}{Simulation result}{39}{section*.23}% 
+\contentsline {chapter}{\numberline {3}Cluster-Based Channel Estimation}{43}{chapter.3}% 
+\contentsline {paragraph}{Introduction for Cluster-based Channel Estimation}{44}{section*.24}% 
+\contentsline {section}{\numberline {3.1}Review of Clustering Algorithm}{45}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}K-Means Algorithm}{45}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}The LBG Algorithm}{46}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.3}K-Means++ Algorithm}{47}{subsection.3.1.3}% 
+\contentsline {subsection}{\numberline {3.1.4}Modified K-Means++ Algorithm}{48}{subsection.3.1.4}% 
+\contentsline {subsection}{\numberline {3.1.5}Gaussian Mixture Model}{49}{subsection.3.1.5}% 
+\contentsline {section}{\numberline {3.2}Cluster-based Estimation Analysis and Design}{51}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Clustering Sample Size Analysis}{52}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Proposed Clustering Algorithm}{56}{subsection.3.2.2}% 
+\contentsline {subsubsection}{Cluster Check}{58}{section*.25}% 
+\contentsline {subsubsection}{Reset Special Centroid}{59}{section*.26}% 
+\contentsline {subsubsection}{Structure Check}{61}{section*.27}% 
+\contentsline {subsection}{\numberline {3.2.3}Derivation of Channel Coefficients}{62}{subsection.3.2.3}% 
+\contentsline {section}{\numberline {3.3}Resolving Phase Ambiguity}{68}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Differential Encoding}{69}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Noncoherent Block-Coded Modulation}{69}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Section Noncoherent Block-Coded Modulation}{71}{subsection.3.3.3}% 
+\contentsline {chapter}{\numberline {4}A Random Access Scheme based on Gain Division Multiple Access}{76}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introduction of RACH and Grant}{77}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Introduction of Random Access System}{79}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}System Model}{83}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}OFDM-GDMA system}{83}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Doppler-effect and unknown timing drift}{83}{subsection.4.3.2}% 
+\contentsline {subsection}{\numberline {4.3.3}Slotted RA OFDM-GDMA system}{85}{subsection.4.3.3}% 
+\contentsline {subsection}{\numberline {4.3.4}Unslotted RA OFDM-GDMA system}{86}{subsection.4.3.4}% 
+\contentsline {section}{\numberline {4.4}Preamble Synchronization}{87}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Preamble}{87}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Synchronization}{89}{subsection.4.4.2}% 
+\contentsline {subsubsection}{Coarse-timing estimate}{89}{section*.28}% 
+\contentsline {subsubsection}{Fine-timing estimate}{90}{section*.29}% 
+\contentsline {section}{\numberline {4.5}Hybrid Channel Estimation}{91}{section.4.5}% 
+\contentsline {section}{\numberline {4.6}Simulation}{92}{section.4.6}% 
+\contentsline {chapter}{\numberline {5}Conclusion and Future Works}{98}{chapter.5}% 
+\contentsline {chapter}{Bibliography}{100}{chapter.5}% 

@@ -1,0 +1,23 @@
+GDMA-QPSK system
+Number of users: 3
+
+Block length: 2000
+
+Cluster length: 2000
+
+Perfect CSI
+
+-
+
+SNR[dB] = 10.0, BER = 1.300677e-01
+SNR[dB] = 15.0, BER = 5.827667e-02
+SNR[dB] = 20.0, BER = 2.213267e-02
+SNR[dB] = 25.0, BER = 9.179333e-03
+SNR[dB] = 30.0, BER = 1.809167e-03
+SNR[dB] = 35.0, BER = 5.718333e-04
+SNR[dB] = 40.0, BER = 9.683333e-05
+SNR[dB] = 45.0, BER = 6.666667e-06
+SNR[dB] = 50.0, BER = 7.500000e-06
+
+
+1.300677e-01, 5.827667e-02, 2.213267e-02, 9.179333e-03, 1.809167e-03, 5.718333e-04, 9.683333e-05, 6.666667e-06, 7.500000e-06, 

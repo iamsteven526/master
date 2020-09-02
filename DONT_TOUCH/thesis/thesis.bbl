@@ -1,0 +1,126 @@
+\begin{thebibliography}{10}
+
+\bibitem{shahab2019grant}
+M.~B. Shahab, R.~Abbas, M.~Shirvanimoghaddam, and S.~J. Johnson, ``Grant-free
+  non-orthogonal multiple access for iot: A survey,'' {\em arXiv preprint
+  arXiv:1910.06529}, 2019.
+
+\bibitem{bh18}
+B.-H. Chang, ``{Multiple Access for Transmissions Over Independent Fading
+  Channels},'' Master's thesis, National Taiwan University, 2018.
+
+\bibitem{plnc06}
+S.~Zhang, S.~Liew, and P.~Lam, ``{Hot Topic: Physical Layer Network Coding},''
+  in {\em Proc. International Conference on Mobile Computing and Networking
+  (MobiCom)}, p.~358–365, 2006.
+
+\bibitem{yt19}
+Y.-T. Hsu, ``{Analysis and Design of Gain-Divsion Multiple Access},'' Master's
+  thesis, National Taiwan University, 2019.
+
+\bibitem{gjcnc10}
+D.~W{\"u}bben and Y.~Lang, ``{Generalized Sum-Product Algorithm for Joint
+  Channel Decoding and Physical-Layer Network Coding in Two-Way Relay
+  Systems},'' in {\em IEEE Proc. Global Communications Conference (GLOBECOM)},
+  Feb. 2010.
+
+\bibitem{lbg80}
+Y.~Linde, A.~Buzo, and R.~M. Gray, ``{An Algorithm for Vector Quantizer
+  Design},'' {\em IEEE Trans. Commun.}, vol.~COM-28, pp.~84--95, Jan. 1980.
+
+\bibitem{kmpp07}
+D.~Arthur and S.~Vassilvitskii, ``{K-Means++: The Advantages of Careful
+  Seeding},'' in {\em Proc. Symp. Discrete Algorithms}, p.~1027–1035, 2007.
+
+\bibitem{em77}
+A.~P. Dempster, N.~M. Laird, and D.~B. Rubin, ``{Maximum Likelihood from
+  Incomplete Data via the EM Algorithm},'' {\em Journal of the Royal
+  Statistical Society. Series B (Methodological)}, vol.~39, no.~1, pp.~84--95,
+  1977.
+
+\bibitem{spa01}
+F.~R. Kschischang, B.~J. Frey, and H.-A. Loeliger, ``{Factor Graphs and the
+  Sum-Product Algorithm},'' {\em IEEE Trans. Inf. Theory}, vol.~47,
+  pp.~498--519, Feb. 2001.
+
+\bibitem{gjcncqpsk10}
+D.~W{\"u}bben, ``{Joint Channel Decoding and Physical-Layer Network Coding in
+  Two-Way QPSK Relay Systems by a Generalized Sum-Product Algorithm},'' in {\em
+  Proc. 7th International Symposium on Wireless Communication Systems (ISWCS)},
+  Sept. 2010.
+
+\bibitem{polar09}
+E.~Arikan, ``{Channel Polarization: A Method for Constructing
+  Capacity-Achieving Codes for Symmetric Binary-Input Memoryless Channels},''
+  {\em IEEE Trans. Inf. Theory}, vol.~55, pp.~3051--3073, July 2009.
+
+\bibitem{scl15}
+I.~Tal and A.~Vardy, ``{List Decoding of Polar Codes},'' {\em IEEE Trans. Inf.
+  Theory}, vol.~61, pp.~2213--2226, May 2015.
+
+\bibitem{arikan2010polar}
+E.~Ar{\i}kan, ``Polar codes: A pipelined implementation,'' in {\em Proc. 4th
+  Int. Symp. on Broad. Commun. ISBC 2010}, pp.~11--14, 2010.
+
+\bibitem{lee2019curve}
+S.-K. Lee, Y.-T. Hsu, B.-H. Chang, M.-C. Lin, and H.-C. Lee, ``A curve fitting
+  method to construct polar coded ofdm systems with channel side information
+  for the transmitter,'' in {\em 2019 IEEE 90th Vehicular Technology Conference
+  (VTC2019-Fall)}, pp.~1--5, IEEE, 2019.
+
+\bibitem{niu2012crc}
+K.~Niu and K.~Chen, ``Crc-aided decoding of polar codes,'' {\em IEEE
+  Communications Letters}, vol.~16, no.~10, pp.~1668--1671, 2012.
+
+\bibitem{lloyd82}
+S.~P. Lloyd, ``{Least Squares Quantization in PCM},'' {\em IEEE Trans. Inf.
+  Theory}, vol.~IT-28, pp.~129--136, Mar. 1982.
+
+\bibitem{hsu2020uplink}
+Y.-T. Hsu, Y.-Q. Yang, S.-K. Lee, H.-C. Lee, and M.-C. Lin, ``An uplink
+  multiple access scheme using pilot-free channel estimation,'' {\em IEEE
+  Communications Letters}, 2020.
+
+\bibitem{nbc05}
+R.-Y. Wei, ``{Noncoherent Block-Coded MPSK},'' {\em IEEE Trans. Commun.},
+  vol.~53, pp.~978--986, June 2005.
+
+\bibitem{abramson1970aloha}
+N.~Abramson, ``The aloha system: another alternative for computer
+  communications,'' in {\em Proceedings of the November 17-19, 1970, fall joint
+  computer conference}, pp.~281--285, 1970.
+
+\bibitem{alohaspread2005}
+D.~B. {Zeleke} and M.~A.~V. {Castro}, ``Aloha versus single code spread aloha
+  for satellite systems,'' in {\em 2005 IEEE 61st Vehicular Technology
+  Conference}, vol.~4, pp.~2692--2696 Vol. 4, 2005.
+
+\bibitem{massey1981collision}
+J.~L. Massey, ``Collision-resolution algorithms and random-access
+  communications,'' in {\em Multi-user communication systems}, pp.~73--137,
+  Springer, 1981.
+
+\bibitem{slottedalohathroughput}
+M.~S. {Chowdhury}, K.~{Ashrafuzzaman}, and K.~S. {Kwak}, ``Saturation
+  throughput analysis of ieee 802.15.6 slotted aloha in heterogeneous
+  conditions,'' {\em IEEE Wireless Communications Letters}, vol.~3, no.~3,
+  pp.~257--260, 2014.
+
+\bibitem{unslottedCDMA}
+H.~{Okada}, P.~M. {Grant}, I.~W. {Band}, and A.~{Ogawa}, ``Application of mmse
+  multi-user detection to cdma unslotted aloha system,'' in {\em 11th IEEE
+  International Symposium on Personal Indoor and Mobile Radio Communications.
+  PIMRC 2000. Proceedings (Cat. No.00TH8525)}, vol.~1, pp.~529--533 vol.1,
+  2000.
+
+\bibitem{zepernick2013pseudo}
+H.-J. Zepernick and A.~Finger, {\em Pseudo random signal processing: theory and
+  application}.
+\newblock John Wiley \& Sons, 2013.
+
+\bibitem{minn2003robust}
+H.~Minn, V.~K. Bhargava, and K.~B. Letaief, ``A robust timing and frequency
+  synchronization for ofdm systems,'' {\em IEEE Transactions on Wireless
+  communications}, vol.~2, no.~4, pp.~822--839, 2003.
+
+\end{thebibliography}

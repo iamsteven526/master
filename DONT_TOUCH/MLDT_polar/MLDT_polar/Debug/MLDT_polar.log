@@ -1,0 +1,24 @@
+﻿  ch_model.cpp
+  cluster_ce.cpp
+  main.cpp
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\main.cpp(96,1): error C4996:  'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  mldt.cpp
+  polar.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(208): message :  請參閱 'fopen' 的宣告
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(813,42): error C2039:  'decode_BP_joint': 不是 'PolarCode' 的成員
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.h(7): message :  請參閱 'PolarCode' 的宣告
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(815,22): error C2065:  '_block_length': 未宣告的識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(824,2): error C2065:  '_list_size': 未宣告的識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(824,15): error C2065:  'list_size': 未宣告的識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(825,2): error C2065:  '_llr_based_computation': 未宣告的識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(826,2): error C3861:  'initializeDataStructures': 找不到識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(827,16): error C3861:  'assignInitialPath': 找不到識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(828,18): error C3861:  'getArrayPointer_LLR': 找不到識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(829,33): error C2065:  '_block_length': 未宣告的識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(833,20): error C2065:  'nuser': 未宣告的識別項
+  pulse_shaping.cpp
+  transceiver.cpp
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.cpp(833,9): error C3861:  'decode_scl': 找不到識別項
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\transceiver.cpp(60,60): error C2039:  'decode_BP_joint': 不是 'PolarCode' 的成員
+  正在產生程式碼...
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_polar\polar.h(7): message :  請參閱 'PolarCode' 的宣告

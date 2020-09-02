@@ -1,0 +1,18 @@
+(256,127) Polar-coded GDMA-BPSK system
+Number of users: 3
+
+PCC: Bhattacharyya bound
+Designed SNR: 1.0 dB
+Decoder: SCL-32
+
+Perfect CSI
+
+Noncoherent block coding
+
+Synchronous system
+
+Block Fading
+Fading size:256
+Rayleight Channel
+-
+

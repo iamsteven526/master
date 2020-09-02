@@ -1,0 +1,62 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Transmitters of $U$ users occupying the same resource.}}{6}{figure.2.1}% 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces GDMA detecter for BPSK and $U=2$.}}{7}{figure.2.2}% 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces An example of superimposed levels in the case of $m=1$ and $U=2$.}}{8}{figure.2.3}% 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces An example of superimposed levels in the case of $m=1$ and $U=3$.}}{10}{figure.2.4}% 
+\contentsline {figure}{\numberline {2.5}{\ignorespaces BER performances of uncoded GDMA BPSK system over block Rayleigh fading channels.}}{13}{figure.2.5}% 
+\contentsline {figure}{\numberline {2.6}{\ignorespaces QPSK modulation gray mapping.}}{16}{figure.2.6}% 
+\contentsline {figure}{\numberline {2.7}{\ignorespaces BER performances of uncoded GDMA QPSK system over block Rayleigh fading channels.}}{16}{figure.2.7}% 
+\contentsline {figure}{\numberline {2.8}{\ignorespaces 4-PAM modulation gray mapping.}}{18}{figure.2.8}% 
+\contentsline {figure}{\numberline {2.9}{\ignorespaces 8-PAM modulation gray mapping.}}{18}{figure.2.9}% 
+\contentsline {figure}{\numberline {2.10}{\ignorespaces BER performances of uncoded GDMA 4-PAM system over block Rayleigh fading channels.}}{19}{figure.2.10}% 
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Multi-level receiver in GDMA system for recovering the messages of U users.}}{19}{figure.2.12}% 
+\contentsline {figure}{\numberline {2.11}{\ignorespaces BER performances of uncoded GDMA 8-PAM system over block Rayleigh fading channels.}}{20}{figure.2.11}% 
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Separated channel decoding in the case of $m=1$ and $U=2$.}}{21}{figure.2.13}% 
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Joint channel decoding in the case of $m=1$ and $U=2$.}}{22}{figure.2.14}% 
+\contentsline {figure}{\numberline {2.15}{\ignorespaces The message passing algorithm along the edges in factor graph.}}{24}{figure.2.15}% 
+\contentsline {figure}{\numberline {2.16}{\ignorespaces BLER performances of (1008, 504) LDPC-coded GDMA systems over quasi-static Rayleigh flat-fading channels.}}{27}{figure.2.16}% 
+\contentsline {figure}{\numberline {2.17}{\ignorespaces BLER performances of (1008, 504) LDPC-coded GDMA OFDM systems over quasi-static Rayleigh flat-fading channels with 16-subcarrier.}}{27}{figure.2.17}% 
+\contentsline {figure}{\numberline {2.18}{\ignorespaces The graph factor for polor code, $N=8, n=3$.}}{29}{figure.2.18}% 
+\contentsline {figure}{\numberline {2.19}{\ignorespaces The message passing function in factor graph.}}{30}{figure.2.19}% 
+\contentsline {figure}{\numberline {2.20}{\ignorespaces The flow chart of polar code G-SPA decoder.}}{33}{figure.2.20}% 
+\contentsline {figure}{\numberline {2.21}{\ignorespaces BLER performances of (256, 128) Polar-coded GDMA systems over quasi-static Rayleigh flat-fading channels.}}{35}{figure.2.21}% 
+\contentsline {figure}{\numberline {2.22}{\ignorespaces BLER performances of (1024, 512) Polar-coded GDMA OFDM systems over quasi-static Rayleigh flat-fading channels with 16-subcarrier.}}{35}{figure.2.22}% 
+\contentsline {figure}{\numberline {2.23}{\ignorespaces The factor graph of J-SCL upper layer (even branch) message passing.}}{37}{figure.2.23}% 
+\contentsline {figure}{\numberline {2.24}{\ignorespaces The factor graph of J-SCL lower layer (odd branch) message passing.}}{38}{figure.2.24}% 
+\contentsline {figure}{\numberline {2.25}{\ignorespaces BLER performances of (256, 128) Polar-coded GDMA systems over quasi-static Rayleigh flat-fading channels.}}{40}{figure.2.25}% 
+\contentsline {figure}{\numberline {2.26}{\ignorespaces BLER performances of (1024, 512) Polar-coded GDMA OFDM systems over quasi-static Rayleigh flat-fading channels with 16-subcarrier.}}{41}{figure.2.26}% 
+\contentsline {figure}{\numberline {2.27}{\ignorespaces BLER performances of Polar-coded GDMA OFDM systems over quasi-static Rayleigh flat-fading channels with 16-subcarrier and interleaver.}}{41}{figure.2.27}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Superimposed levels and the corresponding received signals in the case of $m=1$ and $U=2$.}}{43}{figure.3.1}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Splitting from $q$ to get $q+\epsilon $ and $q-\epsilon $ with a perturbation vector $\epsilon $.}}{47}{figure.3.2}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Grouping result of hard clustering by applying nearest neighbor rule.}}{49}{figure.3.3}% 
+\contentsline {figure}{\numberline {3.4}{\ignorespaces MSE of estimated channel coefficient over AWGN channels.}}{53}{figure.3.4}% 
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The probability of worst case with BPSK transmission for different user $U$.}}{55}{figure.3.5}% 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces MSE of estimated channel coefficient with pair samples over AWGN channels.}}{56}{figure.3.6}% 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The flow chart of proposed cluster-based channel estimation algorithm.}}{57}{figure.3.7}% 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces An example of cluster check.}}{59}{figure.3.8}% 
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The iteration number of estimated channel gain at $N_t=128$.}}{60}{figure.3.9}% 
+\contentsline {figure}{\numberline {3.10}{\ignorespaces An example of structure check.}}{61}{figure.3.10}% 
+\contentsline {figure}{\numberline {3.11}{\ignorespaces The steps to compose superimposed levels.}}{64}{figure.3.11}% 
+\contentsline {figure}{\numberline {3.12}{\ignorespaces The steps of derivation of channel coefficients.}}{66}{figure.3.12}% 
+\contentsline {figure}{\numberline {3.13}{\ignorespaces The MSE of estimated channel gain at $N_t=128$. GMM is used.}}{67}{figure.3.13}% 
+\contentsline {figure}{\numberline {3.14}{\ignorespaces The MSE of estimated channel gain at $N_t=1000$. GMM is used.}}{67}{figure.3.14}% 
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Modulation scheme for DE-BPSK transmission.}}{69}{figure.3.15}% 
+\contentsline {figure}{\numberline {3.16}{\ignorespaces BLER performances for a (128,64) Polar-coded GDMA system over quasi-static Rayleigh flat-fading single carrier channels. NBC and GMM are both used.}}{70}{figure.3.16}% 
+\contentsline {figure}{\numberline {3.17}{\ignorespaces BLER performances of Polar-coded GDMA OFDM systems over quasi-static Rayleigh flat-fading channels with 16-subcarrier.}}{75}{figure.3.17}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Two type of RACH process.}}{79}{figure.4.1}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces (a) An unslotted ALOHA system. (b) A slotted ALOHA system.}}{79}{figure.4.2}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces (a) The vulnerable period for unslotted system. (b) The vulnerable period for slotted system.}}{80}{figure.4.3}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The throughput of ALOHA system.}}{82}{figure.4.4}% 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces BLER performances for a (1008,504) LDPC-coded OFDM-GDMA system where U = 2 users over frequency-selective Rayleigh fading channels.}}{84}{figure.4.5}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces (a) case 1 (b) case 2}}{86}{figure.4.6}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Synchronization and channel estimation process}}{89}{figure.4.7}% 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces MSE comparison of first and second channel estimation}}{93}{figure.4.8}% 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces ALOHA system simulation}}{95}{figure.4.9}% 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces No user collision case}}{96}{figure.4.10}% 
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Two user collision case}}{96}{figure.4.11}% 
+\contentsline {figure}{\numberline {4.12}{\ignorespaces The APP detector variance without considering MUI noise term in Poisson distribution collision case}}{97}{figure.4.12}% 
+\contentsline {figure}{\numberline {4.13}{\ignorespaces The APP detector variance without considering MUI noise term in Poisson distribution collision case}}{97}{figure.4.13}% 
+\addvspace {10\p@ }

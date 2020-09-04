@@ -643,6 +643,14 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 {
 	int num_level = NUM_LEVEL;
 	int num_user = NUM_USER;
+	double MAXx = 0;
+	double SecondMAXx = 0;
+    double MAXy = 0;
+	double SecondMAXy = 0;
+	int FirstMAX = 0;
+	int SecondMAX = 0;
+	double x1,x2,y1,y2;
+	int pass = 0;
 	vector<vector<double>> sup_centroid(num_level, vector<double>(2));
 	for (int i = 0; i < num_level; i++)
 		for (int j = 0; j < 2; j++)
@@ -666,16 +674,66 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 		//---find pair
 
 		pair = pair_seq(sup_centroid, num_level, mse, group_centroid, pair_num);
-
+        
 		if (variance < mse)
 			reset = 1;
 
 
-		if (reset)
+		if (reset && (pass == 0))
 			break;
+        pass = 1;
+        for(int i = 0; i < num_level/2; ++i){ //0816add
+			sup_centroid[pair[i][0]][0] = (-1)*sup_centroid[pair[i][1]][0];
+            sup_centroid[pair[i][0]][1] = (-1)*sup_centroid[pair[i][1]][1];
+		}
 
 		if (num_level != 2)
 		{
+			for (int i = 0; i < num_level; i++){ //find max from x-axis
+                if(sup_centroid[i][0] > MAXx){
+					MAXx = sup_centroid[i][0];
+                    FirstMAX = i;
+				}
+			}
+			for (int i = 0; i < num_level; i++){ //find secondmax from x-axis
+                if((sup_centroid[i][0] > SecondMAXx) && (i != FirstMAX)){
+					SecondMAXx = sup_centroid[i][0];
+                    SecondMAX = i;
+				}
+			}
+			estimate[nuser][0] = (sup_centroid[FirstMAX][0] - sup_centroid[SecondMAX][0]) / 2.0;
+			estimate[nuser][1] = (sup_centroid[FirstMAX][1] - sup_centroid[SecondMAX][1]) / 2.0;
+            vector<vector<double>> temp(num_level / 2, vector<double>(2));
+			for (int j = 0; j < num_level / 2; j++){
+				int canfind = 0;
+				for (int k = 0; k < num_level; k++){
+                    x1 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					y1 = (sup_centroid[pair[j][0]][1] + sup_centroid[k][1]) / 2.0;
+					//x2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					//y2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					if( (abs(x1-estimate[nuser][0]) < 0.01) && (abs(y1-estimate[nuser][1]) < 0.01) ){ //think threshold
+					    temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
+					    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
+						canfind = 1;
+						break;
+					}
+				}
+				if(canfind == 0){
+				    temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
+				    temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
+				}
+			}
+            for (int j = 0; j < num_level / 2; j++){
+				for (int k = 0; k < 2; k++){
+					sup_centroid[j][k] = temp[j][k];
+				}
+			}
+			num_level /= 2;
+			MAXx = 0;
+			SecondMAXx = 0;
+			FirstMAX = 0;
+			SecondMAX = 0;
+			/*
 			//---find channel coefficient
 			for (int i = 0; i < pow(2, num_level / 2); i++)
 			{
@@ -738,13 +796,15 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 				inverse_group_centroid[0] = 0; inverse_group_centroid[1] = 0;
 
 				//system("pause");
-			}
+			}*/
 		}
 		else
 		{
 			estimate[nuser][0] = (sup_centroid[0][0] - sup_centroid[1][0]) / 2;
 			estimate[nuser][1] = (sup_centroid[0][1] - sup_centroid[1][1]) / 2;
+			reset = 0;
 		}
+		cout << estimate[nuser][0] << "  " << estimate[nuser][1] << endl;
 	}
 }
 
@@ -832,6 +892,7 @@ vector<vector<double>> CoefEstimation_(double** centroid, double** estimate, dou
 				inverse_group_centroid[0] = 0; inverse_group_centroid[1] = 0;
 
 				//system("pause");
+				
 			}
 		}
 		else
@@ -856,6 +917,8 @@ void MSEComparison(double **chCoef, double **estimate, double &mse,double **rx,d
 
 	for (int i = 0; i < NUM_USER; i++)
 	{
+		cout << "real:" << chCoef[i][0] << "   " << chCoef[i][1] << endl;
+		//cout << "fake:" << estimate[i][0] << "   " << estimate[i][1] << endl;
 		min_value = 1000;
 		min_tr = 0;
 		for (int j = 1; j <= NUM_USER; j++)
@@ -898,6 +961,7 @@ void MSEComparison(double **chCoef, double **estimate, double &mse,double **rx,d
 	{
 		estimate[i][0] = temp[i][0];
 		estimate[i][1] = temp[i][1];
+		//cout << "fakenew:" << estimate[i][0] << "   " << estimate[i][1] << endl;
 	}
 
 }

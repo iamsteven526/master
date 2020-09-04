@@ -30,6 +30,7 @@ void Transmitter(int** data, double* preTx, double** tx, double* txFilter,double
 		for (int i = 0; i < BLOCK_LEN; i++)
 		{
 			data[nuser][i] = rand() % 2;
+			//cout << data[nuser][i];
 			if (!SYNCHRONOUS)
 			{
 				for (int j = 0; j < SPREAD_LEN; j++)

@@ -651,6 +651,9 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 	int SecondMAX = 0;
 	double x1,x2,y1,y2;
 	int pass = 0;
+	double check_thres = 0.5*sqrt(variance);
+	double checka = 0.1*sqrt(1.0/variance);
+	double checkb = checka / 2.0;
 	vector<vector<double>> sup_centroid(num_level, vector<double>(2));
 	for (int i = 0; i < num_level; i++)
 		for (int j = 0; j < 2; j++)
@@ -709,10 +712,12 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 				for (int k = 0; k < num_level; k++){
                     x1 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
 					y1 = (sup_centroid[pair[j][0]][1] + sup_centroid[k][1]) / 2.0;
+					//cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
 					//x2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
 					//y2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
-					if( (abs(x1-estimate[nuser][0]) < 0.01) && (abs(y1-estimate[nuser][1]) < 0.01) ){ //think threshold
-					    temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
+					if( (abs(x1-estimate[nuser][0]) < check_thres) && (abs(y1-estimate[nuser][1]) < check_thres) ){ //think threshold
+					    //cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
+						temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
 					    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
 						canfind = 1;
 						break;
@@ -721,6 +726,12 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 				if(canfind == 0){
 				    temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
 				    temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
+				}
+				for (int p = 0; p < j; ++p){
+					if(((abs(temp[j][0]-temp[p][0]) < checkb*check_thres) && (abs(temp[j][1]-temp[p][1]) < checka*check_thres) ) || ((abs(temp[j][0]-temp[p][0]) < checka*check_thres) && (abs(temp[j][1]-temp[p][1]) < checkb*check_thres))){
+						temp[j][0] = -temp[j][0];
+						temp[j][1] = -temp[j][1];
+					}
 				}
 			}
             for (int j = 0; j < num_level / 2; j++){
@@ -804,7 +815,7 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 			estimate[nuser][1] = (sup_centroid[0][1] - sup_centroid[1][1]) / 2;
 			reset = 0;
 		}
-		cout << estimate[nuser][0] << "  " << estimate[nuser][1] << endl;
+		//cout << estimate[nuser][0] << "  " << estimate[nuser][1] << endl;
 	}
 }
 
@@ -917,7 +928,7 @@ void MSEComparison(double **chCoef, double **estimate, double &mse,double **rx,d
 
 	for (int i = 0; i < NUM_USER; i++)
 	{
-		cout << "real:" << chCoef[i][0] << "   " << chCoef[i][1] << endl;
+		//cout << "real:" << chCoef[i][0] << "   " << chCoef[i][1] << endl;
 		//cout << "fake:" << estimate[i][0] << "   " << estimate[i][1] << endl;
 		min_value = 1000;
 		min_tr = 0;

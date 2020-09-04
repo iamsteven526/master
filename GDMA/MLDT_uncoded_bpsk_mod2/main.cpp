@@ -126,7 +126,7 @@ int main()
 		}
 		TrellisConstruction(trellis);
 	}
-	double ber[SNR_NUM], mse[SNR_NUM] = { 0 }, mse_centroid[SNR_NUM] = { 0 };
+	double ber[SNR_NUM],bler[SNR_NUM], mse[SNR_NUM] = { 0 }, mse_centroid[SNR_NUM] = { 0 };
 	long double itCount[SNR_NUM] = { 0 };
 	FILE *result_txt = fopen("result.txt", "w");
 	//---------- declaration ----------
@@ -233,11 +233,16 @@ int main()
 				//CentroidMSEComparison(chCoef, estimate, mse_centroid[i], rx, centroid);
 			}
 			MLDT(variance, chCoef, rx, app, appLlr, estimate,known_drift);
+			int BLERa = error;
 			Detector(data, appLlr, trellis, alpha, beta, gamma, error,known_drift);
+			int BLERb = error;
+            if(BLERa != BLERb){
+				bler[i]++;
+			}
 			ber[i] = error / ((long double)NUM_USER * block * (BLOCK_LEN - DIFF_ENC)); // excluding reference symbol
 			//cout << itCount[i] << " ";
 			if (CE_SCHEME == 1) printf("Block# = %d, BER = %e\r", block, ber[i]); 
-			else printf("Block# = %d, BER = %e, MSE = %e, MSE_centroid = %e,iteration = %e\r", block, ber[i], mse[i] / (double)(NUM_USER * block), mse_centroid[i] / (double)(NUM_LEVEL * block), itCount[i]/(double)(block));
+			else printf("Block# = %d, BER = %e,BLER = %e, MSE = %e, MSE_centroid = %e,iteration = %e\r", block, ber[i],(bler[i]/block), mse[i] / (double)(NUM_USER * block), mse_centroid[i] / (double)(NUM_LEVEL * block), itCount[i]/(double)(block));
 			
 			if (error > 10000 && block>10000)
 				break;

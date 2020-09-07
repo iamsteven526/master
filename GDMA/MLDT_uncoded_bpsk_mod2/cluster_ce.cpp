@@ -652,8 +652,8 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 	double x1,x2,y1,y2;
 	int pass = 0;
 	double check_thres = 0.5*sqrt(variance);
-	double checka = 0.1*sqrt(1.0/variance);
-	double checkb = checka / 2.0;
+	double checka = 0.12*sqrt(1.0/variance);
+	double checkb = checka / 3.0;
 	vector<vector<double>> sup_centroid(num_level, vector<double>(2));
 	for (int i = 0; i < num_level; i++)
 		for (int j = 0; j < 2; j++)

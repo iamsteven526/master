@@ -1,0 +1,1 @@
+2*QPSK for SCMA

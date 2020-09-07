@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GDMA_MIMO", "GDMA_MIMO\GDMA_MIMO.vcxproj", "{8CCE7E96-839B-40DF-90EC-AB03889DA694}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8CCE7E96-839B-40DF-90EC-AB03889DA694}.Debug|x64.ActiveCfg = Debug|x64
+		{8CCE7E96-839B-40DF-90EC-AB03889DA694}.Debug|x64.Build.0 = Debug|x64
+		{8CCE7E96-839B-40DF-90EC-AB03889DA694}.Debug|x86.ActiveCfg = Debug|Win32
+		{8CCE7E96-839B-40DF-90EC-AB03889DA694}.Debug|x86.Build.0 = Debug|Win32
+		{8CCE7E96-839B-40DF-90EC-AB03889DA694}.Release|x64.ActiveCfg = Release|x64
+		{8CCE7E96-839B-40DF-90EC-AB03889DA694}.Release|x64.Build.0 = Release|x64
+		{8CCE7E96-839B-40DF-90EC-AB03889DA694}.Release|x86.ActiveCfg = Release|Win32
+		{8CCE7E96-839B-40DF-90EC-AB03889DA694}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B39F2D73-076D-43E9-A376-434E1FF2226C}
+	EndGlobalSection
+EndGlobal

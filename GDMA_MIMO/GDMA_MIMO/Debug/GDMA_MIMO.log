@@ -1,0 +1,7 @@
+﻿  ch_model.cpp
+  main.cpp
+C:\Users\wsxcc\OneDrive\桌面\simulation\GDMA_MIMO\GDMA_MIMO\main.cpp(50,1): error C4996:  'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  mldt.cpp
+  transceiver.cpp
+  正在產生程式碼...
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(208): message :  請參閱 'fopen' 的宣告

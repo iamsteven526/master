@@ -76,9 +76,9 @@ K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
 V = size(CB, 3); % number of users (layers)
 
-N = 10000; % SCMA signals in frame
+N = 100; % SCMA signals in frame
 
-EbN0 = 0:5:40;
+EbN0 = 10:5:40;
 SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
@@ -86,7 +86,7 @@ Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 100;
-maxNumBits = 1e6;
+maxNumBits = 1e5;
 Niter      = 10;
 
 for k = 1:length(SNR)

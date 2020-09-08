@@ -48,7 +48,7 @@ int main()
 	}
 
 	int* groupSize = nullptr, ** group = nullptr;
-	double *variation = nullptr, *distList = nullptr, **centroid = nullptr, **estimate = nullptr, **softAssign = nullptr;
+	double *variation = nullptr, *distList = nullptr, **centroid = nullptr, **estimate = nullptr, **softAssign = nullptr, **finalestimate = nullptr, **finalestimate2 = nullptr;
 	
 	if (CE_METHOD == 0)
 	{
@@ -63,9 +63,16 @@ int main()
 			centroid[i] = new double[2]; // real and imaginary
 		}
 		estimate = new double* [NUM_USER* SCMA_SOURCE / SCMA_USER_SOURCE];
+		finalestimate = new double* [NUM_USER* SCMA_SOURCE / SCMA_USER_SOURCE];
+		finalestimate2 = new double* [NUM_USER* SCMA_SOURCE / SCMA_USER_SOURCE];
+
+
 		for (int i = 0; i < (NUM_USER * SCMA_SOURCE / SCMA_USER_SOURCE); i++)
 		{
 			estimate[i] = new double[2]; // real and imaginary
+			finalestimate[i] = new double[2]; // real and imaginary
+			finalestimate2[i] = new double[2]; // real and imaginary
+
 		}
 		if (EM_GMM)
 		{
@@ -216,15 +223,25 @@ int main()
 			{
 				//KmeansClustering(rx, centroid, group, groupSize, distList, variation, softAssign, variance, estimate, itCount[i], chCoef);
 				for (int source_id = 0; source_id < SCMA_SOURCE; ++source_id) {
-					cout << block << ',' << source_id << endl;
+					//cout << block << ',' << source_id << endl;
 				    Clustering(rx[source_id], centroid, group, groupSize, distList, variation, softAssign, variance, estimate, itCount[i],chCoef,known_drift);
 				    
+					//for(int qq = 0;qq<6;++qq){
+				    //    cout << "cluster  " << 1.414*estimate[qq][0] << " " << 1.414*estimate[qq][1] << endl;
+			        //}
+					
+					SCMA_MSEComparison(chCoef,chCoef2, estimate,finalestimate,finalestimate2,scma_matrix[source_id]);
 					//MSEComparison(chCoef, estimate, mse[i], rx[source_id], centroid,known_drift); // user specification
 				}
 				//CentroidMSEComparison(chCoef, estimate, mse_centroid[i], rx, centroid);
 			}
-			
-			fourwayMLDT(pow(stdDev, 2), chCoef, chCoef2, rx, app, appLlr, estimate, scma_matrix);
+			//debug
+			//for(int qq = 0;qq<6;++qq){
+			//	cout << chCoef[qq][0] << " " << chCoef[qq][1]<< "         2bb       " << chCoef2[qq][0] << " " << chCoef2[qq][1] << "  qqqqqqq   " << finalestimate[qq][0] << " " << finalestimate[qq][1] << "      " <<finalestimate2[qq][0] << " " << finalestimate2[qq][1]<< endl;
+			//}
+
+
+			fourwayMLDT(pow(stdDev, 2), chCoef, chCoef2, rx, app, appLlr, finalestimate,finalestimate2, scma_matrix);
 			Detecter(data, appLlr, error);
 			ber[i] = error / ((long double)NUM_USER * (SCMA_SOURCE / SCMA_USER_SOURCE) * block * (BLOCK_LEN - DIFF_ENC) * Qm); // excluding reference symbol
 			if (CE_METHOD == 1) printf("Block# = %d, BER = %e\r", block, ber[i]);

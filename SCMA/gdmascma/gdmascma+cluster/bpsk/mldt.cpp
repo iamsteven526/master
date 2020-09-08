@@ -6,7 +6,7 @@
 using namespace std;
 
 //20200211 add NUM_USER == 3 with CE_METHOD = 1
-void fourwayMLDT(double variance, double** chCoef, double** chCoef2,double*** rx, double** app, double** appLlr, double** estimate, int scma_matrix[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE])
+void fourwayMLDT(double variance, double** chCoef, double** chCoef2,double*** rx, double** app, double** appLlr, double** finalestimate, double** finalestimate2, int scma_matrix[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE])
 {
 	int count = 0;
 	double** chCoefman = new double* [NUM_USER];
@@ -24,12 +24,18 @@ void fourwayMLDT(double variance, double** chCoef, double** chCoef2,double*** rx
 			for (int nuser = 0; nuser < NUM_USER * SCMA_SOURCE / SCMA_USER_SOURCE; nuser++)
 			{
 				if (scma_matrix[source_id][nuser] == 1) {
-					chCoefman[count] = chCoef[nuser];
-					chCoefman2[count] = chCoef2[nuser];
+					if (CE_METHOD == 0){
+					    chCoefman[count] = finalestimate[nuser];
+					    chCoefman2[count] = finalestimate2[nuser];
+					}
+					else{
+					    chCoefman[count] = chCoef[nuser];
+					    chCoefman2[count] = chCoef2[nuser];
+					}
 					++count;
 				}
 			}
-			MLDT(variance, chCoefman, chCoefman2, rx[source_id], app[source_id], appLlr, estimate, i);
+			MLDT(variance, chCoefman, chCoefman2, rx[source_id], app[source_id], appLlr,i);
 
 			count = 0;
 		}
@@ -40,19 +46,11 @@ void fourwayMLDT(double variance, double** chCoef, double** chCoef2,double*** rx
 }
 
 
-void MLDT(double variance, double **chCoef, double ** chCoef2,double **rx, double *app, double** appLlr, double **estimate, int i) //chCoef[userid][modulationlevel]
+void MLDT(double variance, double **chCoef, double ** chCoef2,double **rx, double *app, double** appLlr,int i) //chCoef[userid][modulationlevel]
 {
 	double chCoefreg = 0, test = 0;
 	double probzero = 0 ,probone = 0;
-	if (CE_METHOD == 0) {
-		for (int i = 0; i < NUM_USER; i++)
-		{
-			for (int j = 0; j < 2; j++)
-			{
-				chCoef[i][j] = estimate[i][j];
-			}
-		}
-	}
+
 	//for (int i = 0; i < BLOCK_LEN; i++)
 	//{
 		//---------- APPs ----------//real

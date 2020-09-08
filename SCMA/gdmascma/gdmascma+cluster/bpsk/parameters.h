@@ -61,11 +61,11 @@
 #define		LLR_LIMIT				230
 
 #define		BLOCK_NUM				100				// number of blocks to be simulated
-#define		BLOCK_LEN				1024							// number of symbols in a block
-#define		Cluster_Len				1024
+#define		BLOCK_LEN				4096							// number of symbols in a block
+#define		Cluster_Len				4096
 
-#define		SNR_NUM					2									// number of SNR points to be simulated
-#define		SNR_START			    15							// in dB
+#define		SNR_NUM					9									// number of SNR points to be simulated
+#define		SNR_START			    0							// in dB
 #define		SNR_STEP				5									// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )
@@ -82,8 +82,8 @@ void	DiffDecoding(double *appLlr);
 void	EnergyProfile(double **chCoef);
 void	MultipleAccessChannel(double stdDev, double **chCoef, double** chCoef2, double **tx, double **rx, int index, int scma_matrix[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE]);
 
-void	fourwayMLDT(double variance, double** chCoef, double** chCoef2, double*** rx, double** app, double** appLlr, double** estimate, int scma_matrix[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE]);
-void	MLDT(double variance, double **chCoef, double** chCoef2, double **rx, double *app, double** appLlr, double **estimate, int i);
+void	fourwayMLDT(double variance, double** chCoef, double** chCoef2, double*** rx, double** app, double** appLlr, double** finalestimate,double** finalestimate2, int scma_matrix[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE]);
+void	MLDT(double variance, double **chCoef, double** chCoef2, double **rx, double *app, double** appLlr, int i);
 void	MLDTLLR(int i, double** app, double** appLlr);
 void	normalization(double* app);
 
@@ -169,7 +169,7 @@ void	Inner_K_means(int min, int max,int sec_min, int* groupSize, int** group,dou
 std::vector<std::vector<double>> pair_seq(std::vector<std::vector<double>> centroid, int num_level, double& mse, std::vector<double> group_centroid, std::vector<int> pair_num);
 std::vector<std::vector<double>> CoefEstimation_(double** centroid, double** estimate, double variance, int CLUSTER_GROUP, int GROUP_USER);
 void	printdata2(double** rx, std::vector<std::vector<double>> es, double** chCoef, double** centroid, int CLUSTER_LEN, int CLUSTER_GROUP, int CLUSTER_USER);
-
+void    SCMA_MSEComparison(double** chCoef,double** chCoef2,double** estimate,double** finalestimate,double** finalestimate2,int a[SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE]);
 /*
 void	scrambler(int* data);
 std::vector<int> descrambler(double* data);

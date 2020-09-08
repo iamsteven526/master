@@ -535,6 +535,17 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 {
 	int num_level = NUM_LEVEL;
 	int num_user = NUM_USER;
+	double MAXx = 0;
+	double SecondMAXx = 0;
+    double MAXy = 0;
+	double SecondMAXy = 0;
+	int FirstMAX = 0;
+	int SecondMAX = 0;
+	double x1,x2,y1,y2;
+	int pass = 0;
+	double check_thres = 0.5*sqrt(variance);
+	double checka = 0.12*sqrt(1.0/variance);
+	double checkb = checka / 3.0;
 	vector<vector<double>> sup_centroid(num_level, vector<double>(2));
 	for (int i = 0; i < num_level; i++)
 		for (int j = 0; j < 2; j++)
@@ -563,9 +574,10 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 			reset = 1;
 
 
-		if (reset)
+		if (reset && (pass == 0))
 			break;
-        
+		
+        pass = 1;
 		int symmetric_success_count = 0;
         for(int i = 0; i < num_level/2; ++i){ //0816add
 			if((abs(sup_centroid[pair[i][0]][0] + sup_centroid[pair[i][1]][0]) < 0.1) && (abs(sup_centroid[pair[i][0]][1] + sup_centroid[pair[i][1]][1]) < 0.1)){
@@ -577,6 +589,59 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 
 		if (num_level != 2)
 		{
+			for (int i = 0; i < num_level; i++){ //find max from x-axis
+                if(sup_centroid[i][0] > MAXx){
+					MAXx = sup_centroid[i][0];
+                    FirstMAX = i;
+				}
+			}
+			for (int i = 0; i < num_level; i++){ //find secondmax from x-axis
+                if((sup_centroid[i][0] > SecondMAXx) && (i != FirstMAX)){
+					SecondMAXx = sup_centroid[i][0];
+                    SecondMAX = i;
+				}
+			}
+			estimate[nuser][0] = (sup_centroid[FirstMAX][0] - sup_centroid[SecondMAX][0]) / 2.0;
+			estimate[nuser][1] = (sup_centroid[FirstMAX][1] - sup_centroid[SecondMAX][1]) / 2.0;
+            vector<vector<double>> temp(num_level / 2, vector<double>(2));
+			for (int j = 0; j < num_level / 2; j++){
+				int canfind = 0;
+				for (int k = 0; k < num_level; k++){
+                    x1 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					y1 = (sup_centroid[pair[j][0]][1] + sup_centroid[k][1]) / 2.0;
+					//cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
+					//x2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					//y2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					if( (abs(x1-estimate[nuser][0]) < check_thres) && (abs(y1-estimate[nuser][1]) < check_thres) ){ //think threshold
+					    //cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
+						temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
+					    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
+						canfind = 1;
+						break;
+					}
+				}
+				if(canfind == 0){
+				    temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
+				    temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
+				}
+				for (int p = 0; p < j; ++p){
+					if(((abs(temp[j][0]-temp[p][0]) < checkb*check_thres) && (abs(temp[j][1]-temp[p][1]) < checka*check_thres) ) || ((abs(temp[j][0]-temp[p][0]) < checka*check_thres) && (abs(temp[j][1]-temp[p][1]) < checkb*check_thres))){
+						temp[j][0] = -temp[j][0];
+						temp[j][1] = -temp[j][1];
+					}
+				}
+			}
+            for (int j = 0; j < num_level / 2; j++){
+				for (int k = 0; k < 2; k++){
+					sup_centroid[j][k] = temp[j][k];
+				}
+			}
+			num_level /= 2;
+			MAXx = 0;
+			SecondMAXx = 0;
+			FirstMAX = 0;
+			SecondMAX = 0;
+			/*
 			//---find channel coefficient
 			for (int i = 0; i < pow(2, num_level / 2); i++)
 			{
@@ -642,12 +707,13 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 				inverse_group_centroid[0] = 0; inverse_group_centroid[1] = 0;
 
 				//system("pause");
-			}
+			}*/
 		}
 		else
 		{
 			estimate[nuser][0] = (sup_centroid[0][0] - sup_centroid[1][0]) / 2;
 			estimate[nuser][1] = (sup_centroid[0][1] - sup_centroid[1][1]) / 2;
+			reset = 0;
 		}
 	}
 }
@@ -1394,6 +1460,7 @@ vector<vector<double>> pair_seq(vector<vector<double>> centroid, int num_level, 
 }
 
 void printdata2(double** rx, vector<vector<double>> es, double** chCoef, double** centroid, int CLUSTER_LEN, int CLUSTER_GROUP, int CLUSTER_USER)
+
 {
 	FILE* rx_x = fopen("rx_x.txt", "w");
 	FILE* rx_y = fopen("rx_y.txt", "w");
@@ -1462,4 +1529,54 @@ void printdata2(double** rx, vector<vector<double>> es, double** chCoef, double*
 	fclose(centroid_y);
 
 	system("pause");
+}
+
+
+
+void SCMA_MSEComparison(double** chCoef,double** chCoef2,double** estimate,double** finalestimate,double** finalestimate2,int a[SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE])
+{
+    double tmin = 100;
+	double treg,treg2;
+	for(int i=0; i<SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE; ++i){
+		tmin = abs(chCoef[i][0]-finalestimate[i][0]) + abs(chCoef[i][1]-finalestimate[i][1]);
+		//cout << "hello" << tmin << endl;
+        if (a[i] == 0){
+			continue;
+		}
+		for(int j=0; j<NUM_USER*Qm; ++j){
+            treg = abs(chCoef[i][0]-1.4142*estimate[j][0]) + abs(chCoef[i][1]-1.4142*estimate[j][1]);//find closest
+			treg2 = abs(chCoef[i][0]+1.4142*estimate[j][0]) + abs(chCoef[i][1]+1.4142*estimate[j][1]);//find closest
+			if(treg <= tmin){
+				tmin = treg;
+				finalestimate[i][0] = 1.4142*estimate[j][0];
+				finalestimate[i][1] = 1.4142*estimate[j][1];
+			}
+			if(treg2 <= tmin){
+				tmin = treg2;
+				finalestimate[i][0] = -1.4142*estimate[j][0];
+				finalestimate[i][1] = -1.4142*estimate[j][1];
+			}
+		}
+	}
+
+	for(int i=0; i<SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE; ++i){
+		tmin = abs(chCoef2[i][0]-finalestimate2[i][0]) + abs(chCoef2[i][1]-finalestimate2[i][1]);
+        if (a[i] == 0){
+			continue;
+		}
+		for(int j=0; j<NUM_USER*Qm; ++j){
+            treg = abs(chCoef2[i][0]-1.4142*estimate[j][1]) + abs(chCoef2[i][1]+1.4142*estimate[j][0]);//find closest
+			treg2 = abs(chCoef2[i][0]+1.4142*estimate[j][1]) + abs(chCoef2[i][1]-1.4142*estimate[j][0]);//find closest
+			if(treg <= tmin){
+				tmin = treg;
+				finalestimate2[i][0] = 1.4142*estimate[j][1];
+				finalestimate2[i][1] = -1.4142*estimate[j][0];
+			}
+			if(treg2 <= tmin){
+				tmin = treg2;
+				finalestimate2[i][0] = -1.4142*estimate[j][1];
+				finalestimate2[i][1] = 1.4142*estimate[j][0];
+			}
+		}
+	}
 }

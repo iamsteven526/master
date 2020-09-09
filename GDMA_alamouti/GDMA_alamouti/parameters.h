@@ -2,7 +2,7 @@
 
 //---------- system ----------
 
-#define		NUM_USER				1													// number of users
+#define		NUM_USER				2													// number of users
 
 #define		NUM_TX					2													// number of transmit antennas
 #define		NUM_LEVEL				( 1 << ( NUM_USER * NUM_TX - 1))					// number of levels of superimposed signal

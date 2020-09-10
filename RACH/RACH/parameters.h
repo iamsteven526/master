@@ -35,7 +35,7 @@
 #define		ALOHA					1												// 1: Aloha + GDMA,  0: Aloha
 #define		PREABLE					1											    // 1: enable, 0: disable	
 #define		PREABLE_LEN				63												
-#define		Time_Estimate			0												// 0: disable, 1: enable
+#define		Time_Estimate			1												// 0: disable, 1: enable
 #define		Phase_Estimate			0												// 0: disable, 1: enable(first channel estimation)
 #define		Root_Num				1
 #define		Threshold				0.15
@@ -80,7 +80,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				1												// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				0												// 0: cluster-based, 1: ideal
 
 #define		CE_METHOD				0												// 0: preamble estimation only;  1: preamble estimation + modified k-means++
 
@@ -99,7 +99,7 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				210
 
-#define		BLOCK_NUM				100000											// number of blocks to be simulated 
+#define		BLOCK_NUM				25000											// number of blocks to be simulated 
 
 #define		G_NUM					30												// number of SNR points to be simulated
 #define		G_START					0.1												// in dB

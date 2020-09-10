@@ -3,7 +3,7 @@
 #include <vector>
 //---------- system ----------
 
-#define		NUM_USER				1									// number of users
+#define		NUM_USER				6									// number of users
 #define		NUM_LEVEL				( 1 << NUM_USER )					// number of levels of superimposed signal
 
 #define		DIFF_ENC				0									// differential encoding; 1: enable, 0: disable
@@ -58,7 +58,7 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				230
 
-#define		BLOCK_NUM				1000000						// number of blocks to be simulated
+#define		BLOCK_NUM				100000						// number of blocks to be simulated
 #define		BLOCK_LEN				128							// number of symbols in a block
 
 #define		SNR_NUM					9									// number of SNR points to be simulated

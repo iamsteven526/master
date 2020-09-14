@@ -3,7 +3,7 @@
 #include <vector>
 //---------- system ----------
 
-#define		NUM_USER				6									// number of users
+#define		NUM_USER				3									// number of users
 #define		NUM_LEVEL				( 1 << NUM_USER )					// number of levels of superimposed signal
 
 #define		DIFF_ENC				0									// differential encoding; 1: enable, 0: disable

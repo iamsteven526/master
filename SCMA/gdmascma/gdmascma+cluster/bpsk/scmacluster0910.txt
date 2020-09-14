@@ -1,1 +1,44 @@
 0.204, 0.148, 0.140, 0.134, 0.043,0.0105,0.00354, 0.0011,0.0004
+
+
+
+64Uncoded GDMA-BPSK system                                                                                                                      
+Number of users: 3                                                                                                                              
+                                                                                                                                                
+Block length: 4096
+
+Cluster length: 4096
+
+Cluster-based channel estimation: K-means
+w/Gaussian mixture model
+
+Synchronous system
+
+-
+
+SNR[dB] = 25.0
+Block# = 2000, BER = 7.173665e-03, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 30.0
+Block# = 2000, BER = 1.313751e-03, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 35.0
+Block# = 2000, BER = 1.184896e-04, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 40.0
+Block# = 2000, BER = 2.460225e-04, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 45.0
+Block# = 2000, BER = 9.584554e-05, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 50.0
+Block# = 2000, BER = 2.145386e-05, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 55.0
+Block# = 2000, BER = 1.068624e-04, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 60.0
+Block# = 2000, BER = 4.128011e-05, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 65.0
+Block# = 2000, BER = 4.339600e-05, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00

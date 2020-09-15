@@ -1,0 +1,5 @@
+﻿  raptor.cpp
+raptor.obj : error LNK2005: "int * step" (?step@@3PAHA) already defined in lt.obj
+raptor.obj : error LNK2005: "int * deg" (?deg@@3PAHA) already defined in lt.obj
+raptor.obj : error LNK2005: "double (* deg_pdf)[8]" (?deg_pdf@@3PAY07NA) already defined in lt.obj
+C:\Users\wsxcc\Desktop\TT\Debug\TT.exe : fatal error LNK1169: one or more multiply defined symbols found

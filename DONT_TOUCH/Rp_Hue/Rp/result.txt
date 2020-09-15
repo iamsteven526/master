@@ -1,0 +1,6 @@
+Raptor code
+
+Systematic, IR length: 40
+degree set: 312
+tandem decoding, iteration#: LDPC 10, LT 20
+

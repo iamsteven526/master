@@ -76,17 +76,17 @@ K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
 V = size(CB, 3); % number of users (layers)
 
-N = 64800; % SCMA signals in frame
-
-EbN0 = 20:5:40;
-SNR  = EbN0 + 10*log10(log2(M)*V/K);
+N = 256; % SCMA signals in frame
+R = 0.5;  %code rate
+EbN0 = 10:5:40;
+SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 100;
-maxNumBits = 1e6;
+maxNumBits = 1e5;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder;
 ldpcEncoder = comm.LDPCEncoder;
@@ -101,7 +101,8 @@ for k = 1:length(SNR)
         %x = randi([0 M-1], V, N); % log2(M)-bit symbols
         dam = randi([0 1], V, N/2); %32400      
         for pp = 1:V
-           w(pp,:) = ldpcEncoder(dam(pp,:)');%64800
+           %w(pp,:) = ldpcEncoder(dam(pp,:)');%64800
+           w(pp,:) = nrPolarEncode(dam(pp,:)',N);
         end
         
         %h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
@@ -131,12 +132,13 @@ for k = 1:length(SNR)
             end
         end
         for pp = 1:V
-            ansbit(pp,:) = ldpcDecoder(datar(:,pp));
+            ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,8);
+            %ansbit(pp,:) = ldpcDecoder(datar(:,pp));
         end
 
         err        = sum(xor(dam', ansbit'));
         Nerr(:,k)  = Nerr(:,k) + err.';
-        Nbits(:,k) = Nbits(:,k) + log2(M)*N;
+        Nbits(:,k) = Nbits(:,k) + log2(M)*N*R;
     end
     BER(:,k) = Nerr(:,k)./Nbits(:,k);
     k

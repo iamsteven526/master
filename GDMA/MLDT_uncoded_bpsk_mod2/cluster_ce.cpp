@@ -653,9 +653,9 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 	double xx1,xx2,yy1,yy2;
 	double mina=100,minb=100;
 	int pass = 0;
-	double check_thres = 0.5*sqrt(variance);
-	double checka = 0.1*sqrt(1.0/variance);
-	double checkb = checka / 3.0;
+	double check_thres = sqrt(variance);
+	//double checka = 0.1*sqrt(1.0/variance);
+	//double checkb = checka / 3.0;
 	vector<vector<double>> sup_centroid(num_level, vector<double>(2));
 	for (int i = 0; i < num_level; i++)
 		for (int j = 0; j < 2; j++)
@@ -701,7 +701,7 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 				}
 			}
 			for (int i = 0; i < num_level; i++){ //find secondmax from x-axis
-                if((sup_centroid[i][0] > SecondMAXx) && (i != FirstMAX) && abs(sup_centroid[i][0]-MAXx) > 0.00005){
+                if((sup_centroid[i][0] > SecondMAXx) && (i != FirstMAX)){// && abs(sup_centroid[i][0]-MAXx) > 0.00005){
 					SecondMAXx = sup_centroid[i][0];
                     SecondMAX = i;
 				}
@@ -734,8 +734,10 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 					*/
 				}
 				if(minb < mina){
-				    temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
-				    temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
+				    temp[j][0] = sup_centroid[pair[j][1]][0] - estimate[nuser][0];
+					temp[j][1] = sup_centroid[pair[j][1]][1] - estimate[nuser][1];
+					//temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
+				    //temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
 				}
 				else{
 				    temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
@@ -743,13 +745,15 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 				}
 				mina = 1000;
 				minb = 1000;
+				/*
 				for (int p = 0; p < j; ++p){
-					if(sqrt((temp[j][0]-temp[p][0])*(temp[j][0]-temp[p][0]) + (temp[j][1]-temp[p][1])*(temp[j][1]-temp[p][1])) < checka*check_thres){
+					if(sqrt((temp[j][0]-temp[p][0])*(temp[j][0]-temp[p][0]) + (temp[j][1]-temp[p][1])*(temp[j][1]-temp[p][1])) < check_thres){
 					//if(((abs(temp[j][0]-temp[p][0]) < checkb*check_thres) && (abs(temp[j][1]-temp[p][1]) < checka*check_thres) ) || ((abs(temp[j][0]-temp[p][0]) < checka*check_thres) && (abs(temp[j][1]-temp[p][1]) < checkb*check_thres))){
 						temp[j][0] = -temp[j][0];
 						temp[j][1] = -temp[j][1];
 					}
 				}
+				*/
 			}
             for (int j = 0; j < num_level / 2; j++){
 				for (int k = 0; k < 2; k++){

@@ -1,1 +1,211 @@
 0.2919, 0.228, 0.153, 0.0663, 0.0225, 0.00650, 0.00250, 0.000601, 0.000220
+
+
+for test threshold from 35db to 55db
+0.3：
+
+SNR[dB] = 30.0
+Block# = 10001, BER = 2.330187e-03,BLER = 7.069293e-02, MSE = 5.351927e-04, MSE_centroid = 0.000000e+00,iteration = 2.330187e-03
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 1.131552e-03,BLER = 2.859714e-02, MSE = 5.581366e-04, MSE_centroid = 0.000000e+00,iteration = 1.131552e-03
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 8.750102e-04,BLER = 1.099890e-02, MSE = 2.770951e-04, MSE_centroid = 0.000000e+00,iteration = 8.750102e-04
+
+SNR[dB] = 45.0
+Block# = 10001, BER = 6.424651e-04,BLER = 4.599540e-03, MSE = 2.396336e-04, MSE_centroid = 0.000000e+00,iteration = 6.424651e-04
+
+SNR[dB] = 50.0
+Block# = 10001, BER = 7.150408e-04,BLER = 2.499750e-03, MSE = 2.021856e-04, MSE_centroid = 0.000000e+00,iteration = 7.150408e-04
+
+SNR[dB] = 55.0
+Block# = 10001, BER = 4.375295e-04,BLER = 1.399860e-03, MSE = 7.551706e-05, MSE_centroid = 0.000000e+00,iteration = 4.375295e-04
+
+
+0.2：
+
+SNR[dB] = 30.0
+Block# = 10001, BER = 1.990768e-03,BLER = 7.929207e-02, MSE = 4.434624e-04, MSE_centroid = 0.000000e+00,iteration = 1.990768e-03
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 9.196834e-04,BLER = 2.659734e-02, MSE = 2.548830e-04, MSE_centroid = 0.000000e+00,iteration = 9.196834e-04
+
+SNR[dB] = 40.0
+Block# = 10874, BER = 2.403463e-04,BLER = 8.000736e-03, MSE = 4.741188e-05, MSE_centroid = 0.000000e+00,iteration = 2.403463e-04
+
+SNR[dB] = 45.0
+Block# = 10001, BER = 4.002774e-04,BLER = 3.499650e-03, MSE = 1.077325e-04, MSE_centroid = 0.000000e+00,iteration = 4.002774e-04
+
+SNR[dB] = 50.0
+Block# = 10001, BER = 2.589585e-04,BLER = 1.299870e-03, MSE = 8.740682e-05, MSE_centroid = 0.000000e+00,iteration = 2.589585e-04
+
+SNR[dB] = 55.0
+Block# = 11986, BER = 2.238125e-04,BLER = 6.674454e-04, MSE = 8.396958e-05, MSE_centroid = 0.000000e+00,iteration = 2.238125e-04
+
+0.16：
+
+SNR[dB] = 30.0
+Block# = 10001, BER = 2.005708e-03,BLER = 7.609239e-02, MSE = 6.443457e-04, MSE_centroid = 0.000000e+00,iteration = 2.005708e-03
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 4.917721e-04,BLER = 2.459754e-02, MSE = 6.172975e-05, MSE_centroid = 0.000000e+00,iteration = 4.917721e-04
+
+SNR[dB] = 40.0
+Block# = 10490, BER = 2.378102e-04,BLER = 9.342231e-03, MSE = 6.556668e-05, MSE_centroid = 0.000000e+00,iteration = 2.378102e-04
+
+SNR[dB] = 45.0
+Block# = 10001, BER = 3.018497e-04,BLER = 3.099690e-03, MSE = 8.673574e-05, MSE_centroid = 0.000000e+00,iteration = 3.018497e-04
+
+SNR[dB] = 50.0
+Block# = 10649, BER = 2.493449e-04,BLER = 1.502488e-03, MSE = 8.037046e-05, MSE_centroid = 0.000000e+00,iteration = 2.493449e-04
+
+SNR[dB] = 55.0
+Block# = 11238, BER = 2.377536e-04,BLER = 8.898380e-04, MSE = 4.470972e-05, MSE_centroid = 0.000000e+00,iteration = 2.377536e-04
+
+0.12：
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 5.344192e-04,BLER = 2.419758e-02, MSE = 7.618735e-05, MSE_centroid = 0.000000e+00,iteration = 5.344192e-04
+
+SNR[dB] = 40.0
+Block# = 10714, BER = 2.445508e-04,BLER = 7.093522e-03, MSE = 4.261115e-05, MSE_centroid = 0.000000e+00,iteration = 2.445508e-04
+
+SNR[dB] = 45.0
+Block# = 15688, BER = 1.563073e-04,BLER = 2.804691e-03, MSE = 2.551778e-05, MSE_centroid = 0.000000e+00,iteration = 1.563073e-04
+
+SNR[dB] = 50.0
+Block# = 20757, BER = 9.454171e-05,BLER = 8.671773e-04, MSE = 2.620899e-05, MS^Ccentroid = 0.000000e+00,iteration = 9.454627e-05
+
+
+0.08：
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 5.827786e-04,BLER = 2.269773e-02, MSE = 1.681697e-04, MSE_centroid = 0.000000e+00,iteration = 5.827786e-04
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 2.737763e-04,BLER = 6.299370e-03, MSE = 1.063087e-04, MSE_centroid = 0.000000e+00,iteration = 2.737763e-04
+
+SNR[dB] = 45.0
+Block# = 11280, BER = 2.374960e-04,BLER = 2.836879e-03, MSE = 4.561915e-05, MSE_centroid = 0.000000e+00,iteration = 2.374960e-04
+
+SNR[dB] = 50.0
+Block# = 30000, BER = 5.900065e-05,BLER = 5.666667e-04, MSE = 2.305510e-05, MSE_centroid = 0.000000e+00,iteration = 5.900065e-05
+
+SNR[dB] = 55.0
+Block# = 30000, BER = 6.769206e-05,BLER = 6.333333e-04, MSE = 1.945733e-05, MSE_centroid = 0.000000e+00,iteration = 6.769206e-05
+
+SNR[dB] = 60.0
+Block# = 30000, BER = 3.945312e-05,BLER = 2.666667e-04, MSE = 1.992450e-05, MSE_centroid = 0.000000e+00,iteration = 3.945312e-05
+
+0.06：
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 4.283019e-04,BLER = 2.709729e-02, MSE = 4.937264e-05, MSE_centroid = 0.000000e+00,iteration = 4.283019e-04
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 3.085141e-04,BLER = 7.499250e-03, MSE = 6.581544e-05, MSE_centroid = 0.000000e+00,iteration = 3.085141e-04
+
+SNR[dB] = 45.0
+Block# = 22479, BER = 1.164824e-04,BLER = 2.847102e-03, MSE = 2.745194e-05, MSE_centroid = 0.000000e+00,iteration = 1.164824e-04
+
+SNR[dB] = 50.0
+Block# = 30000, BER = 5.487467e-05,BLER = 8.666667e-04, MSE = 1.603858e-05, MSE_centroid = 0.000000e+00,iteration = 5.487467e-05
+
+SNR[dB] = 55.0
+Block# = 28322, BER = 2.323999e-05,BLER = 3.177742e-04, MSE = 3.0^C170e-06, MSE_centroid = 0.000000e+00,iteration = 2.324082e-05
+
+0.04:
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 4.302548e-04,BLER = 2.489751e-02, MSE = 6.693047e-05, MSE_centroid = 0.000000e+00,iteration = 4.302548e-04
+
+SNR[dB] = 40.0
+Block# = 11174, BER = 2.458448e-04,BLER = 8.143905e-03, MSE = 1.194783e-04, MSE_centroid = 0.000000e+00,iteration = 2.458448e-04
+
+SNR[dB] = 45.0
+Block# = 30000, BER = 5.493978e-05,BLER = 2.333333e-03, MSE = 2.776614e-05, MSE_centroid = 0.000000e+00,iteration = 5.493978e-05
+
+SNR[dB] = 50.0
+Block# = 15105, BER = 5.265873e-05,BLER = 1.125455e-03, MSE = 1.702110e-05, MSE_centroid = 0.00000^C+00,iteration = 5.266222e-05
+
+0.02:
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 5.835842e-04,BLER = 2.509749e-02, MSE = 2.449799e-04, MSE_centroid = 0.000000e+00,iteration = 5.835842e-04
+
+SNR[dB] = 40.0
+Block# = 16237, BER = 1.622091e-04,BLER = 8.129581e-03, MSE = 4.649575e-05, MSE_centroid = 0.000000e+00,iteration = 1.622091e-04
+
+SNR[dB] = 45.0
+Block# = 30000, BER = 5.430501e-05,BLER = 2.600000e-03, MSE = 2.896839e-06, MSE_centroid = 0.000000e+00,iteration = 5.430501e-05
+
+SNR[dB] = 50.0
+Block# = 30000, BER = 3.784993e-05,BLER = 5.333333e-04, MSE = 3.415216e-06, MSE_centroid = 0.000000e+00,iteration = 3.784993e-05
+
+SNR[dB] = 55.0
+Block# = 30000, BER = 2.805176e-05,BLER = 2.666667e-04, MSE = 7.617856e-06, MSE_centroid = 0.000000e+00,iteration = 2.805176e-05
+
+SNR[dB] = 60.0
+Block# = 30000, BER = 1.057943e-06,BLER = 1.000000e-04, MSE = 2.176139e-09, MSE_centroid = 0.000000e+00,iteration = 1.057943e-06
+
+0.012:
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 2.918190e-03,BLER = 3.179682e-02, MSE = 1.470770e-03, MSE_centroid = 0.000000e+00,iteration = 2.918190e-03
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 3.201828e-04,BLER = 7.799220e-03, MSE = 7.636548e-05, MSE_centroid = 0.000000e+00,iteration = 3.201828e-04
+
+SNR[dB] = 45.0
+Block# = 18175, BER = 1.394322e-04,BLER = 2.035763e-03, MSE = 2.674031e-05, MSE_centroid = 0.000000e+00,iteration = 1.394322e-04
+
+SNR[dB] = 50.0
+Block# = 30000, BER = 3.784180e-05,BLER = 7.666667e-04, MSE = 9.951340e-06, MSE_centroid = 0.000000e+00,iteration = 3.784180e-05
+
+SNR[dB] = 55.0
+Block# = 30000, BER = 2.253418e-05,BLER = 1.666667e-04, MSE = 7.414592e-07, MSE_centroid = 0.000000e+00,iteration = 2.253418e-05
+
+SNR[dB] = 60.0
+Block# = 1817, BER = 0.000000e+00,BLER = 0.000000e+00, MSE = 2.143805e-09, MSE_cent^Cid = 0.000000e+00,iteration = 0.000000e+00
+
+0.008:
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 1.954502e-02,BLER = 7.979202e-02, MSE = 1.013190e-02, MSE_centroid = 0.000000e+00,iteration = 1.954502e-02
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 1.167315e-03,BLER = 1.079892e-02, MSE = 4.705085e-04, MSE_centroid = 0.000000e+00,iteration = 1.167315e-03
+
+SNR[dB] = 45.0
+Block# = 30000, BER = 7.568359e-05,BLER = 2.000000e-03, MSE = 1.245250e-05, MSE_centroid = 0.000000e+00,iteration = 7.568359e-05
+
+SNR[dB] = 50.0
+Block# = 30000, BER = 2.437337e-05,BLER = 6.000000e-04, MSE = 1.834636e-06, MSE_centroid = 0.000000e+00,iteration = 2.437337e-05
+
+SNR[dB] = 55.0
+Block# = 30000, BER = 1.155599e-05,BLER = 3.000000e-04, MSE = 8.057883e-08, MSE_centroid = 0.000000e+00,iteration = 1.155599e-05
+
+SNR[dB] = 60.0
+Block# = 30000, BER = 0.000000e+00,BLER = 0.000000e+00, MSE = 2.195356e-09, MSE_centroid = 0.000000e+00,iteration = 0.000000e+00
+
+0.005:
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 4.728216e-02,BLER = 1.707829e-01, MSE = 2.491740e-02, MSE_centroid = 0.000000e+00,iteration = 4.728216e-02
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 1.377245e-02,BLER = 4.719528e-02, MSE = 6.655497e-03, MSE_centroid = 0.000000e+00,iteration = 1.377245e-02
+
+SNR[dB] = 45.0
+Block# = 10001, BER = 5.755772e-04,BLER = 4.599540e-03, MSE = 3.149601e-04, MSE_centroid = 0.000000e+00,iteration = 5.755772e-04
+
+SNR[dB] = 50.0
+Block# = 30000, BER = 2.229004e-05,BLER = 8.333333e-04, MSE = 3.806733e-08, MSE_centroid = 0.000000e+00,iteration = 2.229004e-05
+
+SNR[dB] = 55.0
+Block# = 30000, BER = 2.274577e-05,BLER = 3.000000e-04, MSE = 4.375969e-06, MSE_centroid = 0.000000e+00,iteration = 2.274577e-05
+
+SNR[dB] = 60.0
+Block# = 30000, BER = 1.381022e-05,BLER = 1.000000e-04, MSE = 1.122252e-05, MSE_centroid = 0.000000e+00,iteration = 1.381022e-05
+

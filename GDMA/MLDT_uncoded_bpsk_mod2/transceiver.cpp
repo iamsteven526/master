@@ -135,11 +135,12 @@ void Detector(int **data, double **appLlr, int ***trellis, double **alpha, doubl
 			if (DIFF_ENC && (DIFF_RX_SCHEME == 1)) BCJR(trellis, appLlr[nuser], appLlr[nuser], alpha, beta, gamma);
 			if (Scrambler)
 			{
-				vector<int> decoded_data(BLOCK_LEN);
-				decoded_data = descrambler(appLlr[nuser]);
+				//vector<int> decoded_data(BLOCK_LEN);
+				//decoded_data = descrambler(appLlr[nuser]);
 				for (int i = DIFF_ENC; i < BLOCK_LEN; i++)
 				{
-					error += (data[nuser][i] != decoded_data[i]);
+					error += (data[nuser][i] != HARD(appLlr[nuser][i]));
+					//error += (data[nuser][i] != decoded_data[i]);
 				}
 			}
 			else

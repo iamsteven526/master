@@ -2,6 +2,47 @@
 
 
 for test threshold from 35db to 55db
+0.8:
+
+
+SNR[dB] = 25.0
+Block# = 10001, BER = 9.602384e-03,BLER = 2.250775e-01, MSE = 3.201822e-03, MSE_centroid = 0.000000e+00,iteration = 9.602384e-03
+
+SNR[dB] = 30.0
+Block# = 10001, BER = 6.073611e-03,BLER = 8.969103e-02, MSE = 2.096005e-03, MSE_centroid = 0.000000e+00,iteration = 6.073611e-03
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 5.813603e-03,BLER = 4.039596e-02, MSE = 1.677190e-03, MSE_centroid = 0.000000e+00,iteration = 5.813603e-03
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 6.208827e-03,BLER = 2.709729e-02, MSE = 1.708543e-03, MSE_centroid = 0.000000e+00,iteration = 6.208827e-03
+
+SNR[dB] = 45.0
+Block# = 10001, BER = 7.387445e-03,BLER = 2.449755e-02, MSE = 2.035661e-03, MSE_centroid = 0.000000e+00,iteration = 7.387445e-03
+
+SNR[dB] = 50.0
+Block# = 10001, BER = 5.900972e-03,BLER = 1.849815e-02, MSE = 1.736654e-03, MSE_centroid = 0.000000e+00,iteration = 5.900972e-03
+
+
+0.5：
+SNR[dB] = 25.0
+Block# = 10001, BER = 6.003770e-03,BLER = 2.168783e-01, MSE = 1.632805e-03, MSE_centroid = 0.000000e+00,iteration = 6.003770e-03
+
+SNR[dB] = 30.0
+Block# = 10001, BER = 3.370757e-03,BLER = 7.809219e-02, MSE = 1.085671e-03, MSE_centroid = 0.000000e+00,iteration = 3.370757e-03
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 2.345054e-03,BLER = 2.999700e-02, MSE = 6.782282e-04, MSE_centroid = 0.000000e+00,iteration = 2.345054e-03
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 1.763642e-03,BLER = 1.319868e-02, MSE = 3.859404e-04, MSE_centroid = 0.000000e+00,iteration = 1.763642e-03
+
+SNR[dB] = 45.0
+Block# = 10001, BER = 2.225485e-03,BLER = 9.199080e-03, MSE = 5.896246e-04, MSE_centroid = 0.000000e+00,iteration = 2.225485e-03
+
+SNR[dB] = 50.0
+Block# = 10001, BER = 1.577259e-03,BLER = 5.899410e-03, MSE = 3.514570e-04, MSE_centroid = 0.000000e+00,iteration = 1.577259e-03
+
 0.3：
 
 SNR[dB] = 30.0

@@ -78,7 +78,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 256; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 25:5:40;
+EbN0 = 10:5:40;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
@@ -125,7 +125,7 @@ for k = 1:length(SNR)
         % symbol to bit conversion
         %r    = de2bi(x, log2(M), 'left-msb');
         datar = zeros(log2(M)*N/2, V);
-        LLR(LLR==inf) = 1000;
+        LLR(LLR==-inf) = -1000;
         LLR(LLR==-inf) = -1000;
         for kk = 1:V
             for tt = 1:N/2

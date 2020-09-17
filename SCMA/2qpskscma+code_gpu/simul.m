@@ -79,14 +79,14 @@ V = size(CB, 3); % number of users (layers)
 N = 1024; % SCMA signals in frame
 R = 0.5;  %code rate
 EbN0 = 15:5:40;
-SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
+SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 100;
-maxNumBits = 2e5;
+maxNumBits = 2e4;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder;
 ldpcEncoder = comm.LDPCEncoder;
@@ -132,7 +132,7 @@ for k = 1:length(SNR)
             end
         end
         for pp = 1:V
-            ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,8,10,false,11);
+            ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,8,10,false,24);
             %ansbit(pp,:) = ldpcDecoder(datar(:,pp));
         end
 

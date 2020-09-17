@@ -8,6 +8,7 @@
             "args": [
                 "-g",
                 "-Ofast",
+                "-march=native",
                 "${fileDirname}/*.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"

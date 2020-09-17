@@ -542,10 +542,12 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 	int FirstMAX = 0;
 	int SecondMAX = 0;
 	double x1,x2,y1,y2;
+	double xx1,xx2,yy1,yy2;
+	double mina = 100, minb = 100;
 	int pass = 0;
 	double check_thres = 0.5*sqrt(variance);
-	double checka = 0.12*sqrt(1.0/variance);
-	double checkb = checka / 3.0;
+	//double checka = 0.12*sqrt(1.0/variance);
+	//double checkb = checka / 3.0;
 	vector<vector<double>> sup_centroid(num_level, vector<double>(2));
 	for (int i = 0; i < num_level; i++)
 		for (int j = 0; j < 2; j++)
@@ -609,27 +611,26 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 				for (int k = 0; k < num_level; k++){
                     x1 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
 					y1 = (sup_centroid[pair[j][0]][1] + sup_centroid[k][1]) / 2.0;
-					//cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
-					//x2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
-					//y2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
-					if( (abs(x1-estimate[nuser][0]) < check_thres) && (abs(y1-estimate[nuser][1]) < check_thres) ){ //think threshold
-					    //cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
-						temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
-					    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
-						canfind = 1;
-						break;
-					}
+					xx1 = (x1-estimate[nuser][0])*(x1-estimate[nuser][0]);
+					yy1 = (y1-estimate[nuser][1])*(y1-estimate[nuser][1]);
+					xx2 = (x1+estimate[nuser][0])*(x1+estimate[nuser][0]);
+					yy2 = (y1+estimate[nuser][1])*(y1+estimate[nuser][1]);
+					mina = min(mina,xx1+yy1);
+					minb = min(minb,xx2+yy2);
+
+			    }
+				if(minb < mina){
+				    temp[j][0] = sup_centroid[pair[j][1]][0] - estimate[nuser][0];
+					temp[j][1] = sup_centroid[pair[j][1]][1] - estimate[nuser][1];
+					//temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
+				    //temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
 				}
-				if(canfind == 0){
-				    temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
-				    temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
+				else{
+				    temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
+				    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
 				}
-				for (int p = 0; p < j; ++p){
-					if(((abs(temp[j][0]-temp[p][0]) < checkb*check_thres) && (abs(temp[j][1]-temp[p][1]) < checka*check_thres) ) || ((abs(temp[j][0]-temp[p][0]) < checka*check_thres) && (abs(temp[j][1]-temp[p][1]) < checkb*check_thres))){
-						temp[j][0] = -temp[j][0];
-						temp[j][1] = -temp[j][1];
-					}
-				}
+				mina = 1000;
+				minb = 1000;
 			}
             for (int j = 0; j < num_level / 2; j++){
 				for (int k = 0; k < 2; k++){
@@ -641,73 +642,6 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 			SecondMAXx = 0;
 			FirstMAX = 0;
 			SecondMAX = 0;
-			/*
-			//---find channel coefficient
-			for (int i = 0; i < pow(2, num_level / 2); i++)
-			{
-				if (i % 50000 == 0){
-                    cout << i/50000 << endl;  
-				}
-				//--- list all state of pair arrangement
-				int reg = i;
-				for (int j = 0; j < num_level / 2; j++)
-				{
-					int num = pair[j][reg % 2];
-					group_centroid[0] += sup_centroid[num][0];
-					group_centroid[1] += sup_centroid[num][1];
-					pair_num_.push_back(pair[j][reg % 2]);
-					inverse_pair_num_.push_back(pair[j][(reg + 1) % 2]);
-					inverse_group_centroid[0] += sup_centroid[pair[j][(reg + 1) % 2]][0];
-					inverse_group_centroid[1] += sup_centroid[pair[j][(reg + 1) % 2]][1];
-
-					reg = reg / 2;
-				}
-				group_centroid[0] /= num_level / 2; group_centroid[1] /= num_level / 2;
-				inverse_group_centroid[0] /= num_level / 2; inverse_group_centroid[1] /= num_level / 2;
-
-				//---check symmtric
-				vector<vector<double>> pair_(num_level / 4);
-				pair_ = pair_seq(sup_centroid, num_level / 2, mse, group_centroid, pair_num_);
-
-				//--- Derive correct chCoef
-				if (variance > mse)
-				{
-					vector<vector<double>> temp(num_level / 2, vector<double>(2));
-
-					for (int j = 0; j < num_level / 2; j++)
-					{
-						temp[j][0] = (sup_centroid[pair_num_[j]][0] - group_centroid[0] - (sup_centroid[inverse_pair_num_[j]][0] - inverse_group_centroid[0])) / 2;
-						temp[j][1] = (sup_centroid[pair_num_[j]][1] - group_centroid[1] - (sup_centroid[inverse_pair_num_[j]][1] - inverse_group_centroid[1])) / 2;
-					}
-
-					for (int j = 0; j < num_level / 2; j++)
-						for (int k = 0; k < 2; k++)
-							sup_centroid[j][k] = temp[j][k];
-
-					estimate[nuser][0] = (group_centroid[0] - inverse_group_centroid[0]) / 2;
-					estimate[nuser][1] = (group_centroid[1] - inverse_group_centroid[1]) / 2;
-					num_level /= 2;
-					break;
-				}
-
-				if (variance < mse && i + 1 == pow(2, num_level / 2))
-				{
-					//cout << "*";
-					reset = 1;
-					break;
-					//	cout << "camn't find symmetric centroid";
-					//	system("pause");
-
-
-				}
-				//---clear previous state
-				pair_num_.clear();
-				inverse_pair_num_.clear();
-				group_centroid[0] = 0; group_centroid[1] = 0;
-				inverse_group_centroid[0] = 0; inverse_group_centroid[1] = 0;
-
-				//system("pause");
-			}*/
 		}
 		else
 		{

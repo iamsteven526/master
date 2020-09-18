@@ -53,15 +53,29 @@ Block length: 1024
 Synchronous system
 
 -
+SNR[dB] = 0.0
+Block# = 10001, BER = 2.795850e-01,BLER = 1.000000e+00, MSE = 8.856218e-02, MSE_centroid = 0.000000e+00,iteration = 2.795850e-01
+
+SNR[dB] = 5.0
+Block# = 10001, BER = 1.832196e-01,BLER = 1.000000e+00, MSE = 4.058265e-02, MSE_centroid = 0.000000e+00,iteration = 1.832196e-01
+
+SNR[dB] = 10.0
+Block# = 10001, BER = 8.710752e-02,BLER = 9.985001e-01, MSE = 1.531929e-02, MSE_centroid = 0.000000e+00,iteration = 8.710752e-02
+
+SNR[dB] = 15.0
+Block# = 10001, BER = 3.069944e-02,BLER = 8.924108e-01, MSE = 3.326317e-03, MSE_centroid = 0.000000e+00,iteration = 3.069944e-02
+
+SNR[dB] = 20.0
+Block# = 10001, BER = 9.955889e-03,BLER = 5.286471e-01, MSE = 5.074018e-04, MSE_centroid = 0.000000e+00,iteration = 9.955889e-03
 
 SNR[dB] = 25.0
-Block# = 10001, BER = 3.391922e-03,BLER = 2.258774e-01, MSE = 5.270718e-05, MSE_centroid = 0.000000e+00,iteration = 3.391922e-03
+Block# = 10001, BER = 3.118902e-03,BLER = 2.135786e-01, MSE = 2.507500e-04, MSE_centroid = 0.000000e+00,iteration = 3.118902e-03
 
 SNR[dB] = 30.0
-Block# = 10001, BER = 1.127524e-03,BLER = 7.719228e-02, MSE = 8.926263e-05, MSE_centroid = 0.000000e+00,iteration = 1.127524e-03
+Block# = 10001, BER = 1.011984e-03,BLER = 7.369263e-02, MSE = 1.291768e-04, MSE_centroid = 0.000000e+00,iteration = 1.011984e-03
 
 SNR[dB] = 35.0
-Block# = 10001, BER = 3.841169e-04,BLER = 2.659734e-02, MSE = 1.062324e-04, MSE_centroid = 0.000000e+00,iteration = 3.841169e-04
+Block# = 10001, BER = 2.453856e-04,BLER = 2.409759e-02, MSE = 6.933396e-07, MSE_centroid = 0.000000e+00,iteration = 2.453856e-04
 
 SNR[dB] = 40.0
-Block# = 20614, BER = 1.086635e-04,BLER = 7.907248e-03, MSE = 1.239391e-05, MSE_centroid = 0.^C0000e+00,iteration = 1.086688e-04
+Block# = 20560, BER = 1.188523e-04,BLER = 8.317121e-03, MSE = 1.478527e-06, MSE_centroid = 0.000000e+00,iteration = 1.188523e-04

@@ -1,0 +1,37 @@
+GDMA-BPSK system
+Number of users: 2
+
+Perfect CSI
+
+Block length: 128
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0
+Block# = 10001, BER = 1.761492e-01
+
+SNR[dB] = 5.0
+Block# = 10001, BER = 8.601171e-02
+
+SNR[dB] = 10.0
+Block# = 10001, BER = 3.402238e-02
+
+SNR[dB] = 15.0
+Block# = 10001, BER = 1.123638e-02
+
+SNR[dB] = 20.0
+Block# = 10569, BER = 3.698907e-03
+
+SNR[dB] = 25.0
+Block# = 32779, BER = 1.196698e-03
+
+SNR[dB] = 30.0
+Block# = 114899, BER = 3.402445e-04
+
+SNR[dB] = 35.0
+Block# = 315875, BER = 1.237386e-04
+
+SNR[dB] = 40.0
+Block# = 984580, BER = 3.976156e-05

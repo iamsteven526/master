@@ -24,16 +24,18 @@ int main()
 	double ****supLevel = new double***[NUM_USER];
 	for (int i = 0; i < NUM_USER; i++)
 	{
-		data[i] = new int[L];
+		data[i] = new int[NUM_TX];
 		appLlr[i] = new double[NUM_TX];
-		tx[i] = new double*[L];
+		tx[i] = new double*[NUM_TX];
 		chCoef[i] = new double*[NUM_TX];
-		postRx[i] = new double*[L];
+		postRx[i] = new double*[NUM_TX];
 		app[i] = new double*[NUM_TX];
 		supLevel[i] = new double**[NUM_TX];
 		for (int j = 0; j < NUM_TX; j++)
 		{
+			tx[i][j] = new double[NUM_TX];
 			chCoef[i][j] = new double[2]; // real and imaginary
+			postRx[i][j] = new double[2]; // real and imaginary
 			app[i][j] = new double[NUM_LEVEL];
 			supLevel[i][j] = new double*[NUM_USER * NUM_TX - 1];
 			for (int k = 0; k < (NUM_USER * NUM_TX - 1); k++)
@@ -41,33 +43,17 @@ int main()
 				supLevel[i][j][k] = new double[2]; // real and imaginary
 			}
 		}
-		for (int j = 0; j < L; j++)
-		{
-			tx[i][j] = new double[NUM_TX];
-			postRx[i][j] = new double[2]; // real and imaginary
-		}
 	}
-	double **rx = new double*[L];
-	for (int i = 0; i < L; i++)
+	double **rx = new double*[NUM_TX];
+	for (int i = 0; i < NUM_TX; i++)
 	{
 		rx[i] = new double[2]; // real and imaginary
 	}
 	double ber[SNR_NUM];
-	int** STBC_matrix = new int*[NUM_TX];
-	for (int i = 0; i < NUM_TX; i++)
-	{
-		STBC_matrix[i] = new int[L];
-	}
-	int** SC_matrix = new int* [L];
-	for (int i = 0; i < L; i++)
-	{
-		SC_matrix[i] = new int[NUM_TX];
-	}
 	FILE *result_txt = fopen("result.txt", "w");
 	//---------- declaration ----------
 	printf("STC-GDMA-BPSK system\n");
 	printf("Number of users: %d\n\n", NUM_USER);
-	printf("Number of TXs: %d\n\n", NUM_TX);
 	fprintf(result_txt, "STC-GDMA-BPSK system\n");
 	fprintf(result_txt, "Number of users: %d\n\n", NUM_USER);
 	printf("-\n\n"); fprintf(result_txt, "-\n\n");
@@ -81,11 +67,11 @@ int main()
 		printf("SNR[dB] = %.1f\n", snrdB);
 		for (int block = 1; block <= BLOCK_NUM; block++)
 		{
-			AlamoutiEncoder(data, tx, STBC_matrix);
+			AlamoutiEncoder(data, tx);
 			EnergyProfile(chCoef);
 			MultipleAccessChannel(stdDev, chCoef, tx, rx);
-			SignalCombiner(chCoef, rx, postRx, SC_matrix);
-			SuperLevelSpecification(chCoef, supLevel, SC_matrix);
+			SignalCombiner(chCoef, rx, postRx);
+			SuperLevelSpecification(chCoef, supLevel);
 			MLDT(pow(stdDev, 2), chCoef, supLevel, postRx, app, appLlr);
 			Detector(data, appLlr, error);
 			ber[i] = error / ((long double)NUM_USER * NUM_TX * block);

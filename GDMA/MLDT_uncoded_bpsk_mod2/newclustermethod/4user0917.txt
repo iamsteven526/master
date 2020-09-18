@@ -37,3 +37,31 @@ Block# = 10001, BER = 5.108986e-04,BLER = 2.579742e-02, MSE = 1.236181e-04, MSE_
 
 SNR[dB] = 40.0
 Block# = 10001, BER = 2.377692e-04,BLER = 9.699030e-03, MSE = 6.026799e-05, MSE_centroid = 0.000000e+00,iteration = 2.377692e-04
+
+
+
+*** if use group size:
+GDMA-BPSK system
+Number of users: 4
+
+Clustering method : propose-2
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 1024
+
+Synchronous system
+
+-
+
+SNR[dB] = 25.0
+Block# = 10001, BER = 3.391922e-03,BLER = 2.258774e-01, MSE = 5.270718e-05, MSE_centroid = 0.000000e+00,iteration = 3.391922e-03
+
+SNR[dB] = 30.0
+Block# = 10001, BER = 1.127524e-03,BLER = 7.719228e-02, MSE = 8.926263e-05, MSE_centroid = 0.000000e+00,iteration = 1.127524e-03
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 3.841169e-04,BLER = 2.659734e-02, MSE = 1.062324e-04, MSE_centroid = 0.000000e+00,iteration = 3.841169e-04
+
+SNR[dB] = 40.0
+Block# = 20614, BER = 1.086635e-04,BLER = 7.907248e-03, MSE = 1.239391e-05, MSE_centroid = 0.^C0000e+00,iteration = 1.086688e-04

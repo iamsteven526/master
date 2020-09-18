@@ -2,7 +2,7 @@
 % Faculty of Radio Engineering
 % Department of Theoretical Fundamentals of Radio Engineering
 % Vyacheslav P. Klimentyev and Alexander B. Sergienko, 2015
-
+function BER = simul()
 % Codebooks
 clc;
 clear;
@@ -78,7 +78,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 1024; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 15:5:40;
+EbN0 = 10:5:40;
 SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
@@ -86,7 +86,7 @@ Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 100;
-maxNumBits = 2e4;
+maxNumBits = 1e6;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder;
 ldpcEncoder = comm.LDPCEncoder;
@@ -121,7 +121,8 @@ for k = 1:length(SNR)
         y = awgn(s, SNR(k));
 
         LLR = scmadec(y, CB, h, N0, Niter);
-
+        LLR(LLR==inf) = 1500;
+        LLR(LLR==-inf) = -1500;
         % symbol to bit conversion
         %r    = de2bi(x, log2(M), 'left-msb');
         datar = zeros(log2(M)*N/2, V);

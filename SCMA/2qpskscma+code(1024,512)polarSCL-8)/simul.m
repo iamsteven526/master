@@ -2,7 +2,7 @@
 % Faculty of Radio Engineering
 % Department of Theoretical Fundamentals of Radio Engineering
 % Vyacheslav P. Klimentyev and Alexander B. Sergienko, 2015
-
+function BER = simul()
 % Codebooks
 clc;
 clear;
@@ -76,17 +76,17 @@ K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
 V = size(CB, 3); % number of users (layers)
 
-N = 256; % SCMA signals in frame
+N = 1024; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 10:5:40;
+EbN0 = 30:5:30;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 100;
-maxNumBits = 1e5;
+maxNumErrs = 10;
+maxNumBits = 1e6;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder;
 ldpcEncoder = comm.LDPCEncoder;
@@ -102,7 +102,7 @@ for k = 1:length(SNR)
         dam = randi([0 1], V, N/2); %32400      
         for pp = 1:V
            %w(pp,:) = ldpcEncoder(dam(pp,:)');%64800
-           w(pp,:) = nrPolarEncode(dam(pp,:)',N,10);
+           w(pp,:) = nrPolarEncode(dam(pp,:)',N,10,false);
         end
         
         %h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
@@ -121,7 +121,8 @@ for k = 1:length(SNR)
         y = awgn(s, SNR(k));
 
         LLR = scmadec(y, CB, h, N0, Niter);
-
+        LLR(LLR==inf) = 1500;
+        LLR(LLR==-inf) = -1500;
         % symbol to bit conversion
         %r    = de2bi(x, log2(M), 'left-msb');
         datar = zeros(log2(M)*N/2, V);
@@ -132,7 +133,7 @@ for k = 1:length(SNR)
             end
         end
         for pp = 1:V
-            ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,8);
+            ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,8,10,false,24);
             %ansbit(pp,:) = ldpcDecoder(datar(:,pp));
         end
 
@@ -142,6 +143,6 @@ for k = 1:length(SNR)
     end
     BER(:,k) = Nerr(:,k)./Nbits(:,k);
     k
-    display(sum(Nerr(:,k))/6)
+    display(sum(Nerr(:,k))/12)
 end
 plot(EbN0,log10(BER))

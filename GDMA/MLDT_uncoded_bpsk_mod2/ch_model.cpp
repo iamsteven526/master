@@ -49,5 +49,4 @@ void MultipleAccessChannel(double stdDev, double **chCoef, double **tx, double *
 			tx[nuser][i] = 0;
 		}
 	}
-
 }

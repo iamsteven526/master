@@ -10,34 +10,44 @@ uniform_real_distribution<double> uniform(0, 1);
 exponential_distribution<double> exponential(1);
 normal_distribution<double> normal(0, 1);
 
-void EnergyProfile(double ***chCoef)
+
+void EnergyProfile(double **chCoef)
 {
-	for (int nuser = 0; nuser < NUM_USER; nuser++)
+	for (int nuser = 0; nuser < NUM_USER*NUM_TX; nuser++)
 	{
-		for (int i = 0; i < NUM_TX; i++)
-		{
-			double theta = 2 * M_PI * uniform(generator);
-			double energy = exponential(generator);
-			double amplitude = sqrt(energy);
-			chCoef[nuser][i][0] = amplitude * cos(theta); // real part
-			chCoef[nuser][i][1] = amplitude * sin(theta); // imaginary part
-		}
+		double theta = 2 * M_PI * uniform(generator);		// phase shift
+		chCoef[nuser][3] = exponential(generator);			// energy
+		chCoef[nuser][2] = sqrt(chCoef[nuser][3]);			// amplitude
+		chCoef[nuser][1] = chCoef[nuser][2] * sin(theta);	// imaginary pary
+		chCoef[nuser][0] = chCoef[nuser][2] * cos(theta);	// real part
 	}
 }
 
-void MultipleAccessChannel(double stdDev, double ***chCoef, double ***tx, double **rx)
+void MultipleAccessChannel(double stdDev, double **chCoef, double **tx, double **rx,double **pilot, int *known_drift)
 {
-	for (int i = 0; i < NUM_TX; i++)
+	int effLen;
+	if(COLLISION)
+		effLen = SYNCHRONOUS ? BLOCK_LEN : BLOCK_LEN * UP_RATE * SPREAD_LEN;
+	else
+		effLen = SYNCHRONOUS ? known_drift[NUM_USER*NUM_TX-1]+BLOCK_LEN : (known_drift[NUM_USER*NUM_TX - 1] + BLOCK_LEN ) * UP_RATE * SPREAD_LEN;
+
+	for (int i = 0; i < effLen; i++)
 	{
 		rx[i][0] = stdDev * normal(generator); // real
 		rx[i][1] = stdDev * normal(generator); // imaginary
-		for (int nuser = 0; nuser < NUM_USER; nuser++)
+		for (int nuser = 0; nuser < NUM_USER*NUM_TX; nuser++)
 		{
-			for (int j = 0; j < NUM_TX; j++)
+			if (!SYNCHRONOUS)
 			{
-				rx[i][0] += tx[nuser][j][i] * chCoef[nuser][j][0];
-				rx[i][1] += tx[nuser][j][i] * chCoef[nuser][j][1];
+				rx[i][0] += tx[nuser][i] * chCoef[nuser][0] - (Power_Ratio) / (1 - Power_Ratio) * pilot[nuser][i] * chCoef[nuser][1];
+				rx[i][1] += tx[nuser][i] * chCoef[nuser][1] + (Power_Ratio) / (1 - Power_Ratio) * pilot[nuser][i] * chCoef[nuser][0];
 			}
+			else
+			{
+				rx[i][0] += tx[nuser][i] * chCoef[nuser][0];
+				rx[i][1] += tx[nuser][i] * chCoef[nuser][1];
+			}
+			tx[nuser][i] = 0;
 		}
 	}
 }

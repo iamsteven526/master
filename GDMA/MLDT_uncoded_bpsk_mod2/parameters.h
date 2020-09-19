@@ -70,7 +70,6 @@
 //--------------------
 
 void	Transmitter(int **data, double *preTx, double **tx, double *txFilter, double *rxFilter, double** pilot, double* prePilot, int *known_drift);
-//void	Transmitter(int** data, double* preTx, double** tx, double* txFilter,double **pilot);
 void	Modulator(int *data, double *tx, int known_drift);
 void	Detector(int **data, double **appLlr, int ***trellis, double **alpha, double **beta, double ***gamma, long double &error, int *known_drift);
 void	DiffDecoding(double *appLlr, int known_drift);

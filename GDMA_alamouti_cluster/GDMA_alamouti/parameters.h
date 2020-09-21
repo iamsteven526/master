@@ -15,7 +15,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				0									// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				1									// 0: cluster-based, 1: ideal
 
 #define		INI_METHOD				2									// 0: LBG, 1: k-means++, 2: modified k-means++
 
@@ -57,10 +57,10 @@
 //---------- simulator ----------
 
 #define		NUMERIC_LIMIT			1e-100
-#define		LLR_LIMIT				230
+#define		LLR_LIMIT				1000
 
-#define		BLOCK_NUM				10000000											// number of blocks to be simulated
-#define		BLOCK_LEN				1024							// number of symbols in a block
+#define		BLOCK_NUM				1000000											// number of blocks to be simulated
+#define		BLOCK_LEN				20							// number of symbols in a block
 
 
 #define		SNR_NUM					9													// number of SNR points to be simulated
@@ -94,7 +94,7 @@ void	EnergyProfile(double **chCoef);
 //void	MultipleAccessChannel(double stdDev, double ***chCoef, double ***tx, double **rx);//TODO
 void	MultipleAccessChannel(double stdDev, double **chCoef, double **tx, double **rx, double **pilot, int *known_drift);
 
-void	MLDT(double variance, double ***chCoef, double ****supLevel, double ***postRx, double ***app, double **appLlr);
+void	MLDT(double variance, double **chCoef, double ****supLevel, double ***postRx, double ***app, double **appLlr);
 
 void	Clustering(double **rx, double **centroid, int **group, int *groupSize, double *distList, double *variation, double **softAssign, double variance, double **estimate, long double &itCount, double **chCeof, int *known_drift);
 void	InitialSeeding(double **rx, double **centroid, int **group, int *groupSize, double *distList, double variance, int CLUSTER_USER, int CLUSTER_GROUP, int CLUSTER_SIZE);

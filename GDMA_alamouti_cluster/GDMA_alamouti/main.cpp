@@ -15,18 +15,21 @@ int main()
 		return 0;
 	}
 	//---------- memory allocation ----------
-	int **data = new int*[NUM_USER*NUM_TX];
-	double **app = new double*[2 * BLOCK_LEN];
-	double **appLlr = new double *[NUM_USER*NUM_TX];
+	int **data = new int*[NUM_USER];
+	double ***app = new double**[NUM_USER];
+	double **appLlr = new double *[NUM_USER];
 	double **chCoef = new double *[NUM_USER*NUM_TX];
 	for (int i = 0; i < NUM_USER*NUM_TX; i++)
 	{
 		data[i] = new int[BLOCK_LEN];
 		appLlr[i] = new double[2 * BLOCK_LEN];
 		chCoef[i] = new double[4];
+		app[i] = new double*[2 * BLOCK_LEN];
+		for (int j = 0; j < 2 * BLOCK_LEN; j++){
+		    app[i][j] = new double[NUM_LEVEL];
+		}
 	}
-	for (int i = 0; i < 2 * BLOCK_LEN; i++)
-		app[i] = new double[NUM_LEVEL];
+
 
     double ****supLevel = new double***[NUM_USER];
     for (int i = 0; i < NUM_USER; i++){
@@ -73,11 +76,11 @@ int main()
 		preTx = new double[BLOCK_LEN*UP_RATE*SPREAD_LEN];
 		prePilot = new double[BLOCK_LEN*UP_RATE*SPREAD_LEN];
 		rx = new double *[BLOCK_LEN*UP_RATE*SPREAD_LEN];
-		postRx = new double*[BLOCK_LEN*UP_RATE*SPREAD_LEN];
+		//postRx = new double*[BLOCK_LEN*UP_RATE*SPREAD_LEN];
 		for (int i = 0; i < BLOCK_LEN*UP_RATE*SPREAD_LEN; i++)
 		{
 			rx[i] = new double[2]; // real and imaginary
-			postRx[i] = new double[2]; // real and imaginary
+			//postRx[i] = new double[2]; // real and imaginary
 		}
 		txFilter = new double[(2 * TRUNCATION + 1)*UP_RATE];
 		rxFilter = new double[(2 * TRUNCATION + 1)*UP_RATE];
@@ -262,7 +265,7 @@ int main()
 
 
 			Detector(data, appLlr, trellis, alpha, beta, gamma, error,known_drift);
-			ber[i] = error / ((long double)NUM_USER * NUM_TX * block * (BLOCK_LEN - DIFF_ENC));
+			ber[i] = error / ((long double)NUM_USER * block * (BLOCK_LEN - DIFF_ENC));
 			printf("Block# = %d, BER = %e\r", block, ber[i]);
 		}
 		fprintf(result_txt, "SNR[dB] = %.1f, BER = %e\n", snrdB, ber[i]);

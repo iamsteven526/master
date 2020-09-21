@@ -12,17 +12,19 @@ void AlamoutiEncoder(int **data, double **tx)
 	{
 		for(int i=0; i < BLOCK_LEN; ++i){
 		//---------- messages generation ----------
-		    data[2*nuser][i] = rand() % 2;
+		    data[nuser][i] = rand() % 2;
 		//---------- Alamouti encoding ----------
-		    tx[2*nuser][i] = 1 - 2 * data[2*nuser][i];
+		    //tx[2*nuser][i] = 1 - 2 * data[nuser][i];
 		}
 		for(int i=0; i < BLOCK_LEN; ++i){
 		//---------- Alamouti encoding ----------
 		    if(i%2 == 0){
-                tx[2*nuser+1][i] = -tx[2*nuser][i+1];
+				tx[2*nuser][i] = 1 - 2 * data[nuser][i];
+                tx[2*nuser+1][i+1] = tx[2*nuser][i];
 			}
-			else{
-                tx[2*nuser+1][i] = -tx[2*nuser][i-1];
+			else{				
+                tx[2*nuser+1][i-1] = 1 - 2 * data[nuser][i]; //-tx[2*nuser][i-1];
+				tx[2*nuser][i] = -tx[2*nuser+1][i-1];
 			}
 		}
 	}
@@ -35,10 +37,13 @@ void SignalCombiner(double **chCoef, double **rx, double ***postRx)
 		for(int j = 0; j < BLOCK_LEN/2; ++j){
 		//double nFactor = sqrt(pow(chCoef[i][0][0], 2) + pow(chCoef[i][0][1], 2) + pow(chCoef[i][1][0], 2) + pow(chCoef[i][1][1], 2));
 		    double nFactor = 1;
+			//cout << "chCoef  " << chCoef[0][0] << "  " << chCoef[0][1] << "  " << chCoef[1][0] << "  " << chCoef[1][1] << "  " << chCoef[2][0] << "  " << chCoef[2][1] << "  " << chCoef[3][0] << "  " << chCoef[3][1] << endl;
+			//cout << "rx  " << rx[2*j][0] << "  " << rx[2*j][1] << "  " << rx[2*j+1][0] << "  " << rx[2*j][1] << endl;
 			postRx[i][2*j][0] = (chCoef[2*i][0] * rx[2*j][0] +  chCoef[2*i][1] * rx[2*j][1] + chCoef[2*i+1][0] * rx[2*j+1][0] +  chCoef[2*i+1][1] * rx[2*j+1][1])  / nFactor;
-			postRx[i][2*j][1] = (chCoef[2*i][0] * rx[2*j][1] -  chCoef[2*i][1] * rx[2*j][0] + chCoef[2*i+1][0] * rx[2*j+1][1] -  chCoef[2*i+1][1] * rx[2*j+1][0])  / nFactor;
+			postRx[i][2*j][1] = (chCoef[2*i][0] * rx[2*j][1] -  chCoef[2*i][1] * rx[2*j][0] + chCoef[2*i+1][1] * rx[2*j+1][0] -  chCoef[2*i+1][0] * rx[2*j+1][1])  / nFactor;
 			postRx[i][2*j+1][0] = (chCoef[2*i+1][0] * rx[2*j][0] + chCoef[2*i+1][1] * rx[2*j][1] - chCoef[2*i][0]*rx[2*j+1][0] - chCoef[2*i][1]*rx[2*j+1][1]) / nFactor;
 			postRx[i][2*j+1][1] = (chCoef[2*i+1][0] * rx[2*j][1] - chCoef[2*i+1][1] * rx[2*j][0] - chCoef[2*i][1]*rx[2*j+1][0] + chCoef[2*i][0]*rx[2*j+1][1]) / nFactor;
+			//cout << "postRx  " << i << " " << postRx[i][2*j][0] << "  " << postRx[i][2*j][1] << "  " << postRx[i][2*j+1][0] << "  " << postRx[i][2*j+1][1] << endl;
 
 			/*
 		    postRx[i][0][0] = (chCoef[i][0][0] * rx[0][0] + chCoef[i][0][1] * rx[0][1] + chCoef[i][1][0] * rx[1][0] + chCoef[i][1][1] * rx[1][1]) / nFactor;
@@ -46,6 +51,7 @@ void SignalCombiner(double **chCoef, double **rx, double ***postRx)
 		    postRx[i][1][0] = (chCoef[i][1][0] * rx[0][0] + chCoef[i][1][1] * rx[0][1] - chCoef[i][0][0] * rx[1][0] - chCoef[i][0][1] * rx[1][1]) / nFactor;
 		    postRx[i][1][1] = (chCoef[i][1][0] * rx[0][1] - chCoef[i][1][1] * rx[0][0] - chCoef[i][0][1] * rx[1][0] + chCoef[i][0][0] * rx[1][1]) / nFactor;
 			*/
+		    //cout << postRx[i][2*j][0] << "   " << postRx[i][2*j][1] << "   " << postRx[i][2*j+1][0] << "   " << postRx[i][2*j+1][1] << "   " << endl;
 		}
 	}
 }
@@ -195,7 +201,7 @@ void Detector(int **data, double **appLlr, int ***trellis, double **alpha, doubl
 {
 	if (COLLISION)
 	{
-		for (int nuser = 0; nuser < NUM_USER*NUM_TX; nuser++)
+		for (int nuser = 0; nuser < NUM_USER; nuser++)
 		{
 			if (DIFF_ENC && (DIFF_RX_SCHEME == 0)) DiffDecoding(appLlr[nuser], 0);
 			//if (DIFF_ENC && (DIFF_RX_SCHEME == 1)) BCJR(trellis, appLlr[nuser], appLlr[nuser], alpha, beta, gamma);
@@ -213,6 +219,7 @@ void Detector(int **data, double **appLlr, int ***trellis, double **alpha, doubl
 			{
 				for (int i = DIFF_ENC; i < BLOCK_LEN; i++)
 				{
+					//cout << data[nuser][i] << "  dddd  " << appLlr[nuser][i] << endl;
 					error += (data[nuser][i] != HARD(appLlr[nuser][i]));
 				}
 			}

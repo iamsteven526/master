@@ -28,16 +28,25 @@ void AlamoutiEncoder(int **data, double **tx)
 	}
 }
 
-void SignalCombiner(double **chCoef, double **rx, double ****postRx)
+void SignalCombiner(double **chCoef, double **rx, double ***postRx)
 {
 	for (int i = 0; i < NUM_USER; i++)
 	{
+		for(int j = 0; j < BLOCK_LEN/2; ++j){
 		//double nFactor = sqrt(pow(chCoef[i][0][0], 2) + pow(chCoef[i][0][1], 2) + pow(chCoef[i][1][0], 2) + pow(chCoef[i][1][1], 2));
-		double nFactor = 1;
-		postRx[i][0][0] = (chCoef[i][0][0] * rx[0][0] + chCoef[i][0][1] * rx[0][1] + chCoef[i][1][0] * rx[1][0] + chCoef[i][1][1] * rx[1][1]) / nFactor;
-		postRx[i][0][1] = (chCoef[i][0][0] * rx[0][1] - chCoef[i][0][1] * rx[0][0] + chCoef[i][1][1] * rx[1][0] - chCoef[i][1][0] * rx[1][1]) / nFactor;
-		postRx[i][1][0] = (chCoef[i][1][0] * rx[0][0] + chCoef[i][1][1] * rx[0][1] - chCoef[i][0][0] * rx[1][0] - chCoef[i][0][1] * rx[1][1]) / nFactor;
-		postRx[i][1][1] = (chCoef[i][1][0] * rx[0][1] - chCoef[i][1][1] * rx[0][0] - chCoef[i][0][1] * rx[1][0] + chCoef[i][0][0] * rx[1][1]) / nFactor;
+		    double nFactor = 1;
+			postRx[i][2*j][0] = (chCoef[2*i][0] * rx[2*j][0] +  chCoef[2*i][1] * rx[2*j][1] + chCoef[2*i+1][0] * rx[2*j+1][0] +  chCoef[2*i+1][1] * rx[2*j+1][1])  / nFactor;
+			postRx[i][2*j][1] = 
+			postRx[i][2*j+1][0] = 
+			postRx[i][2*j+1][1] = 
+
+			/*
+		    postRx[i][0][0] = (chCoef[i][0][0] * rx[0][0] + chCoef[i][0][1] * rx[0][1] + chCoef[i][1][0] * rx[1][0] + chCoef[i][1][1] * rx[1][1]) / nFactor;
+		    postRx[i][0][1] = (chCoef[i][0][0] * rx[0][1] - chCoef[i][0][1] * rx[0][0] + chCoef[i][1][1] * rx[1][0] - chCoef[i][1][0] * rx[1][1]) / nFactor;
+		    postRx[i][1][0] = (chCoef[i][1][0] * rx[0][0] + chCoef[i][1][1] * rx[0][1] - chCoef[i][0][0] * rx[1][0] - chCoef[i][0][1] * rx[1][1]) / nFactor;
+		    postRx[i][1][1] = (chCoef[i][1][0] * rx[0][1] - chCoef[i][1][1] * rx[0][0] - chCoef[i][0][1] * rx[1][0] + chCoef[i][0][0] * rx[1][1]) / nFactor;
+			*/
+		}
 	}
 }
 

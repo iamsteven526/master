@@ -38,16 +38,13 @@ int main()
 
 
 	double** tx = new double* [NUM_USER*NUM_TX];
-	double *preTx = nullptr, **rx = nullptr, ****postRx = new double***[NUM_USER], *txFilter = nullptr, *rxFilter = nullptr, *prePilot=nullptr, ** pilot=nullptr;
+	double *preTx = nullptr, **rx = nullptr, ***postRx = new double**[NUM_USER], *txFilter = nullptr, *rxFilter = nullptr, *prePilot=nullptr, ** pilot=nullptr;
 	
 	
 	for (int i = 0; i < NUM_USER; i++){
-		postRx[i] = new double**[NUM_TX];
-		for (int j = 0; j < NUM_TX; j++){
-			postRx[i][j] = new double*[BLOCK_LEN];
-			for (int k = 0; k < BLOCK_LEN; k++){
-			    postRx[i][j][k] = new double[2];
-			}
+		postRx[i] = new double*[BLOCK_LEN];
+		for (int j = 0; j < BLOCK_LEN; j++){
+		    postRx[i][j] = new double[2];
 		}
 	}
 	if (SYNCHRONOUS)

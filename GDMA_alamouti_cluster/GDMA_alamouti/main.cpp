@@ -28,11 +28,14 @@ int main()
 	for (int i = 0; i < 2 * BLOCK_LEN; i++)
 		app[i] = new double[NUM_LEVEL];
 
-    double ***supLevel = new double**[NUM_USER*NUM_TX];
-    for (int i = 0; i < NUM_USER*NUM_TX; i++){
-		supLevel[i] = new double*[NUM_USER * NUM_TX - 1];
-		for (int j = 0; j < (NUM_USER * NUM_TX - 1); j++){
-				supLevel[i][j] = new double[2]; // real and imaginary
+    double ****supLevel = new double***[NUM_USER];
+    for (int i = 0; i < NUM_USER; i++){
+		supLevel[i] = new double**[NUM_TX];
+		for (int j = 0; j < NUM_TX; j++){
+			supLevel[i][j] = new double*[NUM_USER * NUM_TX - 1]; // real and imaginary
+			for (int k = 0; k < (NUM_USER * NUM_TX - 1); k++){
+                supLevel[i][j][k] = new double[2]; // real and imaginary
+            }
 		}
 	}
 

@@ -75,7 +75,7 @@ void	AlamoutiEncoder(int **data, double **tx);
 void	SignalCombiner(double **chCoef, double **rx, double ***postRx);
 void	ComplexConjugate(double *x, double *y);
 void	ComplexMultiplication(double *x1, double *x2, double *y);
-void	SuperLevelSpecification(double ***chCoef, double ****supLevel);
+void	SuperLevelSpecification(double **chCoef, double ****supLevel);
 //void	Detector(int **data, double **appLlr, long double &error);
 
 void	Transmitter(int **data, double *preTx, double **tx, double *txFilter, double *rxFilter, double** pilot, double* prePilot, int *known_drift);

@@ -36,9 +36,9 @@ void SignalCombiner(double **chCoef, double **rx, double ***postRx)
 		//double nFactor = sqrt(pow(chCoef[i][0][0], 2) + pow(chCoef[i][0][1], 2) + pow(chCoef[i][1][0], 2) + pow(chCoef[i][1][1], 2));
 		    double nFactor = 1;
 			postRx[i][2*j][0] = (chCoef[2*i][0] * rx[2*j][0] +  chCoef[2*i][1] * rx[2*j][1] + chCoef[2*i+1][0] * rx[2*j+1][0] +  chCoef[2*i+1][1] * rx[2*j+1][1])  / nFactor;
-			postRx[i][2*j][1] = 
-			postRx[i][2*j+1][0] = 
-			postRx[i][2*j+1][1] = 
+			postRx[i][2*j][1] = (chCoef[2*i][0] * rx[2*j][1] -  chCoef[2*i][1] * rx[2*j][0] + chCoef[2*i+1][0] * rx[2*j+1][1] -  chCoef[2*i+1][1] * rx[2*j+1][0])  / nFactor;
+			postRx[i][2*j+1][0] = (chCoef[2*i+1][0] * rx[2*j][0] + chCoef[2*i+1][1] * rx[2*j][1] - chCoef[2*i][0]*rx[2*j+1][0] - chCoef[2*i][1]*rx[2*j+1][1]) / nFactor;
+			postRx[i][2*j+1][1] = (chCoef[2*i+1][0] * rx[2*j][1] - chCoef[2*i+1][1] * rx[2*j][0] - chCoef[2*i][1]*rx[2*j+1][0] + chCoef[2*i][0]*rx[2*j+1][1]) / nFactor;
 
 			/*
 		    postRx[i][0][0] = (chCoef[i][0][0] * rx[0][0] + chCoef[i][0][1] * rx[0][1] + chCoef[i][1][0] * rx[1][0] + chCoef[i][1][1] * rx[1][1]) / nFactor;
@@ -63,22 +63,22 @@ void ComplexMultiplication(double *x1, double *x2, double *y)
 	y[0] = temp[0]; y[1] = temp[1];
 }
 
-void SuperLevelSpecification(double ***chCoef, double ****supLevel)
+void SuperLevelSpecification(double **chCoef, double ****supLevel)
 {
 	if (NUM_USER == 1)
 	{
-		supLevel[0][0][0][0] = supLevel[0][1][0][0] = pow(chCoef[0][0][0], 2) + pow(chCoef[0][0][1], 2) + pow(chCoef[0][1][0], 2) + pow(chCoef[0][1][1], 2);
+		supLevel[0][0][0][0] = supLevel[0][1][0][0] = pow(chCoef[0][0], 2) + pow(chCoef[0][1], 2) + pow(chCoef[1][0], 2) + pow(chCoef[1][1], 2);
 		supLevel[0][0][0][1] = supLevel[0][1][0][1] = 0;
 	}
 	else if (NUM_USER == 2)
 	{
 		double temp1[2], temp2[2];
-		supLevel[0][0][0][0] = supLevel[0][1][0][0] = pow(chCoef[0][0][0], 2) + pow(chCoef[0][0][1], 2) + pow(chCoef[0][1][0], 2) + pow(chCoef[0][1][1], 2);
+		supLevel[0][0][0][0] = supLevel[0][1][0][0] = pow(chCoef[0][0], 2) + pow(chCoef[0][1], 2) + pow(chCoef[1][0], 2) + pow(chCoef[1][1], 2);
 		supLevel[0][0][0][1] = supLevel[0][1][0][1] = 0;
-		ComplexConjugate(chCoef[0][0], temp1);
-		ComplexMultiplication(temp1, chCoef[1][0], temp1);
-		ComplexConjugate(chCoef[1][1], temp2);
-		ComplexMultiplication(temp2, chCoef[0][1], temp2);
+		ComplexConjugate(chCoef[0], temp1);
+		ComplexMultiplication(temp1, chCoef[2], temp1);
+		ComplexConjugate(chCoef[3], temp2);
+		ComplexMultiplication(temp2, chCoef[1], temp2);
 		supLevel[0][0][1][0] = temp1[0] + temp2[0];
 		supLevel[0][0][1][1] = temp1[1] + temp2[1];
 		supLevel[1][1][2][0] = supLevel[0][0][1][0];
@@ -86,12 +86,12 @@ void SuperLevelSpecification(double ***chCoef, double ****supLevel)
 		ComplexConjugate(supLevel[0][0][1], supLevel[0][1][2]);
 		supLevel[1][0][1][0] = supLevel[0][1][2][0];
 		supLevel[1][0][1][1] = supLevel[0][1][2][1];
-		supLevel[1][0][0][0] = supLevel[1][1][0][0] = pow(chCoef[1][0][0], 2) + pow(chCoef[1][0][1], 2) + pow(chCoef[1][1][0], 2) + pow(chCoef[1][1][1], 2);
+		supLevel[1][0][0][0] = supLevel[1][1][0][0] = pow(chCoef[2][0], 2) + pow(chCoef[2][1], 2) + pow(chCoef[3][0], 2) + pow(chCoef[3][1], 2);
 		supLevel[1][0][0][1] = supLevel[1][1][0][1] = 0;
-		ComplexConjugate(chCoef[0][0], temp1);
-		ComplexMultiplication(temp1, chCoef[1][1], temp1);
-		ComplexConjugate(chCoef[1][0], temp2);
-		ComplexMultiplication(temp2, chCoef[0][1], temp2);
+		ComplexConjugate(chCoef[0], temp1);
+		ComplexMultiplication(temp1, chCoef[3], temp1);
+		ComplexConjugate(chCoef[2], temp2);
+		ComplexMultiplication(temp2, chCoef[1], temp2);
 		supLevel[0][0][2][0] = temp1[0] - temp2[0];
 		supLevel[0][0][2][1] = temp1[1] - temp2[1];
 		ComplexConjugate(supLevel[0][0][2], supLevel[1][1][1]);

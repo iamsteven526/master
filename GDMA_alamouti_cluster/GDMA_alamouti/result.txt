@@ -1,23 +1,26 @@
 GDMA-BPSK system
 Number of users: 2
 
-Perfect CSI
+Clustering method : propose-2
 
-Block length: 16
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 1024
 
 Synchronous system
 
 -
 
-SNR[dB] = 0.0, BER = 1.522408e-01
-SNR[dB] = 5.0, BER = 5.807350e-02
-SNR[dB] = 10.0, BER = 1.259744e-02
-SNR[dB] = 15.0, BER = 1.717313e-03
-SNR[dB] = 20.0, BER = 2.069688e-04
-SNR[dB] = 25.0, BER = 2.150000e-05
-SNR[dB] = 30.0, BER = 1.875000e-06
-SNR[dB] = 35.0, BER = 2.812500e-07
-SNR[dB] = 40.0, BER = 0.000000e+00
+SNR[dB] = 0.0, BER = 2.171055e-01
+SNR[dB] = 5.0, BER = 1.123361e-01
+SNR[dB] = 10.0, BER = 3.655532e-02
+SNR[dB] = 15.0, BER = 8.381934e-03
+SNR[dB] = 20.0, BER = 1.592529e-03
+SNR[dB] = 25.0, BER = 5.352539e-04
+SNR[dB] = 30.0, BER = 2.950195e-04
+SNR[dB] = 35.0, BER = 1.225586e-05
+SNR[dB] = 40.0, BER = 4.882813e-08
 
 
-1.522408e-01, 5.807350e-02, 1.259744e-02, 1.717313e-03, 2.069688e-04, 2.150000e-05, 1.875000e-06, 2.812500e-07, 0.000000e+00, 
+2.171055e-01, 1.123361e-01, 3.655532e-02, 8.381934e-03, 1.592529e-03, 5.352539e-04, 2.950195e-04, 1.225586e-05, 4.882813e-08, 

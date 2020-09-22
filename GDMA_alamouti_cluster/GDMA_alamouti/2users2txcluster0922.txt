@@ -1,0 +1,33 @@
+alamouti GDMA-BPSK system
+Number of users: 2
+
+Number of TXs: 2
+
+Clustering method : propose-2
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 1024
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0
+Block# = 10000, BER = 2.171055e-01
+SNR[dB] = 5.0
+Block# = 10000, BER = 1.123361e-01
+SNR[dB] = 10.0
+Block# = 10000, BER = 3.655532e-02
+SNR[dB] = 15.0
+Block# = 10000, BER = 8.381934e-03
+SNR[dB] = 20.0
+Block# = 10000, BER = 1.592529e-03
+SNR[dB] = 25.0
+Block# = 10000, BER = 5.352539e-04
+SNR[dB] = 30.0
+Block# = 10000, BER = 2.950195e-04
+SNR[dB] = 35.0
+Block# = 10000, BER = 1.225586e-05
+SNR[dB] = 40.0
+Block# = 10000, BER = 4.882813e-08

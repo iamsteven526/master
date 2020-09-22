@@ -108,7 +108,7 @@ void SuperLevelSpecification(double **chCoef, double ****supLevel)
 	else
 	{
 		printf("\nPARAMETER SETTING IS WRONG\n");
-		system("pause");
+		//system("pause");
 	}
 	for (int i = 0; i < NUM_USER; i++)
 	{
@@ -232,7 +232,7 @@ void Detector(int **data, double **appLlr, int ***trellis, double **alpha, doubl
 		{
 			cout << "Parameter Set Error !!";
 			cout << "In known drift, BCJR, Detector.";
-			system("pause");
+			//system("pause");
 		}
 
 		

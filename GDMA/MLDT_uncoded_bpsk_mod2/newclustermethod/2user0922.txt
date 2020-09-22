@@ -1,0 +1,39 @@
+GDMA-BPSK system
+Number of users: 2
+
+Clustering method : propose-2
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 1024
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0
+Block# = 10000, BER = 1.784423e-01,BLER = 1.000000e+00, MSE = 3.047880e-03, MSE_centroid = 0.000000e+00,iteration = 1.784423e-01
+
+SNR[dB] = 5.0
+Block# = 10000, BER = 8.746328e-02,BLER = 9.825000e-01, MSE = 3.795196e-04, MSE_centroid = 0.000000e+00,iteration = 8.746328e-02
+
+SNR[dB] = 10.0
+Block# = 10000, BER = 3.357168e-02,BLER = 7.517000e-01, MSE = 6.851981e-05, MSE_centroid = 0.000000e+00,iteration = 3.357168e-02
+
+SNR[dB] = 15.0
+Block# = 10000, BER = 1.157544e-02,BLER = 3.751000e-01, MSE = 1.736582e-05, MSE_centroid = 0.000000e+00,iteration = 1.157544e-02
+
+SNR[dB] = 20.0
+Block# = 10000, BER = 3.628906e-03,BLER = 1.343000e-01, MSE = 5.069565e-06, MSE_centroid = 0.000000e+00,iteration = 3.628906e-03
+
+SNR[dB] = 25.0
+Block# = 10000, BER = 1.285156e-03,BLER = 4.670000e-02, MSE = 1.559894e-06, MSE_centroid = 0.000000e+00,iteration = 1.285156e-03
+
+SNR[dB] = 30.0
+Block# = 10000, BER = 2.945801e-04,BLER = 1.300000e-02, MSE = 4.905590e-07, MSE_centroid = 0.000000e+00,iteration = 2.945801e-04
+
+SNR[dB] = 35.0
+Block# = 10000, BER = 1.170410e-04,BLER = 5.500000e-03, MSE = 1.551953e-07, MSE_centroid = 0.000000e+00,iteration = 1.170410e-04
+
+SNR[dB] = 40.0
+Block# = 10000, BER = 3.388672e-05,BLER = 1.300000e-03, MSE = 4.933653e-08, MSE_centroid = 0.000000e+00,iteration = 3.388672e-05

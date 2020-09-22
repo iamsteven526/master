@@ -11,7 +11,6 @@ int main()
 	if ((long double)NUM_USER*BLOCK_NUM*BLOCK_LEN < 0)
 	{
 		cout << "OVERFLOW" << endl;
-		system("pause");
 		return 0;
 	}
 	//---------- memory allocation ----------
@@ -255,6 +254,12 @@ int main()
 				Clustering(rx, centroid, group, groupSize, distList, variation, softAssign, variance, estimate, itCount[i],chCoef,known_drift);
 				MSEComparison(chCoef, estimate, mse[i],rx,centroid,known_drift); // user specification
 				//CentroidMSEComparison(chCoef, estimate, mse_centroid[i], rx, centroid);
+				for (int p = 0; p < NUM_USER*NUM_TX; ++p ){
+					chCoef[p][0] = estimate[p][0];
+					chCoef[p][1] = estimate[p][1];
+				}				
+				//cout << chCoef[0][0] << "  " << chCoef[0][1] << "  " << chCoef[1][0] << "  " << chCoef[1][1] << "  " << chCoef[2][0] << "  " << chCoef[2][1] << "  " << chCoef[3][0] << "  " << chCoef[3][1] << endl;
+				//cout << estimate[0][0] << "  " << estimate[0][1] << "  " << estimate[1][0] << "  " << estimate[1][1] << "  " << estimate[2][0] << "  " << estimate[2][1] << "  " << estimate[3][0] << "  " << estimate[3][1] << endl;
 			}
 			SignalCombiner(chCoef, rx, postRx);
 			SuperLevelSpecification(chCoef, supLevel);

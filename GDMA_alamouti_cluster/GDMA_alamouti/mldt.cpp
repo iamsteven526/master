@@ -7,6 +7,10 @@ using namespace std;
 
 void MLDT(double variance, double **chCoef, double ****supLevel, double ***postRx, double ***app, double **appLlr)
 {
+	for (int j = 0; j < NUM_USER; j++)
+	{
+		memset(appLlr[j], 0, sizeof(double)*BLOCK_LEN);
+	}
 	for(int m = 0; m < BLOCK_LEN/2; ++m){
 		for (int i = 0; i < NUM_TX; i++)
 		{
@@ -100,10 +104,6 @@ void MLDT(double variance, double **chCoef, double ****supLevel, double ***postR
 		{
 			for (int j = 0; j < NUM_USER; j++)
 			{
-				memset(appLlr[j], 0, sizeof(double)*BLOCK_LEN);
-			}
-			for (int j = 0; j < NUM_USER; j++)
-			{
 				for (int i = 0; i < NUM_TX; i++)
 				{
 					//---------- desired signal ----------
@@ -117,6 +117,7 @@ void MLDT(double variance, double **chCoef, double ****supLevel, double ***postR
 					if ((app[j][2*m  + i][0] + app[j][2*m  + i][2] + app[j][2*m  + i][4] + app[j][2*m  + i][6]) <= NUMERIC_LIMIT) appLlr[(j + 1) % NUM_USER][2*m +1] += -LLR_LIMIT;
 					else if ((app[j][2*m  + i][1] + app[j][2*m  + i][3] + app[j][2*m  + i][5] + app[j][2*m  + i][7]) <= NUMERIC_LIMIT) appLlr[(j + 1) % NUM_USER][2*m + 1] += LLR_LIMIT;
 					else appLlr[(j + 1) % NUM_USER][2*m + 1] += log((app[j][2*m  + i][0] + app[j][2*m  + i][2] + app[j][2*m  + i][4] + app[j][2*m  + i][6]) / (app[j][2*m  + i][1] + app[j][2*m  + i][3] + app[j][2*m  + i][5] + app[j][2*m  + i][7]));
+				    //cout << m << "   " << appLlr[j][2*m + i] << endl;
 				}
 			}
 		}

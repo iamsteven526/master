@@ -12,7 +12,7 @@ int main()
 	if ((long double)BLOCK_NUM*DATA_LEN*NUM_USER < 0)
 	{
 		cout << "OVERFLOW" << endl;
-		system("pause");
+		//system("pause");
 		return 0;
 	}
 	//---------- memory allocation
@@ -584,7 +584,7 @@ int main()
 		fprintf(result_txt, "%e, ", mse[i]);
 	fprintf(result_txt, "\n");
 	fclose(result_txt);
-	system("pause");
+	//system("pause");
 	return 0;
 }
 	}

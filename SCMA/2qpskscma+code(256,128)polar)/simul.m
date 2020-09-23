@@ -78,7 +78,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 256; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 30:5:40;
+EbN0 = 5:5:40;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));

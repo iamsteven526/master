@@ -31,11 +31,63 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 	system("pause");*/
 	//---- Sperate MLDT ---- 
 	double adapted_variance = pow(stdDev + (0.1 * sqrt(snrdB)), 2);
+	double test = 0,testtime = 0;
+	//cout << "adapt" << adapted_variance << endl;
 	//double adapted_variance = pow(stdDev, 2);
+	//double adapted_variance = 2*pow(stdDev, 2);
 	for (int nuser = 0; nuser < NUM_USER; nuser++)
 	{
 		for (int t = 0; t < packet_num[nuser]; t++)
 		{
+			//0925modify
+            for (int i = 0, m = 0; i < FFT_SEGMENT + DIFF_ENC; i++)
+			{
+				//---- u_th user, t_th packet, i-th subframe ---- 
+				int NUM_user = Cluster_num[t][nuser][i];
+				int NUM_level = pow(2, Cluster_num[t][nuser][i]);
+				
+				//---- APPs_real_part ----
+				for (int j = 0; j < FFT_POINT; j++)
+				{
+					for (int k = 0; k < NUM_level; k++)
+					{
+						int reg = k;
+						double estimate_sum = 0;
+						for (int g = NUM_user - 1; g >= 0; g--)//---- g is the variable to selete special channel gain "Cluster_gain[t][nuser][i][g]"
+						{
+							if (CE_SCHEME == 1)
+								estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][0][j];
+							else
+								estimate_sum += pow(-1, (reg % 2)) * estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][0];
+
+							reg /= 2;
+						}
+						test += pow(postRx[t][nuser][i][0][j] - estimate_sum, 2);
+						testtime += 1;
+					}
+					for (int k = 0; k < NUM_level; k++)
+					{
+						int reg = k;
+						double estimate_sum = 0;
+						for (int g = NUM_user - 1; g >= 0; g--)
+						{
+							if (CE_SCHEME == 1)
+								estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][1][j];
+							else
+								estimate_sum+= pow(-1, (reg % 2)) * estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][1];
+
+							reg /= 2;
+						}
+						test += pow(postRx[t][nuser][i][0][j] - estimate_sum, 2);
+					}
+					m++;					
+				}
+			}
+
+			//0925endmodify
+            adapted_variance = sqrt(test) / (0.1*testtime);
+
+
 			for (int i = 0, m = 0; i < FFT_SEGMENT + DIFF_ENC; i++)
 			{
 				//---- u_th user, t_th packet, i-th subframe ---- 
@@ -58,6 +110,8 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 
 							reg /= 2;
 						}
+						//test += pow(postRx[t][nuser][i][0][j] - estimate_sum, 2);
+						//testtime += 1;
 						app[t][nuser][m][k] = exp(-pow(postRx[t][nuser][i][0][j] - estimate_sum, 2) / (2. * adapted_variance));
 						//cout << app[t][nuser][m][k] << " ";
 					}
@@ -89,15 +143,11 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 
 							reg /= 2;
 						}
+						//test += pow(postRx[t][nuser][i][0][j] - estimate_sum, 2);
 						app[t][nuser][m][k] *= exp(-pow(postRx[t][nuser][i][1][j] - estimate_sum, 2) / (2. * adapted_variance));
 
 					//	cout << app[t][nuser][m][k] << " ";
 					}
-				
-						
-
-						
-
 					//---------- normalization ----------
 					temp = 0;
 					for (int k = 0; k < NUM_level; k++)
@@ -177,6 +227,8 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 				//appLlr[t][nuser][i - DIFF_ENC * FFT_POINT] = appLlr[t][nuser][i - DIFF_ENC * FFT_POINT] < -LLR_LIMIT ? -LLR_LIMIT : appLlr[t][nuser][i - DIFF_ENC * FFT_POINT];
 			}
 			//system("pause");
+			test = 0;
+			testtime = 0;
 		}
 	}
 

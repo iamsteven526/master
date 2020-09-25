@@ -31,7 +31,7 @@
 
 #define		UE_SPEED				150												// mobile speed (km/hour)
 #define		TEST_FRAME_SIZE			10												// the maximum packets in a frame
-#define		SLOTED					1												// 1: enable, 0: disable
+#define		SLOTED					0												// 1: enable, 0: disable
 #define		ALOHA					1												// 1: Aloha + GDMA,  0: Aloha
 #define		PREABLE					1											    // 1: enable, 0: disable	
 #define		PREABLE_LEN				63												

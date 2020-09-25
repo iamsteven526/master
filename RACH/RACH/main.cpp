@@ -507,6 +507,7 @@ int main()
 			{
 				Clustering(postRx, pow(stdDev, 2), estimate, H, Cluster_num, packet_num,mse[i], estimate_packet_time, cluster_sample, centroid, group, groupSize, variation, packet_time, softAssign);
 				//UserIdentification(H, estimate, mse[i]);
+				//cout << variation[0] << "   " << variation[1] << endl;
 			}
 			
 			

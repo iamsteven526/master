@@ -44,8 +44,7 @@ void Clustering(double *****postRx, double variance, double *****estimate, doubl
 		{
 			//int cluster_len = 60;
 			int cluster_len = (packet_time[1][0] - packet_time[0][0]) / (FFT_POINT + CP_LEN) - PREABLE_LEN / (FFT_POINT + CP_LEN) - 1;
-			int comple = FFT_SEGMENT - cluster_len - PREABLE_LEN / (FFT_POINT + CP_LEN);
-
+			int comple = FFT_SEGMENT - cluster_len - PREABLE_LEN / (FFT_POINT + CP_LEN);			
 			if (CE_METHOD == 1 && cluster_len > 0 && cluster_len < 61)
 			{
 				for (int nuser = 0; nuser < NUM_USER; nuser++)
@@ -101,7 +100,7 @@ void Clustering(double *****postRx, double variance, double *****estimate, doubl
 
 							Grouping(cluster_sample, centroid, group, groupSize, 1, 2, 2 * cluster_len + 4);
 							CentroidRenewal(cluster_sample, centroid, group, groupSize, variation, 2);
-
+                            
 							double temp = pow(H[t][nuser][0][0][i] - centroid[0][0], 2) + pow(H[t][nuser][0][1][i] - centroid[0][1], 2) - pow(H[t][nuser][0][0][i] + centroid[0][0], 2) - pow(H[t][nuser][0][1][i] + centroid[0][1], 2);
 
 							estimate[t][nuser][0][i][0] = temp < 0 ? centroid[0][0] : -centroid[0][0];

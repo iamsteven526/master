@@ -112,7 +112,10 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 						//cout << app[t][nuser][m][k] << " ";
 					}
 					//system("pause");
-					m++;					
+					m++;
+
+					
+					
 				}
 			}
 

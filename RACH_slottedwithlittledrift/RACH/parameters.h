@@ -31,7 +31,7 @@
 
 #define		UE_SPEED				150												// mobile speed (km/hour)
 #define		TEST_FRAME_SIZE			10												// the maximum packets in a frame
-#define		SLOTED					1												// 1: enable, 0: disable
+#define		SLOTED					0												// 1: enable, 0: disable
 #define		ALOHA					1												// 1: Aloha + GDMA,  0: Aloha
 #define		PREABLE					1											    // 1: enable, 0: disable	
 #define		PREABLE_LEN				63												
@@ -42,7 +42,7 @@
 
 //----------  pulse shaping ----------
 
-#define		Unit					1												// unit of one chip
+#define		Unit					10												// units in one chip
 #define		UP_RATE					Unit											// up-sampling rate
 #define		TRUNCATION				10												// truncation of shaping filter		  							
 #define		ROLL_OFF				0.22											// roll-off factor

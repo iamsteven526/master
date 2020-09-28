@@ -553,6 +553,17 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 {
 	int num_level = NUM_LEVEL;
 	int num_user = NUM_USER;
+	double MAXx = 0;
+	double SecondMAXx = 0;
+    double MAXy = 0;
+	double SecondMAXy = 0;
+	int FirstMAX = 0;
+	int SecondMAX = 0;
+	double x1,x2,y1,y2;
+	double xx1,xx2,yy1,yy2;
+	double mina=100,minb=100;
+	int pass = 0;
+	double check_thres = sqrt(variance);
 	vector<vector<double>> sup_centroid(num_level, vector<double>(2));
 	for (int i = 0; i < num_level; i++)
 		for (int j = 0; j < 2; j++)
@@ -581,11 +592,88 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 			reset = 1;
 
 
-		if (reset)
+		if (reset && (pass == 0))
 			break;
+        pass = 1;
+        for(int i = 0; i < num_level/2; ++i){ //0816add
+			sup_centroid[pair[i][0]][0] = (-1)*sup_centroid[pair[i][1]][0];
+            sup_centroid[pair[i][0]][1] = (-1)*sup_centroid[pair[i][1]][1];
+		}
 
 		if (num_level != 2)
 		{
+			for (int i = 0; i < num_level; i++){ //find max from x-axis
+                if(sup_centroid[i][0] > MAXx){
+					MAXx = sup_centroid[i][0];
+                    FirstMAX = i;
+				}
+			}
+			for (int i = 0; i < num_level; i++){ //find secondmax from x-axis
+                if((sup_centroid[i][0] > SecondMAXx) && (i != FirstMAX)){// && abs(sup_centroid[i][0]-MAXx) > 0.00005){
+					SecondMAXx = sup_centroid[i][0];
+                    SecondMAX = i;
+				}
+			}
+			estimate[nuser][0] = (sup_centroid[FirstMAX][0] - sup_centroid[SecondMAX][0]) / 2.0;
+			estimate[nuser][1] = (sup_centroid[FirstMAX][1] - sup_centroid[SecondMAX][1]) / 2.0;
+            vector<vector<double>> temp(num_level / 2, vector<double>(2));
+			for (int j = 0; j < num_level / 2; j++){
+				int canfind = 0;
+				for (int k = 0; k < num_level; k++){
+                    x1 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					y1 = (sup_centroid[pair[j][0]][1] + sup_centroid[k][1]) / 2.0;
+					xx1 = (x1-estimate[nuser][0])*(x1-estimate[nuser][0]);
+					yy1 = (y1-estimate[nuser][1])*(y1-estimate[nuser][1]);
+					xx2 = (x1+estimate[nuser][0])*(x1+estimate[nuser][0]);
+					yy2 = (y1+estimate[nuser][1])*(y1+estimate[nuser][1]);
+					mina = min(mina,xx1+yy1);
+					minb = min(minb,xx2+yy2);
+					//cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
+					//x2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					//y2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
+					/*
+					if( (abs(x1-estimate[nuser][0]) < 1.2*check_thres) && (abs(y1-estimate[nuser][1]) < 1.2*check_thres) ){ //think threshold
+					    //cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
+						temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
+					    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
+						canfind = 1;
+						break;
+					}
+					*/
+				}
+				if(minb < mina){
+				    temp[j][0] = sup_centroid[pair[j][1]][0] - estimate[nuser][0];
+					temp[j][1] = sup_centroid[pair[j][1]][1] - estimate[nuser][1];
+					//temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
+				    //temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
+				}
+				else{
+				    temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
+				    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
+				}
+				mina = 1000;
+				minb = 1000;
+				/*
+				for (int p = 0; p < j; ++p){
+					if(sqrt((temp[j][0]-temp[p][0])*(temp[j][0]-temp[p][0]) + (temp[j][1]-temp[p][1])*(temp[j][1]-temp[p][1])) < check_thres){
+					//if(((abs(temp[j][0]-temp[p][0]) < checkb*check_thres) && (abs(temp[j][1]-temp[p][1]) < checka*check_thres) ) || ((abs(temp[j][0]-temp[p][0]) < checka*check_thres) && (abs(temp[j][1]-temp[p][1]) < checkb*check_thres))){
+						temp[j][0] = -temp[j][0];
+						temp[j][1] = -temp[j][1];
+					}
+				}
+				*/
+			}
+            for (int j = 0; j < num_level / 2; j++){
+				for (int k = 0; k < 2; k++){
+					sup_centroid[j][k] = temp[j][k];
+				}
+			}
+			num_level /= 2;
+			MAXx = 0;
+			SecondMAXx = 0;
+			FirstMAX = 0;
+			SecondMAX = 0;
+			/*
 			//---find channel coefficient
 			for (int i = 0; i < pow(2, num_level / 2); i++)
 			{
@@ -649,6 +737,7 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 
 				//system("pause");
 			}
+			*/
 		}
 		else
 		{

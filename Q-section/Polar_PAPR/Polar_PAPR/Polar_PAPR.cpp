@@ -9,7 +9,7 @@
 #include	<iostream>
 #include	<vector>
 #include	<iomanip>
-#include	<windows.h>
+//#include	<windows.h>
 
 
 
@@ -618,13 +618,14 @@ int main() {
 
 
 
-
+            /*
 			HANDLE hOut;
 			COORD OutChar;
 			OutChar.X = 0;
 			OutChar.Y = cursor_idx * 6;
 			hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 			SetConsoleCursorPosition(hOut, OutChar);
+			*/
 			///////////////Error Performance Measurements///////////////
 			for (bit_idx = 0; bit_idx < k_c; bit_idx++) {
 				flag = 0;
@@ -665,11 +666,12 @@ int main() {
 
 
 
-
+            /*
 			OutChar.X = 0;
 			OutChar.Y = 80;
 			hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 			SetConsoleCursorPosition(hOut, OutChar);
+			*/
 			///////////////PAPR Performance Measurements///////////////
 			for (tech_idx = 0; tech_idx < tech_num; tech_idx++) PAPR_num[tech_idx] = 0;
 			for (PAPR_idx = PAPR_min; PAPR_idx <= PAPR_max; PAPR_idx += PAPR_step) {

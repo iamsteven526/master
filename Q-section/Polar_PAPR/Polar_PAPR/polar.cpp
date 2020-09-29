@@ -7,6 +7,7 @@
 #include <fstream>
 #include "polar.h"
 #include "parameters.h"
+#include <math.h>
 
 void PolarCode::initialize_frozen_bits(uint8_t type, double designedSNR)
 {
@@ -248,11 +249,11 @@ std::vector<int> PolarCode::decode_scl(int nuser)
 	{
 		if (_llr_based_computation)
 		{
-			recursivelyCalcLLR(_n, phi);  //修改message passing的方式
+			recursivelyCalcLLR(_n, phi);  //嚙論改蕭message passing嚙踝蕭嚙質式
 		}
 		else
 		{
-			recursivelyCalcP(_n, phi);  //目前用不到
+			recursivelyCalcP(_n, phi);  //嚙諍前嚙諄歹蕭嚙踝蕭
 		}
 		if (_frozen_bits.at(nuser).at(phi) == 1)
 		{

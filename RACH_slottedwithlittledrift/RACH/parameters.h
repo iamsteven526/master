@@ -103,7 +103,7 @@
 
 #define		G_NUM					30												// number of SNR points to be simulated
 #define		G_START					0.1												// in dB
-#define		G_STEP					0.1												// in dB
+#define		G_STEP					0.5												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )
 

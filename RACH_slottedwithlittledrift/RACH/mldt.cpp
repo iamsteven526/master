@@ -32,6 +32,7 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 	//---- Sperate MLDT ---- 
 	double adapted_variance = pow(stdDev + (0.1 * sqrt(snrdB)), 2);
 	double test = 0,testtime = 0;
+	double alpha = 0;
 	//double adapted_variance = pow(stdDev, 2);
 	for (int nuser = 0; nuser < NUM_USER; nuser++)
 	{
@@ -61,6 +62,7 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 							reg /= 2;
 						}
 						test += pow(postRx[t][nuser][i][0][j] - estimate_sum, 2);
+						//cout << pow(postRx[t][nuser][i][0][j] - estimate_sum, 2) << endl;
 						testtime += 1;
 					}
 					for (int k = 0; k < NUM_level; k++)
@@ -83,7 +85,9 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 			}
 
 			//0925endmodify
-            adapted_variance = sqrt(test) / (0.1*testtime);
+			if(testtime > 2000) alpha = 0.05;
+			else alpha = 0.08;
+            adapted_variance = sqrt(test) / (alpha*testtime);
 
 
 			for (int i = 0, m = 0; i < FFT_SEGMENT + DIFF_ENC; i++)

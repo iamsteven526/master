@@ -1,0 +1,3941 @@
+iter_max=50
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.970000
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.890000
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.780000
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.610000
+
+
+PAPR =6.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.500000
+
+
+PAPR =6.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.370000
+
+
+PAPR =6.750000 dB, CCDF_1 =0.990000, CCDF_2 =0.220000
+
+
+PAPR =7.000000 dB, CCDF_1 =0.970000, CCDF_2 =0.160000
+
+
+PAPR =7.250000 dB, CCDF_1 =0.920000, CCDF_2 =0.110000
+
+
+PAPR =7.500000 dB, CCDF_1 =0.860000, CCDF_2 =0.070000
+
+
+PAPR =7.750000 dB, CCDF_1 =0.760000, CCDF_2 =0.060000
+
+
+PAPR =8.000000 dB, CCDF_1 =0.650000, CCDF_2 =0.040000
+
+
+PAPR =8.250000 dB, CCDF_1 =0.560000, CCDF_2 =0.020000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.460000, CCDF_2 =0.010000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.350000, CCDF_2 =0.000000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.250000, CCDF_2 =0.000000
+
+
+SNR=1.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=1190
+BER=0.105646, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=1179
+BER=0.104670, FER=0.909091
+
+
+SNR=2.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=994
+BER=0.088246, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=987
+BER=0.087624, FER=0.909091
+
+
+SNR=3.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=779
+BER=0.069158, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=771
+BER=0.068448, FER=0.909091
+
+
+SNR=4.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=594
+BER=0.052734, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=583
+BER=0.051758, FER=0.909091
+
+
+SNR=5.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=422
+BER=0.037464, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=411
+BER=0.036488, FER=0.909091
+
+
+SNR=6.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=269
+BER=0.023881, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=265
+BER=0.023526, FER=0.909091
+
+
+SNR=7.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=162
+BER=0.014382, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=159
+BER=0.014116, FER=0.909091
+
+
+SNR=8.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=92
+BER=0.008168, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=91
+BER=0.008079, FER=0.909091
+
+
+SNR=9.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=49
+BER=0.004350, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=49
+BER=0.004350, FER=0.909091
+
+
+SNR=10.000000 dB, code number =10
+Err_F_Num=9, Err_B_Num=16
+BER=0.001420, FER=0.818182
+
+
+Err_F_Num=9, Err_B_Num=16
+BER=0.001420, FER=0.818182
+
+
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.999950
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.999310
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.993960
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.971300
+
+
+PAPR =6.250000 dB, CCDF_1 =0.999960, CCDF_2 =0.911420
+
+
+PAPR =6.500000 dB, CCDF_1 =0.999500, CCDF_2 =0.806460
+
+
+PAPR =6.750000 dB, CCDF_1 =0.996780, CCDF_2 =0.662880
+
+
+PAPR =7.000000 dB, CCDF_1 =0.985640, CCDF_2 =0.505900
+
+
+PAPR =7.250000 dB, CCDF_1 =0.954710, CCDF_2 =0.362490
+
+
+PAPR =7.500000 dB, CCDF_1 =0.893220, CCDF_2 =0.243100
+
+
+PAPR =7.750000 dB, CCDF_1 =0.798700, CCDF_2 =0.156380
+
+
+PAPR =8.000000 dB, CCDF_1 =0.673750, CCDF_2 =0.097370
+
+
+PAPR =8.250000 dB, CCDF_1 =0.536730, CCDF_2 =0.057860
+
+
+PAPR =8.500000 dB, CCDF_1 =0.404660, CCDF_2 =0.033920
+
+
+PAPR =8.750000 dB, CCDF_1 =0.290480, CCDF_2 =0.018910
+
+
+PAPR =9.000000 dB, CCDF_1 =0.197710, CCDF_2 =0.010700
+
+
+SNR=1.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=1216804
+BER=0.118817, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=1381863
+BER=0.134934, FER=0.999900
+
+
+SNR=2.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=1000574
+BER=0.097703, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=1171819
+BER=0.114424, FER=0.999900
+
+
+SNR=3.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=792005
+BER=0.077337, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=969033
+BER=0.094623, FER=0.999900
+
+
+SNR=4.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=600050
+BER=0.058593, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=782486
+BER=0.076407, FER=0.999900
+
+
+SNR=5.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=428174
+BER=0.041810, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=616013
+BER=0.060152, FER=0.999900
+
+
+SNR=6.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=285678
+BER=0.027895, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=477756
+BER=0.046651, FER=0.999900
+
+
+SNR=7.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=174174
+BER=0.017007, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=369170
+BER=0.036048, FER=0.999900
+
+
+SNR=8.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=94630
+BER=0.009240, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=291891
+BER=0.028502, FER=0.999900
+
+
+SNR=9.000000 dB, code number =10000
+Err_F_Num=9904, Err_B_Num=45156
+BER=0.004409, FER=0.990301
+
+
+Err_F_Num=10000, Err_B_Num=243836
+BER=0.023810, FER=0.999900
+
+
+SNR=10.000000 dB, code number =10000
+Err_F_Num=8384, Err_B_Num=18160
+BER=0.001773, FER=0.838316
+
+
+Err_F_Num=10000, Err_B_Num=217644
+BER=0.021252, FER=0.999900
+
+
+iter_max=50
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.999990
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.999230
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.984610
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.902900
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.708670
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.465520
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.260290
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.130410
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.060860
+
+
+PAPR =6.250000 dB, CCDF_1 =0.999960, CCDF_2 =0.027160
+
+
+PAPR =6.500000 dB, CCDF_1 =0.999480, CCDF_2 =0.011740
+
+
+PAPR =6.750000 dB, CCDF_1 =0.996510, CCDF_2 =0.005070
+
+
+PAPR =7.000000 dB, CCDF_1 =0.985320, CCDF_2 =0.001900
+
+
+PAPR =7.250000 dB, CCDF_1 =0.954850, CCDF_2 =0.000720
+
+
+PAPR =7.500000 dB, CCDF_1 =0.894490, CCDF_2 =0.000270
+
+
+PAPR =7.750000 dB, CCDF_1 =0.798460, CCDF_2 =0.000100
+
+
+PAPR =8.000000 dB, CCDF_1 =0.674080, CCDF_2 =0.000040
+
+
+PAPR =8.250000 dB, CCDF_1 =0.538700, CCDF_2 =0.000000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.405200, CCDF_2 =0.000000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.290360, CCDF_2 =0.000000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.197680, CCDF_2 =0.000000
+
+
+SNR=1.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=1217402
+BER=0.118875, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=1374173
+BER=0.134183, FER=0.999900
+
+
+SNR=2.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=998115
+BER=0.097462, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=1161941
+BER=0.113459, FER=0.999900
+
+
+SNR=3.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=793063
+BER=0.077440, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=963882
+BER=0.094120, FER=0.999900
+
+
+SNR=4.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=600702
+BER=0.058656, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=777765
+BER=0.075946, FER=0.999900
+
+
+SNR=5.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=428639
+BER=0.041855, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=611843
+BER=0.059744, FER=0.999900
+
+
+SNR=6.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=284644
+BER=0.027794, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=472787
+BER=0.046166, FER=0.999900
+
+
+SNR=7.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=173960
+BER=0.016987, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=366674
+BER=0.035804, FER=0.999900
+
+
+SNR=8.000000 dB, code number =10000
+Err_F_Num=9998, Err_B_Num=95104
+BER=0.009287, FER=0.999700
+
+
+Err_F_Num=10000, Err_B_Num=290858
+BER=0.028401, FER=0.999900
+
+
+SNR=9.000000 dB, code number =10000
+Err_F_Num=9885, Err_B_Num=45025
+BER=0.004397, FER=0.988401
+
+
+Err_F_Num=10000, Err_B_Num=242972
+BER=0.023725, FER=0.999900
+
+
+SNR=10.000000 dB, code number =10000
+Err_F_Num=8342, Err_B_Num=17796
+BER=0.001738, FER=0.834117
+
+
+Err_F_Num=10000, Err_B_Num=216944
+BER=0.021184, FER=0.999900
+
+
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.999990
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.999740
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.995020
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.968210
+
+
+PAPR =5.250000 dB, CCDF_1 =0.999990, CCDF_2 =0.889640
+
+
+PAPR =5.500000 dB, CCDF_1 =0.999930, CCDF_2 =0.744570
+
+
+PAPR =5.750000 dB, CCDF_1 =0.999650, CCDF_2 =0.560100
+
+
+PAPR =6.000000 dB, CCDF_1 =0.998150, CCDF_2 =0.387200
+
+
+PAPR =6.250000 dB, CCDF_1 =0.991680, CCDF_2 =0.249840
+
+
+PAPR =6.500000 dB, CCDF_1 =0.974380, CCDF_2 =0.154700
+
+
+PAPR =6.750000 dB, CCDF_1 =0.936160, CCDF_2 =0.093790
+
+
+PAPR =7.000000 dB, CCDF_1 =0.870970, CCDF_2 =0.055870
+
+
+PAPR =7.250000 dB, CCDF_1 =0.777510, CCDF_2 =0.032920
+
+
+PAPR =7.500000 dB, CCDF_1 =0.663400, CCDF_2 =0.018840
+
+
+PAPR =7.750000 dB, CCDF_1 =0.537840, CCDF_2 =0.010860
+
+
+PAPR =8.000000 dB, CCDF_1 =0.417980, CCDF_2 =0.006450
+
+
+PAPR =8.250000 dB, CCDF_1 =0.309470, CCDF_2 =0.003570
+
+
+PAPR =8.500000 dB, CCDF_1 =0.219840, CCDF_2 =0.001930
+
+
+PAPR =8.750000 dB, CCDF_1 =0.150420, CCDF_2 =0.001070
+
+
+PAPR =9.000000 dB, CCDF_1 =0.098630, CCDF_2 =0.000580
+
+
+SNR=1.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=608448
+BER=0.118826, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=771257
+BER=0.150621, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=603833
+BER=0.117924, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=780999
+BER=0.152524, FER=0.999900
+
+
+SNR=2.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=500223
+BER=0.097690, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=669630
+BER=0.130774, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=495982
+BER=0.096862, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=682110
+BER=0.133211, FER=0.999900
+
+
+SNR=3.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=395878
+BER=0.077312, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=571877
+BER=0.111684, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=392407
+BER=0.076634, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=585140
+BER=0.114274, FER=0.999900
+
+
+SNR=4.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=300401
+BER=0.058666, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=482179
+BER=0.094166, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=297357
+BER=0.058072, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=492660
+BER=0.096213, FER=0.999900
+
+
+SNR=5.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=214587
+BER=0.041907, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=401536
+BER=0.078417, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=211952
+BER=0.041393, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=415085
+BER=0.081063, FER=0.999900
+
+
+SNR=6.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=141708
+BER=0.027675, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=332969
+BER=0.065027, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=139980
+BER=0.027337, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=350375
+BER=0.068426, FER=0.999900
+
+
+SNR=7.000000 dB, code number =10000
+Err_F_Num=9999, Err_B_Num=86922
+BER=0.016975, FER=0.999800
+
+
+Err_F_Num=10000, Err_B_Num=281562
+BER=0.054987, FER=0.999900
+
+
+Err_F_Num=9999, Err_B_Num=85780
+BER=0.016752, FER=0.999800
+
+
+Err_F_Num=10000, Err_B_Num=296272
+BER=0.057860, FER=0.999900
+
+
+SNR=8.000000 dB, code number =10000
+Err_F_Num=9919, Err_B_Num=47374
+BER=0.009252, FER=0.991801
+
+
+Err_F_Num=10000, Err_B_Num=244469
+BER=0.047743, FER=0.999900
+
+
+Err_F_Num=9908, Err_B_Num=47293
+BER=0.009236, FER=0.990701
+
+
+Err_F_Num=10000, Err_B_Num=259538
+BER=0.050686, FER=0.999900
+
+
+SNR=9.000000 dB, code number =10000
+Err_F_Num=8974, Err_B_Num=22639
+BER=0.004421, FER=0.897310
+
+
+Err_F_Num=10000, Err_B_Num=221298
+BER=0.043218, FER=0.999900
+
+
+Err_F_Num=8928, Err_B_Num=22494
+BER=0.004393, FER=0.892711
+
+
+Err_F_Num=10000, Err_B_Num=238377
+BER=0.046553, FER=0.999900
+
+
+SNR=10.000000 dB, code number =10000
+Err_F_Num=5922, Err_B_Num=8974
+BER=0.001753, FER=0.592141
+
+
+Err_F_Num=10000, Err_B_Num=208408
+BER=0.040701, FER=0.999900
+
+
+Err_F_Num=5835, Err_B_Num=9022
+BER=0.001762, FER=0.583442
+
+
+Err_F_Num=10000, Err_B_Num=229028
+BER=0.044728, FER=0.999900
+
+
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=50
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+SNR=1.000000 dB, code number =10
+Err_F_Num=10, Err_B_Num=460
+BER=0.163352, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=526
+BER=0.186790, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=455
+BER=0.161577, FER=0.909091
+
+
+Err_F_Num=10, Err_B_Num=524
+BER=0.186080, FER=0.909091
+
+
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.900000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.900000
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.800000
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.700000
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.300000
+
+
+PAPR =6.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.300000
+
+
+PAPR =6.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.300000
+
+
+PAPR =6.750000 dB, CCDF_1 =0.900000, CCDF_2 =0.000000
+
+
+PAPR =7.000000 dB, CCDF_1 =0.900000, CCDF_2 =0.000000
+
+
+PAPR =7.250000 dB, CCDF_1 =0.600000, CCDF_2 =0.000000
+
+
+PAPR =7.500000 dB, CCDF_1 =0.600000, CCDF_2 =0.000000
+
+
+PAPR =7.750000 dB, CCDF_1 =0.600000, CCDF_2 =0.000000
+
+
+PAPR =8.000000 dB, CCDF_1 =0.600000, CCDF_2 =0.000000
+
+
+PAPR =8.250000 dB, CCDF_1 =0.500000, CCDF_2 =0.000000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.300000, CCDF_2 =0.000000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.300000, CCDF_2 =0.000000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.300000, CCDF_2 =0.000000
+
+
+SNR=1.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=52
+BER=0.101563, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=62
+BER=0.121094, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=51
+BER=0.099609, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=60
+BER=0.117188, FER=0.500000
+
+
+SNR=2.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=40
+BER=0.078125, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=40
+BER=0.078125, FER=0.500000
+
+
+SNR=3.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=43
+BER=0.083984, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=32
+BER=0.062500, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=43
+BER=0.083984, FER=0.500000
+
+
+SNR=4.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=32
+BER=0.062500, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=52
+BER=0.101563, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=31
+BER=0.060547, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=53
+BER=0.103516, FER=0.500000
+
+
+SNR=5.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=31
+BER=0.060547, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=30
+BER=0.058594, FER=0.500000
+
+
+SNR=6.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=37
+BER=0.072266, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+SNR=7.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=21
+BER=0.041016, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=27
+BER=0.052734, FER=0.500000
+
+
+SNR=8.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=13
+BER=0.025391, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=30
+BER=0.058594, FER=0.500000
+
+
+SNR=9.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=10.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.999990
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.999580
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.994810
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.968540
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.889720
+
+
+PAPR =5.500000 dB, CCDF_1 =0.999990, CCDF_2 =0.742980
+
+
+PAPR =5.750000 dB, CCDF_1 =0.999710, CCDF_2 =0.560450
+
+
+PAPR =6.000000 dB, CCDF_1 =0.998210, CCDF_2 =0.387620
+
+
+PAPR =6.250000 dB, CCDF_1 =0.991990, CCDF_2 =0.250510
+
+
+PAPR =6.500000 dB, CCDF_1 =0.974350, CCDF_2 =0.154260
+
+
+PAPR =6.750000 dB, CCDF_1 =0.935220, CCDF_2 =0.092990
+
+
+PAPR =7.000000 dB, CCDF_1 =0.870580, CCDF_2 =0.055480
+
+
+PAPR =7.250000 dB, CCDF_1 =0.775510, CCDF_2 =0.033120
+
+
+PAPR =7.500000 dB, CCDF_1 =0.663100, CCDF_2 =0.019460
+
+
+PAPR =7.750000 dB, CCDF_1 =0.539230, CCDF_2 =0.011610
+
+
+PAPR =8.000000 dB, CCDF_1 =0.417770, CCDF_2 =0.006490
+
+
+PAPR =8.250000 dB, CCDF_1 =0.309340, CCDF_2 =0.003610
+
+
+PAPR =8.500000 dB, CCDF_1 =0.218430, CCDF_2 =0.002200
+
+
+PAPR =8.750000 dB, CCDF_1 =0.149220, CCDF_2 =0.001290
+
+
+PAPR =9.000000 dB, CCDF_1 =0.098530, CCDF_2 =0.000570
+
+
+SNR=1.000000 dB, code number =10000
+Err_F_Num=10000, Err_B_Num=471969
+BER=0.184344, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=546895
+BER=0.213609, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=468842
+BER=0.183123, FER=0.999900
+
+
+Err_F_Num=10000, Err_B_Num=550273
+BER=0.214929, FER=0.999900
+
+
+SNR=2.000000 dB, code number =10000
+Err_F_Num=9999, Err_B_Num=403598
+BER=0.157640, FER=0.999800
+
+
+Err_F_Num=10000, Err_B_Num=490190
+BER=0.191461, FER=0.999900
+
+
+Err_F_Num=9999, Err_B_Num=400431
+BER=0.156403, FER=0.999800
+
+
+Err_F_Num=10000, Err_B_Num=493498
+BER=0.192753, FER=0.999900
+
+
+SNR=3.000000 dB, code number =10000
+Err_F_Num=9784, Err_B_Num=318164
+BER=0.124270, FER=0.978302
+
+
+Err_F_Num=10000, Err_B_Num=433252
+BER=0.169222, FER=0.999900
+
+
+Err_F_Num=9730, Err_B_Num=313287
+BER=0.122365, FER=0.972903
+
+
+Err_F_Num=10000, Err_B_Num=437496
+BER=0.170880, FER=0.999900
+
+
+SNR=4.000000 dB, code number =10000
+Err_F_Num=5256, Err_B_Num=139075
+BER=0.054321, FER=0.525547
+
+
+Err_F_Num=9991, Err_B_Num=377181
+BER=0.147322, FER=0.999000
+
+
+Err_F_Num=4953, Err_B_Num=130318
+BER=0.050900, FER=0.495250
+
+
+Err_F_Num=9991, Err_B_Num=382826
+BER=0.149526, FER=0.999000
+
+
+SNR=5.000000 dB, code number =10000
+Err_F_Num=417, Err_B_Num=10113
+BER=0.003950, FER=0.041696
+
+
+Err_F_Num=9809, Err_B_Num=316065
+BER=0.123451, FER=0.980802
+
+
+Err_F_Num=345, Err_B_Num=8484
+BER=0.003314, FER=0.034497
+
+
+Err_F_Num=9792, Err_B_Num=320869
+BER=0.125327, FER=0.979102
+
+
+SNR=6.000000 dB, code number =10000
+Err_F_Num=3, Err_B_Num=57
+BER=0.000022, FER=0.000300
+
+
+Err_F_Num=8756, Err_B_Num=251510
+BER=0.098236, FER=0.875512
+
+
+Err_F_Num=2, Err_B_Num=152
+BER=0.000059, FER=0.000200
+
+
+Err_F_Num=8693, Err_B_Num=256440
+BER=0.100162, FER=0.869213
+
+
+SNR=7.000000 dB, code number =10000
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=6505, Err_B_Num=173051
+BER=0.067591, FER=0.650435
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=6389, Err_B_Num=176860
+BER=0.069079, FER=0.638836
+
+
+SNR=8.000000 dB, code number =10000
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=3774, Err_B_Num=96028
+BER=0.037507, FER=0.377362
+
+
+Err_F_Num=1, Err_B_Num=124
+BER=0.000048, FER=0.000100
+
+
+Err_F_Num=3704, Err_B_Num=99211
+BER=0.038750, FER=0.370363
+
+
+SNR=9.000000 dB, code number =10000
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1567, Err_B_Num=40563
+BER=0.015843, FER=0.156684
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1562, Err_B_Num=47544
+BER=0.018570, FER=0.156184
+
+
+SNR=10.000000 dB, code number =10000
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=554, Err_B_Num=26497
+BER=0.010349, FER=0.055394
+
+
+Err_F_Num=1, Err_B_Num=120
+BER=0.000047, FER=0.000100
+
+
+Err_F_Num=584, Err_B_Num=34063
+BER=0.013305, FER=0.058394
+
+
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+SNR=1.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=49
+BER=0.095703, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=49
+BER=0.095703, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=49
+BER=0.095703, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=45
+BER=0.087891, FER=0.500000
+
+
+SNR=1.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=46
+BER=0.089844, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=51
+BER=0.099609, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=51
+BER=0.099609, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=46
+BER=0.089844, FER=0.500000
+
+
+SNR=2.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=41
+BER=0.080078, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=42
+BER=0.082031, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=41
+BER=0.080078, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=38
+BER=0.074219, FER=0.500000
+
+
+SNR=2.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=40
+BER=0.078125, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=38
+BER=0.074219, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=39
+BER=0.076172, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=39
+BER=0.076172, FER=0.500000
+
+
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =7.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.800000
+
+
+PAPR =7.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.600000
+
+
+PAPR =7.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.600000
+
+
+PAPR =7.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.400000
+
+
+PAPR =8.000000 dB, CCDF_1 =0.600000, CCDF_2 =0.200000
+
+
+PAPR =8.250000 dB, CCDF_1 =0.600000, CCDF_2 =0.000000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.400000, CCDF_2 =0.000000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.200000, CCDF_2 =0.000000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.200000, CCDF_2 =0.000000
+
+
+SNR=1.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=47
+BER=0.091797, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=50
+BER=0.097656, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=51
+BER=0.099609, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=48
+BER=0.093750, FER=0.500000
+
+
+SNR=1.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=40
+BER=0.078125, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=43
+BER=0.083984, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=43
+BER=0.083984, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=37
+BER=0.072266, FER=0.500000
+
+
+SNR=2.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=36
+BER=0.070313, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=39
+BER=0.076172, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=40
+BER=0.078125, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=37
+BER=0.072266, FER=0.500000
+
+
+SNR=2.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=33
+BER=0.064453, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=38
+BER=0.074219, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=37
+BER=0.072266, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=33
+BER=0.064453, FER=0.500000
+
+
+SNR=3.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=31
+BER=0.060547, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=42
+BER=0.082031, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=39
+BER=0.076172, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.900000
+
+
+PAPR =6.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.800000
+
+
+PAPR =6.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.600000
+
+
+PAPR =7.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.500000
+
+
+PAPR =7.250000 dB, CCDF_1 =0.700000, CCDF_2 =0.200000
+
+
+PAPR =7.500000 dB, CCDF_1 =0.600000, CCDF_2 =0.200000
+
+
+PAPR =7.750000 dB, CCDF_1 =0.600000, CCDF_2 =0.200000
+
+
+PAPR =8.000000 dB, CCDF_1 =0.500000, CCDF_2 =0.200000
+
+
+PAPR =8.250000 dB, CCDF_1 =0.200000, CCDF_2 =0.100000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.200000, CCDF_2 =0.000000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.200000, CCDF_2 =0.000000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.100000, CCDF_2 =0.000000
+
+
+SNR=3.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=26
+BER=0.050781, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=29
+BER=0.056641, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=4.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=30
+BER=0.058594, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=30
+BER=0.058594, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=32
+BER=0.062500, FER=0.500000
+
+
+SNR=4.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=29
+BER=0.056641, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=33
+BER=0.064453, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=30
+BER=0.058594, FER=0.500000
+
+
+SNR=5.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=5.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=6.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=6.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=7.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=7.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=8.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.900000
+
+
+PAPR =6.250000 dB, CCDF_1 =0.900000, CCDF_2 =0.600000
+
+
+PAPR =6.500000 dB, CCDF_1 =0.900000, CCDF_2 =0.500000
+
+
+PAPR =6.750000 dB, CCDF_1 =0.700000, CCDF_2 =0.500000
+
+
+PAPR =7.000000 dB, CCDF_1 =0.600000, CCDF_2 =0.400000
+
+
+PAPR =7.250000 dB, CCDF_1 =0.600000, CCDF_2 =0.300000
+
+
+PAPR =7.500000 dB, CCDF_1 =0.600000, CCDF_2 =0.300000
+
+
+PAPR =7.750000 dB, CCDF_1 =0.500000, CCDF_2 =0.100000
+
+
+PAPR =8.000000 dB, CCDF_1 =0.300000, CCDF_2 =0.100000
+
+
+PAPR =8.250000 dB, CCDF_1 =0.300000, CCDF_2 =0.000000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.300000, CCDF_2 =0.000000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.200000, CCDF_2 =0.000000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.000000, CCDF_2 =0.000000
+
+
+SNR=3.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=34
+BER=0.066406, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=36
+BER=0.070313, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=36
+BER=0.070313, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=26
+BER=0.050781, FER=0.500000
+
+
+SNR=4.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=31
+BER=0.060547, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=4.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=29
+BER=0.056641, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=27
+BER=0.052734, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=5.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=29
+BER=0.056641, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=19
+BER=0.037109, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=5.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=6.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=6.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=7.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=7.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=8.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.900000
+
+
+PAPR =6.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.800000
+
+
+PAPR =6.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.700000
+
+
+PAPR =6.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.700000
+
+
+PAPR =7.000000 dB, CCDF_1 =0.800000, CCDF_2 =0.600000
+
+
+PAPR =7.250000 dB, CCDF_1 =0.800000, CCDF_2 =0.500000
+
+
+PAPR =7.500000 dB, CCDF_1 =0.800000, CCDF_2 =0.200000
+
+
+PAPR =7.750000 dB, CCDF_1 =0.400000, CCDF_2 =0.000000
+
+
+PAPR =8.000000 dB, CCDF_1 =0.400000, CCDF_2 =0.000000
+
+
+PAPR =8.250000 dB, CCDF_1 =0.300000, CCDF_2 =0.000000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.100000, CCDF_2 =0.000000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.000000, CCDF_2 =0.000000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.000000, CCDF_2 =0.000000
+
+
+SNR=3.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=35
+BER=0.068359, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=36
+BER=0.070313, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=34
+BER=0.066406, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=36
+BER=0.070313, FER=0.500000
+
+
+SNR=4.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=20
+BER=0.039063, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=37
+BER=0.072266, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=29
+BER=0.056641, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=4.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=28
+BER=0.054688, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=30
+BER=0.058594, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=5.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=5.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=6.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=6.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=7.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=7.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=8.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.700000
+
+
+PAPR =7.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.500000
+
+
+PAPR =7.250000 dB, CCDF_1 =0.900000, CCDF_2 =0.400000
+
+
+PAPR =7.500000 dB, CCDF_1 =0.800000, CCDF_2 =0.400000
+
+
+PAPR =7.750000 dB, CCDF_1 =0.700000, CCDF_2 =0.300000
+
+
+PAPR =8.000000 dB, CCDF_1 =0.400000, CCDF_2 =0.300000
+
+
+PAPR =8.250000 dB, CCDF_1 =0.300000, CCDF_2 =0.200000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.300000, CCDF_2 =0.200000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.300000, CCDF_2 =0.100000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.300000, CCDF_2 =0.100000
+
+
+SNR=3.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=20
+BER=0.039063, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=19
+BER=0.037109, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=20
+BER=0.039063, FER=0.500000
+
+
+SNR=4.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=19
+BER=0.037109, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=29
+BER=0.056641, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=30
+BER=0.058594, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=18
+BER=0.035156, FER=0.500000
+
+
+SNR=4.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=23
+BER=0.044922, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=21
+BER=0.041016, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=5.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=1, Err_B_Num=25
+BER=0.048828, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=30
+BER=0.058594, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=5.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=25
+BER=0.048828, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=29
+BER=0.056641, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=31
+BER=0.060547, FER=0.500000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=6.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=6.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=7.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=7.500000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+SNR=8.000000 dB, code number =1
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =6.750000 dB, CCDF_1 =1.000000, CCDF_2 =0.800000
+
+
+PAPR =7.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.800000
+
+
+PAPR =7.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.800000
+
+
+PAPR =7.500000 dB, CCDF_1 =1.000000, CCDF_2 =0.800000
+
+
+PAPR =7.750000 dB, CCDF_1 =0.800000, CCDF_2 =0.800000
+
+
+PAPR =8.000000 dB, CCDF_1 =0.800000, CCDF_2 =0.400000
+
+
+PAPR =8.250000 dB, CCDF_1 =0.800000, CCDF_2 =0.400000
+
+
+PAPR =8.500000 dB, CCDF_1 =0.600000, CCDF_2 =0.000000
+
+
+PAPR =8.750000 dB, CCDF_1 =0.600000, CCDF_2 =0.000000
+
+
+PAPR =9.000000 dB, CCDF_1 =0.400000, CCDF_2 =0.000000
+
+
+SNR=1.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=58
+BER=0.113281, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=61
+BER=0.119141, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=59
+BER=0.115234, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=56
+BER=0.109375, FER=0.500000
+
+
+SNR=1.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=51
+BER=0.099609, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=56
+BER=0.109375, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=54
+BER=0.105469, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=49
+BER=0.095703, FER=0.500000
+
+
+SNR=2.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=37
+BER=0.072266, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=41
+BER=0.080078, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=40
+BER=0.078125, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=33
+BER=0.064453, FER=0.500000
+
+
+SNR=2.500000 dB, code number =1
+Err_F_Num=1, Err_B_Num=34
+BER=0.066406, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=37
+BER=0.072266, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=36
+BER=0.070313, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=32
+BER=0.062500, FER=0.500000
+
+
+SNR=3.000000 dB, code number =1
+Err_F_Num=1, Err_B_Num=36
+BER=0.070313, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=45
+BER=0.087891, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=45
+BER=0.087891, FER=0.500000
+
+
+Err_F_Num=1, Err_B_Num=32
+BER=0.062500, FER=0.500000
+
+
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.999800
+
+
+PAPR =5.250000 dB, CCDF_1 =1.000000, CCDF_2 =0.998033
+
+
+PAPR =5.500000 dB, CCDF_1 =0.999967, CCDF_2 =0.991167
+
+
+PAPR =5.750000 dB, CCDF_1 =0.999633, CCDF_2 =0.969700
+
+
+PAPR =6.000000 dB, CCDF_1 =0.998267, CCDF_2 =0.922900
+
+
+PAPR =6.250000 dB, CCDF_1 =0.991400, CCDF_2 =0.843867
+
+
+PAPR =6.500000 dB, CCDF_1 =0.973500, CCDF_2 =0.736633
+
+
+PAPR =6.750000 dB, CCDF_1 =0.936967, CCDF_2 =0.611933
+
+
+PAPR =7.000000 dB, CCDF_1 =0.869967, CCDF_2 =0.481033
+
+
+PAPR =7.250000 dB, CCDF_1 =0.779133, CCDF_2 =0.360000
+
+
+PAPR =7.500000 dB, CCDF_1 =0.665333, CCDF_2 =0.257767
+
+
+PAPR =7.750000 dB, CCDF_1 =0.540200, CCDF_2 =0.178300
+
+
+PAPR =8.000000 dB, CCDF_1 =0.419367, CCDF_2 =0.119367
+
+
+PAPR =8.250000 dB, CCDF_1 =0.309233, CCDF_2 =0.078467
+
+
+PAPR =8.500000 dB, CCDF_1 =0.221400, CCDF_2 =0.049300
+
+
+PAPR =8.750000 dB, CCDF_1 =0.150367, CCDF_2 =0.031100
+
+
+PAPR =9.000000 dB, CCDF_1 =0.100233, CCDF_2 =0.018167
+
+
+SNR=7.000000 dB, code number =30000
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=120, Err_B_Num=2738
+BER=0.000356, FER=0.004000
+
+
+Err_F_Num=6, Err_B_Num=140
+BER=0.000018, FER=0.000200
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+iter_max=60
+iter_max=60
+
+
+
+
+PAPR =4.000000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.250000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.500000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =4.750000 dB, CCDF_1 =1.000000, CCDF_2 =1.000000
+
+
+PAPR =5.000000 dB, CCDF_1 =1.000000, CCDF_2 =0.999867
+
+
+PAPR =5.250000 dB, CCDF_1 =0.999967, CCDF_2 =0.998367
+
+
+PAPR =5.500000 dB, CCDF_1 =0.999967, CCDF_2 =0.991233
+
+
+PAPR =5.750000 dB, CCDF_1 =0.999733, CCDF_2 =0.970800
+
+
+PAPR =6.000000 dB, CCDF_1 =0.997833, CCDF_2 =0.923633
+
+
+PAPR =6.250000 dB, CCDF_1 =0.991200, CCDF_2 =0.844000
+
+
+PAPR =6.500000 dB, CCDF_1 =0.973033, CCDF_2 =0.733767
+
+
+PAPR =6.750000 dB, CCDF_1 =0.936133, CCDF_2 =0.605300
+
+
+PAPR =7.000000 dB, CCDF_1 =0.871033, CCDF_2 =0.475833
+
+
+PAPR =7.250000 dB, CCDF_1 =0.778067, CCDF_2 =0.354667
+
+
+PAPR =7.500000 dB, CCDF_1 =0.660433, CCDF_2 =0.253933
+
+
+PAPR =7.750000 dB, CCDF_1 =0.536867, CCDF_2 =0.177367
+
+
+PAPR =8.000000 dB, CCDF_1 =0.413833, CCDF_2 =0.119200
+
+
+PAPR =8.250000 dB, CCDF_1 =0.309300, CCDF_2 =0.077367
+
+
+PAPR =8.500000 dB, CCDF_1 =0.218233, CCDF_2 =0.048067
+
+
+PAPR =8.750000 dB, CCDF_1 =0.148733, CCDF_2 =0.030733
+
+
+PAPR =9.000000 dB, CCDF_1 =0.097367, CCDF_2 =0.018200
+
+
+SNR=6.500000 dB, code number =30000
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+Err_F_Num=621, Err_B_Num=14346
+BER=0.001868, FER=0.020699
+
+
+Err_F_Num=77, Err_B_Num=1698
+BER=0.000221, FER=0.002567
+
+
+Err_F_Num=0, Err_B_Num=0
+BER=0.000000, FER=0.000000
+
+
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60
+iter_max=60

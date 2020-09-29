@@ -1,0 +1,4 @@
+﻿  4-section Polar_PAPR.cpp
+c:\users\andy0\source\repos\4-section polar_papr\4-section polar_papr\ace-sgp.h(7): warning C4101: 'mod_sym_idx': 未參考的區域變數
+c:\users\andy0\source\repos\4-section polar_papr\4-section polar_papr\4-section polar_papr.cpp(159): warning C4244: '引數': 將 'time_t' 轉換為 'unsigned int'，由於類型不同，可能導致資料遺失
+  4-section Polar_PAPR.vcxproj -> C:\Users\andy0\source\repos\4-section Polar_PAPR\Debug\4-section Polar_PAPR.exe

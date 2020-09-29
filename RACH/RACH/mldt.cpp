@@ -85,7 +85,7 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 			}
 
 			//0925endmodify
-            adapted_variance = sqrt(test) / (0.12*testtime);
+            adapted_variance = sqrt(test) / (0.09*testtime);
 
 
 			for (int i = 0, m = 0; i < FFT_SEGMENT + DIFF_ENC; i++)

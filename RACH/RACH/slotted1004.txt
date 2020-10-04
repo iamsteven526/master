@@ -1,0 +1,324 @@
+RACH-OFDM-GDMA-BPSK system
+
+(1008,504) LDPC code
+Separated channel decoding: SPA
+Iteration#: 100
+
+FFT point: 16, CP length: 4, channel taps: 5
+Max Number of users: 10
+
+Perfect Time
+
+Perfect CSI
+
+ALOHA + MLDT, Slotted system, Test Frame : 10
+Channel, K=0
+OFDM : CP, CP Len : 4
+Preamble Len: 63
+-
+G =  0.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 9.872013e-02, G = 1.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 9.872013e-02 
+
+G =  0.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.965503e-01, G = 2.000000e-01, mse = 0.000000e+00, T_D = 6.946650e-310, T_E = 1.965503e-01 
+
+G =  0.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.943206e-01, G = 3.000000e-01, mse = 0.000000e+00, T_D = 2.121996e-314, T_E = 2.943206e-01 
+
+G =  0.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 3.874413e-01, G = 4.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 3.874413e-01 
+
+G =  0.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 4.826717e-01, G = 5.000000e-01, mse = 0.000000e+00, T_D = 6.952507e-310, T_E = 4.826717e-01 
+
+G =  0.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 5.715828e-01, G = 6.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 5.715828e-01 
+
+G =  0.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 6.659434e-01, G = 7.000000e-01, mse = 0.000000e+00, T_D = 2.121996e-314, T_E = 6.659434e-01 
+
+G =  0.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 7.541346e-01, G = 8.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 7.541346e-01 
+
+G =  0.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 8.445355e-01, G = 9.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 8.445355e-01 
+
+G =  1.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 9.191881e-01, G = 1.000000e+00, mse = 0.000000e+00, T_D = 4.940656e-323, T_E = 9.191881e-01 
+
+G =  1.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.006599e+00, G = 1.100000e+00, mse = 0.000000e+00, T_D = 6.946650e-310, T_E = 1.006599e+00 
+
+G =  1.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.090551e+00, G = 1.200000e+00, mse = 0.000000e+00, T_D = 6.946650e-310, T_E = 1.090551e+00 
+
+G =  1.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.172313e+00, G = 1.300000e+00, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 1.172313e+00 
+
+G =  1.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.250045e+00, G = 1.400000e+00, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 1.250045e+00 
+
+G =  1.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.328097e+00, G = 1.500000e+00, mse = 0.000000e+00, T_D = 6.946650e-310, T_E = 1.328097e+00 
+
+G =  1.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.403530e+00, G = 1.600000e+00, mse = 0.000000e+00, T_D = 6.946650e-310, T_E = 1.403530e+00 
+
+G =  1.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.468493e+00, G = 1.700000e+00, mse = 0.000000e+00, T_D = 6.946650e-310, T_E = 1.468493e+00 
+
+G =  1.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.548945e+00, G = 1.800000e+00, mse = 0.000000e+00, T_D = 6.952619e-310, T_E = 1.548945e+00 
+
+G =  1.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.607939e+00, G = 1.900000e+00, mse = 0.000000e+00, T_D = 4.110626e-321, T_E = 1.607939e+00 
+
+G =  2.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.679962e+00, G = 2.000000e+00, mse = 3.327671e-298, T_D = 3.328004e-294, T_E = 1.679962e+00 
+
+G =  2.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.741706e+00, G = 2.100000e+00, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 1.741706e+00 
+
+G =  2.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.796470e+00, G = 2.200000e+00, mse = 0.000000e+00, T_D = 2.124003e-314, T_E = 1.796470e+00 
+
+G =  2.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.863554e+00, G = 2.300000e+00, mse = 0.000000e+00, T_D = 7.881335e-319, T_E = 1.863554e+00 
+
+G =  2.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.919278e+00, G = 2.400000e+00, mse = 0.000000e+00, T_D = 3.162020e-322, T_E = 1.919278e+00 
+
+G =  2.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.974313e+00, G = 2.500000e+00, mse = 0.000000e+00, T_D = 9.028753e-318, T_E = 1.974313e+00 
+
+G =  2.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.025227e+00, G = 2.600000e+00, mse = 0.000000e+00, T_D = 1.335099e-307, T_E = 2.025227e+00 
+
+G =  2.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.075672e+00, G = 2.700000e+00, mse = 0.000000e+00, T_D = 1.780169e-307, T_E = 2.075672e+00 
+
+G =  2.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.133237e+00, G = 2.800000e+00, mse = 0.000000e+00, T_D = 8.487983e-314, T_E = 2.133237e+00 
+
+G =  2.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.175272e+00, G = 2.900000e+00, mse = 0.000000e+00, T_D = 3.162020e-322, T_E = 2.175272e+00 
+
+G =  3.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.214209e+00, G = 3.000000e+00, mse = 0.000000e+00, T_D = 3.162020e-322, T_E = 2.214209e+00 
+
+
+RACH-OFDM-GDMA-BPSK system
+
+(1008,504) LDPC code
+Separated channel decoding: SPA
+Iteration#: 100
+
+FFT point: 16, CP length: 4, channel taps: 5
+Max Number of users: 10
+
+Estimated Time
+
+Perfect CSI
+
+ALOHA + MLDT, Slotted system, Test Frame : 10
+Channel, K=0
+OFDM : CP, CP Len : 4
+Preamble Len: 63
+-
+G =  0.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 9.649035e-02, G = 1.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 9.649035e-02 
+
+G =  0.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.917208e-01, G = 2.000000e-01, mse = 0.000000e+00, T_D = 6.922481e-310, T_E = 1.917208e-01 
+
+G =  0.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.862814e-01, G = 3.000000e-01, mse = 0.000000e+00, T_D = 2.121996e-314, T_E = 2.862814e-01 
+
+G =  0.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 3.833317e-01, G = 4.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 3.833317e-01 
+
+G =  0.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 4.758824e-01, G = 5.000000e-01, mse = 0.000000e+00, T_D = 6.952507e-310, T_E = 4.758824e-01 
+
+G =  0.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 5.639036e-01, G = 6.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 5.639036e-01 
+
+G =  0.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 6.543446e-01, G = 7.000000e-01, mse = 0.000000e+00, T_D = 2.121996e-314, T_E = 6.543446e-01 
+
+G =  0.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 7.396860e-01, G = 8.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 7.396860e-01 
+
+G =  0.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 8.230177e-01, G = 9.000000e-01, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 8.230177e-01 
+
+G =  1.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 9.105989e-01, G = 1.000000e+00, mse = 0.000000e+00, T_D = 4.940656e-323, T_E = 9.105989e-01 
+
+G =  1.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 9.951405e-01, G = 1.100000e+00, mse = 0.000000e+00, T_D = 6.922481e-310, T_E = 9.951405e-01 
+
+G =  1.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.082072e+00, G = 1.200000e+00, mse = 0.000000e+00, T_D = 6.922481e-310, T_E = 1.082072e+00 
+
+G =  1.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.153875e+00, G = 1.300000e+00, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 1.153875e+00 
+
+G =  1.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.235626e+00, G = 1.400000e+00, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 1.235626e+00 
+
+G =  1.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.307989e+00, G = 1.500000e+00, mse = 0.000000e+00, T_D = 6.922481e-310, T_E = 1.307989e+00 
+
+G =  1.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.384002e+00, G = 1.600000e+00, mse = 0.000000e+00, T_D = 6.922481e-310, T_E = 1.384002e+00 
+
+G =  1.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.451355e+00, G = 1.700000e+00, mse = 0.000000e+00, T_D = 6.922481e-310, T_E = 1.451355e+00 
+
+G =  1.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.516298e+00, G = 1.800000e+00, mse = 0.000000e+00, T_D = 6.952540e-310, T_E = 1.516298e+00 
+
+G =  1.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.591431e+00, G = 1.900000e+00, mse = 0.000000e+00, T_D = 4.110626e-321, T_E = 1.591431e+00 
+
+G =  2.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.652845e+00, G = 2.000000e+00, mse = 3.327671e-298, T_D = 3.328004e-294, T_E = 1.652845e+00 
+
+G =  2.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.714849e+00, G = 2.100000e+00, mse = 0.000000e+00, T_D = 0.000000e+00, T_E = 1.714849e+00 
+
+G =  2.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.781172e+00, G = 2.200000e+00, mse = 0.000000e+00, T_D = 2.124003e-314, T_E = 1.781172e+00 
+
+G =  2.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.838276e+00, G = 2.300000e+00, mse = 0.000000e+00, T_D = 7.881335e-319, T_E = 1.838276e+00 
+
+G =  2.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.891851e+00, G = 2.400000e+00, mse = 0.000000e+00, T_D = 3.162020e-322, T_E = 1.891851e+00 
+
+G =  2.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.945895e+00, G = 2.500000e+00, mse = 0.000000e+00, T_D = 9.028753e-318, T_E = 1.945895e+00 
+
+G =  2.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.991411e+00, G = 2.600000e+00, mse = 0.000000e+00, T_D = 1.335099e-307, T_E = 1.991411e+00 
+
+G =  2.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.067123e+00, G = 2.700000e+00, mse = 0.000000e+00, T_D = 1.780169e-307, T_E = 2.067123e+00 
+
+G =  2.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.084462e+00, G = 2.800000e+00, mse = 0.000000e+00, T_D = 8.487983e-314, T_E = 2.084462e+00 
+
+G =  2.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.149065e+00, G = 2.900000e+00, mse = 0.000000e+00, T_D = 3.162020e-322, T_E = 2.149065e+00 
+
+G =  3.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.184702e+00, G = 3.000000e+00, mse = 0.000000e+00, T_D = 3.162020e-322, T_E = 2.184702e+00 
+
+RACH-OFDM-GDMA-BPSK system
+
+(1008,504) LDPC code
+Separated channel decoding: SPA
+Iteration#: 100
+
+FFT point: 16, CP length: 4, channel taps: 5
+Max Number of users: 10
+
+Estimated Time
+
+Preamble Estimation Only
+
+ALOHA + MLDT, Slotted system, Test Frame : 10
+Channel, K=0
+OFDM : CP, CP Len : 4
+Preamble Len: 63
+-
+G =  0.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 9.587041e-02, G = 1.000000e-01, mse = 4.969181e-03, T_D = 9.587041e-02, T_E = 0.000000e+00 
+
+G =  0.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.916308e-01, G = 2.000000e-01, mse = 6.876769e-03, T_D = 1.916308e-01, T_E = 0.000000e+00 
+
+G =  0.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 2.871913e-01, G = 3.000000e-01, mse = 7.537603e-03, T_D = 2.871913e-01, T_E = 0.000000e+00 
+
+G =  0.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 3.798520e-01, G = 4.000000e-01, mse = 7.778742e-03, T_D = 3.798520e-01, T_E = 0.000000e+00 
+
+G =  0.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 4.652335e-01, G = 5.000000e-01, mse = 7.874424e-03, T_D = 4.652335e-01, T_E = 0.000000e+00 
+
+G =  0.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 5.515148e-01, G = 6.000000e-01, mse = 7.943534e-03, T_D = 5.515148e-01, T_E = 0.000000e+00 
+
+G =  0.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 6.374663e-01, G = 7.000000e-01, mse = 7.942437e-03, T_D = 6.374663e-01, T_E = 0.000000e+00 
+
+G =  0.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 7.077892e-01, G = 8.000000e-01, mse = 7.951885e-03, T_D = 7.077892e-01, T_E = 0.000000e+00 
+
+G =  0.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 7.903110e-01, G = 9.000000e-01, mse = 7.943763e-03, T_D = 7.903110e-01, T_E = 0.000000e+00 
+
+G =  1.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 8.582142e-01, G = 1.000000e+00, mse = 7.943498e-03, T_D = 8.582142e-01, T_E = 0.000000e+00 
+
+G =  1.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 9.274973e-01, G = 1.100000e+00, mse = 7.948257e-03, T_D = 9.274973e-01, T_E = 0.000000e+00 
+
+G =  1.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 9.848415e-01, G = 1.200000e+00, mse = 7.945545e-03, T_D = 9.848415e-01, T_E = 0.000000e+00 
+
+G =  1.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.045475e+00, G = 1.300000e+00, mse = 7.953647e-03, T_D = 1.045475e+00, T_E = 0.000000e+00 
+
+G =  1.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.093481e+00, G = 1.400000e+00, mse = 7.945092e-03, T_D = 1.093481e+00, T_E = 0.000000e+00 
+
+G =  1.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.140706e+00, G = 1.500000e+00, mse = 7.951212e-03, T_D = 1.140706e+00, T_E = 0.000000e+00 
+
+G =  1.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.183562e+00, G = 1.600000e+00, mse = 7.943656e-03, T_D = 1.183562e+00, T_E = 0.000000e+00 
+
+G =  1.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.216608e+00, G = 1.700000e+00, mse = 7.944260e-03, T_D = 1.216608e+00, T_E = 0.000000e+00 
+
+G =  1.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.255424e+00, G = 1.800000e+00, mse = 7.945243e-03, T_D = 1.255424e+00, T_E = 0.000000e+00 
+
+G =  1.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.295950e+00, G = 1.900000e+00, mse = 7.943388e-03, T_D = 1.295950e+00, T_E = 0.000000e+00 
+
+G =  2.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.322358e+00, G = 2.000000e+00, mse = 7.948748e-03, T_D = 1.322358e+00, T_E = 0.000000e+00 
+
+G =  2.1 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.346125e+00, G = 2.100000e+00, mse = 7.949019e-03, T_D = 1.346125e+00, T_E = 0.000000e+00 
+
+G =  2.2 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.372623e+00, G = 2.200000e+00, mse = 7.948580e-03, T_D = 1.372623e+00, T_E = 0.000000e+00 
+
+G =  2.3 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.392871e+00, G = 2.300000e+00, mse = 7.943905e-03, T_D = 1.392871e+00, T_E = 0.000000e+00 
+
+G =  2.4 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.413319e+00, G = 2.400000e+00, mse = 7.946876e-03, T_D = 1.413319e+00, T_E = 0.000000e+00 
+
+G =  2.5 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.427967e+00, G = 2.500000e+00, mse = 7.951243e-03, T_D = 1.427967e+00, T_E = 0.000000e+00 
+
+G =  2.6 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.447495e+00, G = 2.600000e+00, mse = 7.952064e-03, T_D = 1.447495e+00, T_E = 0.000000e+00 
+
+G =  2.7 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.470463e+00, G = 2.700000e+00, mse = 7.952028e-03, T_D = 1.470463e+00, T_E = 0.000000e+00 
+
+G =  2.8 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.479772e+00, G = 2.800000e+00, mse = 7.949023e-03, T_D = 1.479772e+00, T_E = 0.000000e+00 
+
+G =  2.9 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.495150e+00, G = 2.900000e+00, mse = 7.948576e-03, T_D = 1.495150e+00, T_E = 0.000000e+00 
+
+G =  3.0 / packet_dur; SNR =  20.0 dB
+Block# = 10001, S = 1.503130e+00, G = 3.000000e+00, mse = 7.941835e-03, T_D = 1.503130e+00, T_E = 0.000000e+00 

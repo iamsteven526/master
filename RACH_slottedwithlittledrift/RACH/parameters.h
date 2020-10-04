@@ -35,14 +35,14 @@
 #define		ALOHA					1												// 1: Aloha + GDMA,  0: Aloha
 #define		PREABLE					1											    // 1: enable, 0: disable	
 #define		PREABLE_LEN				63												
-#define		Time_Estimate			0												// 0: disable, 1: enable
-#define		Phase_Estimate			0												// 0: disable, 1: enable(first channel estimation) change if segfault
+#define		Time_Estimate			1												// 0: disable, 1: enable
+#define		Phase_Estimate			1												// 0: disable, 1: enable(first channel estimation) change if segfault
 #define		Root_Num				1
 #define		Threshold				0.15
 
 //----------  pulse shaping ----------
 
-#define		Unit					10												// units in one chip
+#define		Unit					1												// units in one chip
 #define		UP_RATE					Unit											// up-sampling rate
 #define		TRUNCATION				10												// truncation of shaping filter		  							
 #define		ROLL_OFF				0.22											// roll-off factor
@@ -80,7 +80,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				1												// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				0												// 0: cluster-based, 1: ideal
 
 #define		CE_METHOD				0												// 0: preamble estimation only;  1: preamble estimation + modified k-means++
 
@@ -103,7 +103,7 @@
 
 #define		G_NUM					30												// number of SNR points to be simulated
 #define		G_START					0.1												// in dB
-#define		G_STEP					0.5												// in dB
+#define		G_STEP					0.1												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )
 

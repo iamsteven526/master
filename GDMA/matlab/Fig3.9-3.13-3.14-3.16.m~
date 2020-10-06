@@ -19,7 +19,7 @@ x=[0:5:40]
 user210=[1.283102e-01, 4.667958e-02, 1.262283e-02, 4.211750e-03, 1.043000e-03, 3.960417e-04, 1.654167e-04, 4.683333e-05, 0];
 user220=[0.244, 0.164, 0.0756, 0.0225, 0.00481, 0.00103, 0.000300, 0.000120,0.0000368];
 user230=[0.272, 0.125, 0.0425, 0.0150, 0.002839, 0.0003896, 0.0000800, 0.000008779, 0];
-user240=[0.092,0.0333,0.0104,0.00333,0.000872,0.00025,0.0000572,0.00000772,0];
+user240=[0.183776855468750,0.066726,0.0288,0.00667,0.001745,0.000591]
 %bound=0.5*(10.^(-x./10))./(40);
 %user210=[7.735769e-02, 1.416674e-02, 2.681283e-03, 6.503074e-04, 1.836257e-04, 5.588606e-05, 1.734505e-05, 5.522502e-06, 1.735070e-06];
 %user220=[0.069, 0.0405, 0.0253, 0.00692, 0.000507, 0.000150, 0.000129, 0.0000593,0.00000147];
@@ -48,8 +48,8 @@ ylabel('BER', 'fontsize', 21);
 %leg = legend('{\itU} = 3','{\itU} = 4','{\itU} = 5','{\itU} = 6','{\itOld U} = 4','Location','southwest');
 %leg = legend('{\itU} = 3','{\itU} = 4','{\itU} = 5','{\itU} = 6','{CRLB}','Location','southwest');
 %leg = legend('{\itP = 2; No diversity}','{\itP = 2; Alamouti}','{\itP = 2; Alamouti w cluster}','Location','southwest');
-%leg = legend('QPSK','GDMA U = 3','QPSK with CSI','GDMA U=3 with CSI','Location','southwest');
-leg = legend('QPSK','2*QPSK','2*QPSK +(1024,512) polar SCL=8','QPSK +(1024,512) polar SCL=8','Location','southwest');
+leg = legend('QPSK','GDMA U = 3','QPSK with CSI','GDMA U=3 with CSI','Location','southwest');
+%leg = legend('QPSK','2*QPSK','2*QPSK +(1024,512) polar SCL=32','Location','southwest');
 
 
 

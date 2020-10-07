@@ -1,3 +1,6 @@
+
+like the slotted (in 4 Ts)
+
 RACH-OFDM-GDMA-BPSK system
 
 (1008,504) LDPC code

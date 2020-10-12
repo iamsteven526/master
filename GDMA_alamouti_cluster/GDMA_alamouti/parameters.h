@@ -60,7 +60,7 @@
 #define		LLR_LIMIT				1000
 
 #define		BLOCK_NUM				10000											// number of blocks to be simulated
-#define		BLOCK_LEN				1024							// number of symbols in a block
+#define		BLOCK_LEN				2048							// number of symbols in a block
 
 
 #define		SNR_NUM					9													// number of SNR points to be simulated

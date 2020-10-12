@@ -76,6 +76,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
                 time_drift = exponential(generator) * packet_dur;
 				cachetimesum = last_packet_time + time_drift;
 				if((cachetimesum % (packet_dur*Unit)) <= 2*Unit ){
+				//if((cachetimesum % (effLen*Unit)) <= 2*Unit ){
 					break;
 				}
 			}

@@ -48,15 +48,15 @@ B = sparse(double(B));
 
 N = 2048; % SCMA signals in frame
 R = 0.5;
-EbN0 = 0:5:40;
+EbN0 = 20:5:35;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 1000;
-maxNumBits = 1e7;
+maxNumErrs = 5000;
+maxNumBits = 3e7;
 Niter      = 8;
 ldpcDecoder = comm.LDPCDecoder(B);
 ldpcEncoder = comm.LDPCEncoder(B);

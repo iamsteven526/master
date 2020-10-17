@@ -64,8 +64,8 @@
 #define		BLOCK_LEN				10000							// number of symbols in a block
 #define		Cluster_Len				10000
 
-#define		SNR_NUM					5									// number of SNR points to be simulated
-#define		SNR_START			    20							// in dB
+#define		SNR_NUM					2									// number of SNR points to be simulated
+#define		SNR_START			    35							// in dB
 #define		SNR_STEP				5									// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

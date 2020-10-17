@@ -101,8 +101,8 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 			for (int i = 0; i < NUM_TX; i++)
 			{
 				//---------- desired signal ----------
-				if ((app[j][i][0] + app[j][i][1] + app[j][i][2] + app[j][i][3]) <= NUMERIC_LIMIT) appLlr[j][i] += -LLR_LIMIT;
-				else if ((app[j][i][4] + app[j][i][5] + app[j][i][6] + app[j][i][7]) <= NUMERIC_LIMIT) appLlr[j][i] += LLR_LIMIT;
+				if ((app[j][i][0] + app[j][i][1] + app[j][i][2] + app[j][i][3]) <= NUMERIC_LIMIT) appLlr[j][i] += -2*LLR_LIMIT;
+				else if ((app[j][i][4] + app[j][i][5] + app[j][i][6] + app[j][i][7]) <= NUMERIC_LIMIT) appLlr[j][i] += 2*LLR_LIMIT;
 				else appLlr[j][i] += log((app[j][i][0] + app[j][i][1] + app[j][i][2] + app[j][i][3]) / (app[j][i][4] + app[j][i][5] + app[j][i][6] + app[j][i][7]));
 				//---------- interferences ----------
 				if ((app[j][i][0] + app[j][i][1] + app[j][i][4] + app[j][i][5]) <= NUMERIC_LIMIT) appLlr[(j + 1) % NUM_USER][0] += -LLR_LIMIT;

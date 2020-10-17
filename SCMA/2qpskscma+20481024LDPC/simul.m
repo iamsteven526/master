@@ -86,7 +86,7 @@ B = sparse(double(B));
 
 N = 2048; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 30:5:30;
+EbN0 = 30:5:35;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));

@@ -1,0 +1,18 @@
+GDMA-BPSK system
+Number of users: 3
+
+Block length: 10000
+
+Cluster length: 10000
+
+Cluster-based channel estimation: K-means
+w/Gaussian mixture model
+
+Synchronous system
+
+-
+
+SNR[dB] = 30.0, BER = 6.554021e-04, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+
+6.554021e-04, 

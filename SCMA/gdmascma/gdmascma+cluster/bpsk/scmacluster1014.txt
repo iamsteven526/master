@@ -25,4 +25,19 @@ Synchronous system
 SNR[dB] = 15.0
 Block# = 401, BER = 8.507704e-02, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
 
+SNR[dB] = 20.0
+Block# = 813, BER = 2.180145e-02, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 25.0
+Block# = 2160, BER = 3.634475e-03, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 30.0
+Block# = 4000, BER = 6.554021e-04, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 35.0
+Block# = 14000, BER = 1.495149e-04, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 40.0
+Block# = 5380, BER = 6.640644e-05, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
 

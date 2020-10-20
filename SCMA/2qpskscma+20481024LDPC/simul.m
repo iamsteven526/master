@@ -86,15 +86,15 @@ B = sparse(double(B));
 
 N = 2048; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 30:5:35;
+EbN0 = 20:5:25;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 100;
-maxNumBits = 1e6;
+maxNumErrs = 50;
+maxNumBits = 1e7;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder(B);
 ldpcEncoder = comm.LDPCEncoder(B);

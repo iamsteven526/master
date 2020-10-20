@@ -60,7 +60,7 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				230
 
-#define		BLOCK_NUM				4000				// number of blocks to be simulated
+#define		BLOCK_NUM				14000				// number of blocks to be simulated
 #define		BLOCK_LEN				10000							// number of symbols in a block
 #define		Cluster_Len				10000
 

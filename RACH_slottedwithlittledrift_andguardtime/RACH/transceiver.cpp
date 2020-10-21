@@ -66,46 +66,60 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 		int nuser = 0;
 		int last_packet_time = 0;
 		exponential_distribution<double> exponential(G);
+		poisson_distribution<int> poisson(G);
 		vector<int> time_in;
 		int time_in_num = 0;
 		time_in.push_back(-packet_dur);
         int time_drift = 0,cachetimesum = 0;
+		int cache_time_drift = 0;
 		for (;;)
 		{
-			while(true){
-                time_drift = exponential(generator) * packet_dur;
-				cachetimesum = last_packet_time + time_drift;
-				if((cachetimesum % (packet_dur*Unit + 10)) <= 2*Unit ){
-				//if((cachetimesum % (effLen*Unit)) <= 2*Unit ){
+			int NUM_SLOTED = poisson(generator);
+			cache_time_drift = 0;
+			for(int p = 0; p < NUM_SLOTED; ++p){
+				while(true){
+					time_drift = exponential(generator) * packet_dur;
+					time_drift = time_drift%(4+2);
+					cachetimesum = cache_time_drift + time_drift;
+					if(cachetimesum > 4*Unit ){
+					//if((cachetimesum % (effLen*Unit)) <= 2*Unit ){
+					    time_drift = 0;
+					}
+					cache_time_drift = cache_time_drift + time_drift;
 					break;
 				}
+							
+				last_packet_time += time_drift;
+				if (last_packet_time + packet_dur > frame_dur)
+				{
+					break;
+				}
+				if (ALOHA)
+				{
+					for (int nuser = 0; nuser < NUM_USER; nuser++)
+					{
+						if (packet_num[nuser] == 0 || last_packet_time - packet_time[nuser][packet_num[nuser] - 1] >= packet_dur)
+						{
+							//cout << nuser << " ";
+							packet_time[nuser][packet_num[nuser]] = last_packet_time;
+							packet_num[nuser]++;
+							packet_sum++;
+							break;
+						}
+					}
+				}
+				else
+				{
+					time_in.push_back(last_packet_time);
+					time_in_num++;
+					packet_sum++;
+				}
 			}
-						
-			last_packet_time += time_drift;
-			if (last_packet_time + packet_dur > frame_dur)
+			if (last_packet_time + packet_dur*Unit > frame_dur)
 			{
 				break;
 			}
-			if (ALOHA)
-			{
-				for (int nuser = 0; nuser < NUM_USER; nuser++)
-				{
-					if (packet_num[nuser] == 0 || last_packet_time - packet_time[nuser][packet_num[nuser] - 1] >= packet_dur)
-					{
-						//cout << nuser << " ";
-						packet_time[nuser][packet_num[nuser]] = last_packet_time;
-						packet_num[nuser]++;
-						packet_sum++;
-						break;
-					}
-				}
-			}
-			else
-			{
-				time_in.push_back(last_packet_time);
-				time_in_num++;
-				packet_sum++;
-			}
+			last_packet_time += (packet_dur + 10)*Unit;
 		}
 
 		time_in.push_back(frame_dur);
@@ -123,51 +137,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 			}
 		}
 	
-		
-		// 2 user collision case:
-		/*int drift_2 = rand() % ((20*63 + 63 + 8)*Unit);
-	
-		
-		if (drift_2 % (effLen * Unit) < 4 * Unit)
-		{
-			drift_2 -= drift_2 % (effLen * Unit);
-		}
-		
-		
-		packet_num[0] = 1;
-		packet_num[1] = 1;
-		//packet_num[1] = 0;
-		packet_time[0][0] = PREABLE_LEN * PREABLE + 0;
-		packet_time[1][0] = PREABLE_LEN * PREABLE + drift_2;
-		packet_sum += 2;
-		//packet_sum += 1;*/
-
-		//cout << PREABLE_LEN + 0 << " " << PREABLE_LEN + drift_2 << endl;
-		
-		/*for (int nuser = 0; nuser < NUM_USER; nuser++)
-		{
-			for (int t = 0; t < packet_num[nuser]; t++)
-			{
-				if (packet_time[nuser][t] % effLen < CP_LEN)
-					packet_time[nuser][t] -= packet_time[nuser][t] % effLen;
-			}
-		}
-		*/
 	}
-	
-	
-	
-	/*for (int nuser = 0; nuser < NUM_USER; nuser++)
-	{
-		if (packet_num[nuser] == 0)
-			continue;
-		for (int t = 0; t < packet_num[nuser]; t++)
-		{
-			cout << packet_time[nuser][t] << " ";
-		}
-		cout << endl;
-	}
-	system("pause");*/
 }
 
 void Encoder(LDPC &ldpc, int ***data, int ***codeword, int *packet_num)

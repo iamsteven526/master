@@ -7,7 +7,7 @@
 			"command": "/usr/bin/g++",
 			"args": [
 				"-g",
-				"-O1",
+				"-Ofast",
 				"-march=native",
 				"${fileDirname}/*.cpp",
 				"-o",

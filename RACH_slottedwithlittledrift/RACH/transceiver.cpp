@@ -66,46 +66,60 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 		int nuser = 0;
 		int last_packet_time = 0;
 		exponential_distribution<double> exponential(G);
+		poisson_distribution<int> poisson(G);
 		vector<int> time_in;
 		int time_in_num = 0;
 		time_in.push_back(-packet_dur);
         int time_drift = 0,cachetimesum = 0;
+		int cache_time_drift = 0;
 		for (;;)
 		{
-			while(true){
-                time_drift = exponential(generator) * packet_dur;
-				cachetimesum = last_packet_time + time_drift;
-				if((cachetimesum % (packet_dur*Unit)) <= 2*Unit ){
-				//if((cachetimesum % (effLen*Unit)) <= 2*Unit ){
+			int NUM_SLOTED = poisson(generator);
+			cache_time_drift = 0;
+			for(int p = 0; p < NUM_SLOTED; ++p){
+				while(true){
+					time_drift = exponential(generator) * packet_dur;
+					time_drift = time_drift%(4+2);
+					cachetimesum = cache_time_drift + time_drift;
+					if(cachetimesum > 4*Unit ){
+					//if((cachetimesum % (effLen*Unit)) <= 2*Unit ){
+					    time_drift = 0;
+					}
+					cache_time_drift = cache_time_drift + time_drift;
 					break;
 				}
+							
+				last_packet_time += time_drift;
+				if (last_packet_time + packet_dur > frame_dur)
+				{
+					break;
+				}
+				if (ALOHA)
+				{
+					for (int nuser = 0; nuser < NUM_USER; nuser++)
+					{
+						if (packet_num[nuser] == 0 || last_packet_time - packet_time[nuser][packet_num[nuser] - 1] >= packet_dur)
+						{
+							//cout << nuser << " ";
+							packet_time[nuser][packet_num[nuser]] = last_packet_time;
+							packet_num[nuser]++;
+							packet_sum++;
+							break;
+						}
+					}
+				}
+				else
+				{
+					time_in.push_back(last_packet_time);
+					time_in_num++;
+					packet_sum++;
+				}
 			}
-						
-			last_packet_time += time_drift;
-			if (last_packet_time + packet_dur > frame_dur)
+			if (last_packet_time + packet_dur*Unit > frame_dur)
 			{
 				break;
 			}
-			if (ALOHA)
-			{
-				for (int nuser = 0; nuser < NUM_USER; nuser++)
-				{
-					if (packet_num[nuser] == 0 || last_packet_time - packet_time[nuser][packet_num[nuser] - 1] >= packet_dur)
-					{
-						//cout << nuser << " ";
-						packet_time[nuser][packet_num[nuser]] = last_packet_time;
-						packet_num[nuser]++;
-						packet_sum++;
-						break;
-					}
-				}
-			}
-			else
-			{
-				time_in.push_back(last_packet_time);
-				time_in_num++;
-				packet_sum++;
-			}
+			last_packet_time += (packet_dur - 4)*Unit;				
 		}
 
 		time_in.push_back(frame_dur);

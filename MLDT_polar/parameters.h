@@ -35,7 +35,7 @@
 #define		NUM_USER				3									// number of users
 #define		NUM_LEVEL				( 1 << NUM_USER )					// number of levels of superimposed signal
 
-#define		NBC						1									// noncoherent block coding; 1: enable, 0: disable 
+#define		NBC						0									// noncoherent block coding; 1: enable, 0: disable 
 
 //---------- channel estimation ----------
 

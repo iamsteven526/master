@@ -20,8 +20,8 @@
 
 
 
-#define		SNR_min					3
-#define		SNR_max					3
+#define		SNR_min					5
+#define		SNR_max					5
 #define		SNR_step				0.5
 
 

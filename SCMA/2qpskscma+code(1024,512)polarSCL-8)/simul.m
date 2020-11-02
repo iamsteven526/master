@@ -78,15 +78,17 @@ V = size(CB, 3); % number of users (layers)
 
 N = 1024; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 0:5:10;
+
+EbN0 = 30:5:30;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 5000;
-maxNumBits = 1e6;
+
+maxNumErrs = 50;
+maxNumBits = 1e7;
 Niter      = 8;
 ldpcDecoder = comm.LDPCDecoder;
 ldpcEncoder = comm.LDPCEncoder;

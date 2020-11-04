@@ -43,9 +43,9 @@ K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
 V = size(CB, 3); % number of users (layers)
 
-N = 100; % SCMA signals in frame
+N = 10; % SCMA signals in frame
 
-EbN0 = 30:5:35;
+EbN0 = 0:5:30;
 SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
@@ -53,7 +53,7 @@ Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 200;
-maxNumBits = 5e7;
+maxNumBits = 1e7;
 Niter      = 10;
 
 for k = 1:length(SNR)
@@ -64,8 +64,8 @@ for k = 1:length(SNR)
 
         x = randi([0 M-1], V, N); % log2(M)-bit symbols
 
-        %h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
-        h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1));
+        h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
+        %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1));
         for qq = 1:N
             h(:,:,qq) = h(:,:,1);
         end

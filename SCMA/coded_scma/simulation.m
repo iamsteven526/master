@@ -42,7 +42,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 1024; % SCMA signals in frame
 R = 0.5;
-EbN0 = 20:5:35;
+EbN0 = 0:5:30;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
@@ -50,7 +50,7 @@ Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 500;
-maxNumBits = 3e6;
+maxNumBits = 1e6;
 Niter      = 8;
 ldpcDecoder = comm.LDPCDecoder;
 ldpcEncoder = comm.LDPCEncoder;
@@ -68,8 +68,8 @@ for k = 1:length(SNR)
            %w(pp,:) = ldpcEncoder(dam(pp,:)');%64800
            w(pp,:) = nrPolarEncode(dam(pp,:)',N,10,false);
         end
-        %h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
-        h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1)); % no diversity
+        h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
+        %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1)); % no diversity
         for pp = 1:1
             for qq = 1:N/1
                 h(:,:,(pp-1)*N/1+qq) = h(:,:,(pp-1)*N/1+1);

@@ -50,7 +50,7 @@ Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 500;
-maxNumBits = 1e6;
+maxNumBits = 5e6;
 Niter      = 8;
 ldpcDecoder = comm.LDPCDecoder;
 ldpcEncoder = comm.LDPCEncoder;

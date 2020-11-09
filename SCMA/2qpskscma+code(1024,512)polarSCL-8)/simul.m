@@ -148,3 +148,11 @@ for k = 1:length(SNR)
     display(sum(Nerr(:,k))/12)
 end
 plot(EbN0,log10(BER))
+
+
+
+
+
+
+
+

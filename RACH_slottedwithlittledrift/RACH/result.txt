@@ -1,0 +1,37 @@
+RACH-OFDM-GDMA-BPSK system
+
+(1008,504) LDPC code
+Separated channel decoding: SPA
+Iteration#: 100
+
+FFT point: 16, CP length: 4, channel tap: 5
+Number of users: 10
+
+Perfect Time
+
+Preamble + GMM
+
+ALOHA + MLDT, 	NON SLOTED system
+Channel, K=0
+OFDM : CP, CP Len : 4
+Preamble Len: 63
+-
+Packet Rate =  0.6, BER = 1.100000e+00, BLER = 2.098367e-01, MSE = 6.292021e-01, T_D = 0.000000e+00, T_E = 0.000000e+00 
+Packet Rate =  0.7, BER = 1.300000e+00, BLER = 2.513007e-01, MSE = 6.953805e-01, T_D = 0.000000e+00, T_E = 3.336627e-01 
+Packet Rate =  0.8, BER = 1.500000e+00, BLER = 2.906240e-01, MSE = 7.515698e-01, T_D = 0.000000e+00, T_E = 1.626303e-18 
+Packet Rate =  0.8, BER = 1.700000e+00, BLER = 3.300437e-01, MSE = 8.115938e-01, T_D = 0.000000e+00, T_E = -4.336809e-19 
+Packet Rate =  0.9, BER = 1.900000e+00, BLER = 3.690682e-01, MSE = 8.529847e-01, T_D = 0.000000e+00, T_E = -3.854662e-22 
+Packet Rate =  0.9, BER = 2.100000e+00, BLER = 4.086646e-01, MSE = 8.996450e-01, T_D = 0.000000e+00, T_E = 3.336546e-01 
+Packet Rate =  0.9, BER = 2.300000e+00, BLER = 4.487715e-01, MSE = 9.498550e-01, T_D = 0.000000e+00, T_E = 1.897354e-19 
+Packet Rate =  1.0, BER = 2.500000e+00, BLER = 4.858338e-01, MSE = 1.006219e+00, T_D = 0.000000e+00, T_E = -1.629804e-22 
+Packet Rate =  1.1, BER = 2.700000e+00, BLER = 5.313481e-01, MSE = 1.055079e+00, T_D = 0.000000e+00, T_E = -1.084202e-19 
+Packet Rate =  1.1, BER = 2.900000e+00, BLER = 5.698986e-01, MSE = 1.103275e+00, T_D = 0.000000e+00, T_E = 2.964615e-21 
+Packet Rate =  1.1, BER = 3.100000e+00, BLER = 6.132343e-01, MSE = 1.141166e+00, T_D = 0.000000e+00, T_E = 3.335011e-01 
+Packet Rate =  1.2, BER = 3.300000e+00, BLER = 6.474960e-01, MSE = 1.197280e+00, T_D = 0.000000e+00, T_E = 3.338084e-01 
+Packet Rate =  1.2, BER = 3.500000e+00, BLER = 6.908427e-01, MSE = 1.249750e+00, T_D = 0.000000e+00, T_E = 1.716400e-22 
+Packet Rate =  1.3, BER = 3.700000e+00, BLER = 7.286743e-01, MSE = 1.303095e+00, T_D = 0.000000e+00, T_E = 7.589415e-19 
+Packet Rate =  1.4, BER = 3.900000e+00, BLER = 7.700233e-01, MSE = 1.359809e+00, T_D = 0.000000e+00, T_E = 1.930640e-21 
+
+
+6.292021e-01, 6.953805e-01, 7.515698e-01, 8.115938e-01, 8.529847e-01, 8.996450e-01, 9.498550e-01, 1.006219e+00, 1.055079e+00, 1.103275e+00, 1.141166e+00, 1.197280e+00, 1.249750e+00, 1.303095e+00, 1.359809e+00, 
+2.098367e-01, 

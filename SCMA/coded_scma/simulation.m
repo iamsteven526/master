@@ -42,7 +42,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 1024; % SCMA signals in frame
 R = 0.5;
-EbN0 = 0:5:30;
+EbN0 = 15:5:15;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));

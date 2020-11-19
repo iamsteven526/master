@@ -64,7 +64,7 @@
 
 
 #define		SNR_NUM					1													// number of SNR points to be simulated
-#define		SNR_START				60												// in dB
+#define		SNR_START				25												// in dB
 #define		SNR_STEP				5													// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

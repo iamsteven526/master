@@ -257,7 +257,7 @@ void Clustering(double **rx, double **centroid, int **group, int *groupSize, dou
 					}
 
 					//---- centroid delte and centroid split
-					if (max_val > 1.75 * min_val)
+					if (max_val > 1.95 * min_val)
 					{
 						centroid[min_tr][0] = centroid[max_tr][0] + DELTA;
 						centroid[min_tr][1] = centroid[max_tr][1] + DELTA;

@@ -42,7 +42,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 1024; % SCMA signals in frame
 R = 0.5;
-EbN0 = 10:2.5:15;
+EbN0 = 0:2.5:15;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
@@ -70,7 +70,7 @@ for k = 1:length(SNR)
         end
         h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
         %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1)); % no diversity
-        multiblock = 4;
+        multiblock = 8;
         for pp = 1:multiblock
             for qq = 1:N/multiblock
                 h(:,:,(pp-1)*N/multiblock+qq) = h(:,:,(pp-1)*N/multiblock+1);

@@ -18,7 +18,7 @@ QPSK+1024,512polarcode for SCMA 1015
 
 20db:
 3.08194477154969e-05
-
+3.70060035190836e-05
 
 
 1116 with diversity multiblock=4

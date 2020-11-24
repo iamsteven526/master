@@ -27,15 +27,17 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 		//cout << endl;
 	}*/
 	//system("pause");
-	for (int nuser = 0; nuser < NUM_USER; nuser++)
-	{
-		for (int j = 0; j < FFT_POINT; j++)
+	if (CE_SCHEME == 0){
+		for (int nuser = 0; nuser < NUM_USER; nuser++)
 		{
-			int temp = rand() % 2;
-			for (int i = 0; i < FFT_SEGMENT; i++)
+			for (int j = 0; j < FFT_POINT; j++)
 			{
-				estimate[nuser][i][j][0] = H[nuser][i][0][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
-				estimate[nuser][i][j][1] = H[nuser][i][1][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
+				int temp = rand() % 2;
+				for (int i = 0; i < FFT_SEGMENT; i++)
+				{
+					estimate[nuser][i][j][0] = H[nuser][i][0][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
+					estimate[nuser][i][j][1] = H[nuser][i][1][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
+				}
 			}
 		}
 	}

@@ -1,0 +1,191 @@
+====oldNBC (497,1024) 1 users
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 1
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  10.0,
+Block# = 9576, BER = 2.252529e-02, BLER = 1.045322e-01
+
+SNR[dB] =  12.0,
+Block# = 23245, BER = 7.765673e-03, BLER = 4.306302e-02
+
+SNR[dB] =  14.0,
+Block# = 60472, BER = 2.254997e-03, BLER = 1.655312e-02
+
+SNR[dB] =  16.0,
+Block# = 169398, BER = 7.071081e-04, BLER = 5.909161e-03
+
+SNR[dB] =  18.0,
+Block# = 486529, BER = 2.007776e-04, BLER = 2.057431e-03
+
+SNR[dB] =  20.0,
+Block# = 1433344, BER = 5.802025e-05, BLER = 6.983669e-04
+
+SNR[dB] =  22.0,
+Block# = 4456622, BER = 1.441980e-05, BLER = 2.246096e-04
+
+SNR[dB] =  24.0,
+Bloc^C = 1648694, BER = 3.736876e-06, BLER = 7.824375e-05
+
+====oldNBC (497,1024) 2 users
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  10.0,
+Block# = 3422, BER = 3.618144e-02, BLER = 1.464056e-01
+
+SNR[dB] =  12.0,
+Block# = 8444, BER = 1.177672e-02, BLER = 5.927286e-02
+
+SNR[dB] =  14.0,
+Block# = 23895, BER = 3.388610e-03, BLER = 2.094580e-02
+
+SNR[dB] =  16.0,
+Block# = 67618, BER = 9.501685e-04, BLER = 7.401875e-03
+
+SNR[dB] =  18.0,
+Block# = 209177, BER = 2.431249e-04, BLER = 2.392710e-03
+
+SNR[dB] =  20.0,
+Block# = 656011, BER = 6.640955e-05, BLER = 7.629445e-04
+
+SNR[dB] =  22.0,
+Block# = 1964979, BER = 1.692719e-05, BLER = 2.547101e-04
+
+SNR[dB] =  24.0,
+Block# = 1097606, BER = 3.7716^Ce-06, BLER = 7.698580e-05
+
+
+
+
+====newNBC (512,1024) 1 users
+
+OFDM-GDMA-BPSK system
+
+(1024,527) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 1
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.245020e-01, BLER = 6.126937e-01
+
+SNR[dB] =  6.0,
+Block# = 2549, BER = 1.219803e-01, BLER = 3.927030e-01
+
+SNR[dB] =  8.0,
+Block# = 4533, BER = 5.622958e-02, BLER = 2.208251e-01
+
+SNR[dB] =  10.0,
+Block# = 8680, BER = 2.539130e-02, BLER = 1.153226e-01
+
+SNR[dB] =  12.0,
+Block# = 21675, BER = 8.152123e-03, BLER = 4.618224e-02
+
+SNR[dB] =  14.0,
+Block# = 53706, BER = 2.661881e-03, BLER = 1.863851e-02
+
+SNR[dB] =  16.0,
+Block# = 138413, BER = 8.066185e-04, BLER = 7.231980e-03
+
+SNR[dB] =  18.0,
+Block# = 394929, BER = 2.448423e-04, BLER = 2.534633e-03
+
+SNR[dB] =  20.0,
+Block# = 1111985, BER = 6.912434e-05, BLER = 9.001920e-04
+
+
+
+
+
+
+
+
+
+====newNBC (512,1024) 2 users
+
+OFDM-GDMA-BPSK system
+
+(1024,527) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.892680e-01, BLER = 7.248876e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.856196e-01, BLER = 5.264868e-01
+
+SNR[dB] =  8.0,
+Block# = 2001, BER = 9.199892e-02, BLER = 3.128436e-01
+
+SNR[dB] =  10.0,
+Block# = 3176, BER = 3.959844e-02, BLER = 1.575882e-01
+
+SNR[dB] =  12.0,
+Block# = 7295, BER = 1.327549e-02, BLER = 6.860864e-02
+
+SNR[dB] =  14.0,
+Block# = 19199, BER = 4.108033e-03, BLER = 2.606907e-02
+
+SNR[dB] =  16.0,
+Block# = 56351, BER = 1.115618e-03, BLER = 8.881830e-03
+
+SNR[dB] =  18.0,
+Block# = 166111, BER = 2.917559e-04, BLER = 3.013045e-03
+
+SNR[dB] =  20.0,
+Block# = 529531, BER = 7.440805e-05, BLER = 9.451760e-04
+
+
+
+
+

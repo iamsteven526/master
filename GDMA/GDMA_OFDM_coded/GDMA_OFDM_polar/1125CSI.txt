@@ -1,0 +1,42 @@
+perfectCSI no interleaver 1 user
+
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 1
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  10.0,
+Block# = 11986, BER = 1.809468e-02, BLER = 8.351410e-02
+
+SNR[dB] =  12.0,
+Block# = 28358, BER = 6.170409e-03, BLER = 3.529868e-02
+
+SNR[dB] =  14.0,
+Block# = 77082, BER = 1.791137e-03, BLER = 1.298617e-02
+
+SNR[dB] =  16.0,
+Block# = 206809, BER = 5.979343e-04, BLER = 4.840215e-03
+
+SNR[dB] =  18.0,
+Block# = 669921, BER = 1.533850e-04, BLER = 1.494206e-03
+
+SNR[dB] =  20.0,
+Block# = 2178514, BER = 3.903984e-05, BLER = 4.594875e-04
+
+SNR[dB] =  22.0,
+Block# = 6244145, BER = 1.138066e-05, BLER = 1.603102e-04
+
+SNR[dB] =  24.0,
+Block# = 402064, BER = 3.060380e-06, BLER ^C5.471779e-05

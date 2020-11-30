@@ -40,3 +40,97 @@ Block# = 6244145, BER = 1.138066e-05, BLER = 1.603102e-04
 
 SNR[dB] =  24.0,
 Block# = 402064, BER = 3.060380e-06, BLER ^C5.471779e-05
+
+
+perfectCSI yes interleaver 1 user
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0 + Interleaver
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 1
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2274, BER = 1.996525e-01, BLER = 4.401935e-01
+
+SNR[dB] =  6.0,
+Block# = 4496, BER = 9.887956e-02, BLER = 2.226423e-01
+
+SNR[dB] =  8.0,
+Block# = 10789, BER = 4.025983e-02, BLER = 9.277968e-02
+
+SNR[dB] =  10.0,
+Block# = 34245, BER = 1.213544e-02, BLER = 2.923054e-02
+
+SNR[dB] =  12.0,
+Block# = 131016, BER = 3.147725e-03, BLER = 7.640288e-03
+
+SNR[dB] =  14.0,
+Block# = 576358, BER = 6.961582e-04, BLER = 1.736768e-03
+
+SNR[dB] =  16.0,
+Block# = 2926559, BER = 1.333851e-04, BLER = 3.420399e-04
+
+SNR[dB] =  18.0,
+Block# = 18200264, BER = 2.064445e-05, BLER = 5.499920e-05
+
+SNR[dB] =  20.0,
+Block# = 45434840, BER = 2.775653e-06, BLER = 7.835397e-06
+
+
+perfectCSI yes interleaver 2 user
+
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0 + Interleaver
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.678236e-01, BLER = 5.699650e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.552495e-01, BLER = 3.430785e-01
+
+SNR[dB] =  8.0,
+Block# = 3197, BER = 6.977550e-02, BLER = 1.565530e-01
+
+SNR[dB] =  10.0,
+Block# = 9490, BER = 2.247864e-02, BLER = 5.273973e-02
+
+SNR[dB] =  12.0,
+Block# = 33122, BER = 6.186291e-03, BLER = 1.511080e-02
+
+SNR[dB] =  14.0,
+Block# = 163488, BER = 1.224538e-03, BLER = 3.061387e-03
+
+SNR[dB] =  16.0,
+Block# = 944570, BER = 2.017804e-04, BLER = 5.298707e-04
+
+SNR[dB] =  18.0,
+Block# = 6494320, BER = 2.898176e-05, BLER = 7.706735e-05
+
+SNR[dB] =  20.0,
+Block# = 26184577, BER = 4.130048e-06, BLER = 1.103703e-05
+

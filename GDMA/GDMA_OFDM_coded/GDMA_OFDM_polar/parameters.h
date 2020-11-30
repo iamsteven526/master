@@ -28,7 +28,7 @@
 #define		Iteration				50
 #define		NBC						0												// Using the structure of RM code
 #define		INTERLEAVER				1												// 1: enable, 0 : disable
-#define		INTERLEAVER_type		1												// 1: random, 0 : non-random
+#define		INTERLEAVER_type		0												// 1: random, 0 : non-random
 
 #define		DATA_LEN				(512 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length

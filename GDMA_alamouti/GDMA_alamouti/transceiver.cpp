@@ -81,6 +81,89 @@ void SuperLevelSpecification(double ***chCoef, double ****supLevel)
 		supLevel[1][0][2][1] = -supLevel[0][0][2][1];
 		ComplexConjugate(supLevel[1][0][2], supLevel[0][1][1]);
 	}
+	else if (NUM_USER == 3)
+	{
+	    //superlevel[user][tx][user+tx-1][2]
+		double temp1[2], temp2[2];	
+		supLevel[0][0][0][0] = supLevel[0][1][0][0] = pow(chCoef[0][0][0], 2) + pow(chCoef[0][0][1], 2) + pow(chCoef[0][1][0], 2) + pow(chCoef[0][1][1], 2);
+		supLevel[0][0][0][1] = supLevel[0][1][0][1] = 0;
+		ComplexConjugate(chCoef[0][0], temp1);
+		ComplexMultiplication(temp1, chCoef[1][0], temp1);
+		ComplexConjugate(chCoef[1][1], temp2);
+		ComplexMultiplication(temp2, chCoef[0][1], temp2);
+		supLevel[0][0][1][0] = temp1[0] + temp2[0];
+		supLevel[0][0][1][1] = temp1[1] + temp2[1];
+
+		ComplexConjugate(chCoef[0][0], temp1);
+		ComplexMultiplication(temp1, chCoef[2][0], temp1);
+		ComplexConjugate(chCoef[2][1], temp2);
+		ComplexMultiplication(temp2, chCoef[0][1], temp2);
+		supLevel[0][0][3][0] = temp1[0] + temp2[0];
+		supLevel[0][0][3][1] = temp1[1] + temp2[1];
+
+		supLevel[1][1][2][0] = supLevel[0][0][1][0];
+		supLevel[1][1][2][1] = supLevel[0][0][1][1];
+		supLevel[2][1][2][0] = supLevel[0][0][3][0]; 
+		supLevel[2][1][2][1] = supLevel[0][0][3][1]; 
+		ComplexConjugate(supLevel[0][0][1], supLevel[0][1][2]);
+		ComplexConjugate(supLevel[0][0][3], supLevel[0][1][4]);
+		supLevel[1][0][1][0] = supLevel[0][1][2][0];
+		supLevel[1][0][1][1] = supLevel[0][1][2][1];
+		supLevel[2][0][1][0] = supLevel[0][1][4][0];
+		supLevel[2][0][1][1] = supLevel[0][1][4][1];
+
+
+		supLevel[1][0][0][0] = supLevel[1][1][0][0] = pow(chCoef[1][0][0], 2) + pow(chCoef[1][0][1], 2) + pow(chCoef[1][1][0], 2) + pow(chCoef[1][1][1], 2);
+		supLevel[1][0][0][1] = supLevel[1][1][0][1] = 0;
+		ComplexConjugate(chCoef[0][0], temp1);
+		ComplexMultiplication(temp1, chCoef[1][1], temp1);
+		ComplexConjugate(chCoef[1][0], temp2);
+		ComplexMultiplication(temp2, chCoef[0][1], temp2);
+		supLevel[0][0][2][0] = temp1[0] - temp2[0];
+		supLevel[0][0][2][1] = temp1[1] - temp2[1];
+		ComplexConjugate(supLevel[0][0][2], supLevel[1][1][1]);
+		supLevel[1][0][2][0] = -supLevel[0][0][2][0];
+		supLevel[1][0][2][1] = -supLevel[0][0][2][1];
+		ComplexConjugate(supLevel[1][0][2], supLevel[0][1][1]);
+
+		ComplexConjugate(chCoef[0][0], temp1);
+		ComplexMultiplication(temp1, chCoef[2][1], temp1);
+		ComplexConjugate(chCoef[2][0], temp2);
+		ComplexMultiplication(temp2, chCoef[0][1], temp2);
+		supLevel[0][0][4][0] = temp1[0] - temp2[0];
+		supLevel[0][0][4][1] = temp1[1] - temp2[1];
+		ComplexConjugate(supLevel[0][0][4], supLevel[2][1][1]);
+		supLevel[2][0][2][0] = -supLevel[0][0][4][0];
+		supLevel[2][0][2][1] = -supLevel[0][0][4][1];
+		ComplexConjugate(supLevel[2][0][2], supLevel[0][1][3]);
+
+		supLevel[2][0][0][0] = supLevel[2][1][0][0] = pow(chCoef[2][0][0], 2) + pow(chCoef[2][0][1], 2) + pow(chCoef[2][1][0], 2) + pow(chCoef[2][1][1], 2);
+		supLevel[2][0][0][1] = supLevel[2][1][0][1] = 0;
+		ComplexConjugate(chCoef[1][0], temp1);
+		ComplexMultiplication(temp1, chCoef[2][0], temp1);
+		ComplexConjugate(chCoef[2][1], temp2);
+		ComplexMultiplication(temp2, chCoef[1][1], temp2);
+		supLevel[1][0][3][0] = temp1[0] + temp2[0];
+		supLevel[1][0][3][1] = temp1[1] + temp2[1];
+		supLevel[2][1][4][0] = supLevel[1][0][3][0];
+		supLevel[2][1][4][1] = supLevel[1][0][3][1];
+		ComplexConjugate(supLevel[1][0][3], supLevel[1][1][4]);
+		supLevel[2][0][3][0] = supLevel[1][1][4][0];
+		supLevel[2][0][3][1] = supLevel[1][1][4][1];
+
+		ComplexConjugate(chCoef[1][0], temp1);
+		ComplexMultiplication(temp1, chCoef[2][1], temp1);
+		ComplexConjugate(chCoef[2][0], temp2);
+		ComplexMultiplication(temp2, chCoef[1][1], temp2);
+		supLevel[0][1][4][0] = temp1[0] - temp2[0];
+		supLevel[0][1][4][1] = temp1[1] - temp2[1];
+		ComplexConjugate(supLevel[0][1][4], supLevel[2][1][3]);
+		supLevel[2][0][4][0] = -supLevel[0][1][4][0];
+		supLevel[2][0][4][1] = -supLevel[0][1][4][1];
+		ComplexConjugate(supLevel[2][0][4], supLevel[1][1][3]);
+
+
+	}
 	else
 	{
 		printf("\nPARAMETER SETTING IS WRONG\n");

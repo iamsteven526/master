@@ -2,7 +2,7 @@
 
 //---------- system ----------
 
-#define		NUM_USER				2													// number of users
+#define		NUM_USER				3													// number of users
 
 #define		NUM_TX					2													// number of transmit antennas
 #define		NUM_LEVEL				( 1 << ( NUM_USER * NUM_TX - 1))					// number of levels of superimposed signal
@@ -12,7 +12,7 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				1000
 
-#define		BLOCK_NUM				500000000											// number of blocks to be simulated
+#define		BLOCK_NUM				500000											// number of blocks to be simulated
 
 #define		SNR_NUM					9													// number of SNR points to be simulated
 #define		SNR_START				0 													// in dB

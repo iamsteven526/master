@@ -49,7 +49,8 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 			for (int j = 0; j < FFT_SEGMENT; j++)
 			{
 				//Interleaver[0][m] = i + FFT_POINT * j; //seperate into 64 blocks
-				Interleaver[0][m] = (FFT_POINT*4) * (j/4) + j%4 + i*4;
+				//Interleaver[0][m] = //m;//(FFT_POINT*4) * (j/4) + j%4 + i*4;
+				Interleaver[0][m] = FFT_POINT*j + i;
 				//cout << Interleaver[0][m] << endl;
 				m++;
 			}
@@ -59,7 +60,6 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 		int reg = 0, p = 0;
 		for (int j = 0; j < FFT_SEGMENT/4; j++)
 		{
-
 			for (int i = 0; i < FFT_POINT*4; i++) //�H���q1~k�� ���p�өM��i�ӥ洫
 			{
 				p = (rand() ) % (FFT_POINT)*4;
@@ -74,6 +74,7 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 		{
 			for (int j = 0; j < CODE_LEN; j++)
 			{
+				//cout << Interleaver[0][j] << endl;
 				Interleaver[i][j] = Interleaver[0][j];
 			}
 		}
@@ -451,6 +452,7 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 			bool errFlag = false;
 			for (int i = 0; i < DATA_LEN; i++)
 			{
+				//cout << decodedResult[nuser][i] << "    " << int(data[nuser][i]) << endl;
 				if (NBC_index.count(i) == 1 && NBC)
 					continue;
 				//cout << decodedResult[nuser][i] << " " << data[nuser][i] << " - ";

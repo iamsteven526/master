@@ -1,0 +1,29 @@
+STC-GDMA-BPSK system
+Number of users: 3
+
+-
+
+SNR[dB] = 0.0
+Block# = 5000000, BER = 2.019317e-01
+SNR[dB] = 5.0
+Block# = 5000000, BER = 1.235085e-01
+SNR[dB] = 10.0
+Block# = 5000000, BER = 6.194657e-02
+SNR[dB] = 15.0
+Block# = 5000000, BER = 3.160297e-02
+SNR[dB] = 20.0
+Block# = 5000000, BER = 1.934773e-02
+SNR[dB] = 25.0
+Block# = 5000000, BER = 9.579933e-03
+SNR[dB] = 30.0
+Block# = 5000000, BER = 2.822233e-03
+SNR[dB] = 35.0
+Block# = 5000000, BER = 4.996000e-04
+SNR[dB] = 40.0
+Block# = 5000000, BER = 6.243333e-05
+SNR[dB] = 45.0
+Block# = 5000000, BER = 5.733333e-06
+SNR[dB] = 50.0
+Block# = 5000000, BER = 8.000000e-07
+SNR[dB] = 55.0
+Block# = 5000000, BER = 3.333333e-08

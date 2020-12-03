@@ -329,6 +329,5 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
             //LLR[2*v][n]     = log((exp(Q[0][v]) + exp(Q[1][v]))/((exp(Q[2][v]) + exp(Q[3][v]))));
             //LLR[2*v + 1][n] = log((exp(Q[0][v]) + exp(Q[2][v]))/((exp(Q[1][v]) + exp(Q[3][v]))));
         }
-
 	}
 }

@@ -144,12 +144,13 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 			{
 				//TODO:::::
 				double prob0, prob1;
+				double alp = 2;
 				//---------- desired signal ---------- (1)
 				prob0 = app[j][i][0] + app[j][i][1] + app[j][i][2] + app[j][i][3] + app[j][i][4] + app[j][i][5] + app[j][i][6] + app[j][i][7] + app[j][i][8] + app[j][i][9] + app[j][i][10] + app[j][i][11] + app[j][i][12] + app[j][i][13] + app[j][i][14] + app[j][i][15];
 				prob1 = app[j][i][16] + app[j][i][17] + app[j][i][18] + app[j][i][19] + app[j][i][20] + app[j][i][21] + app[j][i][22] + app[j][i][23] + app[j][i][24] + app[j][i][25] + app[j][i][26] + app[j][i][27] + app[j][i][28] + app[j][i][29] + app[j][i][30] + app[j][i][31];
-				if (prob0 <= NUMERIC_LIMIT) appLlr[j][i] += -2*LLR_LIMIT;
-				else if (prob1 <= NUMERIC_LIMIT) appLlr[j][i] += 2*LLR_LIMIT;
-				else appLlr[j][i] += log(prob0 / prob1);
+				if (prob0 <= NUMERIC_LIMIT) appLlr[j][i] += -2*LLR_LIMIT*alp;
+				else if (prob1 <= NUMERIC_LIMIT) appLlr[j][i] += 2*LLR_LIMIT*alp;
+				else appLlr[j][i] += log(prob0 / prob1)*alp;
 				//---------- interferences ----------  (4)
 				
 				prob0 = app[j][i][0] + app[j][i][1] + app[j][i][2] + app[j][i][3] + app[j][i][4] + app[j][i][5] + app[j][i][6] + app[j][i][7] + app[j][i][16] + app[j][i][17] + app[j][i][18] + app[j][i][19] + app[j][i][20] + app[j][i][21] + app[j][i][22] + app[j][i][23];

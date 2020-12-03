@@ -189,10 +189,7 @@ void Detector(int **data, double **appLlr, long double &error)
 	for (int nuser = 0; nuser < NUM_USER; nuser++)
 	{
 		for (int i = 0; i < NUM_TX; i++)
-		{
-			if (data[nuser][i] != HARD(appLlr[nuser][i])){
-			    //cout << appLlr[nuser][i] << "     " << HARD(appLlr[nuser][i]) << "    " << data[nuser][i] << endl;
-			}
+		{			
 			error += (data[nuser][i] != HARD(appLlr[nuser][i]));
 		}
 	}

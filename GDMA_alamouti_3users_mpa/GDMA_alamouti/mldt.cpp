@@ -34,7 +34,6 @@ static inline double log_sum_exp(double const *x, size_t size)
         x_arg = x[i] - xm;
         sum += exp(x_arg);
     }
-
     long double log_sum = xm + log(sum);
 
     return log_sum;
@@ -281,6 +280,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 								else{
 									f[k][m1][m2][m3][m4][m5]   = log(app[(k/2)][(k%2)][(8*m1+4*m2+2*m3+m4+16*m5)]);
 								}
+								//cout << f[k][m1][m2][m3][m4][m5] << endl;
 							}
 						}
                     }
@@ -433,7 +433,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
                 sum2 = log(sum2); // 20201106
 				sum3 = log(sum3);
 				sum4 = log(sum4);
-				cout << sum0 << sum1 << sum2 << sum3 <<sum4;
+				//cout << sum0 << sum1 << sum2 << sum3 << sum4 << endl;
 
                 for (int m = 0; m < M; m++)
                 {
@@ -455,7 +455,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
             {
                 Q[m][v] = Ap + Igv[ind_dv[v][0]][v][m] + Igv[ind_dv[v][1]][v][m] + Igv[ind_dv[v][2]][v][m]  + Igv[ind_dv[v][3]][v][m] + Igv[ind_dv[v][4]][v][m];
 				if(!((Q[m][v] <= 10000)&&(Q[m][v] >= -10000)) ){
-				    cout << m << "   " << v << "   " << Q[m][v] << "   " << Igv[ind_dv[v][0]][v][m] << endl;
+				    //cout << m << "   " << v << "   " << Q[m][v] << "   " << Igv[ind_dv[v][0]][v][m] << endl;
 				}
 			}
         }
@@ -466,6 +466,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 			appLlr[(v/2)][(v%2)] = Q[0][v] - Q[1][v];
 			if(!((appLlr[(v/2)][(v%2)] <= 10000)&&(appLlr[(v/2)][(v%2)] >= -10000)) ){
 			    //cout << Q[0][v] << "   " << Q[1][v] << "   " << appLlr[(v/2)][(v%2)] << endl;
+                //cout << sum0 << endl;
 			}
 			//cout << appLlr[(v/2)][(v%2)] << endl;
             //LLR[2*v][n]     = log((exp(Q[0][v]) + exp(Q[1][v]))/((exp(Q[2][v]) + exp(Q[3][v]))));

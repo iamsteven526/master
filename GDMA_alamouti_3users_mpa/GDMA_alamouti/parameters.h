@@ -9,13 +9,13 @@
 
 //---------- simulator ----------
 
-#define		NUMERIC_LIMIT			1e-100
+#define		NUMERIC_LIMIT			1e-8
 #define		LLR_LIMIT				1000
 
-#define		BLOCK_NUM				500000											// number of blocks to be simulated
+#define		BLOCK_NUM				5000000											// number of blocks to be simulated
 
 #define		SNR_NUM					12													// number of SNR points to be simulated
-#define		SNR_START				40 													// in dB
+#define		SNR_START				0 													// in dB
 #define		SNR_STEP				5													// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

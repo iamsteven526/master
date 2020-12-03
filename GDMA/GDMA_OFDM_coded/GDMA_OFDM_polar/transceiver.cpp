@@ -49,8 +49,8 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 			for (int j = 0; j < FFT_SEGMENT; j++)
 			{
 				//Interleaver[0][m] = i + FFT_POINT * j; //seperate into 64 blocks
-				//Interleaver[0][m] = //m;//(FFT_POINT*4) * (j/4) + j%4 + i*4;
-				Interleaver[0][m] = FFT_POINT*j + i;
+				Interleaver[0][m] = m;//(FFT_POINT*4) * (j/4) + j%4 + i*4;
+				//Interleaver[0][m] = FFT_POINT*j + i;
 				//cout << Interleaver[0][m] << endl;
 				m++;
 			}
@@ -63,9 +63,9 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 			for (int i = 0; i < FFT_POINT*4; i++) //�H���q1~k�� ���p�өM��i�ӥ洫
 			{
 				p = (rand() ) % (FFT_POINT)*4;
-				reg = Interleaver[0][FFT_POINT*4*j + i];
-				Interleaver[0][FFT_POINT*4*j + i] = Interleaver[0][FFT_POINT*4*j + p];
-				Interleaver[0][FFT_POINT*4*j + p] = reg;
+				reg = Interleaver[0][j + FFT_POINT*i];
+				Interleaver[0][j + FFT_POINT*i] = Interleaver[0][j + FFT_POINT*p];
+				Interleaver[0][j + FFT_POINT*p] = reg;
 			}
 		}
 		//end interleaver

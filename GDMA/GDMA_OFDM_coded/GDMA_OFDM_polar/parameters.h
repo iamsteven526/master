@@ -26,7 +26,7 @@
 #define		POLAR_DECODING_TYPE		1												// 1: SCL,  0: BP
 #define		JOINT					0												// 1: JCD,  0: SCD
 #define		Iteration				50
-#define		NBC						0												// Using the structure of RM code
+#define		NBC						1												// Using the structure of RM code
 #define		INTERLEAVER				1												// 1: enable, 0 : disable
 #define		INTERLEAVER_type		0												// 1: random, 0 : non-random
 
@@ -113,7 +113,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				1												// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				0												// 0: cluster-based, 1: ideal
 
 #define		INI_METHOD				2												// 0: LBG, 1: k-means++, 2: modified k-means++
 
@@ -132,7 +132,7 @@
 #define		BLOCK_NUM				100000000											// number of blocks to be simulated 
 
 #define		SNR_NUM					9												// number of SNR points to be simulated
-#define		SNR_START				12												// in dB
+#define		SNR_START				4												// in dB
 #define		SNR_STEP				2												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

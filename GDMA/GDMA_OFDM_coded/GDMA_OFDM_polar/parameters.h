@@ -26,11 +26,11 @@
 #define		POLAR_DECODING_TYPE		1												// 1: SCL,  0: BP
 #define		JOINT					0												// 1: JCD,  0: SCD
 #define		Iteration				50
-#define		NBC						1												// Using the structure of RM code
+#define		NBC						0												// Using the structure of RM code
 #define		INTERLEAVER				1												// 1: enable, 0 : disable
 #define		INTERLEAVER_type		0												// 1: random, 0 : non-random
 
-#define		DATA_LEN				(527 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
+#define		DATA_LEN				(512 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length
 //---------- LDPC code ----------
 
@@ -113,7 +113,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				0												// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				1												// 0: cluster-based, 1: ideal
 
 #define		INI_METHOD				2												// 0: LBG, 1: k-means++, 2: modified k-means++
 

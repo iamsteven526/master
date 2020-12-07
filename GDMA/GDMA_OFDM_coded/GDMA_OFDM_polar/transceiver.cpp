@@ -44,16 +44,29 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 	}
 	else
 	{
+		srand(time(NULL));
+		int reg = 0, p = 0;
+		int* subInterleaver = new int [FFT_POINT];
+		for (int i = 0; i < FFT_POINT; i++) //�H���q1~k�� ���p�өM��i�ӥ洫
+		{
+			p = (rand() ) % FFT_POINT;
+			reg = subInterleaver[i];
+			subInterleaver[i] = subInterleaver[p];
+			subInterleaver[p] = reg;
+		}
+
 		for (int i = 0, m = 0; i < FFT_POINT; i++)  //FFT_point = 16
 		{
 			for (int j = 0; j < FFT_SEGMENT; j++)
 			{
 				//Interleaver[0][m] = i + FFT_POINT * j; //seperate into 64 blocks
-				Interleaver[0][m] = m;
+				//Interleaver[0][m] = m; // best
 				//Interleaver[0][m] = (FFT_POINT*4) * (j/4) + j%4 + i*4;//wrong
-				//Interleaver[0][m] = FFT_POINT*j + i;
-				//Interleaver[0][m] = (FFT_POINT*4) * (m/64) + (4*j)%64 + j/16;
+				//Interleaver[0][m] = FFT_POINT*j + i; // worst
+				//Interleaver[0][m] = (FFT_POINT*4) * (m/64) + (4*j)%64 + j/16; // teachers method
 				//cout << Interleaver[0][m] << endl;
+				Interleaver[0][m] = 16*(m/16) + subInterleaver[m%16];//((9*m)%16);
+
 				m++;
 			}
 		}

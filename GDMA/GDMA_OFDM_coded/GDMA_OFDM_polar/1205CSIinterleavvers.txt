@@ -136,7 +136,7 @@ SNR[dB] =  20.0,
 Block# = 1013565, BER = 4.168262e-05, BLER = 4.938016e-04
 
 
-iamsteven@iamsteven-D830MT:~/Desktop/master/GDMA/GDMA_OFDM_coded/GDMA_OFDM_polar$ ./main
+iamsteven@iamsteven-D830MT:~/Desktop/master/GDMA/GDMA_OFDM_coded/GDMA_OFDM_polar$ ./main best!!!!!
 OFDM-GDMA-BPSK system
 
 (1024,512) Polar code

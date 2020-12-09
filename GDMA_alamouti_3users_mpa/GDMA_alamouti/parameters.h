@@ -15,7 +15,7 @@
 #define		BLOCK_NUM				5000000											// number of blocks to be simulated
 
 #define		SNR_NUM					12													// number of SNR points to be simulated
-#define		SNR_START				0 													// in dB
+#define		SNR_START				20 													// in dB
 #define		SNR_STEP				5													// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

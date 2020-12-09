@@ -71,8 +71,8 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 				//Interleaver[0][m] = FFT_POINT*j + i; // worst
 				//Interleaver[0][m] = (FFT_POINT*4) * (m/64) + (4*j)%64 + j/16; // teachers method
 				//cout << Interleaver[0][m] << endl;
-				Interleaver[0][m] = 16*(m/16) + subinterleaver[(m%16)];//((9*m)%16);
-				//Interleaver[0][m] = 16*(m/16) + ((5*m)%16);
+				//Interleaver[0][m] = 16*(m/16) + subinterleaver[(m%16)];//((9*m)%16);
+				Interleaver[0][m] = 16*(m/16) + ((5*m)%16);
 
 
 				m++;
@@ -83,6 +83,7 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 		//srand(time(NULL));
 		reg = 0;
 		p = 0;
+		
 		for (int j = 0; j < FFT_SEGMENT/4; j++)
 		{
 			for (int i = 0; i < FFT_POINT*4; i++) 
@@ -94,13 +95,16 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 				Interleaver[0][(FFT_POINT)*4*j + i] = Interleaver[0][(FFT_POINT)*4*j + p];
 				Interleaver[0][(FFT_POINT)*4*j + p] = reg;
 				*/
-			    
+			    //correct
+			    /*
 				reg = Interleaver[0][j + FFT_POINT*i];
 				Interleaver[0][j + FFT_POINT*i] = Interleaver[0][j + FFT_POINT*p];
 				Interleaver[0][j + FFT_POINT*p] = reg;
+				*/
 				
 			}
 		}
+		
 		//end interleaver
 
 		for (int i = 1; i < NUM_USER; i++)

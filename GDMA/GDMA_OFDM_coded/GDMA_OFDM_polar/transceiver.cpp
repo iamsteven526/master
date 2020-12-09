@@ -72,7 +72,8 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 				//Interleaver[0][m] = (FFT_POINT*4) * (m/64) + (4*j)%64 + j/16; // teachers method
 				//cout << Interleaver[0][m] << endl;
 				Interleaver[0][m] = 16*(m/16) + subinterleaver[(m%16)];//((9*m)%16);
-				//Interleaver[0][m] = 16*(m/16) + ((5*m)%16);//best of best
+				//Interleaver[0][m] = 16*(m/16) + ((5*m)%16);
+
 
 				m++;
 			}

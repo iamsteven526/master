@@ -20,8 +20,8 @@
 
 
 
-#define		SNR_min					5
-#define		SNR_max					5
+#define		SNR_min					25
+#define		SNR_max					25
 #define		SNR_step				0.5
 
 
@@ -146,6 +146,18 @@ int			Err_S_Num[tech_num], Err_B_Num[tech_num], Err_F_Num[tech_num], Error[tech_
 
 int			cursor_idx;
 
+std::vector<int> hardr(double *llr){
+    std::vector<int> deocded_info_bits(1024);
+    for(int i=0; i < 1024; ++i){
+        if(llr[i] > 0){
+            deocded_info_bits[i] = 0;
+        }
+        else{
+            deocded_info_bits[i] = 1;
+        }
+    }
+    return deocded_info_bits;
+}
 
 int main() {
 	
@@ -597,7 +609,8 @@ int main() {
 
 			///////////////Polar decoding///////////////
 			for (tech_idx = 0; tech_idx < tech_num; tech_idx++) {
-				decoded_result = polar.decode_scl_llr(LIST_SIZE, Polar_LLR[tech_idx], 0);
+				//decoded_result = polar.decode_scl_llr(LIST_SIZE, Polar_LLR[tech_idx], 0);
+				decoded_result = hardr(Polar_LLR[tech_idx]);
 				for (bit_idx = 0; bit_idx < k_c; bit_idx++) {
 					recovered_Inf_b[tech_idx][bit_idx] = decoded_result[bit_idx];
 				}

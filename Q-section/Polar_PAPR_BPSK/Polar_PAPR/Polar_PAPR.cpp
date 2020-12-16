@@ -25,7 +25,7 @@
 #define		SNR_step				0.5
 
 
-#define		PAPR_min				6
+#define		PAPR_min				0
 #define		PAPR_max				11
 #define		PAPR_step				0.25
 #define		tech_num				4
@@ -52,7 +52,7 @@
 #define		p						1//4					// bits number of a modulation symbol, p = M^(1/2)
 
 
-#define		N						1024					// number of subcarriers
+#define		N						16					// number of subcarriers
 #define		L						4					// over-sampling factor
 
 

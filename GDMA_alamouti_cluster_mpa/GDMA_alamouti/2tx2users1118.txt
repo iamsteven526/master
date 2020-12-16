@@ -28,3 +28,36 @@ Block# = 1000000, BER = 6.917012e-04
 
 SNR[dB] = 25.0
 Block# = 1000000, BER = 1.439475e-04
+
+
+---------------------1215 block size = 8192
+
+alamouti GDMA-BPSK system
+Number of users: 2
+
+Number of TXs: 2
+
+Clustering method : propose-2
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 8192
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0
+Block# = 10000, BER = 2.104890e-01
+
+SNR[dB] = 5.0
+Block# = 10000, BER = 9.878391e-02
+
+SNR[dB] = 10.0
+Block# = 47948, BER = 2.051231e-02
+
+SNR[dB] = 15.0
+Block# = 137913, BER = 3.414132e-03
+
+
+

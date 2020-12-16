@@ -1473,7 +1473,6 @@ void SCMA_MSEComparison(double*** chCoef,double*** chCoef2,double** estimate,dou
 	double treg,treg2;
 	int nresource;
 	for(int i=0; i<SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE; ++i){
-
 		//cout << "hello" << tmin << endl;
         if (a[i] == 0){
 			continue;
@@ -1500,8 +1499,9 @@ void SCMA_MSEComparison(double*** chCoef,double*** chCoef2,double** estimate,dou
         if (a[i] == 0){
 			continue;
 		}
-		tmin = abs(chCoef2[nresource][i][0]-finalestimate2[nresource][i][0]) + abs(chCoef2[nresource][i][1]-finalestimate2[nresource][i][1]);
 		nresource = b[i];
+		tmin = abs(chCoef2[nresource][i][0]-finalestimate2[nresource][i][0]) + abs(chCoef2[nresource][i][1]-finalestimate2[nresource][i][1]);
+
 		for(int j=0; j<NUM_USER*Qm; ++j){
             treg = abs(chCoef2[nresource][i][0]-1.4142*estimate[j][1]) + abs(chCoef2[nresource][i][1]+1.4142*estimate[j][0]);//find closest
 			treg2 = abs(chCoef2[nresource][i][0]+1.4142*estimate[j][1]) + abs(chCoef2[nresource][i][1]-1.4142*estimate[j][0]);//find closest

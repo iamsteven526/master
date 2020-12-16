@@ -245,9 +245,10 @@ int main()
 					//cout << block << ',' << source_id << endl;
 				    Clustering(rx[source_id], centroid, group, groupSize, distList, variation, softAssign, variance, estimate, itCount[i],chCoef,known_drift);
 				    //debug
-					for(int qq = 0;qq<6;++qq){
-				        cout << "cluster  " << 1.414*estimate[qq][0] << " " << 1.414*estimate[qq][1] << endl;
-			        }
+
+					//for(int qq = 0;qq<6;++qq){
+				     //   cout << "cluster  " << 1.414*estimate[qq][0] << " " << 1.414*estimate[qq][1] << endl;
+			        //}
 					
 					SCMA_MSEComparison(chCoef,chCoef2, estimate,finalestimate,finalestimate2,scma_matrix[source_id],coef_idx[source_id]);
 					//MSEComparison(chCoef, estimate, mse[i], rx[source_id], centroid,known_drift); // user specification
@@ -255,11 +256,13 @@ int main()
 				//CentroidMSEComparison(chCoef, estimate, mse_centroid[i], rx, centroid);
 			}
 			//debug
-			for(int qq = 0;qq<6;++qq){
-				cout << chCoef[1][qq][0] << " " << chCoef[1][qq][1]<< "         2bb       " << chCoef2[1][qq][0] << " " << chCoef2[1][qq][1] << "  qqqqqqq   " << finalestimate[1][qq][0] << " " << finalestimate[1][qq][1] << "      " <<finalestimate2[1][qq][0] << " " << finalestimate2[1][qq][1]<< endl;
-			}
-
-
+			//for(int qq = 0;qq<6;++qq){
+			//	cout << chCoef[0][qq][0] << " " << chCoef[0][qq][1]<< "         2bb       " << chCoef2[0][qq][0] << " " << chCoef2[0][qq][1] << "  qqqqqqq   " << finalestimate[0][qq][0] << " " << finalestimate[0][qq][1] << "      " <<finalestimate2[0][qq][0] << " " << finalestimate2[0][qq][1]<< endl;
+			//}
+            //cout << "happy" <<endl;
+			//for(int qq = 0;qq<6;++qq){
+			//	cout << chCoef[1][qq][0] << " " << chCoef[1][qq][1]<< "         2bb       " << chCoef2[1][qq][0] << " " << chCoef2[1][qq][1] << "  qqqqqqq   " << finalestimate[1][qq][0] << " " << finalestimate[1][qq][1] << "      " <<finalestimate2[1][qq][0] << " " << finalestimate2[1][qq][1]<< endl;
+			//}
 			fourwayMLDT(pow(stdDev, 2), chCoef, chCoef2, rx, app, appLlr, finalestimate,finalestimate2, scma_matrix, coef_idx);
 			Detecter(data, appLlr, error);
 			ber[i] = error / ((long double)NUM_USER * (SCMA_SOURCE / SCMA_USER_SOURCE) * block * (BLOCK_LEN - DIFF_ENC) * Qm); // excluding reference symbol

@@ -60,12 +60,12 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				230
 
-#define		BLOCK_NUM				14000				// number of blocks to be simulated
-#define		BLOCK_LEN				10000							// number of symbols in a block
-#define		Cluster_Len				10000
+#define		BLOCK_NUM				14000000				// number of blocks to be simulated
+#define		BLOCK_LEN				16000							// number of symbols in a block
+#define		Cluster_Len				16000
 
 #define		SNR_NUM					2									// number of SNR points to be simulated
-#define		SNR_START			    25							// in dB
+#define		SNR_START			    35							// in dB
 #define		SNR_STEP				5									// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

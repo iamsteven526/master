@@ -86,8 +86,12 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 
 			//0925endmodify
 			//cout << testtime << endl;
-			if(testtime > 4000) alpha = 0.05;
-			else alpha = 0.08;
+			if(testtime > 32500) alpha = 1;//user >= 6
+			else if(testtime > 16400) alpha = 0.9;//user = 5
+			else if(testtime > 8300) alpha = 0.8;//user = 4
+			else if(testtime > 4200) alpha = 0.6;//user = 3
+			else if(testtime < 2200) alpha = 0.4;//user = 1
+			else alpha = 0.4;//user = 2
             adapted_variance = sqrt(test) / (alpha*testtime);
 
 

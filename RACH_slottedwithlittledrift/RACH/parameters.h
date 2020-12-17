@@ -102,7 +102,7 @@
 #define		BLOCK_NUM				25000											// number of blocks to be simulated 
 
 #define		G_NUM					15												// number of SNR points to be simulated
-#define		G_START					1.1												// in dB
+#define		G_START					0.1												// in dB
 #define		G_STEP					0.2												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

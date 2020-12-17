@@ -75,6 +75,8 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 		for (;;)
 		{
 			int NUM_SLOTED = poisson(generator);
+			//NUM_SLOTED = 4;
+			//cout << NUM_SLOTED << " ";
 			cache_time_drift = 0;
 			for(int p = 0; p < NUM_SLOTED; ++p){
 				while(true){
@@ -118,6 +120,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 			}
 			if (last_packet_time + packet_dur*Unit > frame_dur)
 			{
+				//cout << endl;//debug
 				break;
 			}
 			last_packet_time += (packet_dur)*Unit;				

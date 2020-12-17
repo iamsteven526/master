@@ -82,7 +82,7 @@
 
 #define		CE_SCHEME				0												// 0: cluster-based, 1: ideal
 
-#define		CE_METHOD				1												// 0: preamble estimation only;  1: preamble estimation + modified k-means++
+#define		CE_METHOD				0												// 0: preamble estimation only;  1: preamble estimation + modified k-means++
 
 #define		GROUP_SIZE				2												// number of groups to be classified
 

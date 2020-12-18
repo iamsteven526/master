@@ -130,6 +130,8 @@ void Clustering(double *****postRx, double variance, double *****estimate, doubl
 
 					for (int i = 0; i < FFT_POINT; i++)
 					{
+						//cout << "real " << i << " " << nuser << " " << H[0][nuser][0][0][i] << "  " << estimate[t][nuser][0][i][0] << endl;
+						//cout << "imag " << i << " " << nuser << " " << H[0][nuser][0][1][i] << "  " << estimate[t][nuser][0][i][1] << endl;
 						double real = H[0][nuser][0][0][i] - estimate[t][nuser][0][i][0];
 						double imag = H[0][nuser][0][1][i] - estimate[t][nuser][0][i][1];
 

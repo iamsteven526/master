@@ -107,7 +107,7 @@ void MLDTLLR(int i, double** app, double** appLlr)
 	double Ap = log(1.0 / M);
 	double Igv[K][V][M] = { 0 };
 	double Ivg[K][V][M] = { 0 };
-	int Niter = 10;
+	int Niter = 30;
 	for (int k = 0; k < K; k++)
 	{
 		for (int v = 0; v < V; v++)

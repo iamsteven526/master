@@ -10,7 +10,7 @@
 #define		INFILENAME				"H_1008_504.txt"								// (3,6)-regular
 //#define		INFILENAME				"H_1008_504_diff_met_dv_12.txt"					// designed for differential encoding
 
-#define		LDPC_IT					100												// maximum number of decoding iterations
+#define		LDPC_IT					150												// maximum number of decoding iterations
 
 #define		DATA_LEN				( LDPC_H_COL - LDPC_H_ROW )						// data length
 #define		CODE_LEN				( LDPC_H_COL )									// codeword length

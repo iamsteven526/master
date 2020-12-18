@@ -75,7 +75,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 		for (;;)
 		{
 			int NUM_SLOTED = poisson(generator);
-			//NUM_SLOTED = 4;
+			//NUM_SLOTED = 2;
 			//cout << NUM_SLOTED << " ";
 			cache_time_drift = 0;
 			for(int p = 0; p < NUM_SLOTED; ++p){
@@ -862,17 +862,17 @@ void Time_Num_Estimation(double** rx, bool** estimate_packet_time, double& Time_
 				/*
 				for (int i = 0; i < FFT_POINT; i++)
 				{
-					cout << estimate[t][nuser][0][i][0] << " ";
+					cout << t << " " << estimate[t][nuser][0][i][0] << " ";
 				}
 				cout << endl;
 				for (int i = 0; i < FFT_POINT; i++)
 				{
 					cout << estimate[t][nuser][0][i][1] << " ";
 				}
+				
 				cout << endl;
 				cout << "---------------------------------------------------";
 				cout << endl;
-				system("pause");
 				*/
 			}
 		}

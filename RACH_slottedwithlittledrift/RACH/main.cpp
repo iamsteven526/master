@@ -452,7 +452,7 @@ int main()
 	for (int i = 0; i < G_NUM; i++)
 	{
 		double G = G_START + (double)i * G_STEP;
-		double snrdB = 20;
+		double snrdB = 30;
 		//double G = 0.1;
 		//double snrdB = 20 + (double)i * 2;
 

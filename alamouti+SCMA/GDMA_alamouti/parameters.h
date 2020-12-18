@@ -7,6 +7,10 @@
 #define		NUM_TX					2													// number of transmit antennas
 #define		NUM_LEVEL				( 1 << ( NUM_USER * NUM_TX - 1))					// number of levels of superimposed signal
 
+
+#define		SCMA_SOURCE				4									//default:1
+#define		SCMA_USER_SOURCE		2									//sources for a user, default:1 
+
 //---------- simulator ----------
 
 #define		NUMERIC_LIMIT			1e-6
@@ -15,7 +19,7 @@
 #define		BLOCK_NUM				1000000											// number of blocks to be simulated
 
 #define		SNR_NUM					3													// number of SNR points to be simulated
-#define		SNR_START				0 													// in dB
+#define		SNR_START				30 													// in dB
 #define		SNR_STEP				5													// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

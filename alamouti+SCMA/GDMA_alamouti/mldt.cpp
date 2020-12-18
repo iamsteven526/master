@@ -462,15 +462,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
         //appLlr[(j + 1) % NUM_USER][1]
         for (int v = 0; v < V; v++)
         {
-			//appLlr[(v/2)][(v%2)] = log(exp(Q[0][v])/exp(Q[1][v]));
 			appLlr[(v/2)][(v%2)] = Q[0][v] - Q[1][v];
-			if(!((appLlr[(v/2)][(v%2)] <= 10000)&&(appLlr[(v/2)][(v%2)] >= -10000)) ){
-			    //cout << Q[0][v] << "   " << Q[1][v] << "   " << appLlr[(v/2)][(v%2)] << endl;
-                //cout << sum0 << endl;
-			}
-			//cout << appLlr[(v/2)][(v%2)] << endl;
-            //LLR[2*v][n]     = log((exp(Q[0][v]) + exp(Q[1][v]))/((exp(Q[2][v]) + exp(Q[3][v]))));
-            //LLR[2*v + 1][n] = log((exp(Q[0][v]) + exp(Q[2][v]))/((exp(Q[1][v]) + exp(Q[3][v]))));
         }
 	}
 

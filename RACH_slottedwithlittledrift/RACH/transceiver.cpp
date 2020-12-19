@@ -72,11 +72,13 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 		time_in.push_back(-packet_dur);
         int time_drift = 0,cachetimesum = 0;
 		int cache_time_drift = 0;
+		int debug_count = 0;
 		for (;;)
 		{
 			int NUM_SLOTED = poisson(generator);
-			//NUM_SLOTED = 2;
+			//NUM_SLOTED = 3;
 			//cout << NUM_SLOTED << " ";
+			debug_count += NUM_SLOTED;
 			cache_time_drift = 0;
 			for(int p = 0; p < NUM_SLOTED; ++p){
 				while(true){
@@ -120,7 +122,9 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 			}
 			if (last_packet_time + packet_dur*Unit > frame_dur)
 			{
+				//cout << debug_count;
 				//cout << endl;//debug
+				//debug_count = 0;
 				break;
 			}
 			last_packet_time += (packet_dur)*Unit;				

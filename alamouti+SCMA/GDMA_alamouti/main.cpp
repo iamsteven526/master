@@ -92,14 +92,12 @@ int main()
 				MLDT(pow(stdDev, 2), chCoef[q], supLevel[q], postRx[q], app[q], appLlr[q]);
 
 			}
-
-
-
-
-			Detector(data[q], appLlr[q], error);
 //////TODO!!! and recalculate stdDev
+			for (int q = 0; q < SCMA_SOURCE;q++){
 
-			ber[i] = error / ((long double)NUM_USER * NUM_TX * block);
+			    Detector(data[q], appLlr[q], error);
+			}
+			ber[i] = error / ((long double)NUM_USER * NUM_TX * block * SCMA_SOURCE);
 			printf("Block# = %d, BER = %e\r", block, ber[i]);
 		}
 		fprintf(result_txt, "SNR[dB] = %.1f, BER = %e\n", snrdB, ber[i]);

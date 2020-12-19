@@ -30,7 +30,7 @@
 #define		CHIP_RATE				1.92 //30.72									// sampling frequency (MHz)
 
 #define		UE_SPEED				150												// mobile speed (km/hour)
-#define		TEST_FRAME_SIZE			20												// the maximum packets in a frame
+#define		TEST_FRAME_SIZE			1												// the maximum packets in a frame
 #define		SLOTED					0												// 1: enable, 0: disable
 #define		ALOHA					1												// 1: Aloha + GDMA,  0: Aloha
 #define		PREABLE					1											    // 1: enable, 0: disable	
@@ -99,7 +99,7 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				210
 
-#define		BLOCK_NUM				25000											// number of blocks to be simulated 
+#define		BLOCK_NUM				300000											// number of blocks to be simulated 
 
 #define		G_NUM					15												// number of SNR points to be simulated
 #define		G_START					0.1												// in dB

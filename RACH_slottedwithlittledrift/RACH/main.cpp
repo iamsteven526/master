@@ -452,7 +452,7 @@ int main()
 	for (int i = 0; i < G_NUM; i++)
 	{
 		double G = G_START + (double)i * G_STEP;
-		double snrdB = 30;
+		double snrdB = 35;
 		//double G = 0.1;
 		//double snrdB = 20 + (double)i * 2;
 
@@ -545,7 +545,7 @@ int main()
 					}
 				}
 			}*/
-			if (block > 10000)
+			if (block > 300000)
 				break;
 
 			//if (errCount[1] > 1000 || block > 1000)

@@ -2,6 +2,8 @@
 #include "parameters.h"
 #include <cstring>
 #include <math.h>
+#include "scma_log_mpa.h"
+#include <omp.h>
 using namespace std;
 
 void AlamoutiEncoder(int **data, double ***tx)
@@ -9,8 +11,8 @@ void AlamoutiEncoder(int **data, double ***tx)
 	for (int nuser = 0; nuser < NUM_USER; nuser++)
 	{
 		//---------- messages generation ----------
-		data[nuser][0] = rand() % 2;
-		data[nuser][1] = rand() % 2;
+		data[nuser][0] = 0;//rand() % 2;
+		data[nuser][1] = 0;//rand() % 2;
 		//---------- Alamouti encoding ----------
 		tx[nuser][0][0] = 1 - 2 * data[nuser][0];
 		tx[nuser][1][0] = 1 - 2 * data[nuser][1];
@@ -167,7 +169,6 @@ void SuperLevelSpecification(double ***chCoef, double ****supLevel)
 	else
 	{
 		printf("\nPARAMETER SETTING IS WRONG\n");
-		system("pause");
 	}
 	for (int i = 0; i < NUM_USER; i++)
 	{
@@ -194,3 +195,250 @@ void Detector(int **data, double **appLlr, long double &error)
 		}
 	}
 }
+
+void    CALC_F(int data_idx[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE], double ***appLlr)
+{
+	double f[NUM_TX][K][M][M][M] = { 0 };
+	double m1p[M] = { 0 };
+	double m2p[M] = { 0 };
+	double m3p[M] = { 0 };
+	for(int ntx = 0; ntx < NUM_TX; ntx++)
+	{
+		for (int k = 0; k < K; k++)
+		{
+			for (int m1 = 0; m1 < M; m1++)
+			{
+                m1p[0] = exp(appLlr[k][0][ntx])/(1 + exp(appLlr[k][0][ntx]));
+				m1p[1] = 1 - m1p[0];
+				for (int m2 = 0; m2 < M; m2++)
+				{
+	                m2p[0] = exp(appLlr[k][1][ntx])/(1 + exp(appLlr[k][1][ntx]));
+				    m2p[1] = 1 - m1p[0];				
+					for (int m3 = 0; m3 < M; m3++)
+					{
+		                m3p[0] = exp(appLlr[k][2][ntx])/(1 + exp(appLlr[k][2][ntx]));
+				        m3p[1] = 1 - m1p[0];
+						f[ntx][k][m1][m2][m3] = m1p[m1]*m2p[m2]*m3p[m3];//TODO
+					}
+				}
+			}
+		}
+	}
+	///////start tx0 bit
+	double Ap = log(1.0 / M);
+	double Igv[K][V][M] = { 0 };
+	double Ivg[K][V][M] = { 0 };
+	int Niter = 30;
+	for (int k = 0; k < K; k++)
+	{
+		for (int v = 0; v < V; v++)
+		{
+			for (int m = 0; m < M; m++)
+			{
+				Ivg[k][v][m] = Ap;
+			}
+		}
+	}
+	int ind_df[SCMA_SOURCE][NUM_USER] = { {1,2,4}, {0,2,5}, {1,3,5}, {0,3,4} };
+	int ind_dv[SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE][SCMA_USER_SOURCE] = { {1,3}, {0,2}, {0,1}, {2,3}, {0,3}, {1,2} };
+
+	//iteration for tx0
+	for (int iter = 0; iter < Niter; iter++)
+	{
+		// Igv update
+
+		for (int k = 0; k < K; k++)
+		{
+
+			for (int m1 = 0; m1 < M; m1++)
+			{
+				double sIgv[M * M] = { 0 };
+				for (int m2 = 0; m2 < M; m2++)
+				{
+					for (int m3 = 0; m3 < M; m3++)
+					{
+						sIgv[m2 * M + m3] = f[0][k][m1][m2][m3] + Ivg[k][ind_df[k][1]][m2] + Ivg[k][ind_df[k][2]][m3];
+					}
+				}
+				Igv[k][ind_df[k][0]][m1] = log_sum_exp(sIgv, M * M);
+			}
+
+			for (int m2 = 0; m2 < M; m2++)
+			{
+				double sIgv[M * M] = { 0 };
+				for (int m1 = 0; m1 < M; m1++)
+				{
+					for (int m3 = 0; m3 < M; m3++)
+					{
+						sIgv[m1 * M + m3] = f[0][k][m1][m2][m3] + Ivg[k][ind_df[k][0]][m1] + Ivg[k][ind_df[k][2]][m3];
+					}
+				}
+				Igv[k][ind_df[k][1]][m2] = log_sum_exp(sIgv, M * M);
+			}
+
+			for (int m3 = 0; m3 < M; m3++)
+			{
+				double sIgv[M * M] = { 0 };
+				for (int m1 = 0; m1 < M; m1++)
+				{
+					for (int m2 = 0; m2 < M; m2++)
+					{
+						sIgv[m1 * M + m2] = f[0][k][m1][m2][m3] + Ivg[k][ind_df[k][0]][m1] + Ivg[k][ind_df[k][1]][m2];
+					}
+				}
+				Igv[k][ind_df[k][2]][m3] = log_sum_exp(sIgv, M * M);
+			}
+		}
+
+		// Ivg update
+
+		for (int v = 0; v < V; v++)
+		{
+			double sum0 = 0;
+			double sum1 = 0;
+
+			for (int i = 0; i < M; i++)
+			{
+				sum0 += exp(Igv[ind_dv[v][0]][v][i]);
+				sum1 += exp(Igv[ind_dv[v][1]][v][i]);
+			}
+
+			sum0 = log(sum0);
+			sum1 = log(sum1);
+
+			for (int m = 0; m < M; m++)
+			{
+				Ivg[ind_dv[v][0]][v][m] = Igv[ind_dv[v][1]][v][m] - sum1;
+				Ivg[ind_dv[v][1]][v][m] = Igv[ind_dv[v][0]][v][m] - sum0;
+			}
+		}
+	}
+
+	// Step 3: LLR calculation//TODO
+
+	double Q[M][V] = { 0 };
+
+	for (int v = 0; v < V; v++)
+	{
+		for (int m = 0; m < M; m++)
+		{
+			Q[m][v] = Ap + Igv[ind_dv[v][0]][v][m] + Igv[ind_dv[v][1]][v][m];
+		}
+	}
+
+    for(int nresource = 0; nresource < K; nresource++)
+	{	
+		appLlr[nresource][0][0] = Q[0][ind_df[nresource][0]] - Q[1][ind_df[nresource][0]];
+		appLlr[nresource][1][0] = Q[0][ind_df[nresource][1]] - Q[1][ind_df[nresource][1]];
+		appLlr[nresource][2][0] = Q[0][ind_df[nresource][2]] - Q[1][ind_df[nresource][2]];
+	}
+	///////start tx1 bit
+	Ap = log(1.0 / M);
+	Igv[K][V][M] = { 0 };
+	Ivg[K][V][M] = { 0 };
+	Niter = 30;
+	for (int k = 0; k < K; k++)
+	{
+		for (int v = 0; v < V; v++)
+		{
+			for (int m = 0; m < M; m++)
+			{
+				Ivg[k][v][m] = Ap;
+			}
+		}
+	}
+	//ind_df[SCMA_SOURCE][NUM_USER] = { {1,2,4}, {0,2,5}, {1,3,5}, {0,3,4} };
+	//ind_dv[SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE][SCMA_USER_SOURCE] = { {1,3}, {0,2}, {0,1}, {2,3}, {0,3}, {1,2} };
+
+	//iteration for tx0
+	for (int iter = 0; iter < Niter; iter++)
+	{
+		// Igv update
+
+		for (int k = 0; k < K; k++)
+		{
+
+			for (int m1 = 0; m1 < M; m1++)
+			{
+				double sIgv[M * M] = { 0 };
+				for (int m2 = 0; m2 < M; m2++)
+				{
+					for (int m3 = 0; m3 < M; m3++)
+					{
+						sIgv[m2 * M + m3] = f[1][k][m1][m2][m3] + Ivg[k][ind_df[k][1]][m2] + Ivg[k][ind_df[k][2]][m3];
+					}
+				}
+				Igv[k][ind_df[k][0]][m1] = log_sum_exp(sIgv, M * M);
+			}
+
+			for (int m2 = 0; m2 < M; m2++)
+			{
+				double sIgv[M * M] = { 0 };
+				for (int m1 = 0; m1 < M; m1++)
+				{
+					for (int m3 = 0; m3 < M; m3++)
+					{
+						sIgv[m1 * M + m3] = f[1][k][m1][m2][m3] + Ivg[k][ind_df[k][0]][m1] + Ivg[k][ind_df[k][2]][m3];
+					}
+				}
+				Igv[k][ind_df[k][1]][m2] = log_sum_exp(sIgv, M * M);
+			}
+
+			for (int m3 = 0; m3 < M; m3++)
+			{
+				double sIgv[M * M] = { 0 };
+				for (int m1 = 0; m1 < M; m1++)
+				{
+					for (int m2 = 0; m2 < M; m2++)
+					{
+						sIgv[m1 * M + m2] = f[1][k][m1][m2][m3] + Ivg[k][ind_df[k][0]][m1] + Ivg[k][ind_df[k][1]][m2];
+					}
+				}
+				Igv[k][ind_df[k][2]][m3] = log_sum_exp(sIgv, M * M);
+			}
+		}
+
+		// Ivg update
+
+		for (int v = 0; v < V; v++)
+		{
+			double sum0 = 0;
+			double sum1 = 0;
+
+			for (int i = 0; i < M; i++)
+			{
+				sum0 += exp(Igv[ind_dv[v][0]][v][i]);
+				sum1 += exp(Igv[ind_dv[v][1]][v][i]);
+			}
+
+			sum0 = log(sum0);
+			sum1 = log(sum1);
+
+			for (int m = 0; m < M; m++)
+			{
+				Ivg[ind_dv[v][0]][v][m] = Igv[ind_dv[v][1]][v][m] - sum1;
+				Ivg[ind_dv[v][1]][v][m] = Igv[ind_dv[v][0]][v][m] - sum0;
+			}
+		}
+	}
+
+	// Step 3: LLR calculation//TODO
+
+	Q[M][V] = { 0 };
+
+	for (int v = 0; v < V; v++)
+	{
+		for (int m = 0; m < M; m++)
+		{
+			Q[m][v] = Ap + Igv[ind_dv[v][0]][v][m] + Igv[ind_dv[v][1]][v][m];
+		}
+	}
+
+    for(int nresource = 0; nresource < K; nresource++)
+	{	
+		appLlr[nresource][0][1] = Q[0][ind_df[nresource][0]] - Q[1][ind_df[nresource][0]];
+		appLlr[nresource][1][1] = Q[0][ind_df[nresource][1]] - Q[1][ind_df[nresource][1]];
+		appLlr[nresource][2][1] = Q[0][ind_df[nresource][2]] - Q[1][ind_df[nresource][2]];
+	}
+}
+

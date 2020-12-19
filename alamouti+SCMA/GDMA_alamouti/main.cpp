@@ -8,6 +8,7 @@ using namespace std;
 //--------- scma matrix-------------//can be generalize
 int		 scma_matrix[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE] = { {0,1,1,0,1,0}, {1,0,1,0,0,1}, {0,1,0,1,0,1}, {1,0,0,1,1,0} };
 int		 coef_idx[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE] = { {-1,0,0,-1,0,-1}, {0,-1,1,-1,-1,0}, {-1,1,-1,0,-1,1}, {1,-1,-1,1,1,-1} };
+int		 data_idx[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE] = { {-1,0,1,-1,2,-1}, {0,-1,1,-1,-1,2}, {-1,0,-1,1,-1,2}, {0,-1,-1,1,2,-1} };
 
 int main()
 {
@@ -65,6 +66,7 @@ int main()
 	    	rx[q][i] = new double[2]; // real and imaginary
 	    }
 	}
+
 	double ber[SNR_NUM];
 	FILE *result_txt = fopen("result.txt", "w");
 	//---------- declaration ----------
@@ -78,7 +80,7 @@ int main()
 	{
 		double snrdB = SNR_START + (double)i * SNR_STEP;
 		double snr = pow(10., snrdB / 10.);
-		double stdDev = sqrt(1 / snr);
+		double stdDev = sqrt(1 / (0.5*snr));
 		long double error = 0;
 		printf("SNR[dB] = %.1f\n", snrdB);
 		for (int block = 1; block <= BLOCK_NUM; block++)
@@ -92,9 +94,10 @@ int main()
 				MLDT(pow(stdDev, 2), chCoef[q], supLevel[q], postRx[q], app[q], appLlr[q]);
 
 			}
+            CALC_F(data_idx, appLlr);
+			//TODO: appLlr to f function and go scma
 //////TODO!!! and recalculate stdDev
 			for (int q = 0; q < SCMA_SOURCE;q++){
-
 			    Detector(data[q], appLlr[q], error);
 			}
 			ber[i] = error / ((long double)NUM_USER * NUM_TX * block * SCMA_SOURCE);

@@ -14,7 +14,7 @@
 //---------- simulator ----------
 
 #define		NUMERIC_LIMIT			1e-6
-#define		LLR_LIMIT				1000
+#define		LLR_LIMIT				200
 
 #define		BLOCK_NUM				1000000											// number of blocks to be simulated
 

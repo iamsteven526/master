@@ -214,7 +214,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 		}	
 		*/
 	}
-
+  
 	//----------message passing--------------
 
     int V = 6;       // number of users (layers)
@@ -305,7 +305,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
         }
 
         // Step 2: Iterative procedure
-        int Niter = 10;
+        int Niter = 3;
         for (int iter = 0; iter < Niter; iter++)
         {
             // Igv update
@@ -465,8 +465,4 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 			appLlr[(v/2)][(v%2)] = Q[0][v] - Q[1][v];
         }
 	}
-
-
-
-
 }

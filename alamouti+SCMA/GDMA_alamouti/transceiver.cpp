@@ -11,7 +11,7 @@ void AlamoutiEncoder(int **data, double ***tx)
 	for (int nuser = 0; nuser < NUM_USER; nuser++)
 	{
 		//---------- messages generation ----------
-		data[nuser][0] = 0;//rand() % 2;
+		data[nuser][0] = 1;//rand() % 2;
 		data[nuser][1] = 0;//rand() % 2;
 		//---------- Alamouti encoding ----------
 		tx[nuser][0][0] = 1 - 2 * data[nuser][0];
@@ -198,27 +198,28 @@ void Detector(int **data, double **appLlr, long double &error)
 
 void    CALC_F(int data_idx[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOURCE], double ***appLlr)
 {
-	double f[NUM_TX][K][M][M][M] = { 0 };
-	double m1p[M] = { 0 };
-	double m2p[M] = { 0 };
-	double m3p[M] = { 0 };
+	long double f[NUM_TX][K][M][M][M] = { 0 };
+	long double m1p[M] = { 0 };
+	long double m2p[M] = { 0 };
+	long double m3p[M] = { 0 };
 	for(int ntx = 0; ntx < NUM_TX; ntx++)
 	{
 		for (int k = 0; k < K; k++)
 		{
 			for (int m1 = 0; m1 < M; m1++)
 			{
-                m1p[0] = exp(appLlr[k][0][ntx])/(1 + exp(appLlr[k][0][ntx]));
-				m1p[1] = 1 - m1p[0];
+                m1p[0] = exp(appLlr[k][0][ntx])/(1.0 + exp(appLlr[k][0][ntx]));
+				m1p[1] = 1.0/(1.0 + exp(appLlr[k][0][ntx]));
+				//cout << m1p[0] << " " << m1p[1] << endl;
 				for (int m2 = 0; m2 < M; m2++)
 				{
-	                m2p[0] = exp(appLlr[k][1][ntx])/(1 + exp(appLlr[k][1][ntx]));
-				    m2p[1] = 1 - m1p[0];				
+	                m2p[0] = exp(appLlr[k][1][ntx])/(1.0 + exp(appLlr[k][1][ntx]));
+				    m2p[1] = 1.0/(1.0 + exp(appLlr[k][1][ntx]));				
 					for (int m3 = 0; m3 < M; m3++)
 					{
-		                m3p[0] = exp(appLlr[k][2][ntx])/(1 + exp(appLlr[k][2][ntx]));
-				        m3p[1] = 1 - m1p[0];
-						f[ntx][k][m1][m2][m3] = m1p[m1]*m2p[m2]*m3p[m3];//TODO
+		                m3p[0] = exp(appLlr[k][2][ntx])/(1.0 + exp(appLlr[k][2][ntx]));
+				        m3p[1] = 1.0/(1.0 + exp(appLlr[k][2][ntx]));
+						f[ntx][k][m1][m2][m3] = m1p[m1]*m2p[m2]*m3p[m3];
 					}
 				}
 			}
@@ -228,7 +229,7 @@ void    CALC_F(int data_idx[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOUR
 	double Ap = log(1.0 / M);
 	double Igv[K][V][M] = { 0 };
 	double Ivg[K][V][M] = { 0 };
-	int Niter = 30;
+	int Niter = 5;
 	for (int k = 0; k < K; k++)
 	{
 		for (int v = 0; v < V; v++)
@@ -336,7 +337,7 @@ void    CALC_F(int data_idx[SCMA_SOURCE][SCMA_SOURCE * NUM_USER / SCMA_USER_SOUR
 	Ap = log(1.0 / M);
 	Igv[K][V][M] = { 0 };
 	Ivg[K][V][M] = { 0 };
-	Niter = 30;
+	Niter = 5;
 	for (int k = 0; k < K; k++)
 	{
 		for (int v = 0; v < V; v++)

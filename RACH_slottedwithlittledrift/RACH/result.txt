@@ -1,0 +1,40 @@
+RACH-OFDM-GDMA-BPSK system
+
+(1008,504) LDPC code
+Separated channel decoding: SPA
+Iteration#: 150
+
+FFT point: 16, CP length: 4, channel tap: 5
+Number of users: 10
+
+Perfect Time
+
+Preamble Estimation Only
+
+ALOHA + MLDT, 	NON SLOTED system
+Channel, K=0
+OFDM : CP, CP Len : 4
+Preamble Len: 63
+-
+Packet Rate =  0.1, BER = 1.000000e-01, BLER = 2.504363e-03, MSE = 9.746333e-02, T_D = -1.109302e-06, T_E = nan 
+Packet Rate =  0.3, BER = 3.000000e-01, BLER = 2.110580e-02, MSE = 2.803567e-01, T_D = 0.000000e+00, T_E = 0.000000e+00 
+Packet Rate =  0.4, BER = 5.000000e-01, BLER = 5.369819e-02, MSE = 4.489500e-01, T_D = 7.361020e-06, T_E = nan 
+Packet Rate =  0.6, BER = 7.000000e-01, BLER = 9.909435e-02, MSE = 6.108367e-01, T_D = 0.000000e+00, T_E = 0.000000e+00 
+Packet Rate =  0.8, BER = 9.000000e-01, BLER = 1.534296e-01, MSE = 7.656800e-01, T_D = 0.000000e+00, T_E = nan 
+Packet Rate =  0.9, BER = 1.100000e+00, BLER = 2.170886e-01, MSE = 9.189567e-01, T_D = 5.919020e-06, T_E = nan 
+Packet Rate =  1.1, BER = 1.300000e+00, BLER = 2.867462e-01, MSE = 1.070447e+00, T_D = 0.000000e+00, T_E = 0.000000e+00 
+Packet Rate =  1.2, BER = 1.500000e+00, BLER = 3.611976e-01, MSE = 1.216213e+00, T_D = 8.196374e-03, T_E = nan 
+Packet Rate =  1.4, BER = 1.700000e+00, BLER = 4.429084e-01, MSE = 1.366243e+00, T_D = 0.000000e+00, T_E = 0.000000e+00 
+Packet Rate =  1.5, BER = 1.900000e+00, BLER = 5.255091e-01, MSE = 1.506097e+00, T_D = 1.877549e-02, T_E = nan 
+Packet Rate =  1.6, BER = 2.100000e+00, BLER = 6.131666e-01, MSE = 1.646813e+00, T_D = 4.183731e-06, T_E = nan 
+Packet Rate =  1.8, BER = 2.300000e+00, BLER = 7.012884e-01, MSE = 1.783040e+00, T_D = 2.477659e-04, T_E = nan 
+Packet Rate =  1.9, BER = 2.500000e+00, BLER = 7.926898e-01, MSE = 1.916893e+00, T_D = 3.217507e-06, T_E = nan 
+Packet Rate =  2.0, BER = 2.700000e+00, BLER = 8.842246e-01, MSE = 2.034853e+00, T_D = 7.800948e-07, T_E = nan 
+Packet Rate =  2.2, BER = 2.900000e+00, BLER = 9.785170e-01, MSE = 2.151770e+00, T_D = 6.397953e-04, T_E = nan 
+
+
+9.746333e-02, 2.803567e-01, 4.489500e-01, 6.108367e-01, 7.656800e-01, 9.189567e-01, 1.070447e+00, 1.216213e+00, 1.366243e+00, 1.506097e+00, 1.646813e+00, 1.783040e+00, 1.916893e+00, 2.034853e+00, 2.151770e+00, 
+2.504363e-03, 
+ 
+6e-03, 
+e-03, 

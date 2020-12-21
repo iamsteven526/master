@@ -80,7 +80,7 @@ int main()
 	{
 		double snrdB = SNR_START + (double)i * SNR_STEP;
 		double snr = pow(10., snrdB / 10.);
-		double stdDev = sqrt(1 / (0.5*snr));
+		double stdDev = sqrt(1. / (2 * snr));
 		long double error = 0;
 		printf("SNR[dB] = %.1f\n", snrdB);
 		for (int block = 1; block <= BLOCK_NUM; block++)

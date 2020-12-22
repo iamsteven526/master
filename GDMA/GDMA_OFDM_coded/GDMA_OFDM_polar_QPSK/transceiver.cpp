@@ -72,7 +72,7 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 				//Interleaver[0][m] = (FFT_POINT*4) * (m/64) + (4*j)%64 + j/16; // teachers method
 				//cout << Interleaver[0][m] << endl;
 				//Interleaver[0][m] = 16*(m/16) + subinterleaver[(m%16)];//((9*m)%16);
-				Interleaver[0][m] = 16*(m/16) + ((5*m)%16);
+				Interleaver[0][m] = FFT_POINT*(m/FFT_POINT) + ((5*m)%FFT_POINT);
 
 
 				m++;
@@ -419,8 +419,10 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 					for (int j = 0; j < CODE_LEN; j++)
 						temp_appLlr[j] = appLlr[i][j];
 
-					for (int j = 0; j < CODE_LEN; j++)
+					for (int j = 0; j < CODE_LEN; j++){
 						appLlr[i][j] = temp_appLlr[Interleaver_invert[i][j]];
+						//cout << appLlr[i][j] << endl;
+					}
 				}
 			}
 

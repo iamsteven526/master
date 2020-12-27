@@ -448,21 +448,25 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 		{
 			if (POLAR_DECODING_TYPE)
 			{
+				
 				NBC_index.insert(0);
-				NBC_index.insert(9);
-				NBC_index.insert(15);
-				NBC_index.insert(20);
-				NBC_index.insert(27);
-				NBC_index.insert(68);
-				NBC_index.insert(77);
-				NBC_index.insert(82);
-				NBC_index.insert(107);
-				NBC_index.insert(110);
-				NBC_index.insert(125);
-				NBC_index.insert(315);
-				NBC_index.insert(323);
-				NBC_index.insert(368);
-				NBC_index.insert(374);			
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(249);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);
+				NBC_index.insert(0);		
+				NBC_index.insert(0);
+				NBC_index.insert(704);	
+				
 			}
 			else
 			{
@@ -494,7 +498,7 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 				//cout << decodedResult[nuser][i] << "    " << int(data[nuser][i]) << endl;
 				if (NBC_index.count(i) == 1 && NBC)
 					continue;
-				//cout << decodedResult[nuser][i] << " " << data[nuser][i] << " - ";
+				//cout << decodedResult[nuser][i] << " " << data[nuser][i] << " - " << endl;
 				if (decodedResult[nuser][i] != int(data[nuser][i]))
 				{
 					//cout << i << endl;

@@ -1,0 +1,22 @@
+﻿  polar.cpp
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(133): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(140): warning C4244: '=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(938): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(989): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(1126): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(1139): warning C4244: '=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(1156): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(1174): warning C4244: '=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(1198): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(1212): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(1232): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(1246): warning C4244: '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\algorithm(1816): warning C4267: '=': 將 'size_t' 轉換為 'unsigned short'，資料可能遺失
+  c:\users\andy0\source\repos\polar_papr\polar_papr\polar.cpp(72): note: 請參閱所要編譯的函式 樣板 具現化 'void std::generate<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<_Ty>>>,PolarCode::initialize_frozen_bits::<lambda_538a56c07b776f8a26f2a52004c8f940>>(_FwdIt,_FwdIt,_Fn)' 之參考
+          with
+          [
+              _Ty=uint16_t,
+              _FwdIt=std::_Vector_iterator<std::_Vector_val<std::_Simple_types<uint16_t>>>,
+              _Fn=PolarCode::initialize_frozen_bits::<lambda_538a56c07b776f8a26f2a52004c8f940>
+          ]
+  Polar_PAPR.vcxproj -> C:\Users\andy0\source\repos\Polar_PAPR\Debug\Polar_PAPR.exe

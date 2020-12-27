@@ -27,20 +27,18 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 		//cout << endl;
 	}*/
 	//system("pause");
+	int temp = 0;
 	if (CE_SCHEME == 0){
 		for (int nuser = 0; nuser < NUM_USER; nuser++)
 		{
 			for (int j = 0; j < FFT_POINT; j++)
 			{
-				int temp = rand() % 2;
+				temp = j % 2;
 				for (int i = 0; i < FFT_SEGMENT; i++)
 				{
-					//cout << "before esti: " << nuser << "  " << i << "  " << j << "   " << estimate[nuser][i][j][0] << " + " << estimate[nuser][i][j][1] << "i" << endl;
-					//cout << "before H:" << nuser << "  " << i << "  " << j << "   " << H[nuser][i][0][j] << " + " << H[nuser][i][1][j] << "i" << endl;
-					estimate[nuser][i][j][0] = H[nuser][i][0][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
-					estimate[nuser][i][j][1] = H[nuser][i][1][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
-					//cout << "after esti: " << nuser << "  " << i << "  " << j << "   " << estimate[nuser][i][j][0] << " + " << estimate[nuser][i][j][1] << "i" << endl;
-					//cout << endl;
+					//cout << (2*temp - 1) << endl;
+					estimate[nuser][i][j][0] = H[nuser][i][0][j] * (2*temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
+					estimate[nuser][i][j][1] = H[nuser][i][1][j] * (2*temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
 				}
 			}
 		}
@@ -248,9 +246,11 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 		}
 		cout << endl;
 	}*/
-    /*
-	for (int i = 0; i < CODE_LEN; i++)
+
+	/*for (int i = 0; i < CODE_LEN; i++)
 	{
-		cout << appLlr[0][i] << " " << endl;
-	}*/
+		cout << appLlr[0][i] << " ";
+	}
+	system("pause");
+	*/
 }

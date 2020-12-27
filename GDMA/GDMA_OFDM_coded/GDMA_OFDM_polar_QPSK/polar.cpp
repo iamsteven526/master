@@ -283,10 +283,10 @@ std::vector<int> PolarCode::decode_scl_llr(uint16_t list_size, double *llr, int 
 	{
 		if (isinf(llr[i]))
 		{
-			llr[i] = signbit(llr[i]) ? -400 : 400;
+			llr[i] = signbit(llr[i]) ? -100 : 100;
 		}
-		llr[i] > 400 ? llr[i] = 400 : 0;
-		llr[i] < -400 ? llr[i] = -400 : 0;
+		llr[i] > 100 ? llr[i] = 100 : 0;
+		llr[i] < -100 ? llr[i] = -100 : 0;
 	}
 	_list_size = list_size;
 	_llr_based_computation = true;
@@ -410,7 +410,7 @@ std::vector<int> PolarCode::decode_scl(int nuser)
 		{
 			recursivelyCalcP(_n, phi);  //�ثe�Τ���
 		}
-		if (NBC && _frozen_bits.at(nuser).at(phi) == 1)// && phi != (1023 - 960) )
+		if (NBC && _frozen_bits.at(nuser).at(phi) == 1 && phi != (1023 - 960) )
 		{
 			continuePaths_FrozenBit(phi);
 		}

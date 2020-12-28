@@ -5,7 +5,7 @@
 
 #define		CH_CODING_TYPE			0												// 1: LDPC ; 0: Polar 
 //---------- Polar code ----------
-#define		BCT_LAYER				10												// number of layers in channel polarization
+#define		BCT_LAYER				15												// number of layers in channel polarization
 
 #define		INF						1000
 
@@ -15,7 +15,7 @@
 #define		PUNCTURING				0												// 1: enable, 0: disable
 #define		PUNCTURED_BIT			16												// number of bits to be punctured
 
-#define		PCC_METHOD				4												// 0: Bhattacharyya bound
+#define		PCC_METHOD				3												// 0: Bhattacharyya bound
 																					// 1: Capacity bound
 																					// 2: Piecewise linear approximation
 																					// 3: Gaussain approximation
@@ -30,7 +30,7 @@
 #define		INTERLEAVER				1												// 1: enable, 0 : disable
 #define		INTERLEAVER_type		0												// 1: random, 0 : non-random
 
-#define		DATA_LEN				(512 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
+#define		DATA_LEN				(16384 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length
 //---------- LDPC code ----------
 
@@ -105,7 +105,7 @@
 
 #define		NUM_LEVEL				( 1 << NUM_USER )								// number of levels of superimposed signal
 
-#define		FFT_LAYER				4												// number of FFT layers
+#define		FFT_LAYER				9												// number of FFT layers
 #define		FFT_POINT				( 1 << FFT_LAYER )								// number of FFT points
 #define		FFT_SEGMENT				( CODE_LEN / FFT_POINT )						// codeword is divided into multiple segments for OFDM transmission
 #define		CP_LEN					( TAP_NUM - 1)									// length of cyclic prefix

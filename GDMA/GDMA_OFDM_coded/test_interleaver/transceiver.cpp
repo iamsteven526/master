@@ -102,11 +102,11 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 				Interleaver[0][(FFT_POINT)*4*j + p] = reg;
 				*/
 			    //correct
-			    /*
+			    
 				reg = Interleaver[0][j + FFT_POINT*i];
 				Interleaver[0][j + FFT_POINT*i] = Interleaver[0][j + FFT_POINT*p];
 				Interleaver[0][j + FFT_POINT*p] = reg;
-				*/
+				
 				
 			}
 		}

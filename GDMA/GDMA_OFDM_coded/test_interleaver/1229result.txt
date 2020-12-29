@@ -1,0 +1,86 @@
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.756083e-01, BLER = 5.932034e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.706593e-01, BLER = 3.805597e-01
+
+SNR[dB] =  8.0,
+Block# = 2712, BER = 7.834177e-02, BLER = 1.845501e-01
+
+SNR[dB] =  10.0,
+Block# = 6887, BER = 2.879775e-02, BLER = 7.267315e-02
+
+SNR[dB] =  12.0,
+Block# = 23739, BER = 7.650994e-03, BLER = 2.108345e-02
+
+SNR[dB] =  14.0,
+Block# = 90878, BER = 1.752639e-03, BLER = 5.507384e-03
+
+SNR[dB] =  16.0,
+Block# = 419547, BER = 3.194526e-04, BLER = 1.192953e-03
+
+SNR[dB] =  18.0,
+Block# = 82685, BER = 5.371478e-05, BLER = 2.539759e-04
+
+=====================
+
+OFDM-GDMA-BPSK system
+
+(1024,527) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 3.038281e-01, BLER = 6.536732e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.830281e-01, BLER = 4.172914e-01
+
+SNR[dB] =  8.0,
+Block# = 2143, BER = 9.762572e-02, BLER = 2.335511e-01
+
+SNR[dB] =  10.0,
+Block# = 5169, BER = 3.537389e-02, BLER = 9.682724e-02
+
+SNR[dB] =  12.0,
+Block# = 15360, BER = 1.007315e-02, BLER = 3.258464e-02
+
+SNR[dB] =  14.0,
+Block# = 43010, BER = 2.524100e-03, BLER = 1.163683e-02
+
+SNR[dB] =  16.0,
+Block# = 125163, BER = 4.902669e-04, BLER = 3.998786e-03
+
+SNR[dB] =  18.0,
+Block# = 287567, BER = 9.423415e-05, BLER = 1.740464e-03
+
+SNR[dB] =  20.0,
+Block# = 67179, BER = 1.674630e-05, BLER = 7.666080e-04
+

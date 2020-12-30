@@ -1,0 +1,14 @@
+GDMA-BPSK system
+Number of users: 3
+
+Clustering method : propose-1
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 1000
+
+Synchronous system
+
+-
+

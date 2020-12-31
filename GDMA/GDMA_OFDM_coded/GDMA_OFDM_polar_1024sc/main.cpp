@@ -636,7 +636,7 @@ int main()
 			if (!SYNCHRONOUS && PULSE_SHAPE) ReceivingFilter(rx, tempRx, rxFilter);
 			MultiCarrierDemapper(rx, postRx, drift);
 
-			if (CE_SCHEME == 0)
+			if (CE_SCHEME == 2)
 			{
 				Clustering(postRx, centroid, group, groupSize, distList, variation, softAssign, pow(stdDev, 2), estimate);
 				UserIdentification(H, estimate);

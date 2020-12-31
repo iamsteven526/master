@@ -1,0 +1,44 @@
+
+OFDM-GDMA-BPSK system    512subcarrier
+
+(32768,16384) Polar code
+PCC: Gaussain approximation
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 512, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+
+
+SNR[dB] =  16.0,
+Block# = 4787, BER = ^C138579e-03, BLER = 7.835353e-03
+
+==============================================================
+
+
+OFDM-GDMA-BPSK system
+
+(32768,16906) Polar code
+PCC: Gaussain approximation
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 512, CP length: 4, channel taps: 5
+Number of users: 2
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  16.0,
+Block# = 421^C BER = 4.455569e-03, BLER = 1.081017e-02

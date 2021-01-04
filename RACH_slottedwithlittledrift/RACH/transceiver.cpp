@@ -83,13 +83,13 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 			for(int p = 0; p < NUM_SLOTED; ++p){
 				while(true){
 					time_drift = exponential(generator) * packet_dur;
-					time_drift = time_drift%(2+1);
+					time_drift = time_drift%(4+2);
 					cachetimesum = cache_time_drift + time_drift;
-					if(cachetimesum > 2*Unit ){
-					//if((cachetimesum % (effLen*Unit)) <= 2*Unit ){
+					//if(cachetimesum > 2*Unit ){
+					if((cachetimesum % (effLen*Unit)) <= 2*Unit ){
 					    time_drift = 0;
 					}
-					time_drift = 0; //slotted
+					//time_drift = 0; //slotted
 					cache_time_drift = cache_time_drift + time_drift;
 					break;
 				}
@@ -127,7 +127,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 				//debug_count = 0;
 				break;
 			}
-			last_packet_time += (packet_dur)*Unit;				
+			last_packet_time += (packet_dur + 4)*Unit; // 4 for what?? not slotted				
 		}
 
 		time_in.push_back(frame_dur);

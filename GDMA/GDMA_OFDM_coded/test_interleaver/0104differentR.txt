@@ -1,0 +1,129 @@
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.755219e-01, BLER = 5.922039e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.634442e-01, BLER = 3.658171e-01
+
+SNR[dB] =  8.0,
+Block# = 2700, BER = 7.842810e-02, BLER = 1.853704e-01
+
+SNR[dB] =  10.0,
+Block# = 7091, BER = 2.776145e-02, BLER = 7.058243e-02
+
+SNR[dB] =  12.0,
+Block# = 22901, BER = 7.981152e-03, BLER = 2.185494e-02
+
+SNR[dB] =  14.0,
+Block# = 91294, BER = 1.691821e-03, BLER = 5.482288e-03
+
+SNR[dB] =  16.0,
+Block# = 423546, BER = 3.047005e-04, BLER = 1.181690e-03
+
+SNR[dB] =  18.0,
+Block# = 1900138, BER = 5.502530e-05, BLER = 2.634019e-04
+
+SNR[dB] =  20.0,
+Block# = 8644272, BER = 8.901306e-06, BLER = 5.789961e-05
+
+OFDM-GDMA-BPSK system
+
+(1024,528) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.819012e-01, BLER = 6.061969e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.691574e-01, BLER = 3.805597e-01
+
+SNR[dB] =  8.0,
+Block# = 2732, BER = 7.517456e-02, BLER = 1.831991e-01
+
+SNR[dB] =  10.0,
+Block# = 6964, BER = 2.826373e-02, BLER = 7.194141e-02
+
+SNR[dB] =  12.0,
+Block# = 22192, BER = 7.691312e-03, BLER = 2.255317e-02
+
+SNR[dB] =  14.0,
+Block# = 85366, BER = 1.780768e-03, BLER = 5.862990e-03
+
+SNR[dB] =  16.0,
+Block# = 358649, BER = 3.509356e-04, BLER = 1.395515e-03
+
+SNR[dB] =  18.0,
+Block# = 1484778, BER = 6.211137e-05, BLER = 3.370874e-04
+
+SNR[dB] =  20.0,
+Block# = 6509366, BER = 9.692764e-06, BLER = 7.688921e-05
+
+
+OFDM-GDMA-BPSK system
+
+(1024,544) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.871377e-01, BLER = 6.164418e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.902045e-01, BLER = 4.270365e-01
+
+SNR[dB] =  8.0,
+Block# = 2199, BER = 9.503902e-02, BLER = 2.276035e-01
+
+SNR[dB] =  10.0,
+Block# = 5565, BER = 3.509675e-02, BLER = 8.993711e-02
+
+SNR[dB] =  12.0,
+Block# = 18653, BER = 9.061141e-03, BLER = 2.683214e-02
+
+SNR[dB] =  14.0,
+Block# = 62374, BER = 2.213050e-03, BLER = 8.024177e-03
+
+SNR[dB] =  16.0,
+Block# = 251648, BER = 4.542884e-04, BLER = 1.988889e-03
+
+SNR[dB] =  18.0,
+Block# = 1044268, BER = 8.430564e-05, BLER = 4.792831e-04
+
+SNR[dB] =  20.0,
+Block# = 3742119, BER = 1.484001e-05, BLER = 1.337478e-04

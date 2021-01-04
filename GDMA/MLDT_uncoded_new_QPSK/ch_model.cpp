@@ -19,6 +19,12 @@ void EnergyProfile(double **chCoef)
 		chCoef[nuser][2] = sqrt(chCoef[nuser][3]);			// amplitude
 		chCoef[nuser][1] = chCoef[nuser][2] * sin(theta);	// imaginary pary
 		chCoef[nuser][0] = chCoef[nuser][2] * cos(theta);	// real part
+		if((nuser % 2) == 1){
+			chCoef[nuser][3] = chCoef[nuser - 1][3]	;		// energy
+			chCoef[nuser][2] = sqrt(chCoef[nuser][3]);			// amplitude
+			chCoef[nuser][1] = chCoef[nuser - 1][0];	// imaginary pary
+			chCoef[nuser][0] = -chCoef[nuser - 1][1];	// real part
+		}
 	}
 }
 

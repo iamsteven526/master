@@ -10,7 +10,6 @@ int main()
 	if ((long double)NUM_USER*BLOCK_NUM*BLOCK_LEN < 0)
 	{
 		cout << "OVERFLOW" << endl;
-		system("pause");
 		return 0;
 	}
 	//---------- memory allocation ----------

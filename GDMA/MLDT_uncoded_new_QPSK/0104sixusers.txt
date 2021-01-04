@@ -1,0 +1,90 @@
+GDMA-BPSK system
+Number of users: 6
+
+Clustering method : propose-2
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 2048
+
+Synchronous system
+
+-
+
+SNR[dB] = 5.0
+Block# = 10001, BER = 3.306536e-01,BLER = 1.000000e+00, MSE = 1.980313e-01, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 10.0
+Block# = 10001, BER = 3.228564e-01,BLER = 1.000000e+00, MSE = 2.101599e-01, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 15.0
+Block# = 10001, BER = 3.036107e-01,BLER = 9.982002e-01, MSE = 1.904742e-01, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 20.0
+Block# = 10001, BER = 2.278125e-01,BLER = 8.943106e-01, MSE = 1.412673e-01, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 25.0
+Block# = 10001, BER = 1.241756e-01,BLER = 5.412459e-01, MSE = 6.852049e-02, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 30.0
+Block# = 10001, BER = 5.963734e-02,BLER = -1.343198e+74, MSE = 3.174094e-02, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 2.883229e-02,BLER = 9.999000e-02, MSE = 1.707069e-02, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 1.641826e-02,BLER = 4.569543e-02, MSE = 1.350393e-02, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 45.0
+Block# = 10001, BER = 1.799362e-02,BLER = 3.959604e-02, MSE = 1.652260e-02, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+
+GDMA-BPSK system
+Number of users: 6
+
+Clustering method : propose-2
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 8192
+
+Synchronous system
+
+-
+
+SNR[dB] = 5.0
+Block# = 10001, BER = 3.121631e-01,BLER = 1.000000e+00, MSE = 1.632401e-01, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 10.0
+Block# = 10001, BER = 2.391780e-01,BLER = 1.000000e+00, MSE = 1.013387e-01, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 15.0
+Block# = 10001, BER = 1.098474e-01,BLER = 9.990001e-01, MSE = 4.024598e-02, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 20.0
+Block# = 10001, BER = 3.534314e-02,BLER = 9.161084e-01, MSE = 1.029646e-02, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 25.0
+Block# = 10001, BER = 1.085795e-02,BLER = 5.678432e-01, MSE = 2.272047e-03, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 30.0
+Block# = 10001, BER = 3.522011e-03,BLER = 2.454755e-01, MSE = 7.153539e-04, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 35.0
+Block# = 10001, BER = 1.153691e-03,BLER = 8.729127e-02, MSE = 2.293837e-04, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 40.0
+Block# = 10001, BER = 4.136529e-04,BLER = -5.716582e+190, MSE = 1.627944e-04, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 45.0
+Block# = 10001, BER = 1.239175e-04,BLER = 1.049895e-02, MSE = 1.949117e-05, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 50.0
+Block# = 10001, BER = 2.153512e-05,BLER = 2.599740e-03, MSE = 1.488792e-08, MSE_centroid = 0.000000e+00,iteration = 6.000600e+04
+
+SNR[dB] = 55.0
+Block# = 20000, BER = 9.337362e-06,BLER = 9.000000e-04, MSE = 4.637026e-09, MSE_centroid = 0.000000e+00,iteration = 1.200000e+05
+
+
+
+

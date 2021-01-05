@@ -42,3 +42,53 @@ OFDM : CP
 -
 SNR[dB] =  16.0,
 Block# = 421^C BER = 4.455569e-03, BLER = 1.081017e-02
+
+
+
+
+
+
+====(1024,512)=====
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 512, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  0.0,
+Block# = 2001, BER = 4.284991e-01, BLER = 8.788106e-01
+
+SNR[dB] =  2.0,
+Block# = 2001, BER = 3.467797e-01, BLER = 7.223888e-01
+
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.374687e-01, BLER = 4.990005e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.354240e-01, BLER = 2.936032e-01
+
+SNR[dB] =  8.0,
+Block# = 4114, BER = 5.405276e-02, BLER = 1.216578e-01
+
+SNR[dB] =  10.0,
+Block# = 12264, BER = 1.725125e-02, BLER = 4.081050e-02
+
+SNR[dB] =  12.0,
+Block# = 40739, BER = 5.003843e-03, BLER = 1.228552e-02
+
+SNR[dB] =  14.0,
+Block# = 178068, BER = 1.122618e-03, BLER = 2.810724e-03
+
+SNR[dB] =  16.0,
+Block# = 246398, BER = 2.031615e-04, BLER = 5.377501e-04

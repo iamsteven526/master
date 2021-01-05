@@ -41,3 +41,36 @@ SNR[dB] = 40.0
 Block# = 5380, BER = 6.640644e-05, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
 
 
+
+
+------with diversity
+
+64Uncoded GDMA-BPSK system
+Number of users: 3
+
+Block length: 10000
+
+Cluster length: 10000
+
+Cluster-based channel estimation: K-means
+w/Gaussian mixture model
+
+Synchronous system
+
+-
+
+SNR[dB] = 5.0
+Block# = 464, BER = 1.790180e-^C, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 10.0
+Block# = 214, BER = 1.595609e-01, MSE = 0.000000e+^C, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 15.0
+Block# = 127, BE^C= 1.326330e-01, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 20.0
+Block# = 139, BER = 5.466325e-02, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 25.0
+Block# = 376, BER = 8.164738e-03, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+

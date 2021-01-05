@@ -5,7 +5,7 @@
 
 #define		CH_CODING_TYPE			0												// 1: LDPC ; 0: Polar 
 //---------- Polar code ----------
-#define		BCT_LAYER				15												// number of layers in channel polarization
+#define		BCT_LAYER				10												// number of layers in channel polarization
 
 #define		INF						1000
 
@@ -15,7 +15,7 @@
 #define		PUNCTURING				0												// 1: enable, 0: disable
 #define		PUNCTURED_BIT			16												// number of bits to be punctured
 
-#define		PCC_METHOD				3												// 0: Bhattacharyya bound
+#define		PCC_METHOD				4												// 0: Bhattacharyya bound
 																					// 1: Capacity bound
 																					// 2: Piecewise linear approximation
 																					// 3: Gaussain approximation
@@ -30,7 +30,7 @@
 #define		INTERLEAVER				1												// 1: enable, 0 : disable
 #define		INTERLEAVER_type		0												// 1: random, 0 : non-random
 
-#define		DATA_LEN				(16384 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
+#define		DATA_LEN				(512 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length
 //---------- LDPC code ----------
 
@@ -129,10 +129,10 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				230
 
-#define		BLOCK_NUM				100000000											// number of blocks to be simulated 
+#define		BLOCK_NUM				1000000											// number of blocks to be simulated 
 
 #define		SNR_NUM					15												// number of SNR points to be simulated
-#define		SNR_START				18												// in dB
+#define		SNR_START				0												// in dB
 #define		SNR_STEP				2												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

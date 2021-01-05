@@ -45,7 +45,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 4; % SCMA signals in frame
 
-EbN0 = 0:2.5:20;
+EbN0 = 0:2:20;
 SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));

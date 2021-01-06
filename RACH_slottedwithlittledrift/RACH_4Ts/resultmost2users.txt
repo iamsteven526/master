@@ -1,0 +1,52 @@
+RACH-OFDM-GDMA-BPSK system
+
+(1008,504) LDPC code
+Separated channel decoding: SPA
+Iteration#: 100
+
+FFT point: 16, CP length: 4, channel tap: 5
+Number of users: 2
+
+Perfect Time
+
+Perfect CSI
+
+ALOHA + MLDT, 	NON SLOTED system
+Channel, K=0
+OFDM : CP, CP Len : 4
+Preamble Len: 63
+-
+Packet Rate =  0.1, BER = 1.000000e-01, BLER = 0.000000e+00, MSE = -7.479641e-02, T_D = 3.939164e-06, T_E = nan 
+Packet Rate =  0.2, BER = 2.000000e-01, BLER = 0.000000e+00, MSE = -1.928184e+00, T_D = -2.342902e-06, T_E = nan 
+Packet Rate =  0.2, BER = 3.000000e-01, BLER = 0.000000e+00, MSE = -6.530397e-01, T_D = 5.080365e-06, T_E = nan 
+Packet Rate =  0.3, BER = 4.000000e-01, BLER = 0.000000e+00, MSE = -5.928297e-01, T_D = 2.535823e-06, T_E = nan 
+Packet Rate =  0.3, BER = 5.000000e-01, BLER = 0.000000e+00, MSE = -6.404329e-01, T_D = 4.228564e-06, T_E = nan 
+Packet Rate =  0.4, BER = 6.000000e-01, BLER = 0.000000e+00, MSE = -3.957232e+00, T_D = -1.276241e-07, T_E = nan 
+Packet Rate =  0.4, BER = 7.000000e-01, BLER = 0.000000e+00, MSE = -1.682589e+01, T_D = 3.466137e-06, T_E = nan 
+Packet Rate =  0.5, BER = 8.000000e-01, BLER = 0.000000e+00, MSE = -2.699906e+00, T_D = 6.246573e-06, T_E = nan 
+Packet Rate =  0.5, BER = 9.000000e-01, BLER = 0.000000e+00, MSE = -8.953957e-02, T_D = -3.310690e-06, T_E = nan 
+Packet Rate =  0.5, BER = 1.000000e+00, BLER = 0.000000e+00, MSE = -1.979270e+00, T_D = -6.940006e-06, T_E = nan 
+Packet Rate =  0.6, BER = 1.100000e+00, BLER = 0.000000e+00, MSE = -8.845134e+00, T_D = -4.573462e-06, T_E = nan 
+Packet Rate =  0.6, BER = 1.200000e+00, BLER = 0.000000e+00, MSE = -1.251516e+00, T_D = -3.446400e-06, T_E = nan 
+Packet Rate =  0.6, BER = 1.300000e+00, BLER = 0.000000e+00, MSE = -7.721635e-02, T_D = -6.934951e-06, T_E = nan 
+Packet Rate =  0.6, BER = 1.400000e+00, BLER = 0.000000e+00, MSE = -2.993552e+01, T_D = 2.443791e-06, T_E = nan 
+Packet Rate =  0.6, BER = 1.500000e+00, BLER = 0.000000e+00, MSE = -6.836864e-02, T_D = -5.265795e-06, T_E = nan 
+Packet Rate =  0.6, BER = 1.600000e+00, BLER = 6.922086e-315, MSE = 5.917935e-03, T_D = 5.935480e-03, T_E = nan 
+Packet Rate =  0.7, BER = 1.700000e+00, BLER = 6.953247e-315, MSE = -1.000472e+00, T_D = -5.491693e-06, T_E = nan 
+Packet Rate =  0.7, BER = 1.800000e+00, BLER = 6.953247e-315, MSE = -5.498568e-03, T_D = 5.483478e-03, T_E = nan 
+Packet Rate =  0.7, BER = 1.900000e+00, BLER = 6.953247e-315, MSE = -2.084354e-01, T_D = -1.818209e-06, T_E = nan 
+Packet Rate =  0.7, BER = 2.000000e+00, BLER = 0.000000e+00, MSE = -2.613015e+00, T_D = 8.638983e-06, T_E = nan 
+Packet Rate =  0.7, BER = 2.100000e+00, BLER = 0.000000e+00, MSE = -7.276496e+00, T_D = -3.981724e-06, T_E = nan 
+Packet Rate =  0.7, BER = 2.200000e+00, BLER = 6.922086e-315, MSE = -1.924068e+00, T_D = 5.996578e-07, T_E = nan 
+Packet Rate =  0.7, BER = 2.300000e+00, BLER = 0.000000e+00, MSE = -9.165241e+00, T_D = -4.431983e-06, T_E = nan 
+Packet Rate =  0.7, BER = 2.400000e+00, BLER = 9.881313e-323, MSE = -1.908473e-06, T_D = 1.908471e-06, T_E = nan 
+Packet Rate =  0.7, BER = 2.500000e+00, BLER = 9.881313e-323, MSE = -5.602078e+00, T_D = -4.199920e-06, T_E = nan 
+Packet Rate =  0.7, BER = 2.600000e+00, BLER = 9.881313e-323, MSE = -1.833916e-01, T_D = 4.589240e-06, T_E = nan 
+Packet Rate =  0.8, BER = 2.700000e+00, BLER = 0.000000e+00, MSE = -9.068232e+00, T_D = 4.707660e-06, T_E = nan 
+Packet Rate =  0.8, BER = 2.800000e+00, BLER = 0.000000e+00, MSE = -8.001783e-01, T_D = 5.403536e-06, T_E = nan 
+Packet Rate =  0.8, BER = 2.900000e+00, BLER = 2.025669e-322, MSE = -7.712716e+00, T_D = 5.579824e-06, T_E = nan 
+Packet Rate =  0.8, BER = 3.000000e+00, BLER = 2.025669e-322, MSE = -7.325540e-01, T_D = -3.163535e-06, T_E = nan 
+
+
+8.222178e-02, 1.564444e-01, 2.240276e-01, 2.800720e-01, 3.343066e-01, 3.817518e-01, 4.198080e-01, 4.580942e-01, 4.928007e-01, 5.226977e-01, 5.503950e-01, 5.710829e-01, 5.987601e-01, 6.157684e-01, 6.337766e-01, 6.481352e-01, 6.630937e-01, 6.766423e-01, 6.908309e-01, 7.017698e-01, 7.092491e-01, 7.208179e-01, 7.274373e-01, 7.371763e-01, 7.457354e-01, 7.499550e-01, 7.575242e-01, 7.644136e-01, 7.695930e-01, 7.747825e-01, 
+0.000000e+00, 

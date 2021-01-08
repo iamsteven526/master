@@ -68,7 +68,7 @@
 																					// 2: time-varying
 #define		K						0												// 1: K=0 ; Rayleight Channel
 
-#define		TAP_NUM					5												// number of channel taps
+#define		TAP_NUM					1												// number of channel taps
 
 #define		CARRIER_FREQ			2												// carrier frequency (GHz)
 #define		CHIP_RATE				1.92 //30.72									// sampling frequency (MHz)
@@ -132,8 +132,8 @@
 #define		BLOCK_NUM				100000000											// number of blocks to be simulated 
 
 #define		SNR_NUM					9												// number of SNR points to be simulated
-#define		SNR_START				4												// in dB
-#define		SNR_STEP				2												// in dB
+#define		SNR_START				0												// in dB
+#define		SNR_STEP				1												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )
 

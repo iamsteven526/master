@@ -31,6 +31,7 @@ void EnergyProfile(double ****h, double ****H)
 				if (j < TAP_NUM)
 				{
 					double power = 1;//0.5*exp(-j) / nFactor;
+					//cout << power << endl;
 					double phi = uniform(generator) * 2. * M_PI - M_PI;
 					h[i][0][j][0] = uniform(generator);
 					h[i][0][j][1] = sqrt(1.0 - pow(h[i][0][j][0],2));//normal(generator);

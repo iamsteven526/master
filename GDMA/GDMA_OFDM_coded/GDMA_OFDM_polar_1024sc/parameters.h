@@ -15,7 +15,7 @@
 #define		PUNCTURING				0												// 1: enable, 0: disable
 #define		PUNCTURED_BIT			16												// number of bits to be punctured
 
-#define		PCC_METHOD				4												// 0: Bhattacharyya bound
+#define		PCC_METHOD				3												// 0: Bhattacharyya bound
 																					// 1: Capacity bound
 																					// 2: Piecewise linear approximation
 																					// 3: Gaussain approximation

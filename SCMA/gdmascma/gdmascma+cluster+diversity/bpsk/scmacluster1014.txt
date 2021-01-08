@@ -74,3 +74,11 @@ Block# = 139, BER = 5.466325e-02, MSE = 0.000000e+00, MSE_centroid = 0.000000e+0
 SNR[dB] = 25.0
 Block# = 376, BER = 8.164738e-03, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
 
+SNR[dB] = 30.0
+Block# = 8897, BER = 8.886634e-04, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 35.0
+Block# = 14000, BER = 1.233411e-04, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00
+
+SNR[dB] = 40.0
+Block# = 14000, BER = 1.347500e-05, MSE = 0.000000e+00, MSE_centroid = 0.000000e+00

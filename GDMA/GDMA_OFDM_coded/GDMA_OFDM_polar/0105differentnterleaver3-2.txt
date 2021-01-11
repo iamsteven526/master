@@ -1,0 +1,46 @@
+iamsteven@iamsteven-D830MT:~/Desktop/master/GDMA/GDMA_OFDM_coded/GDMA_OFDM_polar$ ./main best!!!!! (interleaver 3-1)
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.773067e-01, BLER = 5.997001e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.677145e-01, BLER = 3.800600e-01
+
+SNR[dB] =  8.0,
+Block# = 2748, BER = 7.563384e-02, BLER = 1.821325e-01
+
+SNR[dB] =  10.0,
+Block# = 6417, BER = 2.969240e-02, BLER = 7.799595e-02
+
+SNR[dB] =  12.0,
+Block# = 20968, BER = 8.100700e-03, BLER = 2.386971e-02
+
+SNR[dB] =  14.0,
+Block# = 77614, BER = 1.833933e-03, BLER = 6.448579e-03
+
+SNR[dB] =  16.0,
+Block# = 339629, BER = 3.357236e-04, BLER = 1.473667e-03
+
+SNR[dB] =  18.0,
+Block# = 1395893, BER = 6.038361e-05, BLER = 3.585518e-04
+
+SNR[dB] =  20.0,
+Block# = 5161435, BER = 1.061376e-05, BLER = 9.696916e-05
+
+
+

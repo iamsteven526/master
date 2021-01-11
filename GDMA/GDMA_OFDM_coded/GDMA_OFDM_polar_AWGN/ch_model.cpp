@@ -30,11 +30,11 @@ void EnergyProfile(double ****h, double ****H)
 			{
 				if (j < TAP_NUM)
 				{
-					double power = 1;//0.5*exp(-j) / nFactor;
+					double power = 0.5*exp(-j) / nFactor;
 					//cout << power << endl;
 					double phi = uniform(generator) * 2. * M_PI - M_PI;
-					h[i][0][j][0] = uniform(generator);
-					h[i][0][j][1] = sqrt(1.0 - pow(h[i][0][j][0],2));//normal(generator);
+					h[i][0][j][0] = 1;//uniform(generator);
+					h[i][0][j][1] = 0;//sqrt(1.0 - pow(h[i][0][j][0],2));//normal(generator);
 					//cout << h[i][0][j][0] << "   gjmi   " << h[i][0][j][1] << endl;
 					h[i][0][j][0] = sqrt(power) * (pow(K + 1, -0.5) * h[i][0][j][0] + pow(K, 0.5) / pow(K + 1, 0.5) * cos(phi));
 					h[i][0][j][1] = sqrt(power) * (pow(K + 1, -0.5) * h[i][0][j][1] + pow(K, 0.5) / pow(K + 1, 0.5) * sin(phi));

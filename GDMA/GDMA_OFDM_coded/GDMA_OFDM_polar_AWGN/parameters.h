@@ -101,7 +101,7 @@
 
 //---------- system ----------
 
-#define		NUM_USER				2												// number of users
+#define		NUM_USER				1												// number of users
 
 #define		NUM_LEVEL				( 1 << NUM_USER )								// number of levels of superimposed signal
 
@@ -132,7 +132,7 @@
 #define		BLOCK_NUM				100000000											// number of blocks to be simulated 
 
 #define		SNR_NUM					9												// number of SNR points to be simulated
-#define		SNR_START				0												// in dB
+#define		SNR_START				2.5												// in dB
 #define		SNR_STEP				1												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

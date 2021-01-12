@@ -96,11 +96,11 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 				Interleaver[0][(FFT_POINT)*4*j + p] = reg;
 				*/
 			    //correct
-			    /*
-				reg = Interleaver[0][j + FFT_POINT*i];
-				Interleaver[0][j + FFT_POINT*i] = Interleaver[0][j + FFT_POINT*p];
-				Interleaver[0][j + FFT_POINT*p] = reg;
-				*/
+			    
+				//reg = Interleaver[0][j + FFT_POINT*i];
+				//Interleaver[0][j + FFT_POINT*i] = Interleaver[0][j + FFT_POINT*p];
+				//Interleaver[0][j + FFT_POINT*p] = reg;
+				
 				
 			}
 		}
@@ -454,7 +454,7 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 				NBC_index.insert(0);
 				NBC_index.insert(0);
 				NBC_index.insert(0);
-				NBC_index.insert(249);
+				NBC_index.insert(0);
 				NBC_index.insert(0);
 				NBC_index.insert(0);
 				NBC_index.insert(0);
@@ -465,7 +465,7 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 				NBC_index.insert(0);
 				NBC_index.insert(0);		
 				NBC_index.insert(0);
-				NBC_index.insert(704);	
+				NBC_index.insert(0);	
 				
 			}
 			else

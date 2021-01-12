@@ -1,0 +1,64 @@
+======CSI no NBC====
+iamsteven@iamsteven-D830MT:~/Desktop/master/GDMA/GDMA_OFDM_coded/GDMA_OFDM_polar_AWGN$ ./main
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 0, channel taps: 1
+Number of users: 1
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  0.0,
+Block# = 2001, BER = 4.964978e-01, BLER = 1.000000e+00
+
+SNR[dB] =  1.0,
+Block# = 2001, BER = 4.943661e-01, BLER = 1.000000e+00
+
+SNR[dB] =  2.0,
+Block# = 2001, BER = 4.864980e-01, BLER = 1.000000e+00
+
+SNR[dB] =  2.5,
+Block# = 2001, BER = 4.664670e-01, BLER = 9.960020e-01
+
+SNR[dB] =  3.0,
+Block# = 2001, BER = 3.760044e-01, BLER = 9.115442e-01
+
+SNR[dB] =  3.5,
+Block# = 2001, BER = 1.737110e-01, BLER = 5.632184e-01
+
+SNR[dB] =  4.0,
+Block# = 5696, BER = 3.580158e-02, BLER = 1.757374e-01
+
+SNR[dB] =  4.5,
+Block# = 24383, BER = 4.184124e-03, BLER = 4.105319e-02
+
+SNR[dB] =  5.0,
+Block# = 111516, BER = 6.365048e-04, BLER = 8.976290e-03
+
+SNR[dB] =  5.5,
+Block# = 535765, BER = 1.209646e-04, BLER = 1.868356e-03
+
+SNR[dB] =  6.0,
+Block# = 3137174, BER = 1.961546e-05, BLER = 3.190770e-04
+
+SNR[dB] =  6.5,
+Block# = 5123744, BER = 3.149400e-06, BLER = 4.957312e-05
+
+SNR[dB] =  7.0,
+Block# = 2741373, BER = 5.500209e-07, BLER = 5.836494e-06
+
+
+
+============CSI and NBC=============
+
+
+
+==========clustering and NBC==================

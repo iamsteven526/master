@@ -53,21 +53,21 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 			subinterleaver[i] = i;
 		}
 		subinterleaver[0] = 0;
-		subinterleaver[1] = 11;
+		subinterleaver[1] = 3;
 		subinterleaver[2] = 6;
-		subinterleaver[3] = 1;
+		subinterleaver[3] = 9;
 		subinterleaver[4] = 12;
-		subinterleaver[5] = 7;
-		subinterleaver[6] = 2;
-		subinterleaver[7] = 13;
-		subinterleaver[8] = 8;
-		subinterleaver[9] = 3;
-		subinterleaver[10] = 14;
-		subinterleaver[11] = 9;
-		subinterleaver[12] = 4;
-		subinterleaver[13] = 15;
-		subinterleaver[14] = 10;
-		subinterleaver[15] = 5;
+		subinterleaver[5] = 15;
+		subinterleaver[6] = 1;
+		subinterleaver[7] = 4;
+		subinterleaver[8] = 7;
+		subinterleaver[9] = 10;
+		subinterleaver[10] = 13;
+		subinterleaver[11] = 2;
+		subinterleaver[12] = 5;
+		subinterleaver[13] = 8;
+		subinterleaver[14] = 11;
+		subinterleaver[15] = 14;
 		/*
 		for (int i = 0; i < FFT_POINT; i++) 
 		{

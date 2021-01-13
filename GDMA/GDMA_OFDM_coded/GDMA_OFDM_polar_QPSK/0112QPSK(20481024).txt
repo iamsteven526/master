@@ -1,0 +1,30 @@
+
+============CSI no NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,512) polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 32, CP length: 4, channel tap: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0, BER = 1.952417e-01, BLER = 4.222889e-01
+SNR[dB] =  6.0, BER = 9.500957e-02, BLER = 2.138284e-01
+SNR[dB] =  8.0, BER = 3.789859e-02, BLER = 8.760721e-02
+SNR[dB] =  10.0, BER = 1.268717e-02, BLER = 3.142248e-02
+SNR[dB] =  12.0, BER = 3.656254e-03, BLER = 9.541694e-03
+SNR[dB] =  14.0, BER = 8.975104e-04, BLER = 2.516639e-03
+SNR[dB] =  16.0, BER = 1.915107e-04, BLER = 6.039885e-04
+SNR[dB] =  18.0, BER = 3.129590e-05, BLER = 1.180000e-04
+SNR[dB] =  20.0, BER = 8.610352e-06, BLER = 2.750000e-05
+ 
+4.222889e-01, 2.138284e-01, 8.760721e-02, 3.142248e-02, 9.541694e-03, 2.516639e-03, 6.039885e-04, 1.180000e-04, 2.750000e-05, 

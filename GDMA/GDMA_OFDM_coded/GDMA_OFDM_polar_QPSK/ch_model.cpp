@@ -28,6 +28,7 @@ void EnergyProfile(double ****h, double ****H)
 		{
 			for (int j = 0; j < FFT_POINT; j++)
 			{
+
 				if (j < TAP_NUM)
 				{
 					double power = 0.5*exp(-j) / nFactor;
@@ -39,6 +40,10 @@ void EnergyProfile(double ****h, double ****H)
 					//cout << h[i][0][j][0] << " " << h[i][0][j][1] << endl;
 				}
 				else h[i][0][j][0] = h[i][0][j][1] = 0;
+				if (i % 2 == 1){
+					h[i][0][j][0] = h[i-1][0][j][1];
+					h[i][0][j][1] = (-1.0)*h[i-1][0][j][0];
+				}
 				for (int k = 1; k < FFT_SEGMENT + DIFF_ENC; k++) // block fading
 				{
 					h[i][k][j][0] = h[i][0][j][0];
@@ -125,8 +130,8 @@ void EnergyProfile(double ****h, double ****H)
 
 void MultipleAccessChannel(double stdDev, double ****h, double ****tx, double ***rx, double *drift, double ****H)
 {
-	int effLen; //-------------¤@­Óblock°T¸¹ªºªø«×
-	int effTap; //-------------¤@­Ósymbol°T¸¹ªºªø«×
+	int effLen; //-------------ï¿½@ï¿½ï¿½blockï¿½Tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	int effTap; //-------------ï¿½@ï¿½ï¿½symbolï¿½Tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	// effLen & effTap setting
 	if (SYNCHRONOUS)
@@ -221,7 +226,7 @@ void MultipleAccessChannel(double stdDev, double ****h, double ****tx, double **
 			//cout << drift[nuser]<<" "<<drift_<<" "<<int(drift_)<<" "<<a << " " << b << endl;
 			for (int i = 0; i < FFT_SEGMENT + DIFF_ENC; i++)
 			{
-				//----------------¤º®tdrift­È
+				//----------------ï¿½ï¿½ï¿½tdriftï¿½ï¿½
 				if (drift_ > 0) // -------------------forword delay
 				{
 					for (int j = 0; j < effLen; j++)

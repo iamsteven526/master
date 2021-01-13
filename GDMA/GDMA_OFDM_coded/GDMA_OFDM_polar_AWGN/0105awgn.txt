@@ -59,6 +59,98 @@ Block# = 2741373, BER = 5.500209e-07, BLER = 5.836494e-06
 
 ============CSI and NBC=============
 
+OFDM-GDMA-BPSK system
+
+(1024,528) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 0, channel taps: 1
+Number of users: 1
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  2.0,
+Block# = 2001, BER = 4.840960e-01, BLER = 1.000000e+00
+
+SNR[dB] =  2.5,
+Block# = 2001, BER = 4.651169e-01, BLER = 9.985007e-01
+
+SNR[dB] =  3.0,
+Block# = 2001, BER = 3.852155e-01, BLER = 9.405297e-01
+
+SNR[dB] =  3.5,
+Block# = 2001, BER = 1.867930e-01, BLER = 6.091954e-01
+
+SNR[dB] =  4.0,
+Block# = 4506, BER = 4.276747e-02, BLER = 2.221482e-01
+
+SNR[dB] =  4.5,
+Block# = 19388, BER = 5.356230e-03, BLER = 5.162987e-02
+
+SNR[dB] =  5.0,
+Block# = 98428, BER = 7.570331e-04, BLER = 1.016987e-02
+
+SNR[dB] =  5.5,
+Block# = 534765, BER = 1.247291e-04, BLER = 1.871850e-03
+
+SNR[dB] =  6.0,
+Block# = 3177160, BER = 2.116015e-05, BLER = 3.150612e-04
+
+SNR[dB] =  6.5,
+Block# = 2083965, BER = 2.996364e-06, BLER = 4.222722e-05
 
 
 ==========clustering and NBC==================
+
+OFDM-GDMA-BPSK system
+
+(1024,528) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 0, channel taps: 1
+Number of users: 1
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  2.0,
+Block# = 2001, BER = 4.907722e-01, BLER = 1.000000e+00
+
+SNR[dB] =  2.5,
+Block# = 2001, BER = 4.824021e-01, BLER = 9.990005e-01
+
+SNR[dB] =  3.0,
+Block# = 2001, BER = 4.439028e-01, BLER = 9.865067e-01
+
+SNR[dB] =  3.5,
+Block# = 2001, BER = 2.860402e-01, BLER = 7.936032e-01
+
+SNR[dB] =  4.0,
+Block# = 2671, BER = 9.225725e-02, BLER = 3.747660e-01
+
+SNR[dB] =  4.5,
+Block# = 11189, BER = 1.154660e-02, BLER = 8.946287e-02
+
+SNR[dB] =  5.0,
+Block# = 49878, BER = 1.654759e-03, BLER = 2.006897e-02
+
+SNR[dB] =  5.5,
+Block# = 262735, BER = 2.746784e-04, BLER = 3.809923e-03
+
+SNR[dB] =  6.0,
+Block# = 1533970, BER = 4.527487e-05, BLER = 6.525551e-04
+
+SNR[dB] =  6.5,
+Block# = 3132329, BER = 5.945666e-06, BLER = 8.843263e-05

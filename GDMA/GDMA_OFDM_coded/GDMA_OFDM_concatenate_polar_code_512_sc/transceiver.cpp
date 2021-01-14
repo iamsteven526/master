@@ -47,56 +47,15 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 		srand(time(NULL));
 		int reg = 0, p = 0;
 		
-		int* subinterleaver = new int [FFT_POINT];
-		for (int i = 0; i < FFT_POINT; i++) 
-		{
-			subinterleaver[i] = i;
-		}
-		subinterleaver[0] = 0;
-		subinterleaver[1] = 3;
-		subinterleaver[2] = 6;
-		subinterleaver[3] = 9;
-		subinterleaver[4] = 12;
-		subinterleaver[5] = 15;
-		subinterleaver[6] = 1;
-		subinterleaver[7] = 4;
-		subinterleaver[8] = 7;
-		subinterleaver[9] = 10;
-		subinterleaver[10] = 13;
-		subinterleaver[11] = 2;
-		subinterleaver[12] = 5;
-		subinterleaver[13] = 8;
-		subinterleaver[14] = 11;
-		subinterleaver[15] = 14;
-		/*
-		for (int i = 0; i < FFT_POINT; i++) 
-		{
-			p = (rand() ) % FFT_POINT;
-			reg = subinterleaver[i];
-			subinterleaver[i] = subinterleaver[p];
-			subinterleaver[p] = reg;
-		}
-		*/
-		
 
 		for (int i = 0, m = 0; i < FFT_POINT; i++)  //FFT_point = 16
 		{
 			for (int j = 0; j < FFT_SEGMENT; j++)
 			{
-				//Interleaver[0][m] = i + FFT_POINT * j; //seperate into 64 blocks
-				//Interleaver[0][m] = m; // best
-				//Interleaver[0][m] = (FFT_POINT*4) * (j/4) + j%4 + i*4;//wrong
-				//Interleaver[0][m] = FFT_POINT*j + i; // worst
-				//Interleaver[0][m] = (FFT_POINT*4) * (m/64) + (4*j)%64 + j/16; // teachers method
-				//cout << Interleaver[0][m] << endl;
-				//Interleaver[0][m] = FFT_POINT*(m/FFT_POINT) + subinterleaver[(m%FFT_POINT)];//random
 				Interleaver[0][m] = FFT_POINT*(m/FFT_POINT) + ((5*m)%FFT_POINT);
-
-
 				m++;
 			}
 		}
-		delete [] subinterleaver;
         //interleaver in a FFT_POINT*4(64)
 		//srand(time(NULL));
 		reg = 0;
@@ -114,11 +73,11 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 				Interleaver[0][(FFT_POINT)*4*j + p] = reg;
 				*/
 			    //correct
-			    
+			    /*
 				reg = Interleaver[0][j + FFT_POINT*i];
 				Interleaver[0][j + FFT_POINT*i] = Interleaver[0][j + FFT_POINT*p];
 				Interleaver[0][j + FFT_POINT*p] = reg;
-				
+				*/
 				
 			}
 		}

@@ -1,0 +1,9 @@
+
+==== 1024,522) + CRC-10 perfect CSI
+
+==== 1024,538) + CRC-10 perfect CSI + NBC
+
+
+
+
+

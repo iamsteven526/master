@@ -233,7 +233,6 @@ LDPC::LDPC(int column, int row)
 	if (!flag)
 	{
 		printf("Gaussian-Jordan elimination process is fail\n");
-		system("pause");
 	}
 	for (int i = 0; i < h_row; i++)
 	{
@@ -395,7 +394,6 @@ void LDPC::GSPA(double **app, int it_max)
 							else
 							{
 								printf("\nPARAMETER SETTING IS WRONG\n");
-								system("pause");
 							}
 							for (int z = 0; z < NUM_LEVEL; z++)
 							{
@@ -832,7 +830,6 @@ void LDPC::JointGSPA(double **app, int outer_it_max, int inter_it_max)
 							else
 							{
 								printf("\nPARAMETER SETTING IS WRONG\n");
-								system("pause");
 							}
 							for (int z = 0; z < NUM_LEVEL; z++)
 							{

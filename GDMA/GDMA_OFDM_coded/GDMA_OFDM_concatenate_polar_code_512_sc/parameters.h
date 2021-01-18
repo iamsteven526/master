@@ -32,6 +32,7 @@
 
 #define		DATA_LEN				(512 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length
+#define     CODE_AMOUNT             32                                              //how many polar codes
 //---------- LDPC code ----------
 
 #define		LDPC_H_COL				1008											// number of columns
@@ -107,7 +108,7 @@
 
 #define		FFT_LAYER				9												// number of FFT layers
 #define		FFT_POINT				( 1 << FFT_LAYER )								// number of FFT points
-#define		FFT_SEGMENT				( CODE_LEN / FFT_POINT )						// codeword is divided into multiple segments for OFDM transmission
+#define		FFT_SEGMENT				( CODE_LEN * CODE_AMOUNT / FFT_POINT )			// codeword is divided into multiple segments for OFDM transmission
 #define		CP_LEN					( TAP_NUM - 1)									// length of cyclic prefix
 #define		CS_LEN					4
 
@@ -132,7 +133,7 @@
 #define		BLOCK_NUM				100000000											// number of blocks to be simulated 
 
 #define		SNR_NUM					9												// number of SNR points to be simulated
-#define		SNR_START				14												// in dB
+#define		SNR_START				30												// in dB
 #define		SNR_STEP				2												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

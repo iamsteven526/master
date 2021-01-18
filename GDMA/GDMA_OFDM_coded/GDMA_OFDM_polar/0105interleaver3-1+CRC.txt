@@ -43,6 +43,13 @@ SNR[dB] =  20.0,
 Block# = 5161435, BER = 1.061376e-05, BLER = 9.696916e-05
 
 
+==== 1024,522) + CRC-10 perfect CSI
+
+==== 1024,538) + CRC-10 perfect CSI + NBC
+
+==== 1024,538) + CRC-10 clsutering +NBC
+
+
 
 
 

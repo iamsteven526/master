@@ -13,7 +13,7 @@ using namespace std;
 
 void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Interleaver)
 {
-	for (int i = 0; i < CODE_LEN; i++)
+	for (int i = 0; i < CODE_LEN * CODE_AMOUNT; i++)
 		for(int j=0;j<NUM_USER;j++)
 		Interleaver[j][i] = i;
 
@@ -48,11 +48,14 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 		int reg = 0, p = 0;
 		
 
-		for (int i = 0, m = 0; i < FFT_POINT; i++)  //FFT_point = 16
+		for (int i = 0, m = 0; i < FFT_POINT; i++)  //FFT_point = 512
 		{
 			for (int j = 0; j < FFT_SEGMENT; j++)
 			{
-				Interleaver[0][m] = FFT_POINT*(m/FFT_POINT) + ((5*m)%FFT_POINT);
+				//Interleaver[0][m] = FFT_POINT*(m/FFT_POINT) + ((5*m)%FFT_POINT);
+				TODO!!!!!
+				Interleaver[0][m] = (FFT_POINT)*((m%CODE_LEN)/(FFT_POINT/CODE_AMOUNT)) + ((160*m + (m/CODE_LEN))%FFT_POINT);
+				//cout << (FFT_POINT)*((m%CODE_LEN)/(FFT_POINT/CODE_AMOUNT)) + ((160*m + (m/CODE_LEN))%FFT_POINT) << endl;
 				m++;
 			}
 		}
@@ -86,50 +89,57 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 
 		for (int i = 1; i < NUM_USER; i++)
 		{
-			for (int j = 0; j < CODE_LEN; j++)
+			for (int j = 0; j < CODE_LEN * CODE_AMOUNT; j++)
 			{
 				//cout << Interleaver[0][j] << endl;
 				Interleaver[i][j] = Interleaver[0][j];
 			}
 		}
 	}
-	
+	int* cache_data = new int[DATA_LEN];
+	int* cache_codeword = new int[CODE_LEN];
 	for (int nuser = 0; nuser < NUM_USER; nuser++)
 	{
-		for (int i = 0; i < DATA_LEN; i++)
-		{
-			data[nuser][i] = rand() % 2;
-			//data[nuser][i] = 0;
-		}
-		//data[nuser][0] = 1;
+		for(int num_code = 0; num_code < CODE_AMOUNT; num_code++){
+			for (int i = 0; i < DATA_LEN; i++)
+			{
+				data[nuser][num_code*DATA_LEN + i] = rand() % 2;
+				cache_data[i] = data[nuser][num_code*DATA_LEN + i];
+			}
 
-		if (CH_CODING_TYPE)
-		{
-			ldpc.Encoder(data[nuser], codeword[nuser]);
-			if (DIFF_ENC) DiffEncoding(codeword[nuser]);
-		}
-		else
-		{
-			if (POLAR_DECODING_TYPE)
-				polar.encode(data[nuser], codeword[nuser], nuser);
+			if (CH_CODING_TYPE)
+			{
+				ldpc.Encoder(data[nuser], codeword[nuser]);
+				if (DIFF_ENC) DiffEncoding(codeword[nuser]);
+			}
 			else
-				polar.encode_bp(data[nuser], codeword[nuser], nuser);
+			{
+				if (POLAR_DECODING_TYPE)
+					polar.encode(cache_data, cache_codeword, nuser);
+				else
+					polar.encode_bp(data[nuser], codeword[nuser], nuser);
+			}
+			for (int i = 0; i < CODE_LEN; i++)
+			{
+				codeword[nuser][num_code*CODE_LEN + i] = cache_codeword[i];
+			}
 		}
-
 		if (INTERLEAVER)
 		{
-			vector<int> temp_c(CODE_LEN);
-			for (int i = 0; i < CODE_LEN; i++)
+			vector<int> temp_c(CODE_AMOUNT * CODE_LEN);
+			for (int i = 0; i < CODE_AMOUNT * CODE_LEN; i++)
 			{
 				temp_c[i] = codeword[nuser][i];
 			}
 			
-			for (int i = 0; i < CODE_LEN; i++)
+			for (int i = 0; i < CODE_AMOUNT * CODE_LEN; i++)
 			{
 				codeword[nuser][i] = temp_c[Interleaver[nuser][i]];
 			}
 		}
 	}
+	delete[] cache_codeword;
+	delete[] cache_data;
 }
 
 void DiffEncoding(int *codeword)
@@ -310,39 +320,7 @@ void MultiCarrierDemapper(double ***rx, double ***postRx, double *drift)
 
 void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double **refLlr, long double *errCount, double** app, int** Interleaver, int* error_bits_count)
 {
-	
-	/*for (int i = 0; i < 16; i++)
-	{
-		int flipping = 2 * (rand() % 2) - 1;
-		for (int nuser = 0; nuser < NUM_USER; nuser++)
-		{
-			for (int j = 0; j < 1024/16; j++)
-			{
-				//cout << i + j * 16 << " ";
-				appLlr[nuser][i + j * 16] *= flipping;
-			}
-			//cout << endl;
-		}
-	}*/
-	//system("pause");
-	
-	/*for (int i = 0; i < 16; i++)
-	{
-		int flipping = 2 * (rand() % 2) - 1;
-		for (int nuser = 0; nuser < NUM_USER; nuser++)
-		{
-			for (int j = 0; j < 1024 / 16; j++)
-			{
-				appLlr[nuser][i*1024/16 + j] *= flipping;
-			}
-		}
-	}*/
-	
-	/*for (int i = 0; i < 1024; i++)
-	{
-		for(int nuser=0;nuser<NUM_USER;nuser++)
-			appLlr[nuser][i] *= -1;
-	}*/
+
 
 	if (CH_CODING_TYPE)
 	{
@@ -371,42 +349,60 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 	}
 	else
 	{
-		vector<vector<int>> Interleaver_invert(NUM_USER, vector<int> (CODE_LEN));
-		vector<double> temp_appLlr(CODE_LEN);
-		vector<vector<double>> temp_app(CODE_LEN, vector<double>(NUM_LEVEL));
+		vector<vector<int>> Interleaver_invert(NUM_USER, vector<int> (CODE_AMOUNT * CODE_LEN));
+		vector<double> temp_appLlr(CODE_AMOUNT * CODE_LEN);
+		vector<vector<double>> temp_app(CODE_AMOUNT * CODE_LEN, vector<double>(NUM_LEVEL));
 
 		if (INTERLEAVER)
 		{
 			for (int nuser = 0; nuser < NUM_USER; nuser++)
 			{
-				for (int i = 0; i < CODE_LEN; i++)
+				for (int i = 0; i < CODE_AMOUNT * CODE_LEN; i++)
 				{
 					Interleaver_invert[nuser][Interleaver[nuser][i]] = i;
 				}
 			}
 		}
 
-		vector<vector<int>> decodedResult(NUM_USER, vector<int>(DATA_LEN));
+		vector<vector<int>> decodedResult(NUM_USER, vector<int>(CODE_AMOUNT * DATA_LEN));
+
+		double *  cache_appLlr = new double[CODE_LEN];
+		vector<int> cache_decodedResult(DATA_LEN);
 		if (!JOINT)
 		{
 			if (INTERLEAVER)
 			{
 				for (int i = 0; i < NUM_USER; i++)
 				{
-					for (int j = 0; j < CODE_LEN; j++)
+					for (int j = 0; j < CODE_AMOUNT * CODE_LEN; j++){
 						temp_appLlr[j] = appLlr[i][j];
+						//cout << temp_appLlr[j] << endl;
+					}
 
-					for (int j = 0; j < CODE_LEN; j++)
+					for (int j = 0; j < CODE_AMOUNT * CODE_LEN; j++)
 						appLlr[i][j] = temp_appLlr[Interleaver_invert[i][j]];
 				}
 			}
+            //TODO:
+			for(int code_num = 0; code_num < CODE_AMOUNT; code_num++){
+				for (int nuser = 0; nuser < NUM_USER; nuser++)
+				{
+					for (int j = 0; j < CODE_LEN; j++){
+                        cache_appLlr[j] = appLlr[nuser][code_num * CODE_LEN + j];
+				    }
 
-			for (int nuser = 0; nuser < NUM_USER; nuser++)
-			{
-				if (POLAR_DECODING_TYPE == 1)
-					decodedResult[nuser] = polar.decode_scl_llr(LIST_SIZE, appLlr[nuser], nuser);
-				else
-					decodedResult[nuser] = polar.decode_BP_sep(appLlr[nuser], nuser);
+
+					if (POLAR_DECODING_TYPE == 1)
+						cache_decodedResult = polar.decode_scl_llr(LIST_SIZE, cache_appLlr, nuser);
+					else
+						cache_decodedResult = polar.decode_BP_sep(cache_appLlr, nuser);
+
+					for (int j = 0; j < DATA_LEN; j++){
+                        decodedResult[nuser][code_num*DATA_LEN + j] = cache_decodedResult[j];
+						//cout << cache_decodedResult[j] << endl;
+				    }
+				}
+
 			}
 		}
 		else
@@ -417,6 +413,7 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 			else
 				polar.decode_BP_Joint(app, decodedResult, Interleaver);
 		}
+		delete[] cache_appLlr;
 		
 		unordered_set<int> NBC_index;
 		if (NBC)
@@ -464,7 +461,7 @@ void Detector(LDPC &ldpc, PolarCode &polar, int **data, double **appLlr, double 
 		for (int nuser = 0; nuser < NUM_USER; nuser++)
 		{
 			bool errFlag = false;
-			for (int i = 0; i < DATA_LEN; i++)
+			for (int i = 0; i < CODE_AMOUNT * DATA_LEN; i++)
 			{
 				//cout << decodedResult[nuser][i] << "    " << int(data[nuser][i]) << endl;
 				if (NBC_index.count(i) == 1 && NBC)

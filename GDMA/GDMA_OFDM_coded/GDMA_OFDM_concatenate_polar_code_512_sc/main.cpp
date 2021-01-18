@@ -12,7 +12,6 @@ int main()
 	if ((long double)BLOCK_NUM*DATA_LEN*NUM_USER < 0)
 	{
 		cout << "OVERFLOW" << endl;
-		system("pause");
 		return 0;
 	}
 	//---------- memory allocation ----------
@@ -21,15 +20,15 @@ int main()
 	double **appLlr = new double *[NUM_USER];
 	for (int i = 0; i < NUM_USER; i++)
 	{
-		data[i] = new int[DATA_LEN];
-		codeword[i] = new int[CODE_LEN];
+		data[i] = new int[CODE_AMOUNT * DATA_LEN];
+		codeword[i] = new int[CODE_AMOUNT * CODE_LEN];
 	}
 	for (int i = 0; i < NUM_USER; i++)
 	{
-		appLlr[i] = new double[CODE_LEN];
+		appLlr[i] = new double[CODE_AMOUNT * CODE_LEN];
 	}
-	double **app = new double *[CODE_LEN + DIFF_ENC*FFT_POINT];
-	for (int i = 0; i < CODE_LEN + DIFF_ENC*FFT_POINT; i++)
+	double **app = new double *[CODE_AMOUNT * (CODE_LEN + DIFF_ENC*FFT_POINT)];
+	for (int i = 0; i < CODE_AMOUNT * (CODE_LEN + DIFF_ENC*FFT_POINT); i++)
 	{
 		app[i] = new double[NUM_LEVEL];
 	}
@@ -362,9 +361,9 @@ int main()
 	int** Interleaver = new int* [NUM_USER];
 	for (int i = 0; i < NUM_USER; i++)
 	{
-		Interleaver[i] = new int[CODE_LEN];
+		Interleaver[i] = new int[CODE_LEN * CODE_AMOUNT];
 	}
-	int error_bits_count[DATA_LEN] = { 0 };
+	int error_bits_count[CODE_AMOUNT * DATA_LEN] = { 0 };
 	LDPC ldpc(LDPC_H_COL, LDPC_H_ROW);
 	PolarCode polar(BCT_LAYER, DATA_LEN, CRC_LEN, NUM_USER);
 	if(!CH_CODING_TYPE)
@@ -605,7 +604,6 @@ int main()
 			if (!SYNCHRONOUS)
 			{
 				cout << "Setting Error !!";
-				system("pause");
 			}
 		}
 	}
@@ -644,7 +642,7 @@ int main()
 			MLDT(ldpc, pow(stdDev, 2), H, postRx, app, appLlr, refLlr, estimate);
 			//if (CH_CODING_TYPE && DIFF_ENC && TURBO_DEC) TurboProcessor(ldpc, trellis, tempLlr, refLlr, rxLlr, preLlr, appLlr, alpha, beta, gamma);
 			Detector(ldpc, polar, data, appLlr, refLlr, errCount, app, Interleaver, error_bits_count);
-			ber[i] = NBC ? errCount[0] / ((long double)block * (DATA_LEN - (FFT_POINT - 1)) * NUM_USER) : errCount[0] / ((long double)block * DATA_LEN * NUM_USER);
+			ber[i] = NBC ? errCount[0] / ((long double)block * (DATA_LEN - (FFT_POINT - 1)) * NUM_USER) : errCount[0] / ((long double)block * DATA_LEN * NUM_USER); 
 			bler[i] = errCount[1] / ((long double)block * NUM_USER);
 			printf("Block# = %d, BER = %e, BLER = %e\r", block, ber[i], bler[i]);
 
@@ -671,6 +669,5 @@ int main()
 	}
 	fprintf(result_txt, "\n");
 	fclose(result_txt);
-	system("pause");
 	return 0;
 }

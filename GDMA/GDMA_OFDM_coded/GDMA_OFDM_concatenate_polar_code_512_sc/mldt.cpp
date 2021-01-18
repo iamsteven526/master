@@ -106,7 +106,6 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 			else
 			{
 				printf("\nPARAMETER SETTING IS WRONG\n");
-				system("pause");
 			}
 			//---------- normalization ----------
 			double temp = 0;
@@ -196,7 +195,7 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 
 	if (NUM_USER == 1)
 	{
-		for (int i = 0; i < CODE_LEN; i++)
+		for (int i = 0; i < CODE_AMOUNT * CODE_LEN; i++)
 		{
 			if (app[i][0] <= NUMERIC_LIMIT) appLlr[0][i] = -LLR_LIMIT;
 			else if (app[i][1] <= NUMERIC_LIMIT) appLlr[0][i] = LLR_LIMIT;
@@ -205,7 +204,7 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 	}
 	else if (NUM_USER == 2)
 	{
-		for (int i = 0; i < CODE_LEN; i++)
+		for (int i = 0; i < CODE_AMOUNT * CODE_LEN; i++)
 		{
 			//---------- user-A ----------
 			if ((app[i][0] + app[i][1]) <= NUMERIC_LIMIT) appLlr[1][i - (DIFF_ENC - JOINT_DEC * JCD) * FFT_POINT] = -LLR_LIMIT;
@@ -219,7 +218,7 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 	}
 	else if (NUM_USER == 3)
 	{
-		for (int i = 0; i < CODE_LEN; i++)
+		for (int i = 0; i < CODE_AMOUNT * CODE_LEN; i++)
 		{
 			//---------- user-A ----------
 			if ((app[i][0] + app[i][1] + app[i][2] + app[i][3]) <= NUMERIC_LIMIT) appLlr[0][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = -LLR_LIMIT;

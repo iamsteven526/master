@@ -1,0 +1,30 @@
+OFDM-GDMA-BPSK system
+
+(1024,528) LDPC code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10
+
+FFT point: 16, CP length: 4, channel tap: 5
+Number of users: 2
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0, BER = 3.064837e-01, BLER = 6.721639e-01
+SNR[dB] =  6.0, BER = 1.970511e-01, BLER = 4.652674e-01
+SNR[dB] =  8.0, BER = 1.021692e-01, BLER = 2.678661e-01
+SNR[dB] =  10.0, BER = 3.962216e-02, BLER = 1.280379e-01
+SNR[dB] =  12.0, BER = 1.308945e-02, BLER = 6.490728e-02
+SNR[dB] =  14.0, BER = 4.723464e-03, BLER = 4.134314e-02
+SNR[dB] =  16.0, BER = 2.132141e-03, BLER = 3.215135e-02
+SNR[dB] =  18.0, BER = 1.780586e-03, BLER = 3.207922e-02
+SNR[dB] =  20.0, BER = 1.415311e-03, BLER = 2.872310e-02
+
+
+3.064837e-01, 1.970511e-01, 1.021692e-01, 3.962216e-02, 1.308945e-02, 4.723464e-03, 2.132141e-03, 1.780586e-03, 1.415311e-03, 
+6.721639e-01, 4.652674e-01, 2.678661e-01, 1.280379e-01, 6.490728e-02, 4.134314e-02, 3.215135e-02, 3.207922e-02, 2.872310e-02, 

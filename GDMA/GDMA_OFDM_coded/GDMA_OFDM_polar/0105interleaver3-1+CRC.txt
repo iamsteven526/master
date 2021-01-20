@@ -45,7 +45,93 @@ Block# = 5161435, BER = 1.061376e-05, BLER = 9.696916e-05
 
 ==== 1024,522) + CRC-10 perfect CSI
 
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.823686e-01, BLER = 6.006997e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.681932e-01, BLER = 3.768116e-01
+
+SNR[dB] =  8.0,
+Block# = 2539, BER = 8.553364e-02, BLER = 1.971249e-01
+
+SNR[dB] =  10.0,
+Block# = 6478, BER = 3.081177e-02, BLER = 7.726150e-02
+
+SNR[dB] =  12.0,
+Block# = 22385, BER = 8.349010e-03, BLER = 2.235872e-02
+
+SNR[dB] =  14.0,
+Block# = 85389, BER = 1.907756e-03, BLER = 5.861411e-03
+
+SNR[dB] =  16.0,
+Block# = 417636, BER = 3.404276e-04, BLER = 1.198412e-03
+
+SNR[dB] =  18.0,
+Block# = 1952655, BER = 6.238551e-05, BLER = 2.563177e-04
+
+SNR[dB] =  20.0,
+Block# = 6216441, BER = 1.072556e-05, BLER = 4.769611e-05
+
 ==== 1024,538) + CRC-10 perfect CSI + NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,528) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.820138e-01, BLER = 6.049475e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.709392e-01, BLER = 3.845577e-01
+
+SNR[dB] =  8.0,
+Block# = 2426, BER = 8.723402e-02, BLER = 2.063067e-01
+
+SNR[dB] =  10.0,
+Block# = 6404, BER = 3.041334e-02, BLER = 7.815428e-02
+
+SNR[dB] =  12.0,
+Block# = 20199, BER = 8.771624e-03, BLER = 2.477845e-02
+
+SNR[dB] =  14.0,
+Block# = 78182, BER = 2.002115e-03, BLER = 6.401729e-03
+
+SNR[dB] =  16.0,
+Block# = 331969, BER = 4.166771e-04, BLER = 1.507671e-03
+
+SNR[dB] =  18.0,
+Block# = 1613236, BER = 7.090198e-05, BLER = 3.102460e-04
+
+SNR[dB] =  20.0,
+Block# = 7361520, BER = 1.163297e-05, BLER = 6.364176e-05
 
 ==== 1024,538) + CRC-10 clsutering +NBC
 

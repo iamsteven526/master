@@ -54,7 +54,7 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 			{
 				//Interleaver[0][m] = FFT_POINT*(m/FFT_POINT) + ((5*m)%FFT_POINT);
 				//TODO!!!!!
-				Interleaver[0][m] = (FFT_POINT)*((m%CODE_LEN)/(FFT_POINT/CODE_AMOUNT)) + ((160*m + (m/CODE_LEN))%FFT_POINT);
+				Interleaver[0][m] = (FFT_POINT)*((m%CODE_LEN)/(FFT_POINT/CODE_AMOUNT)) + ((32*7*m + (m/CODE_LEN))%FFT_POINT);
 				//cout << (FFT_POINT)*((m%CODE_LEN)/(FFT_POINT/CODE_AMOUNT)) + ((160*m + (m/CODE_LEN))%FFT_POINT) << endl;
 				//sum = sum + Interleaver[0][m];
 				m++;

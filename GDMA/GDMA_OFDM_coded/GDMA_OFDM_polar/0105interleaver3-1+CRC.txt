@@ -135,7 +135,49 @@ Block# = 7361520, BER = 1.163297e-05, BLER = 6.364176e-05
 
 ==== 1024,538) + CRC-10 clsutering +NBC
 
+OFDM-GDMA-BPSK system
 
+(1024,528) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 3.065918e-01, BLER = 6.546727e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.942552e-01, BLER = 4.337831e-01
+
+SNR[dB] =  8.0,
+Block# = 2187, BER = 9.632633e-02, BLER = 2.288523e-01
+
+SNR[dB] =  10.0,
+Block# = 5314, BER = 3.700531e-02, BLER = 9.418517e-02
+
+SNR[dB] =  12.0,
+Block# = 15653, BER = 1.119497e-02, BLER = 3.197470e-02
+
+SNR[dB] =  14.0,
+Block# = 57704, BER = 2.597463e-03, BLER = 8.673575e-03
+
+SNR[dB] =  16.0,
+Block# = 227712, BER = 5.758788e-04, BLER = 2.197952e-03
+
+SNR[dB] =  18.0,
+Block# = 989867, BER = 1.038082e-04, BLER = 5.056235e-04
+
+SNR[dB] =  20.0,
+Block# = 4391057, BER = 1.942079e-05, BLER = 1.139817e-04
 
 
 

@@ -78,7 +78,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 256; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 5:5:40;
+EbN0 = 13:1:15;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
@@ -87,7 +87,7 @@ BER   = zeros(V, length(SNR));
 
 maxNumErrs = 100;
 maxNumBits = 1e6;
-Niter      = 5;
+Niter      = 6;
 ldpcDecoder = comm.LDPCDecoder;
 ldpcEncoder = comm.LDPCEncoder;
 
@@ -105,8 +105,8 @@ for k = 1:length(SNR)
            w(pp,:) = nrPolarEncode(dam(pp,:)',N);
         end
         
-        %h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
-        h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1));
+        h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
+        %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1));
         for pp = 1:1
             for qq = 1:N/1
                 h(:,:,(pp-1)*N/1+qq) = h(:,:,(pp-1)*N/1+1);
@@ -144,6 +144,6 @@ for k = 1:length(SNR)
     end
     BER(:,k) = Nerr(:,k)./Nbits(:,k);
     k
-    display(sum(Nerr(:,k))/6)
+    display(sum(Nerr(:,k))/12)
 end
 plot(EbN0,log10(BER))

@@ -106,6 +106,48 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 					app[m][7] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0], 2) / (2. * variance));
 				}
 			}
+			else if (NUM_USER == 4)
+			{
+				if (CE_SCHEME == 1)
+				{
+					app[m][0] = exp(-pow(postRx[i][0][j] - H[0][i][0][j] - H[1][i][0][j] - H[2][i][0][j] - H[3][i][0][j], 2) / (2. * variance));
+					app[m][1] = exp(-pow(postRx[i][0][j] - H[0][i][0][j] - H[1][i][0][j] - H[2][i][0][j] + H[3][i][0][j], 2) / (2. * variance));
+					app[m][2] = exp(-pow(postRx[i][0][j] - H[0][i][0][j] - H[1][i][0][j] + H[2][i][0][j] - H[3][i][0][j], 2) / (2. * variance));
+					app[m][3] = exp(-pow(postRx[i][0][j] - H[0][i][0][j] - H[1][i][0][j] + H[2][i][0][j] + H[3][i][0][j], 2) / (2. * variance));
+					app[m][4] = exp(-pow(postRx[i][0][j] - H[0][i][0][j] + H[1][i][0][j] - H[2][i][0][j] - H[3][i][0][j], 2) / (2. * variance));
+					app[m][5] = exp(-pow(postRx[i][0][j] - H[0][i][0][j] + H[1][i][0][j] - H[2][i][0][j] + H[3][i][0][j], 2) / (2. * variance));
+					app[m][6] = exp(-pow(postRx[i][0][j] - H[0][i][0][j] + H[1][i][0][j] + H[2][i][0][j] - H[3][i][0][j], 2) / (2. * variance));
+					app[m][7] = exp(-pow(postRx[i][0][j] - H[0][i][0][j] + H[1][i][0][j] + H[2][i][0][j] + H[3][i][0][j], 2) / (2. * variance));
+					app[m][8] = exp(-pow(postRx[i][0][j] + H[0][i][0][j] - H[1][i][0][j] - H[2][i][0][j] - H[3][i][0][j], 2) / (2. * variance));
+					app[m][9] = exp(-pow(postRx[i][0][j] + H[0][i][0][j] - H[1][i][0][j] - H[2][i][0][j] + H[3][i][0][j], 2) / (2. * variance));
+					app[m][10] = exp(-pow(postRx[i][0][j] + H[0][i][0][j] - H[1][i][0][j] + H[2][i][0][j] - H[3][i][0][j], 2) / (2. * variance));
+					app[m][11] = exp(-pow(postRx[i][0][j] + H[0][i][0][j] - H[1][i][0][j] + H[2][i][0][j] + H[3][i][0][j], 2) / (2. * variance));
+					app[m][12] = exp(-pow(postRx[i][0][j] + H[0][i][0][j] + H[1][i][0][j] - H[2][i][0][j] - H[3][i][0][j], 2) / (2. * variance));
+					app[m][13] = exp(-pow(postRx[i][0][j] + H[0][i][0][j] + H[1][i][0][j] - H[2][i][0][j] + H[3][i][0][j], 2) / (2. * variance));
+					app[m][14] = exp(-pow(postRx[i][0][j] + H[0][i][0][j] + H[1][i][0][j] + H[2][i][0][j] - H[3][i][0][j], 2) / (2. * variance));
+					app[m][15] = exp(-pow(postRx[i][0][j] + H[0][i][0][j] + H[1][i][0][j] + H[2][i][0][j] + H[3][i][0][j], 2) / (2. * variance));					
+				}
+				else
+				{
+					app[m][0] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0] - estimate[1][i * SLIDING][j][0] - estimate[2][i * SLIDING][j][0] - estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][1] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0] - estimate[1][i * SLIDING][j][0] - estimate[2][i * SLIDING][j][0] + estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][2] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0] - estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0] - estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][3] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0] - estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0] + estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][4] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] - estimate[2][i * SLIDING][j][0] - estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][5] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] - estimate[2][i * SLIDING][j][0] + estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][6] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0] - estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][7] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0] + estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][8] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] - estimate[1][i * SLIDING][j][0] - estimate[2][i * SLIDING][j][0] - estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][9] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] - estimate[1][i * SLIDING][j][0] - estimate[2][i * SLIDING][j][0] + estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][10] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] - estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0] - estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][11] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] - estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0] + estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][12] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] - estimate[2][i * SLIDING][j][0] - estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][13] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] - estimate[2][i * SLIDING][j][0] + estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][14] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0] - estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					app[m][15] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0] + estimate[1][i * SLIDING][j][0] + estimate[2][i * SLIDING][j][0] + estimate[3][i * SLIDING][j][0], 2) / (2. * variance));
+					//TODO
+				}				
+			}
 			else
 			{
 				printf("\nPARAMETER SETTING IS WRONG\n");
@@ -179,6 +221,48 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 					app[m][7] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1], 2) / (2. * variance));
 				}
 			}
+			else if (NUM_USER == 4)
+			{
+				if (CE_SCHEME == 1)
+				{
+					app[m][0] *= exp(-pow(postRx[i][1][j] - H[0][i][1][j] - H[1][i][1][j] - H[2][i][1][j] - H[3][i][1][j], 2) / (2. * variance));
+					app[m][1] *= exp(-pow(postRx[i][1][j] - H[0][i][1][j] - H[1][i][1][j] - H[2][i][1][j] + H[3][i][1][j], 2) / (2. * variance));
+					app[m][2] *= exp(-pow(postRx[i][1][j] - H[0][i][1][j] - H[1][i][1][j] + H[2][i][1][j] - H[3][i][1][j], 2) / (2. * variance));
+					app[m][3] *= exp(-pow(postRx[i][1][j] - H[0][i][1][j] - H[1][i][1][j] + H[2][i][1][j] + H[3][i][1][j], 2) / (2. * variance));
+					app[m][4] *= exp(-pow(postRx[i][1][j] - H[0][i][1][j] + H[1][i][1][j] - H[2][i][1][j] - H[3][i][1][j], 2) / (2. * variance));
+					app[m][5] *= exp(-pow(postRx[i][1][j] - H[0][i][1][j] + H[1][i][1][j] - H[2][i][1][j] + H[3][i][1][j], 2) / (2. * variance));
+					app[m][6] *= exp(-pow(postRx[i][1][j] - H[0][i][1][j] + H[1][i][1][j] + H[2][i][1][j] - H[3][i][1][j], 2) / (2. * variance));
+					app[m][7] *= exp(-pow(postRx[i][1][j] - H[0][i][1][j] + H[1][i][1][j] + H[2][i][1][j] + H[3][i][1][j], 2) / (2. * variance));
+					app[m][8] *= exp(-pow(postRx[i][1][j] + H[0][i][1][j] - H[1][i][1][j] - H[2][i][1][j] - H[3][i][1][j], 2) / (2. * variance));
+					app[m][9] *= exp(-pow(postRx[i][1][j] + H[0][i][1][j] - H[1][i][1][j] - H[2][i][1][j] + H[3][i][1][j], 2) / (2. * variance));
+					app[m][10] *= exp(-pow(postRx[i][1][j] + H[0][i][1][j] - H[1][i][1][j] + H[2][i][1][j] - H[3][i][1][j], 2) / (2. * variance));
+					app[m][11] *= exp(-pow(postRx[i][1][j] + H[0][i][1][j] - H[1][i][1][j] + H[2][i][1][j] + H[3][i][1][j], 2) / (2. * variance));
+					app[m][12] *= exp(-pow(postRx[i][1][j] + H[0][i][1][j] + H[1][i][1][j] - H[2][i][1][j] - H[3][i][1][j], 2) / (2. * variance));
+					app[m][13] *= exp(-pow(postRx[i][1][j] + H[0][i][1][j] + H[1][i][1][j] - H[2][i][1][j] + H[3][i][1][j], 2) / (2. * variance));
+					app[m][14] *= exp(-pow(postRx[i][1][j] + H[0][i][1][j] + H[1][i][1][j] + H[2][i][1][j] - H[3][i][1][j], 2) / (2. * variance));
+					app[m][15] *= exp(-pow(postRx[i][1][j] + H[0][i][1][j] + H[1][i][1][j] + H[2][i][1][j] + H[3][i][1][j], 2) / (2. * variance));					
+				}
+				else
+				{
+					app[m][0] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1] - estimate[1][i * SLIDING][j][1] - estimate[2][i * SLIDING][j][1] - estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][1] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1] - estimate[1][i * SLIDING][j][1] - estimate[2][i * SLIDING][j][1] + estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][2] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1] - estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1] - estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][3] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1] - estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1] + estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][4] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] - estimate[2][i * SLIDING][j][1] - estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][5] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] - estimate[2][i * SLIDING][j][1] + estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][6] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1] - estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][7] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1] + estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][8] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] - estimate[1][i * SLIDING][j][1] - estimate[2][i * SLIDING][j][1] - estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][9] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] - estimate[1][i * SLIDING][j][1] - estimate[2][i * SLIDING][j][1] + estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][10] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] - estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1] - estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][11] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] - estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1] + estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][12] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] - estimate[2][i * SLIDING][j][1] - estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][13] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] - estimate[2][i * SLIDING][j][1] + estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][14] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1] - estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					app[m][15] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1] + estimate[1][i * SLIDING][j][1] + estimate[2][i * SLIDING][j][1] + estimate[3][i * SLIDING][j][1], 2) / (2. * variance));
+					//TODO
+				}				
+			}
 			//---------- normalization ----------
 			temp = 0;
 			for (int k = 0; k < NUM_LEVEL; k++)
@@ -238,7 +322,28 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 			else appLlr[2][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = log((app[i][0] + app[i][2] + app[i][4] + app[i][6]) / (app[i][1] + app[i][3] + app[i][5] + app[i][7]));
 		}
 	}
-
+	else if (NUM_USER == 4)
+	{
+		for (int i = 0; i < CODE_LEN; i++)
+		{
+			//------------user-A----------
+			if ((app[i][0] + app[i][1] + app[i][2] + app[i][3] + app[i][4] + app[i][5] + app[i][6] + app[i][7]) <= NUMERIC_LIMIT) appLlr[0][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = -LLR_LIMIT;
+			else if ((app[i][8] + app[i][9] + app[i][10] + app[i][11] + app[i][12] + app[i][13] + app[i][14] + app[i][15]) <= NUMERIC_LIMIT) appLlr[0][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = LLR_LIMIT;
+			else appLlr[0][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = log((app[i][0] + app[i][1] + app[i][2] + app[i][3] + app[i][4] + app[i][5] + app[i][6] + app[i][7]) / (app[i][8] + app[i][9] + app[i][10] + app[i][11] + app[i][12] + app[i][13] + app[i][14] + app[i][15]));
+			//------------user-B----------
+			if ((app[i][0] + app[i][1] + app[i][2] + app[i][3] + app[i][8] + app[i][9] + app[i][10] + app[i][11]) <= NUMERIC_LIMIT) appLlr[1][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = -LLR_LIMIT;
+			else if ((app[i][4] + app[i][5] + app[i][6] + app[i][7] + app[i][12] + app[i][13] + app[i][14] + app[i][15]) <= NUMERIC_LIMIT) appLlr[1][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = LLR_LIMIT;
+			else appLlr[1][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = log((app[i][0] + app[i][1] + app[i][2] + app[i][3] + app[i][8] + app[i][9] + app[i][10] + app[i][11]) / (app[i][4] + app[i][5] + app[i][6] + app[i][7] + app[i][12] + app[i][13] + app[i][14] + app[i][15]));
+			//------------user-C----------
+			if ((app[i][0] + app[i][1] + app[i][4] + app[i][5] + app[i][8] + app[i][9] + app[i][12] + app[i][13]) <= NUMERIC_LIMIT) appLlr[2][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = -LLR_LIMIT;
+			else if ((app[i][2] + app[i][3] + app[i][6] + app[i][7] + app[i][10] + app[i][11] + app[i][14] + app[i][15]) <= NUMERIC_LIMIT) appLlr[2][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = LLR_LIMIT;
+			else appLlr[2][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = log((app[i][0] + app[i][1] + app[i][4] + app[i][5] + app[i][8] + app[i][9] + app[i][12] + app[i][13]) / (app[i][2] + app[i][3] + app[i][6] + app[i][7] + app[i][10] + app[i][11] + app[i][14] + app[i][15]));
+			//------------user-D----------
+			if ((app[i][0] + app[i][2] + app[i][4] + app[i][6] + app[i][8] + app[i][10] + app[i][12] + app[i][14]) <= NUMERIC_LIMIT) appLlr[3][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = -LLR_LIMIT;
+			else if ((app[i][1] + app[i][3] + app[i][5] + app[i][7] + app[i][9] + app[i][11] + app[i][13] + app[i][15]) <= NUMERIC_LIMIT) appLlr[3][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = LLR_LIMIT;
+			else appLlr[3][i - (DIFF_ENC - JOINT_DEC*JCD)*FFT_POINT] = log((app[i][0] + app[i][2] + app[i][4] + app[i][6] + app[i][8] + app[i][10] + app[i][12] + app[i][14]) / (app[i][1] + app[i][3] + app[i][5] + app[i][7] + app[i][9] + app[i][11] + app[i][13] + app[i][15]));
+		}
+	}
 	/*for (int i = 0; i < FFT_POINT; i++)
 	{
 		for (int j = 0; j < FFT_SEGMENT; j++)

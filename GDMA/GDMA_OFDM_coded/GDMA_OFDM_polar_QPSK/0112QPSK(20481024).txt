@@ -1,4 +1,4 @@
-
+ 1 user QPSK
 ============CSI no NBC
 OFDM-GDMA-BPSK system
 

@@ -1,3 +1,50 @@
+random interleaver with CSI no NBC=====
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0 + Interleaver
+
+FFT point: 16, CP length: 0, channel taps: 1
+Number of users: 1
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  2.0,
+Block# = 2001, BER = 4.852369e-01, BLER = 1.000000e+00
+
+SNR[dB] =  2.5,
+Block# = 2001, BER = 4.671395e-01, BLER = 9.930035e-01
+
+SNR[dB] =  3.0,
+Block# = 2001, BER = 3.781517e-01, BLER = 9.220390e-01
+
+SNR[dB] =  3.5,
+Block# = 2001, BER = 1.701347e-01, BLER = 5.647176e-01
+
+SNR[dB] =  4.0,
+Block# = 5318, BER = 3.546659e-02, BLER = 1.882287e-01
+
+SNR[dB] =  4.5,
+Block# = 24182, BER = 4.084747e-03, BLER = 4.139443e-02
+
+SNR[dB] =  5.0,
+Block# = 108346, BER = 6.710814e-04, BLER = 9.238920e-03
+
+SNR[dB] =  5.5,
+Block# = 552819, BER = 1.115130e-04, BLER = 1.810719e-03
+
+SNR[dB] =  6.0,
+Block# = 567359, BER = 2.296482e-05, BLER = 3.648480e-04
+
+
+
 ======CSI no NBC====
 iamsteven@iamsteven-D830MT:~/Desktop/master/GDMA/GDMA_OFDM_coded/GDMA_OFDM_polar_AWGN$ ./main
 OFDM-GDMA-BPSK system

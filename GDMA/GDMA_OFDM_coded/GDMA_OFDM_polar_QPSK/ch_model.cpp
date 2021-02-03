@@ -37,7 +37,7 @@ void EnergyProfile(double ****h, double ****H)
 					h[i][0][j][1] = normal(generator);
 					h[i][0][j][0] = sqrt(power) * (pow(K + 1, -0.5) * h[i][0][j][0] + pow(K, 0.5) / pow(K + 1, 0.5) * cos(phi));
 					h[i][0][j][1] = sqrt(power) * (pow(K + 1, -0.5) * h[i][0][j][1] + pow(K, 0.5) / pow(K + 1, 0.5) * sin(phi));
-					//cout << h[i][0][j][0] << " " << h[i][0][j][1] << endl;
+					//cout << h[i][0][j][0] << " " << h[i][0][j][1] << endl;				
 				}
 				else h[i][0][j][0] = h[i][0][j][1] = 0;
 				if (i % 2 == 1){

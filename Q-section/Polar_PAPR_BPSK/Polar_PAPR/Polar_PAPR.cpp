@@ -440,12 +440,12 @@ int main() {
 
 
 			///////////////Q-Section PAPR Reduction///////////////
-			int digits[4] = { 0 }, index = 0;
+			int digits[16] = { 0 }, index = 0;
 			int quotient, remainder, xx;
 			min_OFDM_PAPR = 100;
 			for (int x = 0; x < 16; x++) {
 				for (bit_idx = 0; bit_idx < k_c; bit_idx++) Inf_b[1][bit_idx] = Inf_b[0][bit_idx];
-				for (bit_idx = 0; bit_idx < 4; bit_idx++) digits[bit_idx] = 0;
+				for (bit_idx = 0; bit_idx < 16; bit_idx++) digits[bit_idx] = 0;
 				index = 0;
 				xx = x;
 				while (xx != 0) {
@@ -458,13 +458,30 @@ int main() {
 				if (digits[0] == 1) Inf_b[1][0] = (Inf_b[1][0] + 1) % 2;
 				if (digits[1] == 1) Inf_b[1][1] = (Inf_b[1][1] + 1) % 2;
 				if (digits[2] == 1) Inf_b[1][2] = (Inf_b[1][2] + 1) % 2;
-				if (digits[3] == 1) Inf_b[1][11] = (Inf_b[1][11] + 1) % 2;
+				if (digits[3] == 1) Inf_b[1][3] = (Inf_b[1][3] + 1) % 2;
+				/*
+				if (digits[4] == 1) Inf_b[1][4] = (Inf_b[1][4] + 1) % 2;
+				if (digits[5] == 1) Inf_b[1][11] = (Inf_b[1][11] + 1) % 2;
+				if (digits[6] == 1) Inf_b[1][12] = (Inf_b[1][12] + 1) % 2;
+				if (digits[7] == 1) Inf_b[1][13] = (Inf_b[1][13] + 1) % 2;
+				
+				if (digits[8] == 1) Inf_b[1][14] = (Inf_b[1][14] + 1) % 2;
+				if (digits[9] == 1) Inf_b[1][15] = (Inf_b[1][15] + 1) % 2;
+				if (digits[10] == 1) Inf_b[1][16] = (Inf_b[1][16] + 1) % 2;
+				if (digits[11] == 1) Inf_b[1][53] = (Inf_b[1][53] + 1) % 2;
+				if (digits[12] == 1) Inf_b[1][54] = (Inf_b[1][54] + 1) % 2;
+				if (digits[13] == 1) Inf_b[1][55] = (Inf_b[1][55] + 1) % 2;
+				if (digits[14] == 1) Inf_b[1][56] = (Inf_b[1][56] + 1) % 2;
+				if (digits[15] == 1) Inf_b[1][147] = (Inf_b[1][147] + 1) % 2;
+				*/
 				///////////////Polar Encoding///////////////
 				polar.encode(Inf_b[1], CodeWord[1], 0);
 				///////////////16-QAM Modulation with Gray Mapping///////////////
 				for (mod_sym_idx = 0; mod_sym_idx < N; mod_sym_idx++) {
-
-
+  					Mod_real[1][mod_sym_idx] = 1 - 2.0*CodeWord[1][mod_sym_idx*64];//QAM_Constellation[mod_idx][0];
+					Mod_imag[1][mod_sym_idx] = 0;//QAM_Constellation[mod_idx][1]; 
+					//cout <<    Mod_real[1][mod_sym_idx] << " "  ;        
+                /*
 					for (mod_idx = 0; mod_idx < M; mod_idx++) {
 						for (bit_idx = 0; bit_idx < p; bit_idx++) {
 							if (CodeWord[1][bit_idx + mod_sym_idx * p] != QAM_S2B_Table[mod_idx][bit_idx]) break;
@@ -476,8 +493,9 @@ int main() {
 							break;
 						}
 					}
-
+                */
 				}
+                //cout << endl;
 				///////////////Over-Sampling///////////////
 				for (mod_sym_idx = 0; mod_sym_idx < L * N; mod_sym_idx++) {
 					if (mod_sym_idx < N) {
@@ -501,6 +519,7 @@ int main() {
 					}
 				}
 				avg_OFDM_power[0] = avg_OFDM_power[0] / (L * N);
+				//cout <<  x << "   " << max_OFDM_power[0] << "    " << avg_OFDM_power[0] << endl;
 				/*if (max_OFDM_s_power[0] != max_OFDM_s_power[1]) {
 					cout <<  max_OFDM_s_power[0] << " " << max_OFDM_s_power[1];
 					system("pause");
@@ -512,6 +531,7 @@ int main() {
 						OFDM_real[2][OFDM_sym_idx] = temp_OFDM_real[OFDM_sym_idx];
 						OFDM_imag[2][OFDM_sym_idx] = temp_OFDM_imag[OFDM_sym_idx];
 					}
+					//cout << "hello" << endl;
 					min_OFDM_PAPR = 10 * log10(max_OFDM_power[0] / avg_OFDM_power[0]);
 				}
 			}

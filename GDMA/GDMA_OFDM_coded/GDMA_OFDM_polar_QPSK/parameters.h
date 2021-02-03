@@ -9,7 +9,7 @@
 
 #define		INF						1000
 
-#define		CRC_LEN					0												// number of bits in CRC
+#define		CRC_LEN					4												// number of bits in CRC
 #define		LIST_SIZE				32												// list size 
 
 #define		PUNCTURING				0												// 1: enable, 0: disable
@@ -28,9 +28,9 @@
 #define		Iteration				50
 #define		NBC						0												// Using the structure of RM code
 #define		INTERLEAVER				1												// 1: enable, 0 : disable
-#define		INTERLEAVER_type		0												// 1: random, 0 : non-random
+#define		INTERLEAVER_type		1												// 1: random, 0 : non-random
 
-#define		DATA_LEN				(544 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
+#define		DATA_LEN				(512 + CRC_LEN - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length
 //---------- LDPC code ----------
 
@@ -101,7 +101,7 @@
 
 //---------- system ----------
 
-#define		NUM_USER				4												// number of users
+#define		NUM_USER				2												// number of users
 
 #define		NUM_LEVEL				( 1 << NUM_USER )								// number of levels of superimposed signal
 
@@ -113,7 +113,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				0												// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				1												// 0: cluster-based, 1: ideal
 
 #define		INI_METHOD				2												// 0: LBG, 1: k-means++, 2: modified k-means++
 

@@ -1,0 +1,58 @@
+1 user QPSK!
+
+CRC-4
+
+============CSI no NBC
+
+
+=======CSI + NBC============
+
+
+
+============clustering +NBC=========
+
+OFDM-GDMA-BPSK system
+
+(1024,544) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 4
+
+FFT point: 32, CP length: 4, channel taps: 5
+Number of users: 2
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.190610e-01, BLER = 4.670165e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.301537e-01, BLER = 2.863568e-01
+
+SNR[dB] =  8.0,
+Block# = 3797, BER = 5.721622e-02, BLER = 1.319463e-01
+
+SNR[dB] =  10.0,
+Block# = 10497, BER = 1.927914e-02, BLER = 4.772792e-02
+
+SNR[dB] =  12.0,
+Block# = 29094, BER = 6.559873e-03, BLER = 1.720286e-02
+
+SNR[dB] =  14.0,
+Block# = 95540, BER = 1.874985e-03, BLER = 5.238644e-03
+
+SNR[dB] =  16.0,
+Block# = 439330, BER = 3.727727e-04, BLER = 1.139235e-03
+
+SNR[dB] =  18.0,
+Block# = 1775689, BER = 8.533918e-05, BLER = 2.821440e-04
+
+SNR[dB] =  20.0,
+Block# = 3000000, BER = 1.257016e-05, BLER = 4.983333e-05
+
+========== random interleaver======

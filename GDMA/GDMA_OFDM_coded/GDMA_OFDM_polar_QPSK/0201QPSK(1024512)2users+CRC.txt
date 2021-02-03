@@ -137,3 +137,46 @@ SNR[dB] =  20.0,
 Block# = 1901431, BER = 4.235079e-05, BLER = 1.316114e-04
 
 =======random interleaver
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 4 + Interleaver
+
+FFT point: 32, CP length: 4, channel taps: 5
+Number of users: 4
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 3.632481e-01, BLER = 7.497501e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 2.639974e-01, BLER = 5.534733e-01
+
+SNR[dB] =  8.0,
+Block# = 2001, BER = 1.534982e-01, BLER = 3.282109e-01
+
+SNR[dB] =  10.0,
+Block# = 2001, BER = 6.664661e-02, BLER = 1.465517e-01
+
+SNR[dB] =  12.0,
+Block# = 6086, BER = 1.840329e-02, BLER = 4.111896e-02
+
+SNR[dB] =  14.0,
+Block# = 34633, BER = 3.232895e-03, BLER = 7.225767e-03
+
+SNR[dB] =  16.0,
+Block# = 225839, BER = 4.772028e-04, BLER = 1.108090e-03
+
+SNR[dB] =  18.0,
+Block# = 1743747, BER = 6.094321e-05, BLER = 1.435128e-04
+
+SNR[dB] =  20.0,
+Block# = 981396, BER = 3.601176e-06, BLER = 8.406393e-06

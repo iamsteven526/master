@@ -37,7 +37,7 @@ CB(:,:,6) = [ 0                  0                  0                  0;...
               0                  0                  0                  0 ];
           
 
-
+CB = 0.8163*CB;
 
 K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
@@ -45,7 +45,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 4; % SCMA signals in frame
 
-EbN0 = 16:1:23;
+EbN0 = 0:2.5:20;
 SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));

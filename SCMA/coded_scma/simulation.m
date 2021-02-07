@@ -36,13 +36,16 @@ CB(:,:,6) = [ 0                  0                  0                  0;...
               0.7071             1j*0.7071          -1j*0.7071         -0.7071;...
               0                  0                  0                  0 ];
 
+          
+CB = CB*0.8163;
+          
 K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
 V = size(CB, 3); % number of users (layers)
 
 N = 1024; % SCMA signals in frame
 R = 0.5;
-EbN0 = 0:2.5:15;
+EbN0 = 0:2.5:17.5;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
@@ -70,7 +73,7 @@ for k = 1:length(SNR)
         end
         h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
         %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1)); % no diversity
-        multiblock = 8;
+        multiblock = 1;
         for pp = 1:multiblock
             for qq = 1:N/multiblock
                 h(:,:,(pp-1)*N/multiblock+qq) = h(:,:,(pp-1)*N/multiblock+1);

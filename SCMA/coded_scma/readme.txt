@@ -57,7 +57,17 @@ QPSK+1024,512polarcode for SCMA 1015
 
 
 ==============0205 with diversity multiblock=1 correct version (with normalized power)
+0db 2.5db 5db 7.5db......
+
+0.2071 0.1592 0.1039 0.0448 0.0146 0.0021 0.000719 0.000200
 
 ==============0205 with diversity multiblock=4 correct version (with normalized power)
+0db 2.5db 5db 7.5db......
+
 
 ==============0205 with diversity multiblock=8 correct version (with normalized power)
+0db 2.5db 5db 7.5db......
+
+
+
+

@@ -69,7 +69,7 @@ CB(:,:,12) = [ 0                  0                  0                  0;...
           
 
           
-
+CB = 0.8167*CB;
 
 
 K = size(CB, 1); % number of orthogonal resources
@@ -78,7 +78,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 4; % SCMA signals in frame
 
-EbN0 = 11:1:13;
+EbN0 = 0:2.5:20;
 SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
@@ -87,7 +87,7 @@ BER   = zeros(V, length(SNR));
 
 maxNumErrs = 100;
 maxNumBits = 5e6;
-Niter      = 8;
+Niter      = 7;
 
 for k = 1:length(SNR)
 

@@ -1,7 +1,7 @@
 clc;
 clear;
-SNR_dB = 14;% SNR PER BIT
-NUM_FRAMES = 3*10^4; 
+SNR_dB = 16;% SNR PER BIT
+NUM_FRAMES = 10^5; 
 FFT_LEN = 512;
 NUM_BIT = 4*FFT_LEN; % NUMBER OF DATA BITS
 CHAN_LEN = 5; % NUMBER OF CHANNEL TAPS
@@ -86,7 +86,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     %rxDataHard = qamdemod(F_REC_SIG_NO_CP',16,'OutputType','bit','UnitAveragePower',true)';
     rxDataSoft = qamdemod(F_REC_SIG_NO_CP',16,'OutputType','approxllr','UnitAveragePower',true,'NoiseVariance',NOISE_VAR_1D)';
     %rxDataSoft = (rxDataSoft*NOISE_VAR_1D).^3;
-    rxDataSoft = (tanh(rxDataSoft*NOISE_VAR_1D*4.5).^3)*3.5;
+    rxDataSoft = (tanh(rxDataSoft*NOISE_VAR_1D*4.5).^3)*3;
     
     for p = 1:NUM_BIT
        rxDataSoftd(mod(interleavepi*p,NUM_BIT)+1) = rxDataSoft(p); 

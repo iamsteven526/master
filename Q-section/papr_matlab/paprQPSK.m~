@@ -1,0 +1,31 @@
+clc;
+clear;
+
+%ccdf = comm.CCDF('AveragePowerOutputPort',true,'PeakPowerOutputPort',true);
+block=20000;
+Q = 4;
+
+for i = 1: block
+    message = randi([0 1],512,1);
+    for p = 1:1
+        messagenew = message;
+        messagenew(1:Q) = xor(messagenew(1:Q),de2bi(p,Q)');
+        messagenew = nrPolarEncode(messagenew,1024,10,false);
+        qamTxSig = qammod(messagenew,4,'InputType','bit','UnitAveragePower',true);
+        for sym = 1:32
+            TTT(sym) = ifft(qamTxSig(16*(sym-1)+1:16*(sym-1)+16));
+            G(sym) = 10*log10(max(abs(TTT(sym)).^2)/mean(abs(TTT(sym)).^2));
+        end
+        
+        i
+        
+    end
+    B(i) = min(A);
+end
+
+for j = 1:29
+   C(j) = length(B(B>2.75+0.25*j)) ;
+end
+
+D = [3:0.25:10];
+plot(D,log10(C/block));

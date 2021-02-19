@@ -45,7 +45,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 2048; % SCMA signals in frame
 R = 0.5;
-EbN0 = 15:2.5:15;
+EbN0 = 0:2.5:15;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
@@ -56,7 +56,7 @@ BER   = zeros(V, length(SNR));
 BLER   = zeros(length(SNR));
 
 maxNumErrs = 1000;
-maxNumBits = 3e5;
+maxNumBits = 1e6;
 Niter      = 8;
 
 fid=fopen('H_2048_1024_z64_0635.txt','r');
@@ -121,11 +121,11 @@ for k = 1:length(SNR)
             end%datar(:,kk) = reshape(downsample(datadec, V, kk-1).', [], 1);
         end
         for pp = 1:V
-            %ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,8,10,false,24);
+            %ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,16,10,false,11);
             ansbit(pp,:) = ldpcDecoder(datar(:,pp));
         end
         err        = sum(xor(dam', ansbit'));
-        NBLerr(k) = NBLerr(:,k) + sum(err>0);
+        NBLerr(k) = NBLerr(k) + sum(err>0);
         Nblocks(k) = Nblocks(k) + 6;
         Nerr(:,k)  = Nerr(:,k) + err.';
         Nbits(:,k) = Nbits(:,k) + log2(M)*N*R;

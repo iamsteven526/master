@@ -72,3 +72,10 @@ QPSK+1024,512polarcode for SCMA 1015
 0.2378 0.2167 0.1155 0.0144 0.000735 0.0000286
 
 
+=======0215 with tuned LLR multiblock = 1 and divided by 2(super correct version)
+0db 2.5db 5db 7.5db......
+
+
+
+
+

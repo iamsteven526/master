@@ -45,7 +45,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 2048; % SCMA signals in frame
 R = 0.5;
-EbN0 = 12.5:2.5:12.5;
+EbN0 = 15:2.5:15;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
@@ -56,7 +56,7 @@ BER   = zeros(V, length(SNR));
 BLER   = zeros(length(SNR));
 
 maxNumErrs = 1000;
-maxNumBits = 5e5;
+maxNumBits = 1e5;
 Niter      = 8;
 
 fid=fopen('H_2048_1024_z64_0635.txt','r');
@@ -66,7 +66,7 @@ B = reshape(A,2048,1024)';
 B = sparse(double(B));
 
 ldpcDecoder = comm.LDPCDecoder(B);
-ldpcDecoder.MaximumIterationCount = 200;
+ldpcDecoder.MaximumIterationCount = 250;
 ldpcDecoder.IterationTerminationCondition = 'Parity check satisfied';
 ldpcEncoder = comm.LDPCEncoder(B);
 for k = 1:length(SNR)
@@ -116,16 +116,16 @@ for k = 1:length(SNR)
             for tt = 1:N/2
                 %datar(2*tt-1,kk) = LLR(2*kk-1,tt)*N0/1;
                 %datar(2*tt,kk) = LLR(2*kk,tt)*N0/1;%tanh(rxDataSoft*NOISE_VAR_1D*4.5).^3)*3
-                datar(2*tt-1,kk) = (tanh(LLR(2*kk-1,tt)*N0);
-                datar(2*tt,kk) = (tanh(LLR(2*kk,tt)*N0*4.5).^3)*3;
+                %datar(2*tt-1,kk) = (tanh(LLR(2*kk-1,tt)*N0*2.25).^1)*8;
+                %datar(2*tt,kk) = (tanh(LLR(2*kk,tt)*N0*2.25).^1)*8;
             end%datar(:,kk) = reshape(downsample(datadec, V, kk-1).', [], 1);
         end
         for pp = 1:V
-            %ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,8,10,false,24);
+            %ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,16,10,false,11);
             ansbit(pp,:) = ldpcDecoder(datar(:,pp));
         end
         err        = sum(xor(dam', ansbit'));
-        NBLerr(k) = NBLerr(:,k) + sum(err>0);
+        NBLerr(k) = NBLerr(k) + sum(err>0);
         Nblocks(k) = Nblocks(k) + 6;
         Nerr(:,k)  = Nerr(:,k) + err.';
         Nbits(:,k) = Nbits(:,k) + log2(M)*N*R;

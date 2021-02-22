@@ -45,7 +45,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 2048; % SCMA signals in frame
 R = 0.5;
-EbN0 = 0:2.5:15;
+EbN0 = 12.5:2.5:12.5;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
@@ -56,7 +56,7 @@ BER   = zeros(V, length(SNR));
 BLER   = zeros(length(SNR));
 
 maxNumErrs = 1000;
-maxNumBits = 1e6;
+maxNumBits = 5e6;
 Niter      = 8;
 
 fid=fopen('H_2048_1024_z64_0635.txt','r');
@@ -85,7 +85,7 @@ for k = 1:length(SNR)
         end
         h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
         %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1)); % no diversity
-        multiblock = 1;
+        multiblock = 4;
         for pp = 1:multiblock
             for qq = 1:N/multiblock
                 h(:,:,(pp-1)*N/multiblock+qq) = h(:,:,(pp-1)*N/multiblock+1);
@@ -114,10 +114,10 @@ for k = 1:length(SNR)
         datar   = zeros(log2(M)*N/2, V);
         for kk = 1:V
             for tt = 1:N/2
-                %datar(2*tt-1,kk) = LLR(2*kk-1,tt)*N0/1;
-                %datar(2*tt,kk) = LLR(2*kk,tt)*N0/1;%tanh(rxDataSoft*NOISE_VAR_1D*4.5).^3)*3
-                datar(2*tt-1,kk) = (tanh(LLR(2*kk-1,tt)*N0*4.5).^1)*5;
-                datar(2*tt,kk) = (tanh(LLR(2*kk,tt)*N0*4.5).^1)*5;
+                %datar(2*tt-1,kk) = LLR(2*kk-1,tt)*N0*12.5;
+                %datar(2*tt,kk) = LLR(2*kk,tt)*N0*12.5;%tanh(rxDataSoft*NOISE_VAR_1D*4.5).^3)*3
+                datar(2*tt-1,kk) = (tanh(LLR(2*kk-1,tt)*N0*2.5).^1)*8;
+                datar(2*tt,kk) = (tanh(LLR(2*kk,tt)*N0*2.5).^1)*8;
             end%datar(:,kk) = reshape(downsample(datadec, V, kk-1).', [], 1);
         end
         for pp = 1:V

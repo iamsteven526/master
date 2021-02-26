@@ -69,7 +69,7 @@ CB(:,:,12) = [ 0                  0                  0                  0;...
           
 
           
-
+CB = CB*0.8163;
 
 
 K = size(CB, 1); % number of orthogonal resources
@@ -86,14 +86,14 @@ B = sparse(double(B));
 
 N = 2048; % SCMA signals in frame
 R = 0.5;  %code rate
-EbN0 = 20:5:25;
+EbN0 = 12.5:2.5:15;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 50;
+maxNumErrs = 200;
 maxNumBits = 1e7;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder(B);
@@ -113,8 +113,8 @@ for k = 1:length(SNR)
            %w(pp,:) = nrPolarEncode(dam(pp,:)',N,10,false);
         end
         
-        %h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
-        h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1));
+        h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
+        %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1));
         for pp = 1:1
             for qq = 1:N/1
                 h(:,:,(pp-1)*N/1+qq) = h(:,:,(pp-1)*N/1+1);
@@ -136,8 +136,8 @@ for k = 1:length(SNR)
         datar = zeros(log2(M)*N/2, V);
         for kk = 1:V
             for tt = 1:N/2
-                datar(2*tt-1,kk) = LLR(2*kk-1,tt)*N0/1;
-                datar(2*tt,kk) = LLR(2*kk,tt)*N0/1;
+                datar(2*tt-1,kk) = LLR(2*kk-1,tt)*N0*12;
+                datar(2*tt,kk) = LLR(2*kk,tt)*N0*12;
             end
         end
         for pp = 1:V

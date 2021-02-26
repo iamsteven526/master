@@ -1,0 +1,136 @@
+===== 64sc CSI no NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0 + Interleaver
+
+FFT point: 128, CP length: 4, channel taps: 5
+Number of users: 4
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 3.383516e-01, BLER = 7.102699e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 2.418264e-01, BLER = 5.193653e-01
+
+SNR[dB] =  8.0,
+Block# = 2001, BER = 1.280985e-01, BLER = 2.843578e-01
+
+SNR[dB] =  10.0,
+Block# = 2259, BER = 4.822312e-02, BLER = 1.111111e-01
+
+SNR[dB] =  12.0,
+Block# = 7879, BER = 1.328808e-02, BLER = 3.176164e-02
+
+SNR[dB] =  14.0,
+Block# = 42063, BER = 2.320424e-03, BLER = 5.949409e-03
+
+SNR[dB] =  16.0,
+Block# = 300130, BER = 3.099097e-04, BLER = 8.338054e-04
+
+SNR[dB] =  18.0,
+Block# = 2596048, BER = 3.411417e-05, BLER = 9.639652e-05
+
+SNR[dB] =  20.0,
+Block# = 1005640, BER = 3.912018e-06, BLER = 9.943926e-06
+
+===== 64sc CSI + NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,640) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0 + Interleaver
+
+FFT point: 128, CP length: 4, channel taps: 5
+Number of users: 4
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 4.005771e-01, BLER = 8.340830e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 3.241209e-01, BLER = 6.896552e-01
+
+SNR[dB] =  8.0,
+Block# = 2001, BER = 2.070055e-01, BLER = 4.558971e-01
+
+SNR[dB] =  10.0,
+Block# = 2001, BER = 9.845019e-02, BLER = 2.295102e-01
+
+SNR[dB] =  12.0,
+Block# = 3057, BER = 3.395396e-02, BLER = 8.194308e-02
+
+SNR[dB] =  14.0,
+Block# = 12589, BER = 7.755344e-03, BLER = 1.987847e-02
+
+SNR[dB] =  16.0,
+Block# = 72028, BER = 1.247741e-03, BLER = 3.474343e-03
+
+SNR[dB] =  18.0,
+Block# = 468027, BER = 1.798182e-04, BLER = 5.352255e-04
+
+SNR[dB] =  20.0,
+Block# = 3000000, BER = 1.971354e-05, BLER = 6.300000e-05
+
+
+===== 64sc Clustering + NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,640) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0 + Interleaver
+
+FFT point: 128, CP length: 4, channel taps: 5
+Number of users: 4
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 4.439544e-01, BLER = 9.111694e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 3.974905e-01, BLER = 8.248376e-01
+
+SNR[dB] =  8.0,
+Block# = 2001, BER = 3.087140e-01, BLER = 6.575462e-01
+
+SNR[dB] =  10.0,
+Block# = 2001, BER = 1.939692e-01, BLER = 4.255372e-01
+
+SNR[dB] =  12.0,
+Block# = 2001, BER = 8.591290e-02, BLER = 1.980260e-01
+
+SNR[dB] =  14.0,
+Block# = 3751, BER = 2.749298e-02, BLER = 6.671554e-02
+
+SNR[dB] =  16.0,
+Block# = 14271, BER = 6.891954e-03, BLER = 1.755308e-02
+
+SNR[dB] =  18.0,
+Block# = 76314, BER = 1.198876e-03, BLER = 3.279215e-03
+
+SNR[dB] =  20.0,
+Block# = 560845, BER = 1.587031e-04, BLER = 4.466475e-04

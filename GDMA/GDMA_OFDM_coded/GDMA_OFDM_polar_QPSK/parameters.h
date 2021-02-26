@@ -101,7 +101,7 @@
 
 //---------- system ----------
 
-#define		NUM_USER				2												// number of users
+#define		NUM_USER				4												// number of users
 
 #define		NUM_LEVEL				( 1 << NUM_USER )								// number of levels of superimposed signal
 

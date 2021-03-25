@@ -43,17 +43,17 @@ K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
 V = size(CB, 3); % number of users (layers)
 
-N = 4; % SCMA signals in frame
+N = 500; % SCMA signals in frame
 
-EbN0 = 0:2.5:20;
+EbN0 = 15:2.5:15;
 SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 150;
-maxNumBits = 5e7;
+maxNumErrs = 60000;
+maxNumBits = 5e8;
 Niter      = 6;
 
 for k = 1:length(SNR)
@@ -90,7 +90,7 @@ for k = 1:length(SNR)
 
         err        = sum(xor(data, datar));
         Nerr(:,k)  = Nerr(:,k) + err.';
-        Nbits(:,k) = Nbits(:,k) + log2(M)*N;
+        Nbits(:,k) = Nbits(:,k) + log2(M)*N
     end
     BER(:,k) = Nerr(:,k)./Nbits(:,k);
     k

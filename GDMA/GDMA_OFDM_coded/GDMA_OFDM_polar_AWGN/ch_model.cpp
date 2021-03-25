@@ -30,7 +30,7 @@ void EnergyProfile(double ****h, double ****H)
 			{
 				if (j < TAP_NUM)
 				{
-					double power = 0.5*exp(-j) / nFactor;
+					double power = exp(-j) / nFactor;
 					//cout << power << endl;
 					double phi = uniform(generator) * 2. * M_PI - M_PI;
 					h[i][0][j][0] = 1;//uniform(generator);

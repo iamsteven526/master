@@ -1,7 +1,7 @@
 clc;
 clear;
-SNR_dB = 24;% SNR PER BIT
-NUM_FRAMES = 500; 
+SNR_dB = 16;% SNR PER BIT
+NUM_FRAMES = 10^5; 
 
 FFT_LEN = 1024*4;
 NUM_BIT = 1024; % NUMBER OF DATA BITS
@@ -74,7 +74,6 @@ ldpcEncoder = comm.LDPCEncoder(B);
 
 
 for FRAME_CNT = 1:NUM_FRAMES
-    FRAME_CNT
     % SOURCE
     A = randi([0 1],V,(NUM_BIT));
 
@@ -145,29 +144,30 @@ for FRAME_CNT = 1:NUM_FRAMES
     
     datar   = zeros(2*NUM_BIT, V);
     for kk = 1:V
-        for tt = 1:NUM_BIT
-            datar(2*tt-1,kk) = LLR(2*kk-1,tt);%(tanh(LLR(2*kk-1,tt)*N0*2.5).^1)*8;
-            datar(2*tt,kk) = LLR(2*kk,tt);%(tanh(LLR(2*kk,tt)*N0*2.5).^1)*8;
+        for tt = 1:N/2
+            datar(2*tt-1,kk) = (tanh(LLR(2*kk-1,tt)*N0*2.5).^1)*8;
+            datar(2*tt,kk) = (tanh(LLR(2*kk,tt)*N0*2.5).^1)*8;
         end
     end    
     
     
     
     for pp = 1:V
-        ansbit(pp,:) = ldpcDecoder(datar(:,pp));
+        ansbit(pp,:) = ldpcDecoder(LLR(:,pp));
     end  
     
     err        = sum(xor(A', ansbit'));    
     
 
-%     if numErrsInFrameHard >= 1
-%         bler_flag = 1;
-%     else
-%         bler_flag = 0;
-%     end
-    C_BER = C_BER + sum(err);
-%     C_BLER = C_BLER + bler_flag;
+    if numErrsInFrameHard >= 1
+        bler_flag = 1;
+    else
+        bler_flag = 0;
+    end
+    C_BER = C_BER + numErrsInFrameHard;
+    C_BLER = C_BLER + bler_flag;
 end
-BER = C_BER/(NUM_BIT*6*NUM_FRAMES);
+BER = C_BER/(NUM_BIT*NUM_FRAMES);
+BLER = C_BLER/NUM_FRAMES;
 
 

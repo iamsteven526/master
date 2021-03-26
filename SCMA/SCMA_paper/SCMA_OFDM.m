@@ -1,6 +1,6 @@
 clc;
 clear;
-SNR_dB = 24;% SNR PER BIT
+SNR_dB = 15;% SNR PER BIT (EbN0)
 NUM_FRAMES = 500; 
 
 FFT_LEN = 1024*4;
@@ -10,8 +10,10 @@ CP_LEN = CHAN_LEN-1; % LENGTH OF THE CYCLIC PREFIX
 FADE_VAR_1D = 1; % 1D FADE VARIANCE OF THE CHANNEL
 FADE_STD_DEV = sqrt(FADE_VAR_1D); % STANDARD DEVIATION OF THE FADING CHANNEL
 % SNR PER BIT DEFINITION - OVERALL RATE IS 2
+
+
 SNR = 10^(0.1*SNR_dB); % LINEAR SCALE
-R = 2*(1024/1028);%coderate
+R = (4096/4100);%coderate
 NOISE_VAR_1D = 1/(R*2*SNR); % 1D AWGN VARIANCE 
 NOISE_STD_DEV = sqrt(NOISE_VAR_1D); % NOISE STANDARD DEVIATION
 C_BER = 0; % bit errors in each frame
@@ -52,7 +54,7 @@ CB(:,:,6) = [ 0                  0                  0                  0;...
               0                  0                  0                  0 ];
 
           
-%CB = CB*0.8163;
+
 
 K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
@@ -115,7 +117,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     % AWGN
     AWGN = normrnd(0,1,1,FFT_LEN+CP_LEN+CHAN_LEN-1)+1i*normrnd(0,1,1,FFT_LEN+CP_LEN+CHAN_LEN-1);
     % CHANNEL OUTPUT
-    T_REC_SIG =  T_REC_SIG + NOISE_STD_DEV*AWGN;
+    T_REC_SIG =  T_REC_SIG + 2*NOISE_STD_DEV*AWGN;
     
     
     
@@ -157,7 +159,7 @@ for FRAME_CNT = 1:NUM_FRAMES
         ansbit(pp,:) = ldpcDecoder(datar(:,pp));
     end  
     
-    err        = sum(xor(A', ansbit'));    
+    err        = sum(xor(A', double(ansbit')));    
     
 
 %     if numErrsInFrameHard >= 1

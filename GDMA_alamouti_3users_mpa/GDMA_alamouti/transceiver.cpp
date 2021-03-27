@@ -155,11 +155,12 @@ void SuperLevelSpecification(double ***chCoef, double ****supLevel)
 		ComplexMultiplication(temp1, chCoef[2][1], temp1);
 		ComplexConjugate(chCoef[2][0], temp2);
 		ComplexMultiplication(temp2, chCoef[1][1], temp2);
-		supLevel[0][1][4][0] = temp1[0] - temp2[0];
-		supLevel[0][1][4][1] = temp1[1] - temp2[1];
-		ComplexConjugate(supLevel[0][1][4], supLevel[2][1][3]);
-		supLevel[2][0][4][0] = -supLevel[0][1][4][0];
-		supLevel[2][0][4][1] = -supLevel[0][1][4][1];
+
+		supLevel[1][0][4][0] = temp1[0] - temp2[0];
+		supLevel[1][0][4][1] = temp1[1] - temp2[1];
+		ComplexConjugate(supLevel[1][0][4], supLevel[2][1][3]);
+		supLevel[2][0][4][0] = -supLevel[1][0][4][0];
+		supLevel[2][0][4][1] = -supLevel[1][0][4][1];
 		ComplexConjugate(supLevel[2][0][4], supLevel[1][1][3]);
 
 
@@ -177,6 +178,7 @@ void SuperLevelSpecification(double ***chCoef, double ****supLevel)
 		{
 			for (int k = 0; k < (NUM_USER*NUM_TX - 1); k++)
 			{
+				//cout << i << j << k << ";;" << supLevel[i][j][k][0] << "," << supLevel[i][j][k][1] << endl;
 				supLevel[i][j][k][0] /= nFactor;
 				supLevel[i][j][k][1] /= nFactor;
 			}
@@ -186,10 +188,12 @@ void SuperLevelSpecification(double ***chCoef, double ****supLevel)
 
 void Detector(int **data, double **appLlr, long double &error)
 {
+	//cout << "dfdfdfdfdf-------" << endl;
 	for (int nuser = 0; nuser < NUM_USER; nuser++)
 	{
 		for (int i = 0; i < NUM_TX; i++)
-		{			
+		{	
+			//cout << data[nuser][i] << "    dddddddd    " << appLlr[nuser][i] << endl;		
 			error += (data[nuser][i] != HARD(appLlr[nuser][i]));
 		}
 	}

@@ -172,7 +172,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 		{
 			memset(appLlr[j], 0, sizeof(double)*NUM_TX);
 		}
-		/*	
+			
 		for (int j = 0; j < NUM_USER; j++)
 		{
 		    for (int i = 0; i < NUM_TX; i++)
@@ -192,13 +192,13 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 				if (prob0 <= NUMERIC_LIMIT) appLlr[(3-j)/3][0] += -2*LLR_LIMIT;
 				else if (prob1 <= NUMERIC_LIMIT) appLlr[(3-j)/3][0] += 2*LLR_LIMIT;
 				else appLlr[(3-j)/3][0] += log(prob0 / prob1);
-
+                
 				prob0 = app[j][i][0] + app[j][i][1] + app[j][i][2] + app[j][i][3] + app[j][i][8] + app[j][i][9] + app[j][i][10] + app[j][i][11] + app[j][i][16] + app[j][i][17] + app[j][i][18] + app[j][i][19] + app[j][i][24] + app[j][i][25] + app[j][i][26] + app[j][i][27];
 				prob1 = app[j][i][4] + app[j][i][5] + app[j][i][6] + app[j][i][7] + app[j][i][12] + app[j][i][13] + app[j][i][14] + app[j][i][15] + app[j][i][20] + app[j][i][21] + app[j][i][22] + app[j][i][23] + app[j][i][28] + app[j][i][29] + app[j][i][30] + app[j][i][31];
 				if (prob0 <= NUMERIC_LIMIT) appLlr[(3-j)/3][1] += -2*LLR_LIMIT;
 				else if (prob1 <= NUMERIC_LIMIT) appLlr[(3-j)/3][1] += 2*LLR_LIMIT;
 				else appLlr[(3-j)/3][1] += log(prob0 / prob1);				
-
+                
 				prob0 = app[j][i][0] + app[j][i][1] + app[j][i][4] + app[j][i][5] + app[j][i][8] + app[j][i][9] + app[j][i][12] + app[j][i][13] + app[j][i][16] + app[j][i][17] + app[j][i][20] + app[j][i][21] + app[j][i][24] + app[j][i][25] + app[j][i][28] + app[j][i][29];
 				prob1 = app[j][i][2] + app[j][i][3] + app[j][i][6] + app[j][i][7] + app[j][i][10] + app[j][i][11] + app[j][i][14] + app[j][i][15] + app[j][i][18] + app[j][i][19] + app[j][i][22] + app[j][i][23] + app[j][i][26] + app[j][i][27] + app[j][i][30] + app[j][i][31];
 				if (prob0 <= NUMERIC_LIMIT) appLlr[(7-j)/3][0] += -2*LLR_LIMIT;
@@ -210,11 +210,12 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 				if (prob0 <= NUMERIC_LIMIT) appLlr[(7-j)/3][1] += -2*LLR_LIMIT;
 				else if (prob1 <= NUMERIC_LIMIT) appLlr[(7-j)/3][1] += 2*LLR_LIMIT;
 				else appLlr[(7-j)/3][1] += log(prob0 / prob1);
+				
 			}
 		}	
-		*/
+		
 	}
-  
+    /*
 	//----------message passing--------------
 
     int V = 6;       // number of users (layers)
@@ -465,4 +466,5 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 			appLlr[(v/2)][(v%2)] = Q[0][v] - Q[1][v];
         }
 	}
+	*/
 }

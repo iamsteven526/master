@@ -1,6 +1,6 @@
 clc;
 clear;
-SNR_dB = 15;% SNR PER BIT (EbN0)
+SNR_dB = 10;% SNR PER BIT (EbN0)
 NUM_FRAMES = 500; 
 
 FFT_LEN = 1024*4;
@@ -53,7 +53,7 @@ CB(:,:,6) = [ 0                  0                  0                  0;...
               (-0.7071 - 0.7071*1j) (-0.7071 + 0.7071*1j) (0.7071 - 0.7071*1j)      (0.7071 + 0.7071*1j);...
               0                  0                  0                  0 ];
 
-          
+%CB=CB*0.8163*0.7071;         
 
 
 K = size(CB, 1); % number of orthogonal resources
@@ -117,7 +117,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     % AWGN
     AWGN = normrnd(0,1,1,FFT_LEN+CP_LEN+CHAN_LEN-1)+1i*normrnd(0,1,1,FFT_LEN+CP_LEN+CHAN_LEN-1);
     % CHANNEL OUTPUT
-    T_REC_SIG =  T_REC_SIG + 2*NOISE_STD_DEV*AWGN;
+    T_REC_SIG =  T_REC_SIG + NOISE_STD_DEV*AWGN;
     
     
     

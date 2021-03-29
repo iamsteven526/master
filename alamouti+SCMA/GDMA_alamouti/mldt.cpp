@@ -177,6 +177,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 		{
 		    for (int i = 0; i < NUM_TX; i++)
 			{
+				/*
 				//TODO:::::
 				double prob0, prob1;
 				//---------- desired signal ---------- (1)
@@ -210,12 +211,13 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 				if (prob0 <= NUMERIC_LIMIT) appLlr[(7-j)/3][1] += -2*LLR_LIMIT;
 				else if (prob1 <= NUMERIC_LIMIT) appLlr[(7-j)/3][1] += 2*LLR_LIMIT;
 				else appLlr[(7-j)/3][1] += log(prob0 / prob1);
+				*/
 				
 			}
 		}	
 		
 	}
-    /*
+    
 	//----------message passing--------------
 
     int V = 6;       // number of users (layers)
@@ -306,7 +308,7 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
         }
 
         // Step 2: Iterative procedure
-        int Niter = 3;
+        int Niter = 1;
         for (int iter = 0; iter < Niter; iter++)
         {
             // Igv update
@@ -466,5 +468,5 @@ void MLDT(double variance, double ***chCoef, double ****supLevel, double ***post
 			appLlr[(v/2)][(v%2)] = Q[0][v] - Q[1][v];
         }
 	}
-	*/
+	
 }

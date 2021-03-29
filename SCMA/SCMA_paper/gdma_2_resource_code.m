@@ -16,15 +16,15 @@ V = 3; % user
 N = 2048; % SCMA signals in frame
 M = 2; % BPSK = 2 QPSK = 4 ....
 R = 0.5;  %code rate
-EbN0 = 10:2.5:10;
-SNR  = EbN0 + 10*log10(R*log2(M));
+EbN0 = 12.5:2.5:12.5;
+SNR  = EbN0 + 10*log10(2*R*log2(M));
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 200000;
-maxNumBits = 1e8;
+maxNumBits = 6e6;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder(B);
 ldpcEncoder = comm.LDPCEncoder(B);
@@ -78,6 +78,6 @@ for k = 1:length(SNR)
     end
     BER(:,k) = Nerr(:,k)./Nbits(:,k);
     k
-    display(sum(Nerr(:,k))/12)
+    display(sum(Nerr(:,k))/3)
 end
 plot(EbN0,log10(BER))

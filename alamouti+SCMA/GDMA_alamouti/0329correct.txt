@@ -1,0 +1,46 @@
+SNR[dB] = 0.0
+Block# = 1000000, BER = 1.875331e-01
+SNR[dB] = 2.0
+Block# = 1000000, BER = 1.529993e-01
+SNR[dB] = 4.0
+Block# = 1000000, BER = 1.181527e-01
+SNR[dB] = 6.0
+Block# = 500000, BER = 8.048333e-02
+SNR[dB] = 8.0
+Block# = 500000, BER = 4.503933e-02
+SNR[dB] = 10.0
+Block# = 500000, BER = 2.063533e-02
+SNR[dB] = 12.0
+Block# = 500000, BER = 7.718500e-03
+SNR[dB] = 14.0
+Block# = 500000, BER = 2.432500e-03
+SNR[dB] = 16.0
+Block# = 500000, BER = 7.133333e-04
+SNR[dB] = 18.0
+Block# = 1000000, BER = 2.161667e-04
+SNR[dB] = 20.0
+Block# = 1000000, BER = 4.691667e-05
+
+
+SNR[dB] = 0.0
+Block# = 1000000, BER = 1.355157e-01
+SNR[dB] = 2.0
+Block# = 1000000, BER = 1.006073e-01
+SNR[dB] = 4.0
+Block# = 1000000, BER = 6.741600e-02
+SNR[dB] = 6.0
+Block# = 1000000, BER = 3.912283e-02
+SNR[dB] = 8.0
+Block# = 1000000, BER = 1.885583e-02
+SNR[dB] = 10.0
+Block# = 1000000, BER = 7.326667e-03
+SNR[dB] = 12.0
+Block# = 1000000, BER = 2.233083e-03
+SNR[dB] = 14.0
+Block# = 1000000, BER = 5.456667e-04
+SNR[dB] = 16.0
+Block# = 1000000, BER = 1.098333e-04
+SNR[dB] = 18.0
+Block# = 1000000, BER = 2.191667e-05
+SNR[dB] = 20.0
+Block# = 1000000, BER = 2.666667e-06

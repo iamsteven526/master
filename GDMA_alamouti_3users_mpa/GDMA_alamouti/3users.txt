@@ -1,36 +1,3 @@
-STC-GDMA-BPSK system
-Number of users: 3
-
--
-
-SNR[dB] = 0.0
-Block# = 5000000, BER = 2.057871e-01
-SNR[dB] = 5.0
-Block# = 5000000, BER = 1.116705e-01
-SNR[dB] = 10.0
-Block# = 5000000, BER = 3.962147e-02
-SNR[dB] = 15.0
-Block# = 5000000, BER = 8.822367e-03
-SNR[dB] = 20.0
-Block# = 5000000, BER = 1.346233e-03
-SNR[dB] = 25.0
-Block# = 5000000, BER = 1.806333e-04
-SNR[dB] = 30.0
-Block# = 5000000, BER = 2.286667e-05
-SNR[dB] = 35.0
-Block# = 5000000, BER = 4.233333e-06
-SNR[dB] = 40.0
-Block# = 5000000, BER = 1.900000e-06
-SNR[dB] = 45.0
-Block# = 5000000, BER = 6.333333e-07
-SNR[dB] = 50.0
-Block# = 5000000, BER = 3.666667e-07
-SNR[dB] = 55.0
-Block# = 5000000, BER = 5.333333e-07
-
-
-==============modify noise===================
-
 
 
 STC-GDMA-BPSK system
@@ -38,25 +5,18 @@ Number of users: 3
 
 -
 
-SNR[dB] = 0.0
-Block# = 1000000, BER = 9.350850e-02
-SNR[dB] = 2.0
-Block# = 1000000, BER = 6.243883e-02
-SNR[dB] = 4.0
-Block# = 1000000, BER = 3.879467e-02
-SNR[dB] = 6.0
-Block# = 1000000, BER = 2.220550e-02
-SNR[dB] = 8.0
-Block# = 1000000, BER = 1.182433e-02
-SNR[dB] = 10.0
-Block# = 1000000, BER = 5.783833e-03
-SNR[dB] = 12.0
-Block# = 1000000, BER = 2.805500e-03
-SNR[dB] = 14.0
-Block# = 1000000, BER = 1.263833e-03
-SNR[dB] = 16.0
-Block# = 1000000, BER = 5.751667e-04
-SNR[dB] = 18.0
-Block# = 1000000, BER = 2.945000e-04
-SNR[dB] = 20.0
-Block# = 1000000, BER = 1.390000e-04
+SNR[dB] = 0.0, BER = 1.969307e-01
+SNR[dB] = 2.0, BER = 1.553233e-01
+SNR[dB] = 4.0, BER = 1.118525e-01
+SNR[dB] = 6.0, BER = 7.275667e-02
+SNR[dB] = 8.0, BER = 4.212317e-02
+SNR[dB] = 10.0, BER = 2.213917e-02
+SNR[dB] = 12.0, BER = 1.041217e-02
+SNR[dB] = 14.0, BER = 4.589167e-03
+SNR[dB] = 16.0, BER = 1.858833e-03
+SNR[dB] = 18.0, BER = 7.420000e-04
+SNR[dB] = 20.0, BER = 3.060000e-04
+
+
+
+

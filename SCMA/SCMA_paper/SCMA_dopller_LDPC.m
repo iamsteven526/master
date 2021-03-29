@@ -46,7 +46,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 2048; % SCMA signals in frame
 R = 0.5;
-EbN0 = 30:2:30;
+EbN0 = 10:2:10;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
@@ -57,7 +57,7 @@ BER   = zeros(V, length(SNR));
 BLER   = zeros(length(SNR));
 
 maxNumErrs = 3000;
-maxNumBits = 5e5;
+maxNumBits = 1e6;
 Niter      = 8;
 
 fid=fopen('H_2048_1024_z64_0635.txt','r');
@@ -91,10 +91,11 @@ for k = 1:length(SNR)
                 h(:,:,(pp-1)*N/multiblock+qq) = h(:,:,(pp-1)*N/multiblock+1);
             end
         end
+        
         for kkk = 1:K
            for vvv = 1:V
                TimeVaryingCIR = gjmi();
-               h(kkk,vvv,:) = h(kkk,vvv,:).*reshape(TimeVaryingCIR,1,1,N);
+               h(kkk,vvv,:) = h(kkk,vvv,:).*reshape(abs(TimeVaryingCIR),1,1,N)*(9/8);
            end
         end
         
@@ -125,8 +126,10 @@ for k = 1:length(SNR)
             for tt = 1:N/2
                 %datar(2*tt-1,kk) = LLR(2*kk-1,tt)*N0*12.5;
                 %datar(2*tt,kk) = LLR(2*kk,tt)*N0*12.5;%tanh(rxDataSoft*NOISE_VAR_1D*4.5).^3)*3
-                datar(2*tt-1,kk) = (tanh(LLR(2*kk-1,tt)*N0*2.5).^1)*8;
-                datar(2*tt,kk) = (tanh(LLR(2*kk,tt)*N0*2.5).^1)*8;
+                %datar(2*tt-1,kk) = (tanh(LLR(2*kk-1,tt)*N0*2.5).^1)*8;
+                %datar(2*tt,kk) = (tanh(LLR(2*kk,tt)*N0*2.5).^1)*8;
+                datar(2*tt-1,kk) = LLR(2*kk-1,tt);
+                datar(2*tt,kk) = LLR(2*kk,tt);
             end%datar(:,kk) = reshape(downsample(datadec, V, kk-1).', [], 1);
         end
         for pp = 1:V
@@ -155,7 +158,7 @@ function TimeVaryingCIR = gjmi()
     Ns = 2048;
     Ng = 0;
     CARRIER_FREQ = 3*10^9;
-    UE_SPEED = 540000;
+    UE_SPEED = 540;
 
     sita = zeros(1, Ln);
     JakesAlpha = zeros(Ln, M);
@@ -200,5 +203,7 @@ function TimeVaryingCIR = gjmi()
             TimeVaryingCIR(tap, idx) = (sqrt(1/M) * Inphase + 1i * sqrt(1/M) * Quadrature);
         end
     end
+    
+    %ppp = ppp + sum(abs(TimeVaryingCIR))/2048
 
 end

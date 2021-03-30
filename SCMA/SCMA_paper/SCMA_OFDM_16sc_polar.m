@@ -1,7 +1,7 @@
 clc;
 clear;
 SNR_dB = 10;% SNR PER BIT (EbN0)
-NUM_FRAMES = 200; 
+NUM_FRAMES = 500; 
 
 FFT_LEN = 512*4;
 NUM_BIT = 512; % NUMBER OF DATA BITS

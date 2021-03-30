@@ -1,10 +1,10 @@
 clc;
 clear;
-SNR_dB = 1;% SNR PER BIT (EbN0)
-NUM_FRAMES = 50000; 
+SNR_dB = 10;% SNR PER BIT (EbN0)
+NUM_FRAMES = 200; 
 
-FFT_LEN = 1024*4;
-NUM_BIT = 2048; % NUMBER OF DATA BITS
+FFT_LEN = 512*4;
+NUM_BIT = 512; % NUMBER OF DATA BITS
 CHAN_LEN = 5; % NUMBER OF CHANNEL TAPS
 CP_LEN = CHAN_LEN-1; % LENGTH OF THE CYCLIC PREFIX
 FADE_VAR_1D = 1; % 1D FADE VARIANCE OF THE CHANNEL
@@ -13,13 +13,22 @@ FADE_STD_DEV = sqrt(FADE_VAR_1D); % STANDARD DEVIATION OF THE FADING CHANNEL
 
 
 SNR = 10^(0.1*SNR_dB); % LINEAR SCALE
-R = 2*(4096/4100);%coderate
+R = (4096/4100)*(501/512);%coderate
 NOISE_VAR_1D = 1/(R*SNR); % 1D AWGN VARIANCE 
 NOISE_STD_DEV = sqrt(NOISE_VAR_1D); % NOISE STANDARD DEVIATION
 C_BER = 0; % bit errors in each frame
 C_BLER = 0;
 st2 = 48511; %random seed
 st3 = 87; % random seed
+
+crcLen = 11;
+poly = '11';
+nPC = 0;
+nMax = 10;
+iIL = false;
+iBIL = true;
+
+interleavepi = 111;
 
 
 %codebook
@@ -78,20 +87,22 @@ ldpcEncoder = comm.LDPCEncoder(B);
 for FRAME_CNT = 1:NUM_FRAMES
     FRAME_CNT
     % SOURCE
-    A = randi([0 1],V,(NUM_BIT));
+    A = randi([0 1],V,(NUM_BIT) - crcLen);
+    A = nrCRCEncode(A',poly)';
 
-    %for pp = 1:V
-    %   enc(pp,:) = ldpcEncoder(A(pp,:)');
-    %end    
+    for pp = 1:V
+       enc(pp,:) = nrPolarEncode(A(pp,:)',1024,10,false)';
+       %enc(pp,:) = ldpcEncoder(A(pp,:)');
+    end    
     % QPSK MAPPING
-    F_SIG_NO_CP_OLD = qammod(A',4,'InputType','bit','UnitAveragePower',true)';
+    F_SIG_NO_CP_OLD = qammod(enc',4,'InputType','bit','UnitAveragePower',true)';
     
-    F_SIG_NO_CP(1,:) = [zeros(1,NUM_BIT/2) F_SIG_NO_CP_OLD(1,:) zeros(1,NUM_BIT/2) F_SIG_NO_CP_OLD(1,:)];
-    F_SIG_NO_CP(2,:) = [F_SIG_NO_CP_OLD(2,:) zeros(1,NUM_BIT/2) F_SIG_NO_CP_OLD(2,:) zeros(1,NUM_BIT/2)];
-    F_SIG_NO_CP(3,:) = [F_SIG_NO_CP_OLD(3,:) F_SIG_NO_CP_OLD(3,:) zeros(1,NUM_BIT/2) zeros(1,NUM_BIT/2)];
-    F_SIG_NO_CP(4,:) = [zeros(1,NUM_BIT/2) zeros(1,NUM_BIT/2) F_SIG_NO_CP_OLD(4,:) F_SIG_NO_CP_OLD(4,:)];
-    F_SIG_NO_CP(5,:) = [F_SIG_NO_CP_OLD(5,:) zeros(1,NUM_BIT/2) zeros(1,NUM_BIT/2) F_SIG_NO_CP_OLD(5,:)];
-    F_SIG_NO_CP(6,:) = [zeros(1,NUM_BIT/2) F_SIG_NO_CP_OLD(6,:) F_SIG_NO_CP_OLD(6,:) zeros(1,NUM_BIT/2)];
+    F_SIG_NO_CP(1,:) = [zeros(1,NUM_BIT) F_SIG_NO_CP_OLD(1,:) zeros(1,NUM_BIT) F_SIG_NO_CP_OLD(1,:)];
+    F_SIG_NO_CP(2,:) = [F_SIG_NO_CP_OLD(2,:) zeros(1,NUM_BIT) F_SIG_NO_CP_OLD(2,:) zeros(1,NUM_BIT)];
+    F_SIG_NO_CP(3,:) = [F_SIG_NO_CP_OLD(3,:) F_SIG_NO_CP_OLD(3,:) zeros(1,NUM_BIT) zeros(1,NUM_BIT)];
+    F_SIG_NO_CP(4,:) = [zeros(1,NUM_BIT) zeros(1,NUM_BIT) F_SIG_NO_CP_OLD(4,:) F_SIG_NO_CP_OLD(4,:)];
+    F_SIG_NO_CP(5,:) = [F_SIG_NO_CP_OLD(5,:) zeros(1,NUM_BIT) zeros(1,NUM_BIT) F_SIG_NO_CP_OLD(5,:)];
+    F_SIG_NO_CP(6,:) = [zeros(1,NUM_BIT) F_SIG_NO_CP_OLD(6,:) F_SIG_NO_CP_OLD(6,:) zeros(1,NUM_BIT)];
     
     % IFFT
     T_REC_SIG = zeros(1,FFT_LEN+CP_LEN+CHAN_LEN-1);
@@ -129,28 +140,25 @@ for FRAME_CNT = 1:NUM_FRAMES
     % PERFORMING THE FFT
     F_REC_SIG_NO_CP = fft(T_REC_SIG_NO_CP)/sqrt(FFT_LEN);
     %TODO: modify input of scmadec() y , CB , h
-    h = zeros(K, V, NUM_BIT/2); % Rayleigh channel
+    h = zeros(K, V, NUM_BIT); % Rayleigh channel
     for kkk = 1:K
         for vvv = 1:V
-            h(kkk,vvv,:) = FREQ_RESP(vvv,(FFT_LEN*0.25*(kkk - 1) + 1):(FFT_LEN*0.25*kkk));
+            h(kkk,vvv,:) = FREQ_RESP(vvv,(512*(kkk - 1) + 1):(512*kkk));
         end
     end
-    y = zeros(K,NUM_BIT/2);
-    y(1,:) = F_REC_SIG_NO_CP(1:NUM_BIT/2);
-    y(2,:) = F_REC_SIG_NO_CP(NUM_BIT/2+1:NUM_BIT/2*2);
-    y(3,:) = F_REC_SIG_NO_CP(2*NUM_BIT/2+1:NUM_BIT/2*3);
-    y(4,:) = F_REC_SIG_NO_CP(3*NUM_BIT/2+1:NUM_BIT/2*4);
+    y = zeros(K,NUM_BIT);
+    y(1,:) = F_REC_SIG_NO_CP(1:NUM_BIT);
+    y(2,:) = F_REC_SIG_NO_CP(NUM_BIT+1:NUM_BIT*2);
+    y(3,:) = F_REC_SIG_NO_CP(2*NUM_BIT+1:NUM_BIT*3);
+    y(4,:) = F_REC_SIG_NO_CP(3*NUM_BIT+1:NUM_BIT*4);
     
-    LLR = scmadec(y, CB, h, NOISE_STD_DEV*NOISE_STD_DEV , 8);
+    LLR = scmadec(y, CB, h, NOISE_STD_DEV*NOISE_STD_DEV , 5);
     LLR(LLR==inf) = 1500;
-    LLR(LLR==-inf) = -1500;
+    LLR(LLR==-inf) = -1500;   
     
-    LLR(LLR>=0) = 0;
-    LLR(LLR<0) = 1;    
-    
-    datar   = zeros(2*NUM_BIT/2, V);
+    datar   = zeros(2*NUM_BIT, V);
     for kk = 1:V
-        for tt = 1:NUM_BIT/2
+        for tt = 1:NUM_BIT
             datar(2*tt-1,kk) = LLR(2*kk-1,tt);%(tanh(LLR(2*kk-1,tt)*N0*2.5).^1)*8;
             datar(2*tt,kk) = LLR(2*kk,tt);%(tanh(LLR(2*kk,tt)*N0*2.5).^1)*8;
         end
@@ -158,21 +166,21 @@ for FRAME_CNT = 1:NUM_FRAMES
     
     
     
-    %for pp = 1:V
-    %    ansbit(pp,:) = ldpcDecoder(datar(:,pp));
-    %end  
+    for pp = 1:V
+        %ansbit(pp,:) = ldpcDecoder(datar(:,pp));
+        ansbit(pp,:) = nrPolarDecode(datar(:,pp),512,1024,32,10,false,11);
+    end  
     
-    err        = sum(xor(A', double(datar)));    
+    err        = sum(xor(A(:,1:512-crcLen)', double(ansbit(:,1:512-crcLen)')));    
     
-
-%     if numErrsInFrameHard >= 1
+%     if err >= 1
 %         bler_flag = 1;
 %     else
 %         bler_flag = 0;
 %     end
+    bler_flag = sum(err>0);
     C_BER = C_BER + sum(err);
-%     C_BLER = C_BLER + bler_flag;
+     C_BLER = C_BLER + bler_flag;
 end
 BER = C_BER/(NUM_BIT*6*NUM_FRAMES);
-
-
+BLER = C_BLER/(6*NUM_FRAMES);

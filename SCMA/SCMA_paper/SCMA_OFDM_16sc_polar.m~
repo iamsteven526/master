@@ -1,10 +1,10 @@
 clc;
 clear;
-SNR_dB = 0;% SNR PER BIT (EbN0)
-NUM_FRAMES = 150; 
+SNR_dB = 18;% SNR PER BIT (EbN0)
+NUM_FRAMES = 22500; 
 
-FFT_LEN = 1024*4;
-NUM_BIT = 1024; % NUMBER OF DATA BITS
+FFT_LEN = 512*4;
+NUM_BIT = 512; % NUMBER OF DATA BITS
 CHAN_LEN = 5; % NUMBER OF CHANNEL TAPS
 CP_LEN = CHAN_LEN-1; % LENGTH OF THE CYCLIC PREFIX
 FADE_VAR_1D = 1; % 1D FADE VARIANCE OF THE CHANNEL
@@ -20,6 +20,15 @@ C_BER = 0; % bit errors in each frame
 C_BLER = 0;
 st2 = 48511; %random seed
 st3 = 87; % random seed
+
+crcLen = 11;
+poly = '11';
+nPC = 0;
+nMax = 10;
+iIL = false;
+iBIL = true;
+
+interleavepi = 111;
 
 
 %codebook
@@ -78,10 +87,12 @@ ldpcEncoder = comm.LDPCEncoder(B);
 for FRAME_CNT = 1:NUM_FRAMES
     FRAME_CNT
     % SOURCE
-    A = randi([0 1],V,(NUM_BIT));
+    A = randi([0 1],V,(NUM_BIT) - crcLen);
+    A = nrCRCEncode(A',poly)';
 
     for pp = 1:V
-       enc(pp,:) = ldpcEncoder(A(pp,:)');
+       enc = nrPolarEncode(A',1024,10,false)';
+       %enc(pp,:) = ldpcEncoder(A(pp,:)');
     end    
     % QPSK MAPPING
     F_SIG_NO_CP_OLD = qammod(enc',4,'InputType','bit','UnitAveragePower',true)';
@@ -132,7 +143,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     h = zeros(K, V, NUM_BIT); % Rayleigh channel
     for kkk = 1:K
         for vvv = 1:V
-            h(kkk,vvv,:) = FREQ_RESP(vvv,(1024*(kkk - 1) + 1):(1024*kkk));
+            h(kkk,vvv,:) = FREQ_RESP(vvv,(512*(kkk - 1) + 1):(512*kkk));
         end
     end
     y = zeros(K,NUM_BIT);
@@ -141,7 +152,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     y(3,:) = F_REC_SIG_NO_CP(2*NUM_BIT+1:NUM_BIT*3);
     y(4,:) = F_REC_SIG_NO_CP(3*NUM_BIT+1:NUM_BIT*4);
     
-    LLR = scmadec(y, CB, h, NOISE_STD_DEV*NOISE_STD_DEV , 8);
+    LLR = scmadec(y, CB, h, NOISE_STD_DEV*NOISE_STD_DEV , 5);
     LLR(LLR==inf) = 1500;
     LLR(LLR==-inf) = -1500;   
     
@@ -161,15 +172,14 @@ for FRAME_CNT = 1:NUM_FRAMES
     
     err        = sum(xor(A', double(ansbit')));    
     
-
-%     if numErrsInFrameHard >= 1
+%     if err >= 1
 %         bler_flag = 1;
 %     else
 %         bler_flag = 0;
 %     end
+    bler_flag = sum(err>0);
     C_BER = C_BER + sum(err);
-%     C_BLER = C_BLER + bler_flag;
+     C_BLER = C_BLER + bler_flag;
 end
 BER = C_BER/(NUM_BIT*6*NUM_FRAMES);
-
-
+BLER = C_BLER/(6*NUM_FRAMES);

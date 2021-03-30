@@ -1,7 +1,7 @@
 clc;
 clear;
-SNR_dB = 10;% SNR PER BIT (EbN0)
-NUM_FRAMES = 350; 
+SNR_dB = 18;% SNR PER BIT (EbN0)
+NUM_FRAMES = 22500; 
 
 FFT_LEN = 1024*4;
 NUM_BIT = 1024; % NUMBER OF DATA BITS
@@ -141,7 +141,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     y(3,:) = F_REC_SIG_NO_CP(2*NUM_BIT+1:NUM_BIT*3);
     y(4,:) = F_REC_SIG_NO_CP(3*NUM_BIT+1:NUM_BIT*4);
     
-    LLR = scmadec(y, CB, h, NOISE_STD_DEV*NOISE_STD_DEV , 8);
+    LLR = scmadec(y, CB, h, NOISE_STD_DEV*NOISE_STD_DEV , 5);
     LLR(LLR==inf) = 1500;
     LLR(LLR==-inf) = -1500;   
     
@@ -161,15 +161,16 @@ for FRAME_CNT = 1:NUM_FRAMES
     
     err        = sum(xor(A', double(ansbit')));    
     
-
-%     if numErrsInFrameHard >= 1
+%     if err >= 1
 %         bler_flag = 1;
 %     else
 %         bler_flag = 0;
 %     end
+    bler_flag = sum(err>0);
     C_BER = C_BER + sum(err);
-%     C_BLER = C_BLER + bler_flag;
+     C_BLER = C_BLER + bler_flag;
 end
 BER = C_BER/(NUM_BIT*6*NUM_FRAMES);
+BLER = C_BLER/(6*NUM_FRAMES);
 
 

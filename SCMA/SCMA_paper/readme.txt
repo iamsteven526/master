@@ -38,11 +38,17 @@
 
 ========
 
-0329 correct version  SCMA-OFDM-(1024-512)coded polar code   2048subcarriers
+0329 correct version  SCMA-OFDM-(1024-512)coded polar code   2048subcarriers  + CRC-11 + randinterleaver + list32
 
 10db: 0.0241,0.0583
+15db: 0.000395, 0.000916
+18db    0.00002      ,0.00005
 
+========
 
+0329 correct version  SCMA-OFDM-(1024-512)coded polar code   16subcarriers + CRC-11 + randinterleaver + list32
+
+10db: 
 ====
 
 0329 SCMA with doppler fdt = 0.1 + 20481024ldpc

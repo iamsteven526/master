@@ -1,7 +1,7 @@
 clc;
 clear;
-SNR_dB = 15;% SNR PER BIT (EbN0)
-NUM_FRAMES = 1500; 
+SNR_dB = ;% SNR PER BIT (EbN0)
+NUM_FRAMES = 100; 
 
 FFT_LEN = 512*4;
 NUM_BIT = 512; % NUMBER OF DATA BITS
@@ -13,7 +13,7 @@ FADE_STD_DEV = sqrt(FADE_VAR_1D); % STANDARD DEVIATION OF THE FADING CHANNEL
 
 
 SNR = 10^(0.1*SNR_dB); % LINEAR SCALE
-R = (4096/4100)*(501/512);%coderate
+R = (16/20)*(501/512);%coderate
 NOISE_VAR_1D = 1/(R*SNR); % 1D AWGN VARIANCE 
 NOISE_STD_DEV = sqrt(NOISE_VAR_1D); % NOISE STANDARD DEVIATION
 C_BER = 0; % bit errors in each frame
@@ -147,19 +147,19 @@ for FRAME_CNT = 1:NUM_FRAMES
     end
     %TODO: modify input of scmadec() y , CB , h
     h = zeros(K, V, NUM_BIT); % Rayleigh channel
-    F_REC_SIG_NO_CP = reshape(F_REC_SIG_NO_CP,1,2048);
+    F_REC_SIG_NO_CP_P = reshape(F_REC_SIG_NO_CP,1,2048);
     for kkk = 1:K
         for vvv = 1:V
             for sc = 1:4
-                h(kkk,vvv,sc:4:512) = FREQ_RESP(vvv,sc);
+                h(kkk,vvv,(sc-1)*128+1:128*sc) = FREQ_RESP(vvv,4*(kkk-1)+sc);
             end
         end
     end
     y = zeros(K,NUM_BIT);
-    y(1,:) = F_REC_SIG_NO_CP(1:NUM_BIT);
-    y(2,:) = F_REC_SIG_NO_CP(NUM_BIT+1:NUM_BIT*2);
-    y(3,:) = F_REC_SIG_NO_CP(2*NUM_BIT+1:NUM_BIT*3);
-    y(4,:) = F_REC_SIG_NO_CP(3*NUM_BIT+1:NUM_BIT*4);
+    y(1,:) = F_REC_SIG_NO_CP_P(1:NUM_BIT);
+    y(2,:) = F_REC_SIG_NO_CP_P(NUM_BIT+1:NUM_BIT*2);
+    y(3,:) = F_REC_SIG_NO_CP_P(2*NUM_BIT+1:NUM_BIT*3);
+    y(4,:) = F_REC_SIG_NO_CP_P(3*NUM_BIT+1:NUM_BIT*4);
     
     LLR = scmadec(y, CB, h, NOISE_STD_DEV*NOISE_STD_DEV , 5);
     LLR(LLR==inf) = 1500;

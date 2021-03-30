@@ -1,7 +1,7 @@
 clc;
 clear;
-SNR_dB = 20;% SNR PER BIT (EbN0)
-NUM_FRAMES = 100; 
+SNR_dB = 18;% SNR PER BIT (EbN0)
+NUM_FRAMES = 10000; 
 
 FFT_LEN = 512*4;
 NUM_BIT = 512; % NUMBER OF DATA BITS
@@ -13,7 +13,7 @@ FADE_STD_DEV = sqrt(FADE_VAR_1D); % STANDARD DEVIATION OF THE FADING CHANNEL
 
 
 SNR = 10^(0.1*SNR_dB); % LINEAR SCALE
-R = (16/20)*(501/512);%coderate
+R = (4096/4100)*(501/512);%coderate
 NOISE_VAR_1D = 1/(R*SNR); % 1D AWGN VARIANCE 
 NOISE_STD_DEV = sqrt(NOISE_VAR_1D); % NOISE STANDARD DEVIATION
 C_BER = 0; % bit errors in each frame
@@ -107,18 +107,16 @@ for FRAME_CNT = 1:NUM_FRAMES
     F_SIG_NO_CP(6,:) = [zeros(1,NUM_BIT) F_SIG_NO_CP_OLD(6,:) F_SIG_NO_CP_OLD(6,:) zeros(1,NUM_BIT)];
     
     % IFFT
-    T_REC_SIG = zeros(128,16+CP_LEN+CHAN_LEN-1);
+    T_REC_SIG = zeros(1,FFT_LEN+CP_LEN+CHAN_LEN-1);
     for pp = 1:V
+        T_SIG_NO_CP(pp,:) = sqrt(FFT_LEN)*ifft(F_SIG_NO_CP(pp,:));
+        T_SIG_CP(pp,:) = [T_SIG_NO_CP(pp,end-CP_LEN+1:end) T_SIG_NO_CP(pp,:)];
         FADE_CHAN(pp,:) = normrnd(0,FADE_STD_DEV,1,CHAN_LEN)+1i*normrnd(0,FADE_STD_DEV,1,CHAN_LEN);
         normal_power = sqrt(0.5*[0.6364, 0.2341, 0.0861, 0.03168, 0.01165]);
         FADE_CHAN(pp,:) = FADE_CHAN(pp,:).*normal_power;
-        FREQ_RESP(pp,:) = fft(FADE_CHAN(pp,:),16);
-        for symnum = 1:128
-            T_SIG_NO_CP(pp,:) = sqrt(16)*ifft(F_SIG_NO_CP(pp,symnum:128:2048));
-            T_SIG_CP(pp,:) = [T_SIG_NO_CP(pp,end-CP_LEN+1:end) T_SIG_NO_CP(pp,:)];
-
-            T_REC_SIG(symnum,:) = T_REC_SIG(symnum,:) + conv(T_SIG_CP(pp,:),FADE_CHAN(pp,:));
-        end      
+        FREQ_RESP(pp,:) = fft(FADE_CHAN(pp,:),FFT_LEN);
+        T_REC_SIG = T_REC_SIG + conv(T_SIG_CP(pp,:),FADE_CHAN(pp,:));
+        
     end
     % INSERTING CYCLIC PREFIX
     
@@ -130,7 +128,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     
     %FREQ_RESP = fft(FADE_CHAN,FFT_LEN); % ACTUAL CHANNEL FREQUENCY RESPONSE
     % AWGN
-    AWGN = normrnd(0,1,128,16+CP_LEN+CHAN_LEN-1)+1i*normrnd(0,1,128,16+CP_LEN+CHAN_LEN-1);
+    AWGN = normrnd(0,1,1,FFT_LEN+CP_LEN+CHAN_LEN-1)+1i*normrnd(0,1,1,FFT_LEN+CP_LEN+CHAN_LEN-1);
     % CHANNEL OUTPUT
     T_REC_SIG =  T_REC_SIG + NOISE_STD_DEV*AWGN;
     
@@ -139,27 +137,22 @@ for FRAME_CNT = 1:NUM_FRAMES
     
     %----------------      RECEIVER  ------------------------------------------
     % CP & TRANSIENT SAMPLES REMOVAL
-    T_REC_SIG(:,1:CP_LEN) = [];
-    for symnum = 1:128
-        T_REC_SIG_NO_CP(symnum,:) = T_REC_SIG(symnum,1:16);
-        % PERFORMING THE FFT
-        F_REC_SIG_NO_CP(symnum,:) = fft(T_REC_SIG_NO_CP(symnum,:))/sqrt(16);
-    end
+    T_REC_SIG(1:CP_LEN) = [];
+    T_REC_SIG_NO_CP = T_REC_SIG(1:FFT_LEN);
+    % PERFORMING THE FFT
+    F_REC_SIG_NO_CP = fft(T_REC_SIG_NO_CP)/sqrt(FFT_LEN);
     %TODO: modify input of scmadec() y , CB , h
     h = zeros(K, V, NUM_BIT); % Rayleigh channel
-    F_REC_SIG_NO_CP_P = reshape(F_REC_SIG_NO_CP,1,2048);
     for kkk = 1:K
         for vvv = 1:V
-            for sc = 1:4
-                h(kkk,vvv,(sc-1)*128+1:128*sc) = FREQ_RESP(vvv,4*(kkk-1)+sc);
-            end
+            h(kkk,vvv,:) = FREQ_RESP(vvv,(512*(kkk - 1) + 1):(512*kkk));
         end
     end
     y = zeros(K,NUM_BIT);
-    y(1,:) = F_REC_SIG_NO_CP_P(1:NUM_BIT);
-    y(2,:) = F_REC_SIG_NO_CP_P(NUM_BIT+1:NUM_BIT*2);
-    y(3,:) = F_REC_SIG_NO_CP_P(2*NUM_BIT+1:NUM_BIT*3);
-    y(4,:) = F_REC_SIG_NO_CP_P(3*NUM_BIT+1:NUM_BIT*4);
+    y(1,:) = F_REC_SIG_NO_CP(1:NUM_BIT);
+    y(2,:) = F_REC_SIG_NO_CP(NUM_BIT+1:NUM_BIT*2);
+    y(3,:) = F_REC_SIG_NO_CP(2*NUM_BIT+1:NUM_BIT*3);
+    y(4,:) = F_REC_SIG_NO_CP(3*NUM_BIT+1:NUM_BIT*4);
     
     LLR = scmadec(y, CB, h, NOISE_STD_DEV*NOISE_STD_DEV , 5);
     LLR(LLR==inf) = 1500;

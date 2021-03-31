@@ -48,14 +48,26 @@
 
 0329 correct version  SCMA-OFDM-(1024-512)coded polar code   16subcarriers + CRC-11 + randinterleaver + list32
 
-10db: 
-
-
+0db: 0.4448,0.9267
+2db:0.3956,0.8267
+4db:,0.6533
+6db:0.2076,0.4422
+8db:0.1242,0.2700
+10db:0.0441,0.1008
 12db:0.0099,0.0228
 14db:0.002051257621951,0.004634146341463
 16db:0.000431,0.000956
+18db:0.0000748,0.000184
 
 =========
+
+
+0329 correct version  SCMA-OFDM-(2048-1024)coded LDPC   16subcarriers
+
+0.db:0.2571,0.9400
+
+
+================
 
 ***3users-BPSK-GDMA-OFDM + polarcode(1024,512)  16subcarriers + CRC-11 + randinterleaver + list32
 

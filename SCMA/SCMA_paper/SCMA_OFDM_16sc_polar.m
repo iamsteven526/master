@@ -1,6 +1,6 @@
 clc;
 clear;
-SNR_dB = 16;% SNR PER BIT (EbN0)
+SNR_dB = 14;% SNR PER BIT (EbN0)
 NUM_FRAMES = 12050; 
 
 FFT_LEN = 512*4;

@@ -1,10 +1,10 @@
 clc;
 clear;
-SNR_dB = 14;% SNR PER BIT (EbN0)
-NUM_FRAMES = 1050; 
+SNR_dB = 18;% SNR PER BIT (EbN0)
+NUM_FRAMES = 20000; 
 
-FFT_LEN = 512*4;
-NUM_BIT = 512; % NUMBER OF DATA BITS
+FFT_LEN = 1024*4;
+NUM_BIT = 1024; % NUMBER OF DATA BITS
 CHAN_LEN = 5; % NUMBER OF CHANNEL TAPS
 CP_LEN = CHAN_LEN-1; % LENGTH OF THE CYCLIC PREFIX
 FADE_VAR_1D = 1; % 1D FADE VARIANCE OF THE CHANNEL
@@ -13,7 +13,7 @@ FADE_STD_DEV = sqrt(FADE_VAR_1D); % STANDARD DEVIATION OF THE FADING CHANNEL
 
 
 SNR = 10^(0.1*SNR_dB); % LINEAR SCALE
-R = (16/20)*(501/512);%coderate
+R = (16/20);%coderate
 NOISE_VAR_1D = 1/(R*SNR); % 1D AWGN VARIANCE 
 NOISE_STD_DEV = sqrt(NOISE_VAR_1D); % NOISE STANDARD DEVIATION
 C_BER = 0; % bit errors in each frame
@@ -91,9 +91,9 @@ for FRAME_CNT = 1:NUM_FRAMES
     A = nrCRCEncode(A',poly)';
 
     for pp = 1:V
-       enc(pp,:) = nrPolarEncode(A(pp,:)',1024,10,false)';
-       enc(pp,:) = randintrlv(enc(pp,:),st2);
-       %enc(pp,:) = ldpcEncoder(A(pp,:)');
+       %enc(pp,:) = nrPolarEncode(A(pp,:)',1024,10,false)';
+       %enc(pp,:) = randintrlv(enc(pp,:),st2);
+       enc(pp,:) = ldpcEncoder(A(pp,:)');
     end    
     
     % QPSK MAPPING
@@ -107,14 +107,14 @@ for FRAME_CNT = 1:NUM_FRAMES
     F_SIG_NO_CP(6,:) = [zeros(1,NUM_BIT) F_SIG_NO_CP_OLD(6,:) F_SIG_NO_CP_OLD(6,:) zeros(1,NUM_BIT)];
     
     % IFFT
-    T_REC_SIG = zeros(128,16+CP_LEN+CHAN_LEN-1);
+    T_REC_SIG = zeros(256,16+CP_LEN+CHAN_LEN-1);
     for pp = 1:V
         FADE_CHAN(pp,:) = normrnd(0,FADE_STD_DEV,1,CHAN_LEN)+1i*normrnd(0,FADE_STD_DEV,1,CHAN_LEN);
         normal_power = sqrt(0.5*[0.6364, 0.2341, 0.0861, 0.03168, 0.01165]);
         FADE_CHAN(pp,:) = FADE_CHAN(pp,:).*normal_power;
         FREQ_RESP(pp,:) = fft(FADE_CHAN(pp,:),16);
-        for symnum = 1:128
-            T_SIG_NO_CP(pp,:) = sqrt(16)*ifft(F_SIG_NO_CP(pp,symnum:128:2048));
+        for symnum = 1:256
+            T_SIG_NO_CP(pp,:) = sqrt(16)*ifft(F_SIG_NO_CP(pp,symnum:256:4096));
             T_SIG_CP(pp,:) = [T_SIG_NO_CP(pp,end-CP_LEN+1:end) T_SIG_NO_CP(pp,:)];
 
             T_REC_SIG(symnum,:) = T_REC_SIG(symnum,:) + conv(T_SIG_CP(pp,:),FADE_CHAN(pp,:));
@@ -130,7 +130,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     
     %FREQ_RESP = fft(FADE_CHAN,FFT_LEN); % ACTUAL CHANNEL FREQUENCY RESPONSE
     % AWGN
-    AWGN = normrnd(0,1,128,16+CP_LEN+CHAN_LEN-1)+1i*normrnd(0,1,128,16+CP_LEN+CHAN_LEN-1);
+    AWGN = normrnd(0,1,256,16+CP_LEN+CHAN_LEN-1)+1i*normrnd(0,1,256,16+CP_LEN+CHAN_LEN-1);
     % CHANNEL OUTPUT
     T_REC_SIG =  T_REC_SIG + NOISE_STD_DEV*AWGN;
     
@@ -140,18 +140,18 @@ for FRAME_CNT = 1:NUM_FRAMES
     %----------------      RECEIVER  ------------------------------------------
     % CP & TRANSIENT SAMPLES REMOVAL
     T_REC_SIG(:,1:CP_LEN) = [];
-    for symnum = 1:128
+    for symnum = 1:256
         T_REC_SIG_NO_CP(symnum,:) = T_REC_SIG(symnum,1:16);
         % PERFORMING THE FFT
         F_REC_SIG_NO_CP(symnum,:) = fft(T_REC_SIG_NO_CP(symnum,:))/sqrt(16);
     end
     %TODO: modify input of scmadec() y , CB , h
     h = zeros(K, V, NUM_BIT); % Rayleigh channel
-    F_REC_SIG_NO_CP_P = reshape(F_REC_SIG_NO_CP,1,2048);
+    F_REC_SIG_NO_CP_P = reshape(F_REC_SIG_NO_CP,1,4096);
     for kkk = 1:K
         for vvv = 1:V
             for sc = 1:4
-                h(kkk,vvv,(sc-1)*128+1:128*sc) = FREQ_RESP(vvv,4*(kkk-1)+sc);
+                h(kkk,vvv,(sc-1)*256+1:256*sc) = FREQ_RESP(vvv,4*(kkk-1)+sc);
             end
         end
     end
@@ -176,12 +176,12 @@ for FRAME_CNT = 1:NUM_FRAMES
     
     
     for pp = 1:V
-        %ansbit(pp,:) = ldpcDecoder(datar(:,pp));
-        datar(:,pp) = randdeintrlv(datar(:,pp),st2);
-        ansbit(pp,:) = nrPolarDecode(datar(:,pp),512,1024,32,10,false,11);
+        ansbit(pp,:) = ldpcDecoder(datar(:,pp));
+        %datar(:,pp) = randdeintrlv(datar(:,pp),st2);
+        %ansbit(pp,:) = nrPolarDecode(datar(:,pp),512,1024,32,10,false,11);
     end  
     
-    err        = sum(xor(A(:,1:512-crcLen)', double(ansbit(:,1:512-crcLen)')));    
+    err        = sum(xor(A', double(ansbit')));    
     
 %     if err >= 1
 %         bler_flag = 1;

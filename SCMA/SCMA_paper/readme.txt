@@ -49,6 +49,57 @@
 0329 correct version  SCMA-OFDM-(1024-512)coded polar code   16subcarriers + CRC-11 + randinterleaver + list32
 
 10db: 
+
+
+12db:0.0099,0.0228
+14db:0.002051257621951,0.004634146341463
+16db:0.000431,0.000956
+
+=========
+
+***3users-BPSK-GDMA-OFDM + polarcode(1024,512)  16subcarriers + CRC-11 + randinterleaver + list32
+
+OFDM-GDMA-BPSK system
+
+(1024,502) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10 + Interleaver
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 3
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 3.408817e-01, BLER = 7.058138e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 2.412668e-01, BLER = 5.039147e-01
+
+SNR[dB] =  8.0,
+Block# = 2001, BER = 1.352903e-01, BLER = 2.876895e-01
+
+SNR[dB] =  10.0,
+Block# = 2800, BER = 5.497676e-02, BLER = 1.191667e-01
+
+SNR[dB] =  12.0,
+Block# = 11110, BER = 1.360092e-02, BLER = 3.003300e-02
+
+SNR[dB] =  14.0,
+Block# = 55776, BER = 2.701650e-03, BLER = 5.982262e-03
+
+SNR[dB] =  16.0,
+Block# = 369489, BER = 4.042445e-04, BLER = 9.030490e-04
+
+SNR[dB] =  18.0,
+Block# = 1435826, BER = 5.037658e-05, BLER = 1.146844e-04
+
+
 ====
 
 0329 SCMA with doppler fdt = 0.1 + 20481024ldpc

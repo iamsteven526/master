@@ -67,6 +67,8 @@
 0.db:0.2571,0.9400
 
 
+14db:0.000618,0.0032
+
 ================
 
 ***3users-BPSK-GDMA-OFDM + polarcode(1024,512)  16subcarriers + CRC-11 + randinterleaver + list32

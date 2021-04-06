@@ -192,5 +192,7 @@ for FRAME_CNT = 1:NUM_FRAMES
     C_BER = C_BER + sum(err);
      C_BLER = C_BLER + bler_flag;
 end
-BER = C_BER/(NUM_BIT*6*NUM_FRAMES);
-BLER = C_BLER/(6*NUM_FRAMES);
+
+
+
+

@@ -239,7 +239,7 @@ int main()
 			if (CE_SCHEME == 1) printf("Block# = %d, BER = %e\r", block, ber[i]); 
 			else printf("Block# = %d, BER = %e, MSE = %e, MSE_centroid = %e,iteration = %e\r", block, ber[i], mse[i] / (double)(NUM_USER * block), mse_centroid[i] / (double)(NUM_LEVEL * block), itCount[i]/(double)(block));
 			
-			if (error > 10000 && block>10000)
+			if (error > 10000 && block>500000)
 				break;
 		}
 		mse[i] /= (double)(NUM_USER* block);

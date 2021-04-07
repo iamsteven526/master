@@ -13,7 +13,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				0									// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				1									// 0: cluster-based, 1: ideal
 
 #define		INI_METHOD				2									// 0: LBG, 1: k-means++, 2: modified k-means++
 
@@ -23,7 +23,7 @@
 
 #define		EM_GMM					1									// EM clustering with Gaussian mixture model; 1: enable, 0: disable
 
-#define		PROPOSAL				1									// 0: original,1: proposal-1, 2: proposal-2
+#define		PROPOSAL				2									// 0: original,1: proposal-1, 2: proposal-2
 
 //---------- synchronization ----------
 
@@ -58,11 +58,11 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				230
 
-#define		BLOCK_NUM				2000							// number of blocks to be simulated
+#define		BLOCK_NUM				500000							// number of blocks to be simulated
 #define		BLOCK_LEN				2048 							// number of symbols in a block
 
-#define		SNR_NUM					9									// number of SNR points to be simulated
-#define		SNR_START				0									// in dB
+#define		SNR_NUM					4									// number of SNR points to be simulated
+#define		SNR_START				40									// in dB
 #define		SNR_STEP				5									// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

@@ -51,6 +51,8 @@ Block length: 8192
 Synchronous system
 
 -
+SNR[dB] = 0.0
+Block# = 203, BER = 2.454876e-01,BLER = 1.000000e+00, MSE = 4.435702e-02, MSE_centroid = 0.000000e+00,iteration = 2.462889e-01
 
 SNR[dB] = 5.0
 Block# = 10001, BER = 1.426397e-01,BLER = 1.000000e+00, MSE = 1.344082e-02, MSE_centroid = 0.000000e+00,iteration = 4.000400e+04

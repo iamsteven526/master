@@ -3,7 +3,7 @@
 #include <vector>
 //---------- system ----------
 
-#define		NUM_USER				3									// number of users
+#define		NUM_USER				4									// number of users
 #define		NUM_LEVEL				( 1 << NUM_USER )					// number of levels of superimposed signal
 
 #define		DIFF_ENC				0									// differential encoding; 1: enable, 0: disable
@@ -23,7 +23,7 @@
 
 #define		EM_GMM					1									// EM clustering with Gaussian mixture model; 1: enable, 0: disable
 
-#define		PROPOSAL				2									// 0: original,1: proposal-1, 2: proposal-2
+#define		PROPOSAL				1									// 0: original,1: proposal-1, 2: proposal-2
 
 //---------- synchronization ----------
 
@@ -59,10 +59,10 @@
 #define		LLR_LIMIT				230
 
 #define		BLOCK_NUM				505000						// number of blocks to be simulated
-#define		BLOCK_LEN				2048							// number of symbols in a block
+#define		BLOCK_LEN				256							// number of symbols in a block
 
 #define		SNR_NUM					5									// number of SNR points to be simulated
-#define		SNR_START				40									// in dB
+#define		SNR_START				10									// in dB
 #define		SNR_STEP			    5									// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

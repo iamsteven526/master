@@ -1,0 +1,96 @@
+﻿  cluster_ce.cpp
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(114,72): warning C4244:  '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(114,92): warning C4244:  '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(120,36): warning C4244:  '=': 將 '_Ty' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(120,36): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(120,36): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(120,36): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(120,36): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(124,36): warning C4244:  '=': 將 '_Ty' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(124,36): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(124,36): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(124,36): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(124,36): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(131,44): warning C4244:  '=': 將 '_Ty' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(131,44): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(131,44): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(131,44): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(131,44): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(172,72): warning C4244:  '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(172,92): warning C4244:  '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(236,71): warning C4244:  '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(236,91): warning C4244:  '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(425,28): warning C4244:  '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(685,14): warning C4244:  '正在初始化': 將 '_Ty' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(685,14): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(685,14): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(685,14): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(685,14): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:  '引數': 將 '_Ty' 轉換為 'const _Ty'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:         and
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:             _Ty=int
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(688,41): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:  '引數': 將 '_Ty' 轉換為 'const _Ty'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:         and
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:             _Ty=int
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(689,55): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(690,69): warning C4244:  '引數': 將 '_Ty' 轉換為 'const unsigned __int64'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(690,69): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(690,69): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(690,69): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(690,69): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(691,69): warning C4244:  '引數': 將 '_Ty' 轉換為 'const unsigned __int64'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(691,69): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(691,69): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(691,69): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(691,69): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(789,14): warning C4244:  '正在初始化': 將 '_Ty' 轉換為 'int'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(789,14): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(789,14): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(789,14): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(789,14): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:  '引數': 將 '_Ty' 轉換為 'const _Ty'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:         and
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:             _Ty=int
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(792,41): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:  '引數': 將 '_Ty' 轉換為 'const _Ty'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:         and
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:             _Ty=int
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(793,55): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(794,69): warning C4244:  '引數': 將 '_Ty' 轉換為 'const unsigned __int64'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(794,69): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(794,69): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(794,69): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(794,69): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(795,69): warning C4244:  '引數': 將 '_Ty' 轉換為 'const unsigned __int64'，由於類型不同，可能導致資料遺失
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(795,69): warning C4244:         with
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(795,69): warning C4244:         [
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(795,69): warning C4244:             _Ty=double
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(795,69): warning C4244:         ]
+C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\cluster_ce.cpp(969,27): warning C4244:  '正在初始化': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+  正在產生程式碼
+  1 of 614 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
+  已完成程式碼產生
+  Project1.vcxproj -> C:\Users\wsxcc\OneDrive\桌面\simulation\MLDT_uncoded_bpsk_mod2\x64\Release\Project1.exe

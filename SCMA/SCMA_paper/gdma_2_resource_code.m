@@ -16,7 +16,7 @@ V = 3; % user
 N = 2048; % SCMA signals in frame
 M = 2; % BPSK = 2 QPSK = 4 ....
 R = 0.5;  %code rate
-EbN0 = 12.5:2.5:12.5;
+EbN0 = 6:2:6;
 SNR  = EbN0 + 10*log10(2*R*log2(M));
 
 Nerr  = zeros(V, length(SNR));
@@ -24,7 +24,7 @@ Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
 maxNumErrs = 200000;
-maxNumBits = 6e6;
+maxNumBits = 6e5;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder(B);
 ldpcEncoder = comm.LDPCEncoder(B);
@@ -47,9 +47,17 @@ for k = 1:length(SNR)
         
         h = 1/sqrt(2)*(randn(V, N)+1j*randn(V, N)); % Rayleigh channel
         %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1));
-        for pp = 1:2
-            for qq = 1:N/2
-                h(:,(pp-1)*N/2+qq) = h(:,(pp-1)*N/2+1);
+        popo = 64
+        
+        
+        
+        
+        
+        
+        ;
+        for pp = 1:popo
+            for qq = 1:N/popo
+                h(:,(pp-1)*N/popo+qq) = h(:,(pp-1)*N/popo+1);
             end
         end
         for pp = 1:V

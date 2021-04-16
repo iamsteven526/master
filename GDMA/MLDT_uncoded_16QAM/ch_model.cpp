@@ -22,11 +22,11 @@ void EnergyProfile(double **chCoef)
 	}
 }
 
-void MultipleAccessChannel(double stdDev, double **chCoef, double **tx, double **rx,double **pilot, int *known_drift)
+void MultipleAccessChannel(double stdDev, double **chCoef, double ***tx, double **rx,double **pilot, int *known_drift)
 {
 	int effLen;
 	if(COLLISION)
-		effLen = SYNCHRONOUS ? BLOCK_LEN : BLOCK_LEN * UP_RATE * SPREAD_LEN;
+		effLen = SYNCHRONOUS ? BLOCK_LEN/ MOD_LEVEL : BLOCK_LEN * UP_RATE * SPREAD_LEN/ MOD_LEVEL;
 	else
 		effLen = SYNCHRONOUS ? known_drift[NUM_USER-1]+BLOCK_LEN : (known_drift[NUM_USER - 1] + BLOCK_LEN ) * UP_RATE * SPREAD_LEN;
 
@@ -36,17 +36,11 @@ void MultipleAccessChannel(double stdDev, double **chCoef, double **tx, double *
 		rx[i][1] = stdDev * normal(generator); // imaginary
 		for (int nuser = 0; nuser < NUM_USER; nuser++)
 		{
-			if (!SYNCHRONOUS)
-			{
-				rx[i][0] += tx[nuser][i] * chCoef[nuser][0] - (Power_Ratio) / (1 - Power_Ratio) * pilot[nuser][i] * chCoef[nuser][1];
-				rx[i][1] += tx[nuser][i] * chCoef[nuser][1] + (Power_Ratio) / (1 - Power_Ratio) * pilot[nuser][i] * chCoef[nuser][0];
-			}
-			else
-			{
-				rx[i][0] += tx[nuser][i] * chCoef[nuser][0];
-				rx[i][1] += tx[nuser][i] * chCoef[nuser][1];
-			}
-			tx[nuser][i] = 0;
+			rx[i][0] += tx[nuser][i][0] * chCoef[nuser][0] - tx[nuser][i][1] * chCoef[nuser][1];
+			rx[i][1] += tx[nuser][i][0] * chCoef[nuser][1] + tx[nuser][i][1] * chCoef[nuser][0];
+
+			tx[nuser][i][0] = 0;
+			tx[nuser][i][1] = 0;
 		}
 	}
 }

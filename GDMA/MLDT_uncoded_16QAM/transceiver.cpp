@@ -8,7 +8,7 @@ using namespace std;
 
 void Modulator(int *data, double *tx, int known_drift);
 
-void Transmitter(int** data, double* preTx, double** tx, double* txFilter,double *rxFilter,double **pilot,double *prePilot, int *known_drift)
+void Transmitter(int** data, double* preTx, double*** tx, double* txFilter,double *rxFilter,double **pilot,double *prePilot, int *known_drift)
 {
 	// known_drift is the bonder of each range
 	
@@ -43,7 +43,7 @@ void Transmitter(int** data, double* preTx, double** tx, double* txFilter,double
 			scrambler(data[nuser]);
 
 		Modulator(data[nuser], tx[nuser], known_drift[nuser]);
-		
+		/*
 		if (!SYNCHRONOUS)
 		{
 			random_device seed;
@@ -53,10 +53,11 @@ void Transmitter(int** data, double* preTx, double** tx, double* txFilter,double
 			SRRCGeneration(txFilter, uniform(generator));
 			PulseShaping(preTx, tx[nuser], txFilter, rxFilter, prePilot, pilot[nuser]);
 		}
+		*/
 	}
 }
 
-void Modulator(int *data, double *tx, int known_drift)
+void Modulator(int *data, double **tx, int known_drift)//16QAm
 {
 	//cout << "mo" << endl;
 	if (COLLISION)
@@ -64,10 +65,43 @@ void Modulator(int *data, double *tx, int known_drift)
 		if (SYNCHRONOUS)
 		{
 			if (DIFF_ENC) data[0] = 0;
-			for (int i = 0; i < BLOCK_LEN; i++)
+			for (int i = 0; i < BLOCK_LEN / MOD_LEVEL; i++)
 			{
-				tx[i] = 1 - 2 * data[i];
+				if (data[4*i] == 0 && data[4*i+1] == 0 &&data[4*i+2] == 0 &&data[4*i+3] == 0) tx[i][0] = -0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 0 &&data[4*i+2] == 0 &&data[4*i+3] == 1) tx[i][0] = -0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 0 &&data[4*i+2] == 1 &&data[4*i+3] == 0) tx[i][0] = 0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 0 &&data[4*i+2] == 1 &&data[4*i+3] == 1) tx[i][0] = 0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 1 &&data[4*i+2] == 0 &&data[4*i+3] == 0) tx[i][0] = -0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 1 &&data[4*i+2] == 0 &&data[4*i+3] == 1) tx[i][0] = -0.31622;
+				else if (data[4*i] == 0 && data[4*i+1] == 1 &&data[4*i+2] == 1 &&data[4*i+3] == 0) tx[i][0] = 0.31622;
+				else if (data[4*i] == 0 && data[4*i+1] == 1 &&data[4*i+2] == 1 &&data[4*i+3] == 1) tx[i][0] = 0.94868;
+				else if (data[4*i] == 1 && data[4*i+1] == 0 &&data[4*i+2] == 0 &&data[4*i+3] == 0) tx[i][0] = -0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 0 &&data[4*i+2] == 0 &&data[4*i+3] == 1) tx[i][0] = -0.94868;
+				else if (data[4*i] == 1 && data[4*i+1] == 0 &&data[4*i+2] == 1 &&data[4*i+3] == 0) tx[i][0] = 0.94868;
+				else if (data[4*i] == 1 && data[4*i+1] == 0 &&data[4*i+2] == 1 &&data[4*i+3] == 1) tx[i][0] = 0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 1 &&data[4*i+2] == 0 &&data[4*i+3] == 0) tx[i][0] = -0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 1 &&data[4*i+2] == 0 &&data[4*i+3] == 1) tx[i][0] = -0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 1 &&data[4*i+2] == 1 &&data[4*i+3] == 0) tx[i][0] = 0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 1 &&data[4*i+2] == 1 &&data[4*i+3] == 1) tx[i][0] = 0.31622;
+
+				if (data[4*i] == 0 && data[4*i+1] == 0 &&data[4*i+2] == 0 &&data[4*i+3] == 0) tx[i][1] = 0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 0 &&data[4*i+2] == 0 &&data[4*i+3] == 1) tx[i][1] = -0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 0 &&data[4*i+2] == 1 &&data[4*i+3] == 0) tx[i][1] = 0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 0 &&data[4*i+2] == 1 &&data[4*i+3] == 1) tx[i][1] = -0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 1 &&data[4*i+2] == 0 &&data[4*i+3] == 0) tx[i][1] = 0.31622;
+				else if (data[4*i] == 0 && data[4*i+1] == 1 &&data[4*i+2] == 0 &&data[4*i+3] == 1) tx[i][1] = -0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 1 &&data[4*i+2] == 1 &&data[4*i+3] == 0) tx[i][1] = 0.94868;
+				else if (data[4*i] == 0 && data[4*i+1] == 1 &&data[4*i+2] == 1 &&data[4*i+3] == 1) tx[i][1] = -0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 0 &&data[4*i+2] == 0 &&data[4*i+3] == 0) tx[i][1] = 0.94868;
+				else if (data[4*i] == 1 && data[4*i+1] == 0 &&data[4*i+2] == 0 &&data[4*i+3] == 1) tx[i][1] = -0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 0 &&data[4*i+2] == 1 &&data[4*i+3] == 0) tx[i][1] = 0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 0 &&data[4*i+2] == 1 &&data[4*i+3] == 1) tx[i][1] = -0.94868;
+				else if (data[4*i] == 1 && data[4*i+1] == 1 &&data[4*i+2] == 0 &&data[4*i+3] == 0) tx[i][1] = 0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 1 &&data[4*i+2] == 0 &&data[4*i+3] == 1) tx[i][1] = -0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 1 &&data[4*i+2] == 1 &&data[4*i+3] == 0) tx[i][1] = 0.31622;
+				else if (data[4*i] == 1 && data[4*i+1] == 1 &&data[4*i+2] == 1 &&data[4*i+3] == 1) tx[i][1] = -0.31622;
 			}
+			/*
 			if (DIFF_ENC)
 			{
 				for (int i = 1; i < BLOCK_LEN; i++)
@@ -75,7 +109,9 @@ void Modulator(int *data, double *tx, int known_drift)
 					tx[i] *= tx[i - 1];
 				}
 			}
+			*/
 		}
+		/*
 		else
 		{
 			int spread_code[SPREAD_LEN] = { 0,0,1,1,0,1,1 };
@@ -101,7 +137,9 @@ void Modulator(int *data, double *tx, int known_drift)
 				}
 			}
 		}
+		*/
 	}
+	/*
 	else
 	{
 		vector<double> temp_tx(BLOCK_LEN);
@@ -123,6 +161,7 @@ void Modulator(int *data, double *tx, int known_drift)
 			tx[i + known_drift] = temp_tx[i];
 		}
 	}
+	*/
 }
 
 void Detector(int **data, double **appLlr, int ***trellis, double **alpha, double **beta, double ***gamma, long double &error, int *known_drift)

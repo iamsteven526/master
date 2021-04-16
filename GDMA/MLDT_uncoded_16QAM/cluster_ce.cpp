@@ -14,10 +14,10 @@ void Clustering(double **rx, double **centroid, int **group, int *groupSize, dou
 	int count = 0;
 		
 	//---- generater paired samples
-	for (int i = 0; i < BLOCK_LEN; i++)
+	for (int i = 0; i < BLOCK_LEN / MOD_LEVEL; i++)
 	{
-		rx[i + BLOCK_LEN][0] = -rx[i][0];
-		rx[i + BLOCK_LEN][1] = -rx[i][1];
+		rx[i + BLOCK_LEN / MOD_LEVEL][0] = -rx[i][0];
+		rx[i + BLOCK_LEN / MOD_LEVEL][1] = -rx[i][1];
 	}
 
 		
@@ -28,16 +28,16 @@ void Clustering(double **rx, double **centroid, int **group, int *groupSize, dou
 		if (reset)
 		{
 			if (PROPOSAL == 0)
-				InitialSeeding(rx, centroid, group, groupSize, distList, variance, NUM_USER, GROUP_SIZE, BLOCK_LEN);
+				InitialSeeding(rx, centroid, group, groupSize, distList, variance, NUM_USER*MOD_LEVEL, GROUP_SIZE, BLOCK_LEN / MOD_LEVEL);
 			else
-				InitialSeeding(rx, centroid, group, groupSize, distList, variance, NUM_USER, GROUP_SIZE, 2 * BLOCK_LEN);
+				InitialSeeding(rx, centroid, group, groupSize, distList, variance, NUM_USER*MOD_LEVEL, GROUP_SIZE, 2 * BLOCK_LEN / MOD_LEVEL);
 			reset = false;
 		}
 
 		if (PROPOSAL == 0)
-			Grouping(rx, centroid, group, groupSize, NUM_USER, GROUP_SIZE, BLOCK_LEN);
+			Grouping(rx, centroid, group, groupSize, NUM_USER*MOD_LEVEL, GROUP_SIZE, BLOCK_LEN / MOD_LEVEL);
 		else
-			Grouping(rx, centroid, group, groupSize, NUM_USER, GROUP_SIZE, 2 * BLOCK_LEN);
+			Grouping(rx, centroid, group, groupSize, NUM_USER*MOD_LEVEL, GROUP_SIZE, 2 * BLOCK_LEN / MOD_LEVEL);
 		CentroidRenewal(rx, centroid, group, groupSize, variation, GROUP_SIZE);
 			
 		bool convergence = true;
@@ -213,14 +213,14 @@ void Clustering(double **rx, double **centroid, int **group, int *groupSize, dou
 							break;
 						}
 					}
-					if (EM_GMM) EMClustering(rx, centroid, softAssign, variance, 2 * BLOCK_LEN, GROUP_SIZE);
+					if (EM_GMM) EMClustering(rx, centroid, softAssign, variance, 2 * BLOCK_LEN / MOD_LEVEL, GROUP_SIZE);
 					CoefEstimation(centroid, estimate, variance, reset);
 					return;
 				}
 
 				if (!reset)
 				{
-					if (EM_GMM) EMClustering(rx, centroid, softAssign, variance, 2 * BLOCK_LEN, GROUP_SIZE);
+					if (EM_GMM) EMClustering(rx, centroid, softAssign, variance, 2 * BLOCK_LEN / MOD_LEVEL, GROUP_SIZE);
 					CoefEstimation(centroid, estimate, variance, reset);
 
 					if (!reset)
@@ -281,7 +281,7 @@ void Clustering(double **rx, double **centroid, int **group, int *groupSize, dou
 				//---- count is the reset times 
 				if (!reset || count > 100)
 				{
-					if (EM_GMM) EMClustering(rx, centroid, softAssign, variance, 2 * BLOCK_LEN, GROUP_SIZE);
+					if (EM_GMM) EMClustering(rx, centroid, softAssign, variance, 2 * BLOCK_LEN / MOD_LEVEL, GROUP_SIZE);
 					CoefEstimation(centroid, estimate, variance, reset);
 
 					return;
@@ -391,7 +391,7 @@ void InitialSeeding(double **rx, double **centroid, int **group, int *groupSize,
 	else
 	{
 		printf("\nPARAMETER SETTING IS WRONG\n");
-		system("pause");
+		//system("pause");
 	}
 
 }
@@ -423,7 +423,7 @@ void Check_initial(double** rx, double** centroid, int** group, int* groupSize, 
 		int count = 0;
 
 		int min = 0, max = 0;
-		int max_val = 0, min_val = 1e10;
+		int max_val = 0, min_val = 1e8;
 		for (int i = 0; i < GROUP_SIZE; i++)
 		{
 			if (groupSize[i] < min_val)
@@ -643,15 +643,10 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 {
 	int num_level = NUM_LEVEL;
 	int num_user = NUM_USER;
-	double MAXx = 0;
-	double SecondMAXx = 0;
-    double MAXy = 0;
-	double SecondMAXy = 0;
-	int FirstMAX = 0;
-	int SecondMAX = 0;
-	double x1,x2,y1,y2;
-	double xx1,xx2,yy1,yy2;
-	double mina=100,minb=100;
+	double FirstMAX = 0;
+	double FirstMAXx , FirstMAXy;
+	double now = 0;
+	
 	int pass = 0;
 	double check_thres = sqrt(variance);
 	//double checka = 0.1*sqrt(1.0/variance);
@@ -687,156 +682,28 @@ void CoefEstimation(double** centroid, double** estimate, double variance, bool&
 		if (reset && (pass == 0))
 			break;
         pass = 1;
-        for(int i = 0; i < num_level/2; ++i){ //0816add
-			sup_centroid[pair[i][0]][0] = (-1)*sup_centroid[pair[i][1]][0];
-            sup_centroid[pair[i][0]][1] = (-1)*sup_centroid[pair[i][1]][1];
+		for (int i = 0; i < num_level; i++){
+            now = pow(sup_centroid[i][0],2) + pow(sup_centroid[i][1],2);
+			if(now > FirstMAX){
+				FirstMAX = max(FirstMAX,now);
+				FirstMAXx = sup_centroid[i][0];
+				FirstMAXy = sup_centroid[i][1];
+			}
+			
 		}
+        
 
-		if (num_level != 2)
-		{
-			for (int i = 0; i < num_level; i++){ //find max from x-axis
-                if(sup_centroid[i][0] > MAXx){
-					MAXx = sup_centroid[i][0];
-                    FirstMAX = i;
-				}
-			}
-			for (int i = 0; i < num_level; i++){ //find secondmax from x-axis
-                if((sup_centroid[i][0] > SecondMAXx) && (i != FirstMAX)){// && abs(sup_centroid[i][0]-MAXx) > 0.00005){
-					SecondMAXx = sup_centroid[i][0];
-                    SecondMAX = i;
-				}
-			}
-			estimate[nuser][0] = (sup_centroid[FirstMAX][0] - sup_centroid[SecondMAX][0]) / 2.0;
-			estimate[nuser][1] = (sup_centroid[FirstMAX][1] - sup_centroid[SecondMAX][1]) / 2.0;
-            vector<vector<double>> temp(num_level / 2, vector<double>(2));
-			for (int j = 0; j < num_level / 2; j++){
-				int canfind = 0;
-				for (int k = 0; k < num_level; k++){
-                    x1 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
-					y1 = (sup_centroid[pair[j][0]][1] + sup_centroid[k][1]) / 2.0;
-					xx1 = (x1-estimate[nuser][0])*(x1-estimate[nuser][0]);
-					yy1 = (y1-estimate[nuser][1])*(y1-estimate[nuser][1]);
-					xx2 = (x1+estimate[nuser][0])*(x1+estimate[nuser][0]);
-					yy2 = (y1+estimate[nuser][1])*(y1+estimate[nuser][1]);
-					mina = min(mina,xx1+yy1);
-					minb = min(minb,xx2+yy2);
-					//cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
-					//x2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
-					//y2 = (sup_centroid[pair[j][0]][0] + sup_centroid[k][0]) / 2.0;
-					/*
-					if( (abs(x1-estimate[nuser][0]) < 1.2*check_thres) && (abs(y1-estimate[nuser][1]) < 1.2*check_thres) ){ //think threshold
-					    //cout << abs(x1-estimate[nuser][0]) << "  " << abs(y1-estimate[nuser][1]) << endl;
-						temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
-					    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
-						canfind = 1;
-						break;
-					}
-					*/
-				}
-				if(minb < mina){
-				    temp[j][0] = sup_centroid[pair[j][1]][0] - estimate[nuser][0];
-					temp[j][1] = sup_centroid[pair[j][1]][1] - estimate[nuser][1];
-					//temp[j][0] = sup_centroid[pair[j][0]][0] + estimate[nuser][0];
-				    //temp[j][1] = sup_centroid[pair[j][0]][1] + estimate[nuser][1];
-				}
-				else{
-				    temp[j][0] = sup_centroid[pair[j][0]][0] - estimate[nuser][0];
-				    temp[j][1] = sup_centroid[pair[j][0]][1] - estimate[nuser][1];
-				}
-				mina = 1000;
-				minb = 1000;
-				/*
-				for (int p = 0; p < j; ++p){
-					if(sqrt((temp[j][0]-temp[p][0])*(temp[j][0]-temp[p][0]) + (temp[j][1]-temp[p][1])*(temp[j][1]-temp[p][1])) < check_thres){
-					//if(((abs(temp[j][0]-temp[p][0]) < checkb*check_thres) && (abs(temp[j][1]-temp[p][1]) < checka*check_thres) ) || ((abs(temp[j][0]-temp[p][0]) < checka*check_thres) && (abs(temp[j][1]-temp[p][1]) < checkb*check_thres))){
-						temp[j][0] = -temp[j][0];
-						temp[j][1] = -temp[j][1];
-					}
-				}
-				*/
-			}
-            for (int j = 0; j < num_level / 2; j++){
-				for (int k = 0; k < 2; k++){
-					sup_centroid[j][k] = temp[j][k];
-				}
-			}
-			num_level /= 2;
-			MAXx = 0;
-			SecondMAXx = 0;
-			FirstMAX = 0;
-			SecondMAX = 0;
-			/*
-			//---find channel coefficient
-			for (int i = 0; i < pow(2, num_level / 2); i++)
-			{
-				//--- list all state of pair arrangement
-				int reg = i;
-				for (int j = 0; j < num_level / 2; j++)
-				{
-					int num = pair[j][reg % 2];
-					group_centroid[0] += sup_centroid[num][0];
-					group_centroid[1] += sup_centroid[num][1];
-					pair_num_.push_back(pair[j][reg % 2]);
-					inverse_pair_num_.push_back(pair[j][(reg + 1) % 2]);
-					inverse_group_centroid[0] += sup_centroid[pair[j][(reg + 1) % 2]][0];
-					inverse_group_centroid[1] += sup_centroid[pair[j][(reg + 1) % 2]][1];
+			//sup_centroid[pair[i][0]][0] = (-1)*sup_centroid[pair[i][1]][0];
+            //sup_centroid[pair[i][0]][1] = (-1)*sup_centroid[pair[i][1]][1];
+		
 
-					reg = reg / 2;
-				}
-				group_centroid[0] /= num_level / 2; group_centroid[1] /= num_level / 2;
-				inverse_group_centroid[0] /= num_level / 2; inverse_group_centroid[1] /= num_level / 2;
-
-				//---check symmtric
-				vector<vector<double>> pair_(num_level / 4);
-				pair_ = pair_seq(sup_centroid, num_level / 2, mse, group_centroid, pair_num_);
-
-				//--- Derive correct chCoef
-				if (variance > mse)
-				{
-					vector<vector<double>> temp(num_level / 2, vector<double>(2));
-
-					for (int j = 0; j < num_level / 2; j++)
-					{
-						temp[j][0] = (sup_centroid[pair_num_[j]][0] - group_centroid[0] - (sup_centroid[inverse_pair_num_[j]][0] - inverse_group_centroid[0])) / 2;
-						temp[j][1] = (sup_centroid[pair_num_[j]][1] - group_centroid[1] - (sup_centroid[inverse_pair_num_[j]][1] - inverse_group_centroid[1])) / 2;
-					}
-
-					for (int j = 0; j < num_level / 2; j++)
-						for (int k = 0; k < 2; k++)
-							sup_centroid[j][k] = temp[j][k];
-
-					estimate[nuser][0] = (group_centroid[0] - inverse_group_centroid[0]) / 2;
-					estimate[nuser][1] = (group_centroid[1] - inverse_group_centroid[1]) / 2;
-					num_level /= 2;
-					break;
-				}
-
-				if (variance < mse && i + 1 == pow(2, num_level / 2))
-				{
-					//cout << "*";
-					reset = 1;
-					break;
-					//	cout << "camn't find symmetric centroid";
-					//	system("pause");
-
-
-				}
-				//---clear previous state
-				pair_num_.clear();
-				inverse_pair_num_.clear();
-				group_centroid[0] = 0; group_centroid[1] = 0;
-				inverse_group_centroid[0] = 0; inverse_group_centroid[1] = 0;
-
-				//system("pause");
-			}*/
-		}
-		else
-		{
-			estimate[nuser][0] = (sup_centroid[0][0] - sup_centroid[1][0]) / 2;
-			estimate[nuser][1] = (sup_centroid[0][1] - sup_centroid[1][1]) / 2;
-			reset = 0;
-		}
+		
+		estimate[nuser][0] = ((FirstMAXx * 0.94868) + (FirstMAXy * 0.94868)) / 1.8; //(sup_centroid[0][0] - sup_centroid[1][0]) / 2;
+		estimate[nuser][1] = ((FirstMAXy * 0.94868) - (FirstMAXx * 0.94868)) / 1.8;//(sup_centroid[0][1] - sup_centroid[1][1]) / 2;
+		reset = 0;
+		
 		//cout << estimate[nuser][0] << "  " << estimate[nuser][1] << endl;
+		//reset = 90;
 	}
 }
 
@@ -940,10 +807,9 @@ vector<vector<double>> CoefEstimation_(double** centroid, double** estimate, dou
 
 void MSEComparison(double **chCoef, double **estimate, double &mse,double **rx,double **centroid, int*known_drift)
 {
-	unordered_set<int> map;
 	double temp[NUM_USER][2] = { 0 };
 
-	double min_value;
+	double min_value , reg , pp , test;
 	int min_tr;
 
 
@@ -953,49 +819,39 @@ void MSEComparison(double **chCoef, double **estimate, double &mse,double **rx,d
 		//cout << "fake:" << estimate[i][0] << "   " << estimate[i][1] << endl;
 		min_value = 1000;
 		min_tr = 0;
-		for (int j = 1; j <= NUM_USER; j++)
-		{
-			if (map.count(j))
-				continue;
-			double reg1 = pow(chCoef[i][0] - estimate[j - 1][0], 2) + pow(chCoef[i][1] - estimate[j - 1][1], 2);
-			double reg2 = pow(chCoef[i][0] + estimate[j - 1][0], 2) + pow(chCoef[i][1] + estimate[j - 1][1], 2);
+		for (int j = 0; j < 4; ++j){
+			if(j == 0) reg = pow(chCoef[i][0] - estimate[i][0], 2) + pow(chCoef[i][1] - estimate[i][1], 2);
+			else if(j == 1) reg = pow(chCoef[i][0] + estimate[i][0], 2) + pow(chCoef[i][1] + estimate[i][1], 2);
+			else if(j == 2) reg = pow(chCoef[i][0] - estimate[i][1], 2) + pow(chCoef[i][1] + estimate[i][0], 2);
+		    else if(j == 3) reg = pow(chCoef[i][0] + estimate[i][1], 2) + pow(chCoef[i][1] - estimate[i][0], 2);
 
-			if (reg1 < reg2)
-			{
-				if (reg1 < min_value)
-				{
-					min_value = reg1;
-					min_tr = j;
-				}
-			}
-			else
-			{
-				if (reg2 < min_value)
-				{
-					min_value = reg2;
-					min_tr = -j;
-				}
+			if(reg < min_value){
+				min_tr = j;
+				min_value = reg;
+				test = (pow(chCoef[i][0],2) + pow(chCoef[i][1],2))/ (pow(estimate[i][0],2) + pow(estimate[i][1],2));
 			}
 		}
-	
-		map.insert(min_tr > 0 ? min_tr : -min_tr);
-		temp[i][0] = min_tr > 0 ? estimate[min_tr - 1][0] : -estimate[-min_tr - 1][0];
-		temp[i][1] = min_tr > 0 ? estimate[min_tr - 1][1] : -estimate[-min_tr - 1][1];
-		mse += 0.5*min_value;
-	}
-	
-	/*if (min_value > 0.01)
-	{
-		cout << min_value;
-		printdata(rx, estimate, chCoef, centroid);
-	}*/
-	for (int i = 0; i < NUM_USER; i++)
-	{
-		estimate[i][0] = temp[i][0];
-		estimate[i][1] = temp[i][1];
-		//cout << "fakenew:" << estimate[i][0] << "   " << estimate[i][1] << endl;
-	}
 
+        if(min_tr == 1){
+			estimate[i][0] = -estimate[i][0];
+			estimate[i][1] = -estimate[i][1];
+		}
+		else if(min_tr == 2){
+			pp = estimate[i][1];
+			estimate[i][1] = -estimate[i][0];
+			estimate[i][0] = pp;			
+		}
+		else if(min_tr == 3){
+			pp = -estimate[i][1];
+			estimate[i][1] = estimate[i][0];	
+			estimate[i][0] = pp;		
+		}
+		estimate[i][0] /= 0.9935;
+		estimate[i][1] /= 0.9935;
+		//cout << "real:" << chCoef[i][0] << "   " << chCoef[i][1] << endl;
+		//cout << "fake:" << estimate[i][0] << "   " << estimate[i][1] << endl;	
+		mse += test;
+	}
 }
 
 bool ConditionCheck(double **centroid, int *groupSize, int &count, int CLUSTER_GROUP)

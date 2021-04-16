@@ -3,8 +3,9 @@
 #include <vector>
 //---------- system ----------
 
-#define		NUM_USER				4									// number of users
-#define		NUM_LEVEL				( 1 << NUM_USER )					// number of levels of superimposed signal
+#define		NUM_USER				1									// number of users
+#define     MOD_LEVEL               4                                   //16QAM
+#define		NUM_LEVEL				( 1 << (MOD_LEVEL*NUM_USER) )		        // number of levels of superimposed signal
 
 #define		DIFF_ENC				0									// differential encoding; 1: enable, 0: disable
 #define		DIFF_RX_SCHEME			0									// 0: differential decoding, 1: BCJR algo.
@@ -62,15 +63,15 @@
 #define		BLOCK_LEN				256							// number of symbols in a block
 
 #define		SNR_NUM					5									// number of SNR points to be simulated
-#define		SNR_START				10									// in dB
+#define		SNR_START				30									// in dB
 #define		SNR_STEP			    5									// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )
 
 //--------------------
 
-void	Transmitter(int **data, double *preTx, double **tx, double *txFilter, double *rxFilter, double** pilot, double* prePilot, int *known_drift);
-void	Modulator(int *data, double *tx, int known_drift);
+void	Transmitter(int **data, double *preTx, double ***tx, double *txFilter, double *rxFilter, double** pilot, double* prePilot, int *known_drift);
+void	Modulator(int *data, double **tx, int known_drift);
 void	Detector(int **data, double **appLlr, int ***trellis, double **alpha, double **beta, double ***gamma, long double &error, int *known_drift);
 void	DiffDecoding(double *appLlr, int known_drift);
 
@@ -85,9 +86,9 @@ void	BCJR(int ***trellis, double *rxLlr, double *appLlr, double **alpha, double 
 double	LogMaxFunction(double x, double y);
 
 void	EnergyProfile(double **chCoef);
-void	MultipleAccessChannel(double stdDev, double **chCoef, double **tx, double **rx, double **pilot, int *known_drift);
+void	MultipleAccessChannel(double stdDev, double **chCoef, double ***tx, double **rx, double **pilot, int *known_drift);
 
-void	MLDT(double variance, double **chCoef, double **rx, double **app, double **appLlr, double **estimate, int *known_drift);
+void	MLDT(double variance, double **chCoef, double **rx, double **app, double **appLlr, double **estimate, int *known_drift, std::vector<std::vector<double>> map_16QAM);
 
 void	Clustering(double **rx, double **centroid, int **group, int *groupSize, double *distList, double *variation, double **softAssign, double variance, double **estimate, long double &itCount, double **chCeof, int *known_drift);
 void	InitialSeeding(double **rx, double **centroid, int **group, int *groupSize, double *distList, double variance, int CLUSTER_USER, int CLUSTER_GROUP, int CLUSTER_SIZE);

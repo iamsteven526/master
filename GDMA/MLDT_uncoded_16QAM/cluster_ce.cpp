@@ -809,7 +809,7 @@ void MSEComparison(double **chCoef, double **estimate, double &mse,double **rx,d
 {
 	double temp[NUM_USER][2] = { 0 };
 
-	double min_value , reg , pp , test;
+	double min_value , reg , pp , test , nor = sqrt(0.98);
 	int min_tr;
 
 
@@ -828,7 +828,8 @@ void MSEComparison(double **chCoef, double **estimate, double &mse,double **rx,d
 			if(reg < min_value){
 				min_tr = j;
 				min_value = reg;
-				test = (pow(chCoef[i][0],2) + pow(chCoef[i][1],2))/ (pow(estimate[i][0],2) + pow(estimate[i][1],2));
+				//test = (pow(chCoef[i][0],2) + pow(chCoef[i][1],2))/ (pow(estimate[i][0],2) + pow(estimate[i][1],2));
+				//if (test > 2) test = 2;
 			}
 		}
 
@@ -846,11 +847,11 @@ void MSEComparison(double **chCoef, double **estimate, double &mse,double **rx,d
 			estimate[i][1] = estimate[i][0];	
 			estimate[i][0] = pp;		
 		}
-		estimate[i][0] /= 0.9935;
-		estimate[i][1] /= 0.9935;
+		estimate[i][0] /= nor;
+		estimate[i][1] /= nor;
 		//cout << "real:" << chCoef[i][0] << "   " << chCoef[i][1] << endl;
 		//cout << "fake:" << estimate[i][0] << "   " << estimate[i][1] << endl;	
-		mse += test;
+		mse += min_value;
 	}
 }
 

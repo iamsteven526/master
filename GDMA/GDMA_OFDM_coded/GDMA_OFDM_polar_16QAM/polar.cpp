@@ -107,7 +107,7 @@ void PolarCode::initialize_frozen_bits(uint8_t type, double designedSNR)
 		else
 		{
 			printf("\nPARAMETER SETTING IS WRONG\n");
-			system("pause");
+			//system("pause");
 		}
 		uint16_t effective_info_length = _info_length + _crc_size;
 		for (uint16_t i = 0; i < effective_info_length; ++i)
@@ -306,7 +306,7 @@ void PolarCode::decode_jpscl_llr(uint16_t list_size, double** app, std::vector<s
 	if (NUM_USER == 1)
 	{
 		std :: cout << "paramater set in decoded_jpsck_llr";
-		system("pause");
+		//system("pause");
 	}
 	
 
@@ -757,7 +757,7 @@ double **PolarCode::getArrayPointer_C_vector(uint16_t lambda, uint16_t l)
 		else
 		{
 			std::cout << "paramater set error !!! in getArrayPointer_C_vector";
-			system("pause");
+			//system("pause");
 		}
 		
 		for (int i = 0; i < (1 << (_n - lambda + 1)); i++)
@@ -777,7 +777,7 @@ double **PolarCode::getArrayPointer_C_vector(uint16_t lambda, uint16_t l)
 void PolarCode::recursivelyCalcP(uint16_t lambda, uint16_t phi)
 {
 	std::cout << "recursivelyCalcP";
-	system("pause");
+	//system("pause");
 	if (lambda == 0)
 	{
 		return;

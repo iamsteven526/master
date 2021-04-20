@@ -14,7 +14,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				1									// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				0									// 0: cluster-based, 1: ideal
 
 #define		INI_METHOD				2									// 0: LBG, 1: k-means++, 2: modified k-means++
 
@@ -59,11 +59,11 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				230
 
-#define		BLOCK_NUM				5050000						// number of blocks to be simulated
-#define		BLOCK_LEN				256							// number of symbols in a block
+#define		BLOCK_NUM				5050					// number of blocks to be simulated
+#define		BLOCK_LEN				1024							// number of symbols in a block
 
-#define		SNR_NUM					1									// number of SNR points to be simulated
-#define		SNR_START				20									// in dB
+#define		SNR_NUM					3									// number of SNR points to be simulated
+#define		SNR_START				10									// in dB
 #define		SNR_STEP			    5									// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

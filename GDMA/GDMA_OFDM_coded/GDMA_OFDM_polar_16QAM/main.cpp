@@ -690,7 +690,7 @@ int main()
 			if (!SYNCHRONOUS && PULSE_SHAPE) ReceivingFilter(rx, tempRx, rxFilter);
 			MultiCarrierDemapper(rx, postRx, drift);
 
-			if (CE_SCHEME == 0)
+			if (CE_SCHEME == 8)
 			{
 				Clustering(postRx, centroid, group, groupSize, distList, variation, softAssign, pow(stdDev, 2), estimate);
 				UserIdentification(H, estimate);
@@ -725,6 +725,6 @@ int main()
 	}
 	fprintf(result_txt, "\n");
 	fclose(result_txt);
-	system("pause");
+	//system("pause");
 	return 0;
 }

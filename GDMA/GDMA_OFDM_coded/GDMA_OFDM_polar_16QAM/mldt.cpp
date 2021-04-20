@@ -35,8 +35,8 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 				int temp = 1;//rand() % 2;
 				for (int i = 0; i < FFT_SEGMENT; i++)
 				{
-					estimate[nuser][i][j][0] = H[nuser][i][0][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
-					estimate[nuser][i][j][1] = H[nuser][i][1][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
+					estimate[nuser][i][j][0] = H[nuser][i][0][j] * (2 * temp - 1) + sqrt(1.5*variance / FFT_SEGMENT) * normal(generator);
+					estimate[nuser][i][j][1] = H[nuser][i][1][j] * (2 * temp - 1) + sqrt(1.5*variance / FFT_SEGMENT) * normal(generator);
 				}
 			}
 		}
@@ -58,6 +58,9 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 				}
 				else
 				{
+					for(int k = 0; k < NUM_LEVEL; k++){
+						app[m][k] = exp(-pow(postRx[i][0][j] - (map_16QAM[k][0]*estimate[0][i][j][0] - map_16QAM[k][1]*estimate[0][i][j][1]), 2) / (2. * variance));
+					}
 					//app[m][0] = exp(-pow(postRx[i][0][j] - estimate[0][i * SLIDING][j][0], 2) / (2. * variance));
 					//app[m][1] = exp(-pow(postRx[i][0][j] + estimate[0][i * SLIDING][j][0], 2) / (2. * variance));
 				}
@@ -109,7 +112,7 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 			else
 			{
 				printf("\nPARAMETER SETTING IS WRONG\n");
-				system("pause");
+				//system("pause");
 			}
 			//---------- normalization ----------
 			double temp = 0;
@@ -136,8 +139,11 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 				}
 				else
 				{
-					app[m][0] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1], 2) / (2. * variance));
-					app[m][1] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1], 2) / (2. * variance));
+					for(int k = 0; k < NUM_LEVEL; k++){
+						app[m][k] *= exp(-pow(postRx[i][1][j] - (map_16QAM[k][0]*estimate[0][i][j][1] + map_16QAM[k][1]*estimate[0][i][j][0]), 2) / (2. * variance));
+					}
+					//app[m][0] *= exp(-pow(postRx[i][1][j] - estimate[0][i * SLIDING][j][1], 2) / (2. * variance));
+					//app[m][1] *= exp(-pow(postRx[i][1][j] + estimate[0][i * SLIDING][j][1], 2) / (2. * variance));
 				}
 			}
 			else if (NUM_USER == 2)

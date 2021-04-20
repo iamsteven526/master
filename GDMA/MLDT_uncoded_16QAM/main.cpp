@@ -279,6 +279,7 @@ int main()
 		long double error = 0;
 		printf("SNR[dB] = %.1f\n", snrdB);
 		int block = 1;
+		cout << variance << endl << endl;
 		for (block; block <= BLOCK_NUM; block++)
 		{
 			
@@ -307,7 +308,7 @@ int main()
 			if (CE_SCHEME == 1) printf("Block# = %d, BER = %e\r", block, ber[i]); 
 			else printf("Block# = %d, BER = %e,BLER = %e, MSE = %e, MSE_centroid = %e,iteration = %e\r", block, ber[i],(bler[i]/block), mse[i] / (double)(NUM_USER * block), mse_centroid[i] / (double)(NUM_LEVEL * block), itCount[i]/(double)(block));
 			
-			if (error > 10000 && block>5000000)
+			if (error > 10000 && block>500000)
 				break;
 		}
 		mse[i] /= (double)(NUM_USER* block);

@@ -1,0 +1,188 @@
+
+==== 1024,522) + CRC-10 perfect CSI
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10 + Interleaver
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 1
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 3.853620e-01, BLER = 7.961019e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 2.741617e-01, BLER = 5.772114e-01
+
+SNR[dB] =  8.0,
+Block# = 2888, BER = 1.624306e-01, BLER = 3.466066e-01
+
+SNR[dB] =  10.0,
+Block# = 6204, BER = 7.468562e-02, BLER = 1.613475e-01
+
+SNR[dB] =  12.0,
+Block# = 16432, BER = 2.747378e-02, BLER = 6.091772e-02
+
+SNR[dB] =  14.0,
+Block# = 51275, BER = 8.833153e-03, BLER = 1.952218e-02
+
+SNR[dB] =  16.0,
+Block# = 226742, BER = 1.964375e-03, BLER = 4.414709e-03
+
+SNR[dB] =  18.0,
+Block# = 1000000, BER = 3.973711e-04, BLER = 9.000000e-04
+
+SNR[dB] =  20.0,
+Block# = 1000000, BER = 7.492383e-05, BLER = 1.730000e-04
+
+
+==== 1024,554) + CRC-10 perfect CSI + NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,544) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10 + Interleaver
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 1
+
+Perfect CSI
+
+perfect csi + NBC error !!
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 4.187613e-01, BLER = 8.510745e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 3.159611e-01, BLER = 6.511744e-01
+
+SNR[dB] =  8.0,
+Block# = 2395, BER = 2.003812e-01, BLER = 4.179541e-01
+
+SNR[dB] =  10.0,
+Block# = 4600, BER = 1.037454e-01, BLER = 2.176087e-01
+
+SNR[dB] =  12.0,
+Block# = 12055, BER = 3.930128e-02, BLER = 8.303608e-02
+
+SNR[dB] =  14.0,
+Block# = 36075, BER = 1.295379e-02, BLER = 2.774775e-02
+
+SNR[dB] =  16.0,
+Block# = 135197, BER = 3.430155e-03, BLER = 7.404010e-03
+
+SNR[dB] =  18.0,
+Block# = 623646, BER = 7.359247e-04, BLER = 1.605077e-03
+
+SNR[dB] =  20.0,
+Block# = 1000000, BER = 1.392382e-04, BLER = 3.020000e-04
+
+==== 1024,516) + CRC-4 perfect CSI
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 4 + Interleaver
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 1
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 3.833064e-01, BLER = 7.896052e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 2.749651e-01, BLER = 5.787106e-01
+
+SNR[dB] =  8.0,
+Block# = 2970, BER = 1.573436e-01, BLER = 3.370370e-01
+
+SNR[dB] =  10.0,
+Block# = 6325, BER = 7.342113e-02, BLER = 1.582609e-01
+
+SNR[dB] =  12.0,
+Block# = 16058, BER = 2.858218e-02, BLER = 6.233653e-02
+
+SNR[dB] =  14.0,
+Block# = 55761, BER = 8.111558e-03, BLER = 1.795161e-02
+
+SNR[dB] =  16.0,
+Block# = 238125, BER = 1.850853e-03, BLER = 4.203675e-03
+
+SNR[dB] =  18.0,
+Block# = 1000000, BER = 3.930586e-04, BLER = 8.910000e-04
+
+SNR[dB] =  20.0,
+Block# = 1000000, BER = 7.154883e-05, BLER = 1.620000e-04
+
+
+==== 1024,548) + CRC-4 perfect CSI + NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,544) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 4 + Interleaver
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 1
+
+Perfect CSI
+
+perfect csi + NBC error !!
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 4.042572e-01, BLER = 8.255872e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 2.964180e-01, BLER = 6.121939e-01
+
+SNR[dB] =  8.0,
+Block# = 2595, BER = 1.848210e-01, BLER = 3.857418e-01
+
+SNR[dB] =  10.0,
+Block# = 5257, BER = 8.903962e-02, BLER = 1.904128e-01
+
+SNR[dB] =  12.0,
+Block# = 12852, BER = 3.592388e-02, BLER = 7.788671e-02
+
+SNR[dB] =  14.0,
+Block# = 40832, BER = 1.124604e-02, BLER = 2.451509e-02
+
+SNR[dB] =  16.0,
+Block# = 152386, BER = 2.970258e-03, BLER = 6.568845e-03
+
+SNR[dB] =  18.0,
+Block# = 708221, BER = 6.444247e-04, BLER = 1.413401e-03
+
+SNR[dB] =  20.0,
+Block# = 1000000, BER = 1.063743e-04, BLER = 2.410000e-04
+
+

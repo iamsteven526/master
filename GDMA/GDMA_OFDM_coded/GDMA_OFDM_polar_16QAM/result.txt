@@ -1,0 +1,22 @@
+OFDM-GDMA-BPSK system
+
+(1024,544) LDPC code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 4
+
+FFT point: 16, CP length: 4, channel tap: 5
+Number of users: 1
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  16.0, BER = 4.237172e-03, BLER = 1.118748e-02
+SNR[dB] =  18.0, BER = 1.027510e-03, BLER = 2.857575e-03
+
+
+4.237172e-03, 1.027510e-03, 
+1.118748e-02, 2.857575e-03, 

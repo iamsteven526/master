@@ -6,6 +6,7 @@ block=10000;
 
 for i = 1: block
     message = randi([0 1],512,1);
+    i
     for p = 1:15
         messagenew = message;
         messagenew(1:4) = xor(messagenew(1:4),de2bi(p,4)');

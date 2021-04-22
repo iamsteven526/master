@@ -91,7 +91,7 @@ void Encoder(LDPC &ldpc, PolarCode &polar,int **data, int **codeword, int **Inte
 				//Interleaver[0][m] = (FFT_POINT*4) * (m/64) + (4*j)%64 + j/16; // teachers method
 				//cout << Interleaver[0][m] << endl;
 				//Interleaver[0][m] = FFT_POINT*(m/FFT_POINT) + subinterleaver[(m%FFT_POINT)];//random
-				Interleaver[0][m] = (FFT_POINT*MOD_LEVEL)*(m/(FFT_POINT*MOD_LEVEL)) + ((23*m)%(FFT_POINT*MOD_LEVEL));
+				Interleaver[0][m] = (FFT_POINT*MOD_LEVEL)*(m/(FFT_POINT*MOD_LEVEL)) + ((7*m)%(FFT_POINT*MOD_LEVEL));
 
 				m++;
 			}

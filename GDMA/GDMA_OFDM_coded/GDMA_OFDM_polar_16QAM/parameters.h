@@ -114,7 +114,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				1												// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				0												// 0: cluster-based, 1: ideal
 
 #define		INI_METHOD				2												// 0: LBG, 1: k-means++, 2: modified k-means++
 
@@ -132,8 +132,8 @@
 
 #define		BLOCK_NUM				1000000											// number of blocks to be simulated 
 
-#define		SNR_NUM					2												// number of SNR points to be simulated
-#define		SNR_START				16												// in dB
+#define		SNR_NUM					9												// number of SNR points to be simulated
+#define		SNR_START				4												// in dB
 #define		SNR_STEP				2												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

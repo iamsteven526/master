@@ -40,14 +40,14 @@ V = size(CB, 3); % number of users (layers)
 
 N = 4; % SCMA signals in frame
 
-EbN0 = 0:1:5;
+EbN0 = 0:1:10;
 SNR  = EbN0 + 10*log10(log2(M)*V/K);
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 1000;
+maxNumErrs = 4000;
 maxNumBits = 4e7;
 Niter      = 10;
 

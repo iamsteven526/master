@@ -68,6 +68,10 @@ for k = 1:length(SNR)
         % symbol to bit conversion
         %r    = de2bi(x, log2(M), 'left-msb');
 
+        
+        
+        
+        
         for pp = 1:V
             %ansbit(pp,:) = nrPolarDecode(datar(:,pp),N/2,N,8,10,false,24);
             ansbit(pp,:) = ldpcDecoder(LLR(pp,:)');

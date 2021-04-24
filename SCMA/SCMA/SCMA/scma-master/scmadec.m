@@ -42,7 +42,7 @@ LLR = zeros(log2(M)*V, N);
 
 Noise = 1/N0;
 
-parfor jj = 1:N
+for jj = 1:N
 
     % Step 1: Initial calculations
     f = zeros(M, M, M, K);

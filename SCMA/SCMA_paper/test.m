@@ -5,7 +5,7 @@ for i = 1:10000000
     b1 = rand;
     a2 = sqrt(1-a1*a1);
     b2 = sqrt(1-b1*b1);
-    now = min([2-2*a1*b1-2*a2*b2,2-b1,3+2*a1-2*b1-2*a1*b1-2*a2*b2,3-2*a1-2*b1+2*a1*b1+2*a2*b2]);
+    now = min([2-2*a1*b1-2*a2*b2,2-2*b1,3+2*a1-2*b1-2*a1*b1-2*a2*b2,3-2*a1-2*b1+2*a1*b1+2*a2*b2,2-2*a1]);
     if now > maxyy
         maxyy = now;
         nowa1 = a1;

@@ -16,14 +16,14 @@ V = 3; % user
 N = 4; % SCMA signals in frame
 M = 2; % BPSK = 2 QPSK = 4 ....
 R = 1;  %code rate
-EbN0 = 0:1:5;
+EbN0 = 0:1:10;
 SNR  = EbN0 + 10*log10(2*R*log2(M));
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 1000;
+maxNumErrs = 6000;
 maxNumBits = 6e8;
 Niter      = 5;
 ldpcDecoder = comm.LDPCDecoder(B);
@@ -36,8 +36,8 @@ for k = 1:length(SNR)
     N0 = 1/(10^(SNR(k)/10)); % noise power
 
     while ((min(Nerr(:,k)) < maxNumErrs) && (Nbits(1,k) < maxNumBits))
-        display(k);
-        display(Nbits(1,k));
+        %display(k);
+        %display(Nbits(1,k));
         %x = randi([0 M-1], V, N); % log2(M)-bit symbols
         dam = randi([0 1], V, N); %32400      
 %         for pp = 1:V
@@ -47,13 +47,16 @@ for k = 1:length(SNR)
         
         h = 1/sqrt(2)*(randn(V, N)+1j*randn(V, N)); % Rayleigh channel
         %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1));
+        test1 = 0.7071;
+        test2 = sqrt(1-test1*test1);
         popo = 1;
         for pp = 1:popo
             for qq = 1:N/popo
                 %h(:,(pp-1)*N/popo+qq) = h(:,(pp-1)*N/popo+1);
                 h(1,:) = 1;
-                h(2,:) = 1j;
-                h(3,:) = 0.9719 + 0.2354j;
+                h(2,:) = (1j)*0.8163;
+                %h(3,:) = 0.7071 + 0.7071j; %[0.0984069886947585,0.0765361609570419,0.0583705120033992,0.0393886799730016,0.0308351932338776,0.0202465939698230]
+                h(3,:) = (test1 + test2*1j)*0.8163;
             end
         end
         for pp = 1:V

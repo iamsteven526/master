@@ -1,0 +1,108 @@
+====block = 128
+GDMA-BPSK system
+Number of users: 1
+
+Clustering method : propose-1
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 256
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0
+Block# = 4344, BER = 2.422262e-01,BLER = 9.995396e-01, MSE = 6.717536e-02, MSE_centroid = 0.000000e+00,iteration = 1.000007e-
+SNR[dB] = 5.0
+Block# = 1109, BER = 1.390857e-01,BLER = 9.431921e-01, MSE = 1Segmentation fault (core dumped)0000e+00,iteration = -7.774736e-06
+SNR[dB] = 10.0
+Block# = 5001, BER = 5.754708e-02,BLER = 6.074785e-01, MSE = 3.715335e-03, MSE_centroid = 0.000000e+00,iteration = 4.998264e-066
+SNR[dB] = 15.0
+Block# = 45570, BER = 2.090571e-02,BLER = 2.716320e-01, MSE = 8.628458e-04, MSE_centroid = 0.000000e+00,iteration = 3.766600e-066
+SNR[dB] = 20.0
+Block# = 50001, BER = 6.886347e-03,BLER = 9.465811e-02, MSE = 2.240315e-04, MSE_centroid = 0.000000e+00,iteration = 3.776454e-066
+
+SNR[dB] = 25.0
+Block# = 50001, BER = 2.188394e-03,BLER = 3.135937e-02, MSE = 6.604783e-05, MSE_centroid = 0.000000e+00,iteration = -5.404508e-06
+
+SNR[dB] = 30.0
+Block# = 50001, BER = 8.066245e-04,BLER = 1.009980e-02, MSE = 2.026296e-05, MSE_centroid = 0.000000e+00,iteration = 6.866622e-066
+
+SNR[dB] = 35.0
+Block# = 77645, BER = 2.540106e-04,BLER = 3.219782e-03, MSE = 6.331580e-06, MSE_centroid = 0.000000e+00,iteration = -4.929060e-06
+
+SNR[dB] = 40.0
+Block# = 233695, BER = 8.359253e-05,BLER = -5.612864e+48, MSE = 1.988172e-06, MSE_centroid = 0.000000e+00,iteration = -4.780805e-09
+=====block = 1024
+
+GDMA-BPSK system
+Number of users: 1
+
+Clustering method : propose-1
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Block length: 2048
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0
+Block# = 3388, BER = 2.238721e-01,BLER = 1.000000e+00, MS^C= 1.601737e-02, MSE_centroid = 0.000000e+00,iteration = 5.516746e-067
+SNR[dB] = 5.0
+Block# = 1053, BER = 1.195821e-01,BLER = 9.743590e-01, MSE = 2.481832e-03, MSE_centroid = 0.000000e+00,iteration = 9.673295e-076
+SNR[dB] = 10.0
+Block# = 6281, BER = 5.147119e-02,BLER = 7.441490e-01, MSE = 4.703324e-04, MSE_centroid = 0.000000e+00,iteration = 7.891901e-067
+SNR[dB] = 15.0
+Block# = 13544, BER = 1.860274e-02,BLER = 3.716037e-01, MSE = 9.764678e-05, MSE_centroid = 0.000000e+00,iteration = -2.497251e066
+SNR[dB] = 20.0
+Block# = 100001, BER = 6.148386e-03,BLER = 1.346387e-01, MSE = 2.512220e-05, MSE_centroid = 0.000000e+00,iteration = 6.681717e-067
+SNR[dB] = 25.0
+Block# = 100001, BER = 1.900289e-03,BLER = 4.342957e-02, MSE = 7.288300e-06, MSE_centroid = 0.000000e+00,iteration = -4.549881e-06
+SNR[dB] = 30.0
+Block# = 100001, BER = 6.203893e-04,BLER = 1.456985e-02, MSE = 2.224629e-06, MSE_centroid = 0.000000e+00,iteration = 3.235566e-06
+
+SNR[dB] = 35.0
+Block# = 256476, BER = 1.907198e-04,BLER = 4.507244e-03, MSE = 6.963111e-07, MSE_centroid = 0.000000e+00,iteration = 1.589303e-066
+SNR[dB] = 40.0
+Block# = 695331, BER = 6.641326e-05,BLER = 1.478433e-03, MSE = 8.898993e-07, MSE_centroid = 0.000000e+00,iteration = -5.282741e-07
+=========perfect CSI
+GDMA-BPSK system
+Number of users: 1
+
+Perfect CSI
+
+Block length: 20
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0
+Block# = 5001, BER = 2.202360e-01
+
+SNR[dB] = 5.0
+Block# = 5001, BER = 1.182264e-01
+
+SNR[dB] = 10.0
+Block# = 5001, BER = 5.373925e-02
+
+SNR[dB] = 15.0
+Block# = 13975, BER = 1.789624e-02
+
+SNR[dB] = 20.0
+Block# = 42365, BER = 5.904638e-03
+
+SNR[dB] = 25.0
+Block# = 130811, BER = 1.911536e-03
+
+SNR[dB] = 30.0
+Block# = 397899, BER = 6.286771e-04
+
+SNR[dB] = 35.0
+Block# = 1290159, BER = 1.938133e-04
+
+SNR[dB] = 40.0
+Block# = 4188228, BER = 5.975081e-05

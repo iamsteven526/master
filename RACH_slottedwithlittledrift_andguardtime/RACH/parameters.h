@@ -30,7 +30,7 @@
 #define		CHIP_RATE				1.92 //30.72									// sampling frequency (MHz)
 
 #define		UE_SPEED				150												// mobile speed (km/hour)
-#define		TEST_FRAME_SIZE			20												// the maximum packets in a frame
+#define		TEST_FRAME_SIZE			2												// the maximum packets in a frame
 #define		SLOTED					0												// 1: enable, 0: disable
 #define		ALOHA					1												// 1: Aloha + GDMA,  0: Aloha
 #define		PREABLE					1											    // 1: enable, 0: disable	
@@ -61,7 +61,7 @@
 #define		FFT_LAYER				4												// number of FFT layers
 #define		FFT_POINT				( 1 << FFT_LAYER )								// number of FFT points
 #define		FFT_SEGMENT				( CODE_LEN / FFT_POINT )						// codeword is divided into multiple segments for OFDM transmission
-#define		CP_LEN					( TAP_NUM - 1)									// length of cyclic prefix
+#define		CP_LEN					( TAP_NUM - 1 )									// length of cyclic prefix
 #define		CS_LEN					4
 #define		CP_TYPE					1												// 1: cp, 0:cp + cs
 

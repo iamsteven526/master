@@ -79,9 +79,9 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 			for(int p = 0; p < NUM_SLOTED; ++p){
 				while(true){
 					time_drift = exponential(generator) * packet_dur;
-					time_drift = time_drift%(2+1);
+					time_drift = time_drift%(4+2);
 					cachetimesum = cache_time_drift + time_drift;
-					if(cachetimesum > 2*Unit ){
+					if(cachetimesum > 4*Unit ){
 					//if((cachetimesum % (effLen*Unit)) <= 2*Unit ){
 					    time_drift = 0;
 					}

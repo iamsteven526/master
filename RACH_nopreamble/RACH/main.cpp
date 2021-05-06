@@ -503,7 +503,7 @@ int main()
 			MultiCarrierDemapper(ClassifyRx, postRx, packet_num);
 			
 			
-			if (CE_SCHEME == 0)
+			if (CE_SCHEME == 6)
 			{
 				Clustering(postRx, pow(stdDev, 2), estimate, H, Cluster_num, packet_num,mse[i], estimate_packet_time, cluster_sample, centroid, group, groupSize, variation, packet_time, softAssign);
 				//UserIdentification(H, estimate, mse[i]);

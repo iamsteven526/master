@@ -3,7 +3,15 @@
 #include "parameters.h"
 #include <cstring>
 #include <cmath>
+#include <random>
 using namespace std;
+
+namespace
+{
+	random_device seed;
+	mt19937 generator(seed());
+	normal_distribution<double> normal(0, 1);
+}
 
 void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double ****app, double ***appLlr, double ***refLlr, double *****estimate, int* packet_num, int*** Cluster_num, int**** Cluster_gain, double snrdB)
 {
@@ -33,6 +41,8 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 	double adapted_variance = pow(stdDev + (0.1 * sqrt(snrdB)), 2);
 	double test = 0,testtime = 0;
 	double alpha = 0;
+	int NUM_user;
+	int NUM_level;
 	//double adapted_variance = pow(stdDev, 2);
 	for (int nuser = 0; nuser < NUM_USER; nuser++)
 	{
@@ -42,8 +52,8 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
             for (int i = 0, m = 0; i < FFT_SEGMENT + DIFF_ENC; i++)
 			{
 				//---- u_th user, t_th packet, i-th subframe ---- 
-				int NUM_user = Cluster_num[t][nuser][i];
-				int NUM_level = pow(2, Cluster_num[t][nuser][i]);
+				NUM_user = Cluster_num[t][nuser][i];
+				NUM_level = pow(2, Cluster_num[t][nuser][i]);
 				
 				//---- APPs_real_part ----
 				for (int j = 0; j < FFT_POINT; j++)
@@ -54,10 +64,7 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 						double estimate_sum = 0;
 						for (int g = NUM_user - 1; g >= 0; g--)//---- g is the variable to selete special channel gain "Cluster_gain[t][nuser][i][g]"
 						{
-							if (CE_SCHEME == 1)
-								estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][0][j];
-							else
-								estimate_sum += pow(-1, (reg % 2)) * estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][0];
+							estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][0][j];
 
 							reg /= 2;
 						}
@@ -71,10 +78,7 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 						double estimate_sum = 0;
 						for (int g = NUM_user - 1; g >= 0; g--)
 						{
-							if (CE_SCHEME == 1)
-								estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][1][j];
-							else
-								estimate_sum+= pow(-1, (reg % 2)) * estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][1];
+							estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][1][j];
 
 							reg /= 2;
 						}
@@ -106,8 +110,8 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 			for (int i = 0, m = 0; i < FFT_SEGMENT + DIFF_ENC; i++)
 			{
 				//---- u_th user, t_th packet, i-th subframe ---- 
-				int NUM_user = Cluster_num[t][nuser][i];
-				int NUM_level = pow(2, Cluster_num[t][nuser][i]);
+				NUM_user = Cluster_num[t][nuser][i];
+				NUM_level = pow(2, Cluster_num[t][nuser][i]);
 				
 				//---- APPs_real_part ----
 				for (int j = 0; j < FFT_POINT; j++)
@@ -121,8 +125,8 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 							if (CE_SCHEME == 1)
 								estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][0][j];
 							else
-								estimate_sum += pow(-1, (reg % 2)) * estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][0];
-
+								//estimate_sum += pow(-1, (reg % 2)) * (estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][0] + 0.2*(pow(NUM_user,8)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
+								estimate_sum += pow(-1, (reg % 2)) * (H[0][Cluster_gain[t][nuser][i][g]][i][0][j] + 0.2*(pow(NUM_user,8)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
 							reg /= 2;
 						}
 						app[t][nuser][m][k] = exp(-pow(postRx[t][nuser][i][0][j] - estimate_sum, 2) / (2. * adapted_variance));
@@ -152,8 +156,8 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 							if (CE_SCHEME == 1)
 								estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][1][j];
 							else
-								estimate_sum+= pow(-1, (reg % 2)) * estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][1];
-
+								//estimate_sum+= pow(-1, (reg % 2)) * (estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][1] +  0.2*(pow(NUM_user,8)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
+								estimate_sum+= pow(-1, (reg % 2)) * (H[0][Cluster_gain[t][nuser][i][g]][i][1][j] +  0.2*(pow(NUM_user,8)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
 							reg /= 2;
 						}
 						app[t][nuser][m][k] *= exp(-pow(postRx[t][nuser][i][1][j] - estimate_sum, 2) / (2. * adapted_variance));
@@ -256,4 +260,5 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 		cout << appLlr[0][0][i] << " ";
 
 	system("pause");*/
+	//cout << "est : " << NUM_user << endl;
 }

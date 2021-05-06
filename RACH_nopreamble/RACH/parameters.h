@@ -30,7 +30,7 @@
 #define		CHIP_RATE				1.92 //30.72									// sampling frequency (MHz)
 
 #define		UE_SPEED				150												// mobile speed (km/hour)
-#define		TEST_FRAME_SIZE			1												// the maximum packets in a frame
+#define		TEST_FRAME_SIZE			2												// the maximum packets in a frame
 #define		SLOTED					0												// 1: enable, 0: disable
 #define		ALOHA					1												// 1: Aloha + GDMA,  0: Aloha
 #define		PREABLE					0											    // 1: enable, 0: disable	
@@ -61,7 +61,7 @@
 #define		FFT_LAYER				4												// number of FFT layers
 #define		FFT_POINT				( 1 << FFT_LAYER )								// number of FFT points
 #define		FFT_SEGMENT				( CODE_LEN / FFT_POINT )						// codeword is divided into multiple segments for OFDM transmission
-#define		CP_LEN					( TAP_NUM - 1)									// length of cyclic prefix
+#define		CP_LEN					( TAP_NUM - 1 + 4)									// length of cyclic prefix
 #define		CS_LEN					0
 #define		CP_TYPE					1												// 1: cp, 0:cp + cs
 
@@ -82,7 +82,7 @@
 
 #define		CE_SCHEME				1												// 0: cluster-based, 1: ideal
 
-#define		CE_METHOD				0												// 0: preamble estimation only;  1: preamble estimation + modified k-means++
+#define		CE_METHOD				1												// 0: preamble estimation only;  1: preamble estimation + modified k-means++
 
 #define		GROUP_SIZE				2												// number of groups to be classified
 
@@ -99,10 +99,10 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				210
 
-#define		BLOCK_NUM				10000											// number of blocks to be simulated 
+#define		BLOCK_NUM				50000											// number of blocks to be simulated 
 
 #define		G_NUM					15												// number of SNR points to be simulated
-#define		G_START				    0.1											// in dB
+#define		G_START				    1.1											// in dB
 #define		G_STEP					0.2												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

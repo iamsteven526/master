@@ -76,23 +76,27 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 		for (;;)
 		{
 			int NUM_SLOTED = poisson(generator);
-			NUM_SLOTED = 3;
+			//NUM_SLOTED = 3;
 			//cout << "true: " << NUM_SLOTED << " ";
 			debug_count += NUM_SLOTED;
 			cache_time_drift = 0;
 			for(int p = 0; p < NUM_SLOTED; ++p){
 				while(true){
 					time_drift = exponential(generator) * packet_dur;
-					time_drift = time_drift%(2+1);
+					time_drift = time_drift%(4+4);
 					cachetimesum = cache_time_drift + time_drift;
 					//if(cachetimesum > 2*Unit ){
-					if((cachetimesum % (effLen*Unit)) > 2*Unit ){
+					if((cachetimesum % (effLen*Unit)) > 4*Unit ){
 					    time_drift = 0;
 					}
-					//time_drift = 0; //slotted
+					
+					time_drift = 0; //slotted
+					//if(p == 0) time_drift = 1;
 					cache_time_drift = cache_time_drift + time_drift;
+					//cout << time_drift << "  ";
 					break;
 				}
+
 							
 				last_packet_time += time_drift;
 				if (last_packet_time + packet_dur > frame_dur)
@@ -120,6 +124,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 					packet_sum++;
 				}
 			}
+			//cout << endl;
 			if (last_packet_time + packet_dur*Unit > frame_dur)
 			{
 				//cout << debug_count;
@@ -127,7 +132,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 				//debug_count = 0;
 				break;
 			}
-			last_packet_time += (packet_dur + 20)*Unit; 
+			last_packet_time += (packet_dur + 200)*Unit; 
 		}
 
 		time_in.push_back(frame_dur);
@@ -200,8 +205,8 @@ void Encoder(LDPC &ldpc, int ***data, int ***codeword, int *packet_num)
 		{
 			for (int i = 0; i < DATA_LEN; i++)
 			{
-				data[t][nuser][i] = rand() % 2;
-				//data[t][nuser][i] = 1;
+				//data[t][nuser][i] = rand() % 2;
+				data[t][nuser][i] = 1;
 			}
 			ldpc.Encoder(data[t][nuser], codeword[t][nuser]);
 			if (DIFF_ENC) DiffEncoding(codeword[t][nuser]);
@@ -394,8 +399,11 @@ void ReceivingClassify(double** rx, double***** ClassifyRx, int* packet_num, int
 			{
 				for (int j = 0; j < effLen; j++)
 				{
-					ClassifyRx[t][nuser][i][j][0] = rx[packet_time[nuser][t] + (j + i * effLen + (PREABLE_LEN + CP_LEN + CS_LEN) * PREABLE) * Unit][0];
-					ClassifyRx[t][nuser][i][j][1] = rx[packet_time[nuser][t] + (j + i * effLen + (PREABLE_LEN + CP_LEN + CS_LEN) * PREABLE) * Unit][1];
+					//cout << nuser << "  " << t << "  " << packet_time[nuser][t] << endl;
+					//ClassifyRx[t][nuser][i][j][0] = rx[packet_time[nuser][t] + (j + i * effLen + (PREABLE_LEN + CP_LEN + CS_LEN) * PREABLE) * Unit][0];
+					//ClassifyRx[t][nuser][i][j][1] = rx[packet_time[nuser][t] + (j + i * effLen + (PREABLE_LEN + CP_LEN + CS_LEN) * PREABLE) * Unit][1];
+					ClassifyRx[t][nuser][i][j][0] = rx[0 + (j + i * effLen + (PREABLE_LEN + CP_LEN + CS_LEN) * PREABLE) * Unit][0];
+					ClassifyRx[t][nuser][i][j][1] = rx[0 + (j + i * effLen + (PREABLE_LEN + CP_LEN + CS_LEN) * PREABLE) * Unit][1];
 				}	
 			}
 		}
@@ -450,6 +458,8 @@ void MultiCarrierDemapper(double *****ClassifyRx, double *****postRx, int *packe
 					{
 						postRx[t][nuser][i][0][j] /= sqrt((double)FFT_POINT);
 						postRx[t][nuser][i][1][j] /= sqrt((double)FFT_POINT);
+
+						//cout << t << " " << nuser << " " << i << " " << j << " : "<< postRx[t][nuser][i][0][j] << " + "<< postRx[t][nuser][i][1][j] << endl;
 					}
 				}
 			}

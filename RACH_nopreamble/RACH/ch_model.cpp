@@ -38,10 +38,6 @@ void EnergyProfile(double *****h, double *****H, int *packet_num, int **packet_t
 					h[0][i][0][j][0] = normal(generator);
 					h[0][i][0][j][1] = normal(generator);
 
-					//double phi = 0.5 * 2. * M_PI - M_PI;
-					//h[0][i][0][j][0] = 0.2;
-					//h[0][i][0][j][1] = 0.3;
-
 					h[0][i][0][j][0] = sqrt(power) * (pow(K + 1, -0.5) * h[0][i][0][j][0] + pow(K, 0.5) / pow(K + 1, 0.5) * cos(phi));
 					h[0][i][0][j][1] = sqrt(power) * (pow(K + 1, -0.5) * h[0][i][0][j][1] + pow(K, 0.5) / pow(K + 1, 0.5) * sin(phi));
 					//cout << h[i][0][j][0] << " " << h[i][0][j][1] << endl;
@@ -128,14 +124,14 @@ void EnergyProfile(double *****h, double *****H, int *packet_num, int **packet_t
 	//---------- channel coefficients in the frequency domain ----------
 	double real[FFT_POINT], imag[FFT_POINT];
 	double real_p[FFT_POINT], imag_p[FFT_POINT];
-	for (int i = 0; i <NUM_USER; i++)
+	for (int i = 0; i < NUM_USER; i++)
 	{
 		for (int j = 0; j < FFT_SEGMENT + DIFF_ENC; j++)
 		{
 			for (int k = 0; k < FFT_POINT; k++)
 			{
-				real[k] = h[0][i][j][k][0];
-				imag[k] = h[0][i][j][k][1];
+				real[k] = h[0][i][j][(k+FFT_POINT-packet_time[i][0])%FFT_POINT][0];
+				imag[k] = h[0][i][j][(k+FFT_POINT-packet_time[i][0])%FFT_POINT][1];
 			}
 			FFT(real, imag, FFT_POINT, FFT_LAYER, H[0][i][j][0], H[0][i][j][1], 0, 0);
 		}

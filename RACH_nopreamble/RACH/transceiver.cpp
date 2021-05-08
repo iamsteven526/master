@@ -90,7 +90,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 					    time_drift = 0;
 					}
 					
-					time_drift = 0; //slotted
+					//time_drift = 0; //slotted
 					//if(p == 0) time_drift = 1;
 					cache_time_drift = cache_time_drift + time_drift;
 					//cout << time_drift << "  ";

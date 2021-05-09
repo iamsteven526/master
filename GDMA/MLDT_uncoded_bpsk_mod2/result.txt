@@ -1,0 +1,27 @@
+GDMA-BPSK system
+Number of users: 2
+
+Perfect CSI
+
+Block length: 64
+
+Differential encoding,
+w/ differential decoding
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0, BER = 2.613440e-01
+SNR[dB] = 5.0, BER = 1.371694e-01
+SNR[dB] = 10.0, BER = 5.524719e-02
+SNR[dB] = 15.0, BER = 1.918564e-02
+SNR[dB] = 20.0, BER = 6.276781e-03
+SNR[dB] = 25.0, BER = 2.003599e-03
+SNR[dB] = 30.0, BER = 6.462844e-04
+SNR[dB] = 35.0, BER = 1.966504e-04
+SNR[dB] = 40.0, BER = 6.399497e-05
+SNR[dB] = 45.0, BER = 1.852900e-05
+
+
+2.613440e-01, 1.371694e-01, 5.524719e-02, 1.918564e-02, 6.276781e-03, 2.003599e-03, 6.462844e-04, 1.966504e-04, 6.399497e-05, 1.852900e-05, 

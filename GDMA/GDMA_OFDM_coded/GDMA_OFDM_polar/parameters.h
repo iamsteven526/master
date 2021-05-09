@@ -26,11 +26,11 @@
 #define		POLAR_DECODING_TYPE		1												// 1: SCL,  0: BP
 #define		JOINT					0												// 1: JCD,  0: SCD
 #define		Iteration				50
-#define		NBC						0												// Using the structure of RM code
+#define		NBC						1												// Using the structure of RM code
 #define		INTERLEAVER				1												// 1: enable, 0 : disable
-#define		INTERLEAVER_type		1												// 1: random, 0 : non-random
+#define		INTERLEAVER_type		0												// 1: random, 0 : non-random
 
-#define		DATA_LEN				(512 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
+#define		DATA_LEN				(538 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length
 //---------- LDPC code ----------
 
@@ -40,9 +40,9 @@
 
 #define		INFILENAME				"H_1008_504.txt"								// (3,6)-regular
 //#define		INFILENAME				"H_1008_504_diff_met_dv_12.txt"					// designed for differential encoding
-#define		LDPC_IT					100												// maximum number of decoding iterations
+#define		LDPC_IT					150												// maximum number of decoding iterations
 
-#define		JCD						1												// joint channel decoding; 1: enable, 0: disable
+#define		JCD						0												// joint channel decoding; 1: enable, 0: disable
 
 //#define		DATA_LEN				( LDPC_H_COL - LDPC_H_ROW )						// data length
 //#define		CODE_LEN				( LDPC_H_COL )									// codeword length
@@ -101,13 +101,13 @@
 
 //---------- system ----------
 
-#define		NUM_USER				3												// number of users
+#define		NUM_USER				2												// number of users
 
 #define		NUM_LEVEL				( 1 << NUM_USER )								// number of levels of superimposed signal
 
 #define		FFT_LAYER				4												// number of FFT layers
 #define		FFT_POINT				( 1 << FFT_LAYER )								// number of FFT points
-#define		FFT_SEGMENT				( CODE_LEN / FFT_POINT )						// codeword is divided into multiple segments for OFDM transmission
+#define		FFT_SEGMENT				( CODE_LEN / FFT_POINT ) 						// codeword is divided into multiple segments for OFDM transmission
 #define		CP_LEN					( TAP_NUM - 1)									// length of cyclic prefix
 #define		CS_LEN					4
 
@@ -132,7 +132,7 @@
 #define		BLOCK_NUM				100000000											// number of blocks to be simulated 
 
 #define		SNR_NUM					9												// number of SNR points to be simulated
-#define		SNR_START				20												// in dB
+#define		SNR_START				4												// in dB
 #define		SNR_STEP				2												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

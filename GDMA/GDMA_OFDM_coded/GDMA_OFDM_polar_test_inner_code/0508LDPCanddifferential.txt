@@ -1,0 +1,41 @@
+OFDM-GDMA-BPSK system
+
+(1008,504) Polar code
+Separated channel decoding: SPA
+Iteration#: 150
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 1.267447e-01, BLER = 6.661669e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 7.411027e-02, BLER = 4.355322e-01
+
+SNR[dB] =  8.0,
+Block# = 2259, BER = 3.329978e-02, BLER = 2.215582e-01
+
+SNR[dB] =  10.0,
+Block# = 5764, BER = 1.191991e-02, BLER = 8.683206e-02
+
+SNR[dB] =  12.0,
+Block# = 18301, BER = 3.563319e-03, BLER = 2.734823e-02
+
+SNR[dB] =  14.0,
+Block# = 85376, BER = 7.217257e-04, BLER = 5.862303e-03
+
+SNR[dB] =  16.0,
+Block# = 464113, BER = 1.271969e-04, BLER = 1.078401e-03
+
+SNR[dB] =  18.0,
+Block# = 2647673, BER = 2.151035e-05, BLER = 1.890339e-04
+
+SNR[dB] =  20.0,
+Block# = 638895, BER = 2.807427e-06, BLER = 2.426064e-05

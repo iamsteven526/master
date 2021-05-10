@@ -1,0 +1,183 @@
+iamsteven@iamsteven-D830MT:~/Desktop/master/GDMA/GDMA_OFDM_coded/GDMA_OFDM_polar$ ./main best!!!!! (interleaver 3-1)
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 0
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.773067e-01, BLER = 5.997001e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.677145e-01, BLER = 3.800600e-01
+
+SNR[dB] =  8.0,
+Block# = 2748, BER = 7.563384e-02, BLER = 1.821325e-01
+
+SNR[dB] =  10.0,
+Block# = 6417, BER = 2.969240e-02, BLER = 7.799595e-02
+
+SNR[dB] =  12.0,
+Block# = 20968, BER = 8.100700e-03, BLER = 2.386971e-02
+
+SNR[dB] =  14.0,
+Block# = 77614, BER = 1.833933e-03, BLER = 6.448579e-03
+
+SNR[dB] =  16.0,
+Block# = 339629, BER = 3.357236e-04, BLER = 1.473667e-03
+
+SNR[dB] =  18.0,
+Block# = 1395893, BER = 6.038361e-05, BLER = 3.585518e-04
+
+SNR[dB] =  20.0,
+Block# = 5161435, BER = 1.061376e-05, BLER = 9.696916e-05
+
+
+==== 1024,522) + CRC-10 perfect CSI
+
+OFDM-GDMA-BPSK system
+
+(1024,512) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.823686e-01, BLER = 6.006997e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.681932e-01, BLER = 3.768116e-01
+
+SNR[dB] =  8.0,
+Block# = 2539, BER = 8.553364e-02, BLER = 1.971249e-01
+
+SNR[dB] =  10.0,
+Block# = 6478, BER = 3.081177e-02, BLER = 7.726150e-02
+
+SNR[dB] =  12.0,
+Block# = 22385, BER = 8.349010e-03, BLER = 2.235872e-02
+
+SNR[dB] =  14.0,
+Block# = 85389, BER = 1.907756e-03, BLER = 5.861411e-03
+
+SNR[dB] =  16.0,
+Block# = 417636, BER = 3.404276e-04, BLER = 1.198412e-03
+
+SNR[dB] =  18.0,
+Block# = 1952655, BER = 6.238551e-05, BLER = 2.563177e-04
+
+SNR[dB] =  20.0,
+Block# = 6216441, BER = 1.072556e-05, BLER = 4.769611e-05
+
+==== 1024,538) + CRC-10 perfect CSI + NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,528) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Perfect CSI
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 2.820138e-01, BLER = 6.049475e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.709392e-01, BLER = 3.845577e-01
+
+SNR[dB] =  8.0,
+Block# = 2426, BER = 8.723402e-02, BLER = 2.063067e-01
+
+SNR[dB] =  10.0,
+Block# = 6404, BER = 3.041334e-02, BLER = 7.815428e-02
+
+SNR[dB] =  12.0,
+Block# = 20199, BER = 8.771624e-03, BLER = 2.477845e-02
+
+SNR[dB] =  14.0,
+Block# = 78182, BER = 2.002115e-03, BLER = 6.401729e-03
+
+SNR[dB] =  16.0,
+Block# = 331969, BER = 4.166771e-04, BLER = 1.507671e-03
+
+SNR[dB] =  18.0,
+Block# = 1613236, BER = 7.090198e-05, BLER = 3.102460e-04
+
+SNR[dB] =  20.0,
+Block# = 7361520, BER = 1.163297e-05, BLER = 6.364176e-05
+
+==== 1024,538) + CRC-10 clsutering +NBC
+
+OFDM-GDMA-BPSK system
+
+(1024,528) Polar code
+PCC: 3GPP
+Separated channel decoding: SCL-32
+CRC_LEN = 10
+
+FFT point: 16, CP length: 4, channel taps: 5
+Number of users: 2
+
+Cluster-based channel estimation: modified k-means++
+w/ Gaussian mixture model
+
+Synchronous system
+Channel, K=0
+OFDM : CP
+-
+SNR[dB] =  4.0,
+Block# = 2001, BER = 3.065918e-01, BLER = 6.546727e-01
+
+SNR[dB] =  6.0,
+Block# = 2001, BER = 1.942552e-01, BLER = 4.337831e-01
+
+SNR[dB] =  8.0,
+Block# = 2187, BER = 9.632633e-02, BLER = 2.288523e-01
+
+SNR[dB] =  10.0,
+Block# = 5314, BER = 3.700531e-02, BLER = 9.418517e-02
+
+SNR[dB] =  12.0,
+Block# = 15653, BER = 1.119497e-02, BLER = 3.197470e-02
+
+SNR[dB] =  14.0,
+Block# = 57704, BER = 2.597463e-03, BLER = 8.673575e-03
+
+SNR[dB] =  16.0,
+Block# = 227712, BER = 5.758788e-04, BLER = 2.197952e-03
+
+SNR[dB] =  18.0,
+Block# = 989867, BER = 1.038082e-04, BLER = 5.056235e-04
+
+SNR[dB] =  20.0,
+Block# = 10687431, BER = 3.855380e-06, BLER = 8.935731e-06
+
+
+

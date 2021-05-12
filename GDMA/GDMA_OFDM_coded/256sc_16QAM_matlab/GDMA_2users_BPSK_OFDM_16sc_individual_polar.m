@@ -1,7 +1,7 @@
 clc;
 clear;
 SNR_dB = 20;% SNR PER BIT (EbN0)
-NUM_FRAMES = 1; 
+NUM_FRAMES = 2000; 
 
 FFT_LEN = 512*4;
 NUM_BIT = 512; % NUMBER OF DATA BITS
@@ -159,7 +159,7 @@ for FRAME_CNT = 1:NUM_FRAMES
             h(vvv,(sc-1)*64+1:64*sc) = FREQ_RESP(vvv,sc);
         end
     end
-    plot(FREQ_RESP(1,:),'-o');
+    %plot(FREQ_RESP(1,:),'-o');
     y = F_REC_SIG_NO_CP_P;
 %     y(1,:) = F_REC_SIG_NO_CP_P(1:NUM_BIT);
 %     y(2,:) = F_REC_SIG_NO_CP_P(NUM_BIT+1:NUM_BIT*2);
@@ -182,24 +182,30 @@ for FRAME_CNT = 1:NUM_FRAMES
     for pp = 1:V
        for tt = 1:8
            ansbit(pp,(tt-1)*64 + 1:tt*64) = nrRateRecoverPolar(datar((tt-1)*128 + 1:tt*128,pp),mes,64);
+           ansbit(ansbit >= 0) = 0;
+           ansbit(ansbit < 0) = 1; 
+           err        = sum(xor(A(pp,(tt-1)*64 + 1:tt*64)', double(ansbit(pp,(tt-1)*64 + 1:tt*64)'))); 
+           bler_flag = sum(err>0);
+           C_BLER = C_BLER + bler_flag;
        end
         %ansbit(pp,:) = ldpcDecoder(datar(:,pp));
         %datar(:,pp) = randdeintrlv(datar(:,pp),st2);
         %ansbit(pp,:) = nrPolarDecode(datar(:,pp),512,1024,16,10,false,11);
         %ansbit(pp,:) = randdeintrlv(ansbit(pp,:),st2);
+ 
     end  
-    ansbit(ansbit >= 0) = 0;
-    ansbit(ansbit < 0) = 1;   
-    err        = sum(xor(A', double(ansbit')));    
+    %ansbit(ansbit >= 0) = 0;
+    %ansbit(ansbit < 0) = 1;   
+    %err        = sum(xor(A', double(ansbit')));    
     
 %     if err >= 1
 %         bler_flag = 1;
 %     else
 %         bler_flag = 0;
 %     end
-    bler_flag = sum(err>0);
+    %bler_flag = sum(err>0);
     C_BER = C_BER + sum(err);
-     C_BLER = C_BLER + bler_flag;
+     %C_BLER = C_BLER + bler_flag;
 end
 BER = C_BER/(NUM_BIT*2*NUM_FRAMES);
-BLER = C_BLER/(2*NUM_FRAMES);
+BLER = C_BLER/(8*2*NUM_FRAMES);

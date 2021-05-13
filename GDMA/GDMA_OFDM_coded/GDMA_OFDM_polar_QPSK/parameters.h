@@ -27,10 +27,10 @@
 #define		JOINT					0												// 1: JCD,  0: SCD
 #define		Iteration				50
 #define		NBC						0												// Using the structure of RM code
-#define		INTERLEAVER				1												// 1: enable, 0 : disable
+#define		INTERLEAVER				0												// 1: enable, 0 : disable
 #define		INTERLEAVER_type		1												// 1: random, 0 : non-random
 
-#define		DATA_LEN				(640 + CRC_LEN - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
+#define		DATA_LEN				(544 + CRC_LEN - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length
 //---------- LDPC code ----------
 
@@ -105,7 +105,7 @@
 
 #define		NUM_LEVEL				( 1 << NUM_USER )								// number of levels of superimposed signal
 
-#define		FFT_LAYER				7												// number of FFT layers
+#define		FFT_LAYER				5												// number of FFT layers
 #define		FFT_POINT				( 1 << FFT_LAYER )								// number of FFT points
 #define		FFT_SEGMENT				( CODE_LEN / FFT_POINT )						// codeword is divided into multiple segments for OFDM transmission
 #define		CP_LEN					( TAP_NUM - 1)									// length of cyclic prefix
@@ -113,7 +113,7 @@
 
 //---------- channel estimation ----------
 
-#define		CE_SCHEME				0												// 0: cluster-based, 1: ideal
+#define		CE_SCHEME				1												// 0: cluster-based, 1: ideal
 
 #define		INI_METHOD				2												// 0: LBG, 1: k-means++, 2: modified k-means++
 
@@ -129,10 +129,10 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				230
 
-#define		BLOCK_NUM				3000000										// number of blocks to be simulated 
+#define		BLOCK_NUM				125000										// number of blocks to be simulated 
 
 #define		SNR_NUM					9												// number of SNR points to be simulated
-#define		SNR_START				4												// in dB
+#define		SNR_START				20												// in dB
 #define		SNR_STEP				2												// in dB
 
 #define		HARD(x)					( (x) > 0 ? 0 : 1 )

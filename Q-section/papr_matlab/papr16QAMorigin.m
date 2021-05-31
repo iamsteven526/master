@@ -2,7 +2,7 @@ clc;
 clear;
 
 %ccdf = comm.CCDF('AveragePowerOutputPort',true,'PeakPowerOutputPort',true);
-block=10000;
+block=50000;
 Q = 4;
 
 
@@ -11,16 +11,16 @@ for i = 1: block
     message = randi([0 1],512,1);
     message = nrPolarEncode(message,1024,10,false);
     qamTxSig = qammod(message,16,'InputType','bit','UnitAveragePower',true);
-    TTT = ifft(qamTxSig(1:256));
+    TTT = ifft(qamTxSig(1:64));
     B(i) = 10*log10(max(abs(TTT).^2)/mean(abs(TTT).^2));
     
 end
 
-for j = 1:29
+for j = 1:33
    C(j) = length(B(B>2.75+0.25*j)) ;
 end
 
-D = [3:0.25:10];
+D = [3:0.25:11];
 plot(D,log10(C/block));
 test = C/(block);
 

@@ -61,7 +61,7 @@
 #define		FFT_LAYER				4												// number of FFT layers
 #define		FFT_POINT				( 1 << FFT_LAYER )								// number of FFT points
 #define		FFT_SEGMENT				( CODE_LEN / FFT_POINT )						// codeword is divided into multiple segments for OFDM transmission
-#define		CP_LEN					( TAP_NUM - 1)									// length of cyclic prefix
+#define		CP_LEN					( TAP_NUM - 1 + 4)									// length of cyclic prefix
 #define		CS_LEN					0
 #define		CP_TYPE					1												// 1: cp, 0:cp + cs
 

@@ -31,7 +31,7 @@
 #define		INTERLEAVER				1												// 1: enable, 0 : disable
 #define		INTERLEAVER_type		0												// 1: random, 0 : non-random
 
-#define		DATA_LEN				(548 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
+#define		DATA_LEN				(644 - (CRC_LEN * POLAR_DECODING_TYPE))			// data length  527 for NBC  , 512 for CSI
 #define		CODE_LEN				( 1 << BCT_LAYER )								// codeword length
 //---------- LDPC code ----------
 
@@ -106,7 +106,7 @@
 #define     MOD_LEVEL               4                                               //16QAM
 #define		NUM_LEVEL				( 1 << MOD_LEVEL*NUM_USER )								// number of levels of superimposed signal
 
-#define		FFT_LAYER				4												// number of FFT layers
+#define		FFT_LAYER				6												// number of FFT layers
 #define		FFT_POINT				( 1 << FFT_LAYER )								// number of FFT points
 #define		FFT_SEGMENT				( CODE_LEN / (FFT_POINT*MOD_LEVEL) )						// codeword is divided into multiple segments for OFDM transmission
 #define		CP_LEN					( TAP_NUM - 1)									// length of cyclic prefix

@@ -99,7 +99,7 @@
 #define		NUMERIC_LIMIT			1e-100
 #define		LLR_LIMIT				210
 
-#define		BLOCK_NUM				50000											// number of blocks to be simulated 
+#define		BLOCK_NUM				100000											// number of blocks to be simulated 
 
 #define		G_NUM					15												// number of SNR points to be simulated
 #define		G_START				    0.1											// in dB

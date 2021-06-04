@@ -2,12 +2,12 @@ clc;
 clear;
 
 %ccdf = comm.CCDF('AveragePowerOutputPort',true,'PeakPowerOutputPort',true);
-block=500;
-Q = 12;
+block=10000;
+Q = 8;
 symbolcount = 4;
 sccount = 256/symbolcount;
 
-jump = 31;
+jump = 61;
 
 for i = 1: block
     i

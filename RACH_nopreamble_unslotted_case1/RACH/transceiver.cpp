@@ -86,7 +86,7 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 					time_drift = time_drift/NUM_SLOTED;
 					cachetimesum = cache_time_drift + time_drift;
 					//if(cachetimesum > 2*Unit ){
-					if((cachetimesum % (ofdmsymbolLen*Unit)) > 4*Unit ){
+					if((cachetimesum % (ofdmsymbolLen*Unit)) > 0*Unit ){
 					    time_drift = (cachetimesum/(ofdmsymbolLen*Unit))*(ofdmsymbolLen*Unit) - cache_time_drift;
 					}
 					if(cachetimesum  > packet_dur){

@@ -76,22 +76,24 @@ void Packet_generater(int *packet_num, int **packet_time, long double& packet_su
 		for (;;)
 		{
 			int NUM_SLOTED = poisson(generator);
-			//NUM_SLOTED = 3;
+			//NUM_SLOTED = 2;
 			//cout << "true: " << NUM_SLOTED << " ";
 			debug_count += NUM_SLOTED;
 			cache_time_drift = 0;
+			int dddrift = 10;
 			for(int p = 0; p < NUM_SLOTED; ++p){
 				while(true){
 					time_drift = exponential(generator) * packet_dur;
-					time_drift = time_drift%(4+4);
+					time_drift = time_drift%(dddrift);
 					cachetimesum = cache_time_drift + time_drift;
 					//if(cachetimesum > 2*Unit ){
-					if((cachetimesum % (effLen*Unit)) > 4*Unit ){
-					    time_drift = 0;
+					if((cachetimesum % (effLen*Unit)) > dddrift*Unit ){
+					    //time_drift = 0;
+						time_drift = dddrift-cache_time_drift;
 					}
 					
-					//time_drift = 1; //slotted
-					//if(p == 0) time_drift = 0;
+					//time_drift = 15; //slotted
+					if(p == 0) time_drift = 0;
 					cache_time_drift = cache_time_drift + time_drift;
 					//cout << time_drift << "  ";
 					break;

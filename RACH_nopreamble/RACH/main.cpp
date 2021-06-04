@@ -457,7 +457,7 @@ int main()
 		//double snrdB = 20 + (double)i * 2;
 
 		double snr = pow(10., snrdB / 10.);
-		double stdDev = sqrt((0.5 / snr) * ((double)(CODE_LEN + DIFF_ENC*FFT_POINT) / DATA_LEN) * ((double)(CP_LEN + FFT_POINT) / FFT_POINT)); // 4 --> CP_LEN
+		double stdDev = sqrt((0.5 / snr) * ((double)(CODE_LEN + DIFF_ENC*FFT_POINT) / DATA_LEN) * ((double)(4 + FFT_POINT) / FFT_POINT)); // 4 --> CP_LEN
 		long double errCount[2] = { 0 }; // 0: bit error; 1: block error
 		long double packet_sum = 0;
 		int pre_time = 0;

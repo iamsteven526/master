@@ -39,6 +39,7 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 	system("pause");*/
 	//---- Sperate MLDT ---- 
 	double adapted_variance = pow(stdDev + (0.1 * sqrt(snrdB)), 2);
+	double powd = 9;
 	double test = 0,testtime = 0;
 	double alpha = 0;
 	int NUM_user;
@@ -126,7 +127,7 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 								estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][0][j];
 							else
 								//estimate_sum += pow(-1, (reg % 2)) * (estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][0] + 0.2*(pow(NUM_user,8)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
-								estimate_sum += pow(-1, (reg % 2)) * (H[0][Cluster_gain[t][nuser][i][g]][i][0][j] + 0.2*(pow(NUM_user,8)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
+								estimate_sum += pow(-1, (reg % 2)) * (H[0][Cluster_gain[t][nuser][i][g]][i][0][j] + 0.2*(pow(NUM_user,powd)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
 							reg /= 2;
 						}
 						app[t][nuser][m][k] = exp(-pow(postRx[t][nuser][i][0][j] - estimate_sum, 2) / (2. * adapted_variance));
@@ -157,7 +158,7 @@ void MLDT(LDPC &ldpc, double stdDev, double *****H, double *****postRx, double *
 								estimate_sum += pow(-1, (reg % 2)) * H[0][Cluster_gain[t][nuser][i][g]][i][1][j];
 							else
 								//estimate_sum+= pow(-1, (reg % 2)) * (estimate[0][Cluster_gain[t][nuser][i][g]][i * SLIDING][j][1] +  0.2*(pow(NUM_user,8)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
-								estimate_sum+= pow(-1, (reg % 2)) * (H[0][Cluster_gain[t][nuser][i][g]][i][1][j] +  0.2*(pow(NUM_user,8)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
+								estimate_sum+= pow(-1, (reg % 2)) * (H[0][Cluster_gain[t][nuser][i][g]][i][1][j] +  0.2*(pow(NUM_user,powd)/600) * sqrt(0.01275 / FFT_SEGMENT) * normal(generator));
 							reg /= 2;
 						}
 						app[t][nuser][m][k] *= exp(-pow(postRx[t][nuser][i][1][j] - estimate_sum, 2) / (2. * adapted_variance));

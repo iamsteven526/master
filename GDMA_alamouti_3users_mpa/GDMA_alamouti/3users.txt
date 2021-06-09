@@ -18,5 +18,88 @@ SNR[dB] = 18.0, BER = 7.420000e-04
 SNR[dB] = 20.0, BER = 3.060000e-04
 
 
+======0609new
+1, only GDMA no diversity 0:5:40
+GDMA-BPSK system
+Number of users: 3
 
+Perfect CSI
+
+Block length: 64
+
+Synchronous system
+
+-
+
+SNR[dB] = 0.0
+Block# = 500001, BER = 2.050903e-01
+
+SNR[dB] = 5.0
+Block# = 500001, BER = 1.142121e-01
+
+SNR[dB] = 10.0
+Block# = 500001, BER = 4.854317e-02
+
+SNR[dB] = 15.0
+Block# = 500001, BER = 1.721308e-02
+
+SNR[dB] = 20.0
+Block# = 500001, BER = 5.736864e-03
+
+SNR[dB] = 25.0
+Block# = 500001, BER = 1.829007e-03
+
+SNR[dB] = 30.0
+Block# = 500001, BER = 5.741864e-04
+
+SNR[dB] = 35.0
+Block# = 500001, BER = 1.846038e-04
+
+SNR[dB] = 40.0
+Block# = 925098, BER = 5.631723e-05
+
+2:alamouti message passing=============================
+
+STC-GDMA-BPSK system
+Number of users: 3
+
+
+SNR[dB] = 0.0
+^Cock# = 1022784, BER = 1.971260e-01
+SNR[dB] = 5.0
+Block# = 1000000, BER = 9.138567e-02
+SNR[dB] = 10.0
+Block# = 1000000, BER = 2.221683e-02
+SNR[dB] = 15.0
+Block# = 1000000, BER = 2.939000e-03
+SNR[dB] = 20.0
+Block# = 1000000, BER = 3.091667e-04
+SNR[dB] = 25.0
+Block# = 10000000, BER = 3.038333e-05
+SNR[dB] = 30.0
+Block# = 10000000, BER = 2.400000e-06
+
+SNR[dB] = 35.0
+Block# = 10000000, BER = 4.666667e-07
+
+3:=======================only add LLR
+
+SNR[dB] = 0.0
+Block# = 10000000, BER = 1.931423e-01
+SNR[dB] = 5.0
+Block# = 10000000, BER = 1.029181e-01
+SNR[dB] = 10.0
+Block# = 10000000, BER = 3.156553e-02
+SNR[dB] = 15.0
+Block# = 10000000, BER = 4.834467e-03
+SNR[dB] = 20.0
+Block# = 10000000, BER = 4.674333e-04
+SNR[dB] = 25.0
+Block# = 10000000, BER = 3.981667e-05
+SNR[dB] = 30.0
+Block# = 10000000, BER = 3.700000e-06
+SNR[dB] = 35.0
+Block# = 10000000, BER = 2.000000e-07
+SNR[dB] = 40.0
+Block# = 10000000, BER = 1.666667e-08
 

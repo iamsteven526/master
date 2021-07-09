@@ -2,24 +2,27 @@ clc;
 clear;
 
 %ccdf = comm.CCDF('AveragePowerOutputPort',true,'PeakPowerOutputPort',true);
-block=50000;
+block=11200;
 Q = 4;
 
 
 for i = 1: block
     i
-    message = randi([0 1],512,1);
-    message1 = randi([0 1],512,1);
-    message2 = randi([0 1],512,1);
-    message3 = randi([0 1],512,1);
-    message = nrPolarEncode(message,1024,10,false);
-    message1 = nrPolarEncode(message1,1024,10,false);
-    message2 = nrPolarEncode(message2,1024,10,false);
-    message3 = nrPolarEncode(message3,1024,10,false);
-    qamTxSig = qammod([message; message1; message2; message3],16,'InputType','bit','UnitAveragePower',true);
-    TTT = ifft([qamTxSig(1:1024); zeros([3072,1])]);
-    B(i) = 10*log10(max(abs(TTT).^2)/mean(abs(TTT).^2));
-    
+    B(i) = 100;
+    for t = 1:15
+        
+        message = randi([0 1],512,1);
+        message1 = randi([0 1],512,1);
+        message2 = randi([0 1],512,1);
+        message3 = randi([0 1],512,1);
+        message = nrPolarEncode(message,1024,10,false);
+        message1 = nrPolarEncode(message1,1024,10,false);
+        message2 = nrPolarEncode(message2,1024,10,false);
+        message3 = nrPolarEncode(message3,1024,10,false);
+        qamTxSig = qammod([message; message1; message2; message3],16,'InputType','bit','UnitAveragePower',true);
+        TTT = ifft([qamTxSig(1:1024); zeros([3072,1])]);
+        B(i) = min(10*log10(max(abs(TTT).^2)/mean(abs(TTT).^2)),B(i));
+    end
 end
 
 for j = 1:33

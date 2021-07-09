@@ -37,8 +37,8 @@ void MLDT(LDPC &ldpc, double variance, double ****H, double ***postRx, double **
 				{
 					//estimate[nuser][i][j][0] = H[nuser][i][0][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
 					//estimate[nuser][i][j][1] = H[nuser][i][1][j] * (2 * temp - 1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
-					estimate[nuser][i][j][0] = H[nuser][i][0][j] * (1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
-					estimate[nuser][i][j][1] = H[nuser][i][1][j] * (1) + sqrt(variance / FFT_SEGMENT) * normal(generator);
+					estimate[nuser][i][j][0] = H[nuser][i][0][j] * (1) + sqrt(variance / (2*FFT_SEGMENT)) * normal(generator);
+					estimate[nuser][i][j][1] = H[nuser][i][1][j] * (1) + sqrt(variance / (2*FFT_SEGMENT)) * normal(generator);
 				}
 			}
 		}

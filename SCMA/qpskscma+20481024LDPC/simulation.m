@@ -36,6 +36,8 @@ CB(:,:,6) = [ 0                  0                  0                  0;...
               0.7071             1j*0.7071          -1j*0.7071         -0.7071;...
               0                  0                  0                  0 ];
 
+CB = 0.8163*CB;     
+          
 K = size(CB, 1); % number of orthogonal resources
 M = size(CB, 2); % number of codewords in each codebook
 V = size(CB, 3); % number of users (layers)
@@ -48,16 +50,16 @@ B = sparse(double(B));
 
 N = 2048; % SCMA signals in frame
 R = 0.5;
-EbN0 = 20:5:35;
+EbN0 = 0:2.5:20;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
 Nbits = zeros(V, length(SNR));
 BER   = zeros(V, length(SNR));
 
-maxNumErrs = 5000;
+maxNumErrs = 20000;
 maxNumBits = 3e7;
-Niter      = 8;
+Niter      = 6;
 ldpcDecoder = comm.LDPCDecoder(B);
 ldpcEncoder = comm.LDPCEncoder(B);
 for k = 1:length(SNR)
@@ -74,8 +76,8 @@ for k = 1:length(SNR)
            w(pp,:) = ldpcEncoder(dam(pp,:)');%64800
            %w(pp,:) = nrPolarEncode(dam(pp,:)',N,10,false);
         end
-        %h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
-        h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1)); % no diversity
+        h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
+        %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1)); % no diversity
         for pp = 1:1
             for qq = 1:N/1
                 h(:,:,(pp-1)*N/1+qq) = h(:,:,(pp-1)*N/1+1);

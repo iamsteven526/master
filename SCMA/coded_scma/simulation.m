@@ -45,7 +45,7 @@ V = size(CB, 3); % number of users (layers)
 
 N = 2048; % SCMA signals in frame
 R = 0.5;
-EbN0 = 4:2:12;
+EbN0 = 0:1:10;
 SNR  = EbN0 + 10*log10(R*log2(M)*V/K);   %noise power maybe wrong!!!
 
 Nerr  = zeros(V, length(SNR));
@@ -55,8 +55,8 @@ Nblocks = zeros(length(SNR));
 BER   = zeros(V, length(SNR));
 BLER   = zeros(length(SNR));
 
-maxNumErrs = 1000;
-maxNumBits = 5e6;
+maxNumErrs = 5000;
+maxNumBits = 5e7;
 Niter      = 8;
 
 fid=fopen('H_2048_1024_z64_0635.txt','r');
@@ -85,7 +85,7 @@ for k = 1:length(SNR)
         end
         h = 1/sqrt(2)*(randn(K, V, N)+1j*randn(K, V, N)); % Rayleigh channel
         %h = 1/sqrt(2)*(repmat(randn(1, V, N), K, 1)+1j*repmat(randn(1, V, N), K, 1)); % no diversity
-        multiblock = 8;
+        multiblock = 512;
         for pp = 1:multiblock
             for qq = 1:N/multiblock
                 h(:,:,(pp-1)*N/multiblock+qq) = h(:,:,(pp-1)*N/multiblock+1);
